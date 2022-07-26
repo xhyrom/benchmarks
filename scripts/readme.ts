@@ -4,6 +4,8 @@ import benchmarks from './benchmarks.json';
 import { join, resolve } from 'path';
 import { exec } from 'bun-utilities';
 
+const __dirname = new URL('.', import.meta.url).pathname;
+
 const getCPU = () => {
     if (process.platform === 'linux') {
         return exec(['bash', '-c', `lscpu | grep 'Model name' | cut -f 2 -d ":" | awk '{$1=$1}1'`]).stdout.replace(/\n|\r/g, '');
@@ -60,4 +62,4 @@ for (const benchmark of benchmarks) {
     markdown += `${markdownTable(table)}\n\n`;
 }
 
-Bun.write('./README.md', `${head}\n${markdown}`);
+Bun.write(resolve(__dirname, '..', 'README.md'), `${head}\n${markdown}`);
