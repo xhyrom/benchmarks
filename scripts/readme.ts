@@ -17,7 +17,7 @@ const getCPU = () => {
 }
 
 let head = [
-    `Runned on ${getCPU()}`,
+    `*Runned on ${getCPU()}*`,
     '',
     '## Table Of Contents',
     '',
@@ -44,7 +44,7 @@ for (const benchmark of benchmarks) {
 
     for (const [key, value] of Object.entries(outputs)) {
         for (const b of value.benchmarks) {
-            table.push([b.runtime, b.name, `${duration(b.stats.avg)}/iter`, duration(b.stats.min), duration(b.stats.max), b.stats.avg]);
+            table.push([value.runtime, b.name, `${duration(b.stats.avg)}/iter`, duration(b.stats.min), duration(b.stats.max), b.stats.avg]);
         }
     }
 
@@ -62,6 +62,6 @@ for (const benchmark of benchmarks) {
 
 Bun.write('./README.md', `${head}\n${markdown}`);
 
-console.log(exec(['git', 'add', '.', './README.md']));
-console.log(exec(['git', 'commit', '-m', 'Update benchmarks 🚀']));
-console.log(exec(['git', 'push']));
+exec(['git', 'add', '.', './README.md']);
+exec(['git', 'commit', '-m', 'Update benchmarks 🚀']);
+exec(['git', 'push']);
