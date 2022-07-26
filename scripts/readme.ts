@@ -3,6 +3,8 @@ import { duration } from '../node_modules/mitata/reporter/fmt.mjs';
 import benchmarks from './benchmarks.json';
 import { join, resolve } from 'path';
 import { exec } from 'bun-utilities';
+import os from 'os';
+console.log(os);
 
 let head = [
     '## Table Of Contents',
@@ -30,7 +32,7 @@ for (const benchmark of benchmarks) {
 
     for (const [key, value] of Object.entries(outputs)) {
         for (const b of value.benchmarks) {
-            table.push([key, b.name, `${duration(b.stats.avg)}/iter`, duration(b.stats.min), duration(b.stats.max), b.stats.avg]);
+            table.push([b.runtime, b.name, `${duration(b.stats.avg)}/iter`, duration(b.stats.min), duration(b.stats.max), b.stats.avg]);
         }
     }
 
