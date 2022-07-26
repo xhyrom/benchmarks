@@ -4,11 +4,12 @@ let join;
 if (typeof Deno === "undefined") {
     join = (await import("node:path")).join;
 } else {
-    join = (await import('https://deno.land/std@0.141.0/node/path/mod.ts')).join;
+    join = (await import('https://deno.land/std@0.141.0/node/path/mod.ts')).resolve;
     console.log(join);
 }
 
 export const save = async(output, runtime, ...path) => {
+    console.log(output, join(...path, "outputs", `${runtime}.json`))
     if (typeof Bun !== "undefined") {
         Bun.write(join(...path, "outputs", `${runtime}.json`), JSON.stringify(output));
     } else if (typeof Deno !== "undefined") {
