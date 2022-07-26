@@ -12,6 +12,7 @@
     "bun-types": "^0.0.83"
   },
   "dependencies": {
+    "bun-utilities": "^0.1.7",
     "markdown-table": "^3.0.2",
     "mitata": "^0.1.6"
   }
