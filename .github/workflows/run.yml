@@ -56,3 +56,5 @@ jobs:
 
       - name: Generate README
         run: bun run generate:readme
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
