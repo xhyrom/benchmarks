@@ -9,11 +9,10 @@ if (typeof Deno === "undefined") {
 }
 
 export const save = async(output, runtime, ...path) => {
-    console.log(output, join(...path, "outputs", `${runtime}.json`))
     if (typeof Bun !== "undefined") {
-        Bun.write(join(...path, "outputs", `${runtime}.json`), JSON.stringify(output));
+        await Bun.write(join(...path, "outputs", `${runtime}.json`), JSON.stringify(output));
     } else if (typeof Deno !== "undefined") {
-        Deno.writeTextFile(join(...path, "outputs", `${runtime}.json`), JSON.stringify(output));
+        await Deno.writeTextFile(join(...path, "outputs", `${runtime}.json`), JSON.stringify(output));
     } else {
         (await import("fs/promises")).writeFile(join(...path, "outputs", `${runtime}.json`), JSON.stringify(output));
     }

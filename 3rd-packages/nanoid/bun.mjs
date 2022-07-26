@@ -4,4 +4,4 @@ import { save } from "../../scripts/summary.mjs";
 
 bench("generate id", () => nanoid(36));
 
-save(await run(), "bun", __dirname);
+await save(await run(), "bun", __dirname);

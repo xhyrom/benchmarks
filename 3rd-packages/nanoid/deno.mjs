@@ -6,4 +6,4 @@ const __dirname = new URL('.', import.meta.url).pathname;
 
 bench("generate id", () => nanoid(36));
 
-save(await run(), "deno", __dirname);
+await save(await run(), "deno", __dirname);
