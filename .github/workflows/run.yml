@@ -1,6 +1,8 @@
 name: Run benchmarks
 
 on:
+  schedule:
+    - cron: 0 0 * * *
   push:
   workflow_dispatch:
 

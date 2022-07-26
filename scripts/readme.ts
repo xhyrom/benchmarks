@@ -48,6 +48,6 @@ for (const benchmark of benchmarks) {
 
 Bun.write('./README.md', `${head}\n${markdown}`);
 
-exec(['git', 'add', '.']);
-exec(['git', 'commit', '-m', 'Update benchmarks 🚀']);
-exec(['git', 'push']);
+console.log(exec(['git', 'add', '.', './README.md']));
+console.log(exec(['git', 'commit', '-m', 'Update benchmarks 🚀']));
+console.log(exec(['git', 'push']));
