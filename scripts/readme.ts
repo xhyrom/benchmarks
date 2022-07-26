@@ -61,7 +61,3 @@ for (const benchmark of benchmarks) {
 }
 
 Bun.write('./README.md', `${head}\n${markdown}`);
-
-if (process.env.GITHUB_TOKEN) exec(['git', 'add', '.']);
-if (process.env.GITHUB_TOKEN) exec(['git', 'commit', '-m', 'Update benchmarks 🚀']);
-if (process.env.GITHUB_TOKEN) exec(['git', 'push']);

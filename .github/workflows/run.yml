@@ -56,5 +56,9 @@ jobs:
 
       - name: Generate README
         run: bun run generate:readme
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Push changes
+        uses: actions-js/push@v1
+        with:
+          github_token: '${{ secrets.GITHUB_TOKEN }}'
+          branch: main
