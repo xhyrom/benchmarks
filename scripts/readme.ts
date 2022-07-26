@@ -62,4 +62,4 @@ for (const benchmark of benchmarks) {
     markdown += `${markdownTable(table)}\n\n`;
 }
 
-Bun.write(resolve(__dirname, '..', 'README.md'), `${head}\n${markdown}`);
+await Bun.write(resolve(__dirname, '..', 'README.md'), `${head}\n${markdown}`);
