@@ -1,4 +1,4 @@
-import * as kleur from "./node_modules/mitata/reporter/clr.mjs";
+import * as kleur from "../node_modules/mitata/reporter/clr.mjs";
 
 let join;
 if (typeof Deno === "undefined") {
@@ -20,6 +20,8 @@ export const save = async(output, runtime, ...path) => {
 
 export default async(summaries, benchmarks) => {
     for (const summaryName of summaries) {
+        console.log(kleur.bold(true, `Summary for ${kleur.green(true, summaryName)}`));
+
         // Node & Deno
         const nodeAndDeno = [benchmarks.find(b => b.name.includes('node') && b.id === summaryName), benchmarks.find(b => b.name.includes('deno') && b.id === summaryName)];
         console.log(__summary(nodeAndDeno, '(node & deno)'));

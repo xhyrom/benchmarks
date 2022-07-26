@@ -1,6 +1,6 @@
 import { bench, run } from "mitata";
 import { nanoid } from "nanoid";
-import { save } from "../../summary.mjs";
+import { save } from "../../scripts/summary.mjs";
 
 const __dirname = new URL('.', import.meta.url).pathname;
 

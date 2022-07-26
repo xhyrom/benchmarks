@@ -1,0 +1,10 @@
+{
+    "name": "json",
+    "scripts": {
+        "bench:bun": "bun run bun.mjs | grep iter",
+        "bench:node": "node node.mjs | grep iter",
+        "bench:deno": "deno run -A --unstable --allow-write deno.mjs | grep iter",
+        "summary": "bun run summary.mjs",
+        "bench": "bun run bench:bun && bun run bench:node && bun run bench:deno && bun run summary"
+    }
+}

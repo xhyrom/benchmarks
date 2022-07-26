@@ -1,4 +1,4 @@
-import summary from "../../scripts/summary.mjs";
+import summary from "../scripts/summary.mjs";
 import { join } from "node:path";
 
 const outputBun = JSON.parse(await (await Bun.file(join(__dirname, "outputs", "bun.json"))).text()).benchmarks.map(b => {
@@ -13,6 +13,7 @@ const outputDeno = JSON.parse(await (await Bun.file(join(__dirname, "outputs", "
 
 await summary(
     [
-        "generate id"
+        "parse",
+        "stringify"
     ], [].concat(outputBun, outputNode, outputDeno)
 );

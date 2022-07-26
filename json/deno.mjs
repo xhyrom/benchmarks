@@ -3,7 +3,7 @@ import { save } from "../scripts/summary.mjs";
 
 const __dirname = new URL('.', import.meta.url).pathname;
 
-bench("console.log('hello')", () => console.log("hello"));
-bench("console.log({ hello: 'object' })", () => console.log({ hello: "object" }));
+bench("parse", () => JSON.parse("{\"hello\": \"world\"}"));
+bench("stringify", () => JSON.stringify({ hello: "world" }));
 
 save(await run(), "deno", __dirname);

@@ -2,9 +2,11 @@
   "version": "1.0.0",
   "name": "benchmarks",
   "scripts": {
-    "console": "cd console && bun run bench",
-    "3rd-packages": "cd 3rd-packages && bun run bench",
-    "bench": "bun run console && bun run 3rd-packages"
+    "bench:console": "cd console && bun run bench",
+    "bench:3rd-packages": "cd 3rd-packages && bun run bench",
+    "bench:json": "cd json && bun run bench",
+    "bench": "bun run bench:console && bun run bench:3rd-packages && bun run bench:json",
+    "generate:readme": "bun scripts/readme.ts"
   },
   "devDependencies": {
     "bun-types": "^0.0.83"
