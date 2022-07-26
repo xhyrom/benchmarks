@@ -8,27 +8,27 @@
 ## Console
 | Runtime | Benchmark                        | Average        | Min       | Max      |
 | ------- | -------------------------------- | -------------- | --------- | -------- |
-| bun     | console.log('hello')             | 948.36 ns/iter | 846.15 ns | 1.37 µs  |
-| bun     | console.log({ hello: 'object' }) | 1.65 µs/iter   | 1.42 µs   | 1.99 µs  |
-| node    | console.log('hello')             | 6.49 µs/iter   | 1.8 µs    | 1.06 ms  |
-| node    | console.log({ hello: 'object' }) | 18.74 µs/iter  | 3.4 µs    | 1.16 ms  |
-| deno    | console.log('hello')             | 23.55 µs/iter  | 5 µs      | 709.3 µs |
-| deno    | console.log({ hello: 'object' }) | 35.63 µs/iter  | 9.7 µs    | 1.88 ms  |
+| bun     | console.log('hello')             | 922.66 ns/iter | 821.85 ns | 1.35 µs  |
+| bun     | console.log({ hello: 'object' }) | 1.54 µs/iter   | 1.36 µs   | 3.74 µs  |
+| node    | console.log('hello')             | 7.5 µs/iter    | 1.7 µs    | 1.21 ms  |
+| node    | console.log({ hello: 'object' }) | 17.67 µs/iter  | 3.3 µs    | 1.4 ms   |
+| deno    | console.log('hello')             | 22.63 µs/iter  | 4.9 µs    | 638.7 µs |
+| deno    | console.log({ hello: 'object' }) | 35.38 µs/iter  | 10.1 µs   | 1.83 ms  |
 
 ## Nanoid
-| Runtime | Benchmark   | Average        | Min       | Max     |
-| ------- | ----------- | -------------- | --------- | ------- |
-| node    | generate id | 486.91 ns/iter | 380.25 ns | 1.59 µs |
-| deno    | generate id | 1.13 µs/iter   | 989.01 ns | 1.56 µs |
-| bun     | generate id | 1.51 µs/iter   | 1.4 µs    | 2.01 µs |
+| Runtime | Benchmark   | Average        | Min       | Max       |
+| ------- | ----------- | -------------- | --------- | --------- |
+| node    | generate id | 477.49 ns/iter | 387.05 ns | 668.21 ns |
+| deno    | generate id | 1.15 µs/iter   | 983.23 ns | 1.52 µs   |
+| bun     | generate id | 1.48 µs/iter   | 1.38 µs   | 2.39 µs   |
 
 ## Json
 | Runtime | Benchmark | Average        | Min       | Max       |
 | ------- | --------- | -------------- | --------- | --------- |
-| bun     | parse     | 143.84 ns/iter | 117.69 ns | 569.9 ns  |
-| deno    | stringify | 194.07 ns/iter | 177.28 ns | 345.23 ns |
-| node    | stringify | 206.01 ns/iter | 181.92 ns | 404.48 ns |
-| deno    | parse     | 253.04 ns/iter | 236.53 ns | 403.98 ns |
-| node    | parse     | 287.23 ns/iter | 234.94 ns | 480.89 ns |
-| bun     | stringify | 358.96 ns/iter | 278.8 ns  | 656.95 ns |
+| bun     | parse     | 138.17 ns/iter | 116.99 ns | 652.15 ns |
+| deno    | stringify | 191.12 ns/iter | 176.19 ns | 358.35 ns |
+| node    | stringify | 201.36 ns/iter | 181.46 ns | 749.71 ns |
+| node    | parse     | 244.66 ns/iter | 229.14 ns | 341.89 ns |
+| deno    | parse     | 250.98 ns/iter | 236.98 ns | 431.23 ns |
+| bun     | stringify | 307.99 ns/iter | 268.78 ns | 614.15 ns |
 
