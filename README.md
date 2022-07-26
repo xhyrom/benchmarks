@@ -1,3 +1,5 @@
+Runned on Intel(R) Core(TM) i5-9300HF CPU @ 2.40GHz
+
 ## Table Of Contents
 
 - Benchmarks

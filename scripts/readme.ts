@@ -3,10 +3,22 @@ import { duration } from '../node_modules/mitata/reporter/fmt.mjs';
 import benchmarks from './benchmarks.json';
 import { join, resolve } from 'path';
 import { exec } from 'bun-utilities';
-import os from 'os';
-console.log(os);
+
+const getCPU = () => {
+    if (process.platform === 'linux') {
+        return exec(['bash', '-c', `lscpu | grep 'Model name' | cut -f 2 -d ":" | awk '{$1=$1}1'`]).stdout.replace(/\n|\r/g, '');
+    }
+
+    if (process.platform === 'darwin') {
+        return exec(['bash', '-c', `sysctl -n machdep.cpu.brand_string'`]).stdout.replace(/\n|\r/g, '');
+    }
+
+    return 'unknown';
+}
 
 let head = [
+    `Runned on ${getCPU()}`,
+    '',
     '## Table Of Contents',
     '',
     '- Benchmarks',
