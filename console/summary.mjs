@@ -14,6 +14,9 @@ const outputDeno = JSON.parse(await Bun.file(join(__dirname, "outputs", "deno.js
 await summary(
     [
         "console.log('hello')",
-        "console.log({ hello: 'object' })"
+        "console.log({ hello: 'object' })",
+        "console.info('hello')",
+        "console.warn('hello')",
+        "console.debug('hello')",
     ], [].concat(outputBun, outputNode, outputDeno)
 );

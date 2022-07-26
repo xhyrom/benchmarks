@@ -4,6 +4,6 @@ import { save } from "../../scripts/summary.mjs";
 
 const __dirname = new URL('.', import.meta.url).pathname;
 
-bench("generate id", () => nanoid(36));
+bench("nanoid(36)", () => nanoid(36));
 
 await save(await run(), "node", __dirname);

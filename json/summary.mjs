@@ -13,7 +13,7 @@ const outputDeno = JSON.parse(await Bun.file(join(__dirname, "outputs", "deno.js
 
 await summary(
     [
-        "parse",
-        "stringify"
+        "JSON.parse('{\"hello\": \"world\"}')",
+        "JSON.stringify({hello: \"world\"})"
     ], [].concat(outputBun, outputNode, outputDeno)
 );
