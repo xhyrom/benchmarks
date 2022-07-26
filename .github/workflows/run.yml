@@ -27,7 +27,7 @@ jobs:
           node-version: 16
 
       - name: Check if installed
-        run:
+        run: |
           bun -v
           node -v
           deno --version
