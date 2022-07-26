@@ -13,6 +13,6 @@ const outputDeno = JSON.parse(await Bun.file(join(__dirname, "outputs", "deno.js
 
 await summary(
     [
-        "generate id"
+        "nanoid(36)",
     ], [].concat(outputBun, outputNode, outputDeno)
 );
