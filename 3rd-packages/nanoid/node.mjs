@@ -1,0 +1,9 @@
+import { bench, run } from "mitata";
+import { nanoid } from "nanoid";
+import { save } from "../../summary.mjs";
+
+const __dirname = new URL('.', import.meta.url).pathname;
+
+bench("generate id", () => nanoid(36));
+
+save(await run(), "node", __dirname);

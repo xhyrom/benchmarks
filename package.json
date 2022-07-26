@@ -1,8 +1,16 @@
 {
   "version": "1.0.0",
-  "name": "Benchmarks",
-  "main": "src/index.js",
+  "name": "benchmarks",
+  "scripts": {
+    "console": "cd console && bun run bench",
+    "3rd-packages": "cd 3rd-packages && bun run bench",
+    "bench": "bun run console && bun run 3rd-packages"
+  },
   "devDependencies": {
     "bun-types": "^0.0.83"
+  },
+  "dependencies": {
+    "markdown-table": "^3.0.2",
+    "mitata": "^0.1.6"
   }
 }

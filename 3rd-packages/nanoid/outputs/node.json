@@ -1,0 +1,1 @@
+{"benchmarks":[{"name":"generate id","group":null,"time":500,"warmup":true,"baseline":false,"async":false,"stats":{"n":118,"min":380.86,"max":1516.7,"jit":[744900,13900,3400,2900,10400,2600,2200,2400,5100,2500],"p75":472.92,"p99":526.67,"avg":460.98703389830524,"p995":1516.7,"p999":1516.7}}],"cpu":"Intel(R) Core(TM) i5-9300HF CPU @ 2.40GHz","runtime":"node v16.16.0 (x64-linux)"}

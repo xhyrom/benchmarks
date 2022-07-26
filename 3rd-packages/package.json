@@ -1,0 +1,7 @@
+{
+    "name": "3rd-packages",
+    "scripts": {
+        "bench:nanoid": "cd nanoid && bun run bench",
+        "bench": "bun run bench:nanoid"
+    }
+}
