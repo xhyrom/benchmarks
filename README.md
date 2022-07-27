@@ -1,4 +1,4 @@
-*Runned on Intel(R) Core(TM) i5-9300HF CPU @ 2.40GHz*
+*Runned on Intel(R) Xeon(R) Platinum 8370C CPU @ 2.80GHz*
 
 ## Table Of Contents
 
@@ -10,65 +10,65 @@
 ## Console
 
 ### console.log('hello')
-| Runtime                                | Benchmark            | Average       | Min     | Max       |
-| -------------------------------------- | -------------------- | ------------- | ------- | --------- |
-| bun 0.1.5 (x64-linux)                  | console.log('hello') | 2.31 µs/iter  | 1.84 µs | 8.48 µs   |
-| node v18.7.0 (x64-linux)               | console.log('hello') | 4.77 µs/iter  | 2.7 µs  | 8.18 ms   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | console.log('hello') | 12.01 µs/iter | 6.8 µs  | 413.51 µs |
+| Runtime                                | Benchmark            | Average       | Min     | Max      |
+| -------------------------------------- | -------------------- | ------------- | ------- | -------- |
+| bun 0.1.5 (x64-linux)                  | console.log('hello') | 2.41 µs/iter  | 1.9 µs  | 9.26 µs  |
+| node v18.7.0 (x64-linux)               | console.log('hello') | 4.09 µs/iter  | 3.93 µs | 4.84 µs  |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | console.log('hello') | 10.95 µs/iter | 6.7 µs  | 383.3 µs |
 
 
 ### console.log({ hello: 'object' })
-| Runtime                                | Benchmark                        | Average       | Min     | Max       |
-| -------------------------------------- | -------------------------------- | ------------- | ------- | --------- |
-| bun 0.1.5 (x64-linux)                  | console.log({ hello: 'object' }) | 2.23 µs/iter  | 1.86 µs | 2.81 µs   |
-| node v18.7.0 (x64-linux)               | console.log({ hello: 'object' }) | 7.38 µs/iter  | 4.6 µs  | 1.39 ms   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | console.log({ hello: 'object' }) | 18.81 µs/iter | 12.2 µs | 467.41 µs |
+| Runtime                                | Benchmark                        | Average       | Min     | Max      |
+| -------------------------------------- | -------------------------------- | ------------- | ------- | -------- |
+| bun 0.1.5 (x64-linux)                  | console.log({ hello: 'object' }) | 2.22 µs/iter  | 2.07 µs | 2.35 µs  |
+| node v18.7.0 (x64-linux)               | console.log({ hello: 'object' }) | 6.61 µs/iter  | 4.3 µs  | 278.3 µs |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | console.log({ hello: 'object' }) | 17.15 µs/iter | 11.5 µs | 1.14 ms  |
 
 
 ### everything
-| Runtime                                | Benchmark                        | Average       | Min     | Max       |
-| -------------------------------------- | -------------------------------- | ------------- | ------- | --------- |
-| bun 0.1.5 (x64-linux)                  | console.log({ hello: 'object' }) | 2.23 µs/iter  | 1.86 µs | 2.81 µs   |
-| bun 0.1.5 (x64-linux)                  | console.log('hello')             | 2.31 µs/iter  | 1.84 µs | 8.48 µs   |
-| node v18.7.0 (x64-linux)               | console.log('hello')             | 4.77 µs/iter  | 2.7 µs  | 8.18 ms   |
-| node v18.7.0 (x64-linux)               | console.log({ hello: 'object' }) | 7.38 µs/iter  | 4.6 µs  | 1.39 ms   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | console.log('hello')             | 12.01 µs/iter | 6.8 µs  | 413.51 µs |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | console.log({ hello: 'object' }) | 18.81 µs/iter | 12.2 µs | 467.41 µs |
+| Runtime                                | Benchmark                        | Average       | Min     | Max      |
+| -------------------------------------- | -------------------------------- | ------------- | ------- | -------- |
+| bun 0.1.5 (x64-linux)                  | console.log({ hello: 'object' }) | 2.22 µs/iter  | 2.07 µs | 2.35 µs  |
+| bun 0.1.5 (x64-linux)                  | console.log('hello')             | 2.41 µs/iter  | 1.9 µs  | 9.26 µs  |
+| node v18.7.0 (x64-linux)               | console.log('hello')             | 4.09 µs/iter  | 3.93 µs | 4.84 µs  |
+| node v18.7.0 (x64-linux)               | console.log({ hello: 'object' }) | 6.61 µs/iter  | 4.3 µs  | 278.3 µs |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | console.log('hello')             | 10.95 µs/iter | 6.7 µs  | 383.3 µs |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | console.log({ hello: 'object' }) | 17.15 µs/iter | 11.5 µs | 1.14 ms  |
 
 ## Nanoid
 
 ### nanoid(36)
-| Runtime                                | Benchmark  | Average        | Min       | Max     |
-| -------------------------------------- | ---------- | -------------- | --------- | ------- |
-| node v18.7.0 (x64-linux)               | nanoid(36) | 646.55 ns/iter | 532.98 ns | 1.94 µs |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | nanoid(36) | 1.43 µs/iter   | 1.37 µs   | 1.5 µs  |
-| bun 0.1.5 (x64-linux)                  | nanoid(36) | 1.85 µs/iter   | 1.8 µs    | 2.07 µs |
+| Runtime                                | Benchmark  | Average        | Min     | Max     |
+| -------------------------------------- | ---------- | -------------- | ------- | ------- |
+| node v18.7.0 (x64-linux)               | nanoid(36) | 523.34 ns/iter | 439 ns  | 1.87 µs |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | nanoid(36) | 1.4 µs/iter    | 1.28 µs | 1.51 µs |
+| bun 0.1.5 (x64-linux)                  | nanoid(36) | 1.87 µs/iter   | 1.82 µs | 2.05 µs |
 
 ## Json
 
 ### JSON.parse('{"hello": "world"}')
 | Runtime                                | Benchmark                        | Average        | Min       | Max       |
 | -------------------------------------- | -------------------------------- | -------------- | --------- | --------- |
-| bun 0.1.5 (x64-linux)                  | JSON.parse('{"hello": "world"}') | 159.46 ns/iter | 153.05 ns | 363.09 ns |
-| node v18.7.0 (x64-linux)               | JSON.parse('{"hello": "world"}') | 310.12 ns/iter | 303.32 ns | 346.21 ns |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | JSON.parse('{"hello": "world"}') | 327.77 ns/iter | 320.53 ns | 388.66 ns |
+| bun 0.1.5 (x64-linux)                  | JSON.parse('{"hello": "world"}') | 158.18 ns/iter | 153.53 ns | 261.21 ns |
+| node v18.7.0 (x64-linux)               | JSON.parse('{"hello": "world"}') | 307.54 ns/iter | 300.88 ns | 338.45 ns |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | JSON.parse('{"hello": "world"}') | 327.27 ns/iter | 319.6 ns  | 509.84 ns |
 
 
 ### JSON.stringify({hello: "world"})
 | Runtime                                | Benchmark                        | Average        | Min       | Max       |
 | -------------------------------------- | -------------------------------- | -------------- | --------- | --------- |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | JSON.stringify({hello: "world"}) | 239.59 ns/iter | 235.13 ns | 273.93 ns |
-| node v18.7.0 (x64-linux)               | JSON.stringify({hello: "world"}) | 248.17 ns/iter | 239.17 ns | 267.47 ns |
-| bun 0.1.5 (x64-linux)                  | JSON.stringify({hello: "world"}) | 382.96 ns/iter | 355.86 ns | 497.66 ns |
+| node v18.7.0 (x64-linux)               | JSON.stringify({hello: "world"}) | 232.05 ns/iter | 224.3 ns  | 262.43 ns |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | JSON.stringify({hello: "world"}) | 240.35 ns/iter | 235.97 ns | 261.21 ns |
+| bun 0.1.5 (x64-linux)                  | JSON.stringify({hello: "world"}) | 374 ns/iter    | 355.51 ns | 427.54 ns |
 
 
 ### everything
 | Runtime                                | Benchmark                        | Average        | Min       | Max       |
 | -------------------------------------- | -------------------------------- | -------------- | --------- | --------- |
-| bun 0.1.5 (x64-linux)                  | JSON.parse('{"hello": "world"}') | 159.46 ns/iter | 153.05 ns | 363.09 ns |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | JSON.stringify({hello: "world"}) | 239.59 ns/iter | 235.13 ns | 273.93 ns |
-| node v18.7.0 (x64-linux)               | JSON.stringify({hello: "world"}) | 248.17 ns/iter | 239.17 ns | 267.47 ns |
-| node v18.7.0 (x64-linux)               | JSON.parse('{"hello": "world"}') | 310.12 ns/iter | 303.32 ns | 346.21 ns |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | JSON.parse('{"hello": "world"}') | 327.77 ns/iter | 320.53 ns | 388.66 ns |
-| bun 0.1.5 (x64-linux)                  | JSON.stringify({hello: "world"}) | 382.96 ns/iter | 355.86 ns | 497.66 ns |
+| bun 0.1.5 (x64-linux)                  | JSON.parse('{"hello": "world"}') | 158.18 ns/iter | 153.53 ns | 261.21 ns |
+| node v18.7.0 (x64-linux)               | JSON.stringify({hello: "world"}) | 232.05 ns/iter | 224.3 ns  | 262.43 ns |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | JSON.stringify({hello: "world"}) | 240.35 ns/iter | 235.97 ns | 261.21 ns |
+| node v18.7.0 (x64-linux)               | JSON.parse('{"hello": "world"}') | 307.54 ns/iter | 300.88 ns | 338.45 ns |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | JSON.parse('{"hello": "world"}') | 327.27 ns/iter | 319.6 ns  | 509.84 ns |
+| bun 0.1.5 (x64-linux)                  | JSON.stringify({hello: "world"}) | 374 ns/iter    | 355.51 ns | 427.54 ns |
 
