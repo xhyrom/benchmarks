@@ -11,4 +11,4 @@ bench("Buffer.from('hello').toString('latin1')", () => Buffer.from("hello").toSt
 bench("Buffer.from('hello').toString('binary')", () => Buffer.from("hello").toString("binary"));
 bench("Buffer.from('hello').toString('hex')", () => Buffer.from("hello").toString("hex"));
 
-await save(await run(), "bun", __dirname);
+await save(await run(), "bun", __dirname, ".toString");

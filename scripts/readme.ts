@@ -56,7 +56,7 @@ for (const benchmark of benchmarks) {
 
             tables[b.name].push([
                 value.runtime,
-                b.name,
+                b.benchmark,
                 `${duration(b.stats.avg)}/iter`,
                 duration(b.stats.min),
                 duration(b.stats.p75),

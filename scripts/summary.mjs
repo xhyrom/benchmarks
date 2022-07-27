@@ -8,13 +8,33 @@ if (typeof Deno === "undefined") {
     console.log(join);
 }
 
-export const save = async(output, runtime, ...path) => {
+/**
+ * @param {Output} output 
+ * @param {Runtime} runtime 
+ * @param {string} path 
+ * @param {string} keepFrom 
+ * 
+ * @typedef {{
+ *  benchmarks: any[];
+ *  cpu: any;
+ *  runtime: string;
+ * }} Output
+ * 
+ * @typedef {'deno'|'bun'|'node'} Runtime
+ */
+export const save = async(output, runtime, path, keepFrom) => {
+    console.log(output);
+    output.benchmarks = output.benchmarks.map(b => {
+        return { ...b, formattedName: `[${runtime}] ${b.name}`, id: b.name, benchmark: keepFrom ? keepFrom + b.name.split(keepFrom)[1] : b.name }
+    });
+    console.log(output);
+
     if (typeof Bun !== "undefined") {
-        await Bun.write(join(...path, "outputs", `${runtime}.json`), JSON.stringify(output));
+        await Bun.write(join(path, "outputs", `${runtime}.json`), JSON.stringify(output));
     } else if (typeof Deno !== "undefined") {
-        await Deno.writeTextFile(join(...path, "outputs", `${runtime}.json`), JSON.stringify(output));
+        await Deno.writeTextFile(join(path, "outputs", `${runtime}.json`), JSON.stringify(output));
     } else {
-        (await import("fs/promises")).writeFile(join(...path, "outputs", `${runtime}.json`), JSON.stringify(output));
+        (await import("fs/promises")).writeFile(join(path, "outputs", `${runtime}.json`), JSON.stringify(output));
     }
 }
 
@@ -23,15 +43,15 @@ export default async(summaries, benchmarks) => {
         console.log(kleur.bold(true, `Summary for ${kleur.green(true, summaryName)}`));
 
         // Node & Deno
-        const nodeAndDeno = [benchmarks.find(b => b.name.includes('node') && b.id === summaryName), benchmarks.find(b => b.name.includes('deno') && b.id === summaryName)];
+        const nodeAndDeno = [benchmarks.find(b => b.formattedName.includes('node') && b.id === summaryName), benchmarks.find(b => b.formattedName.includes('deno') && b.id === summaryName)];
         console.log(__summary(nodeAndDeno, '(node & deno)'));
 
         // Node & Bun
-        const nodeAndBun = [benchmarks.find(b => b.name.includes('node') && b.id === summaryName), benchmarks.find(b => b.name.includes('bun') && b.id === summaryName)];
+        const nodeAndBun = [benchmarks.find(b => b.formattedName.includes('node') && b.id === summaryName), benchmarks.find(b => b.formattedName.includes('bun') && b.id === summaryName)];
         console.log(__summary(nodeAndBun, '(node & bun)'));
 
         // Deno & Bun
-        const denoAndBun = [benchmarks.find(b => b.name.includes('deno') && b.id === summaryName), benchmarks.find(b => b.name.includes('bun') && b.id === summaryName)];
+        const denoAndBun = [benchmarks.find(b => b.formattedName.includes('deno') && b.id === summaryName), benchmarks.find(b => b.formattedName.includes('bun') && b.id === summaryName)];
         console.log(__summary(denoAndBun, '(deno & bun)'));
 
         // All
