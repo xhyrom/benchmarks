@@ -37,13 +37,13 @@ jobs:
       - name: Install dependencies
         run: |
           bun install
-          for dir in 3rd-packages/*/ ; do
+          for dir in benchmarks/*/*/ ; do
               dir=${dir%*/}
               dir="${dir##*/}"
               
-              cd 3rd-packages/$dir
+              cd benchmarks/*/$dir
               bun install
-              cd ../..
+              cd ../../..
           done
       
       - name: Run benchmarks
