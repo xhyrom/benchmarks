@@ -26,6 +26,6 @@ group("decode", () => {
 });
 
 await save(await run(), "bun", __dirname, {
-    encode: (name) => name.match(/\.toString\('[aA-zZ0-9]+'\)/)[0],
-    decode: (name) => name.match(/\.from\('(.*?)+'\, '[aA-zZ0-9]+'\)/)[0]
+    encode: (name) => name.match(/\.toString\('[aA-zZ0-9]+'\)/)?.[0] || name,
+    decode: (name) => name.match(/\.from\('(.*?)+'\, '[aA-zZ0-9]+'\)/)?.[0] || name,
 });

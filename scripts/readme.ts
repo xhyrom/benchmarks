@@ -76,6 +76,9 @@ for (const promiseBenchmark of benchmarks) {
         if (group !== 'null') {
             headerSize = "####";
             markdown += `\n### ${group}\n`;
+
+            const count = head.match(new RegExp(group, 'g'))?.length || 0;
+            head += `     - [${group}](#${count > 0 ? `${group}-${count - 1}` : group})\n`;
         }
 
         for (const [key, table] of Object.entries(value)) {
