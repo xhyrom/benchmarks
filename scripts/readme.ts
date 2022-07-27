@@ -18,6 +18,13 @@ const getCPU = () => {
     return 'unknown';
 }
 
+const sort = (a: any[], b: any[]) => {
+    if (a[5] > b[5]) return 1;
+    if (a[5] < b[5]) return -1;
+  
+    return 0;
+}
+
 let head = [
     `*Runned on ${getCPU()}*`,
     '',
@@ -27,15 +34,12 @@ let head = [
     ''
 ].join('\n');
 
+let tables: Record<string, any[]> = {};
 let markdown = '';
 
 for (const benchmark of benchmarks) {
     head += `   - [${benchmark.name}](#${benchmark.name})\n`;
     markdown += `## ${benchmark.name.at(0).toUpperCase() + benchmark.name.slice(1)}\n`;
-
-    let table = [
-        ['Runtime', 'Benchmark', 'Average', 'Min', 'Max']
-    ];
 
     const path = resolve('.', benchmark.path, 'outputs');
     const outputs = {
@@ -44,22 +48,43 @@ for (const benchmark of benchmarks) {
         node: JSON.parse(await Bun.file(join(path, 'node.json')).text()),
     }
 
-    for (const [key, value] of Object.entries(outputs)) {
+    for (const value of Object.values(outputs)) {
         for (const b of value.benchmarks) {
-            table.push([value.runtime, b.name, `${duration(b.stats.avg)}/iter`, duration(b.stats.min), duration(b.stats.max), b.stats.avg]);
+            tables[b.name] = tables[b.name] || [
+                ['Runtime', 'Benchmark', 'Average', 'Min', 'Max']
+            ];
+
+            tables[b.name].push([value.runtime, b.name, `${duration(b.stats.avg)}/iter`, duration(b.stats.min), duration(b.stats.max), b.stats.avg]);
         }
     }
 
-    table.sort((a, b) => {
-        if (a[5] > b[5]) return 1;
-        if (a[5] < b[5]) return -1;
-      
-        return 0;
-    });
+    const tempTables = [];
+    for (const [key, table] of Object.entries(tables)) {
+        table.sort(sort);
+    
+        tempTables.push(table.map(a => Object.assign([], a)));
+        for (const b of table.slice(1)) b.pop();
 
-    for (const b of table.slice(1)) b.pop();
+        markdown += `\n### ${key}\n`
+        markdown += `${markdownTable(table)}\n\n`;
+    }
 
-    markdown += `${markdownTable(table)}\n\n`;
+    if (tempTables[1]) {
+        const flattedTablesArray = tempTables.flat();
+        for (const element of flattedTablesArray.slice(1)) {
+            if (element.join(',') === flattedTablesArray[0].join(',')) {
+                flattedTablesArray.splice(flattedTablesArray.indexOf(element), 1);
+            }
+        }
+        
+        flattedTablesArray.sort(sort);
+        for (const b of flattedTablesArray.slice(1)) b.pop();
+
+        markdown += `\n### everything\n`;
+        markdown += `${markdownTable(flattedTablesArray)}\n\n`;
+    }
+
+    tables = {};
 }
 
 await Bun.write(resolve(__dirname, '..', 'README.md'), `${head}\n${markdown}`);
