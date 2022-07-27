@@ -19,8 +19,8 @@ const getCPU = () => {
 }
 
 const sort = (a: any[], b: any[]) => {
-    if (a[5] > b[5]) return 1;
-    if (a[5] < b[5]) return -1;
+    if (a.at(-1) > b.at(-1)) return 1;
+    if (a.at(-1) < b.at(-1)) return -1;
   
     return 0;
 }
@@ -51,7 +51,7 @@ for (const benchmark of benchmarks) {
     for (const value of Object.values(outputs)) {
         for (const b of value.benchmarks) {
             tables[b.name] = tables[b.name] || [
-                ['Runtime', 'Benchmark', 'Average', 'p75', 'p99', 'p995', 'p999', 'Min', 'Max']
+                ['Runtime', 'Benchmark', 'Average', 'p75', 'p99', 'Min', 'Max']
             ];
 
             tables[b.name].push([
@@ -61,8 +61,6 @@ for (const benchmark of benchmarks) {
                 duration(b.stats.min),
                 duration(b.stats.p75),
                 duration(b.stats.p99),
-                duration(b.stats.p995),
-                duration(b.stats.p999),
                 duration(b.stats.max),
                 b.stats.avg
             ]);
