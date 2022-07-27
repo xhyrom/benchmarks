@@ -16,6 +16,6 @@ group("encode", () => {
 });
 
 await save(await run(), "node", __dirname, {
-    encode: (name) => `.toString${name.split(".toString")[1]}`,
+    encode: (name) => name.match(/\.toString\('[aA-zZ0-9]+'\)/)[0],
     decode: (name) => name.match(/\.from\('[aA-zZ0-9]+'\, '[aA-zZ0-9]+'\)/)[0]
 });
