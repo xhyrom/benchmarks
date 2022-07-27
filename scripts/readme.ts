@@ -71,15 +71,20 @@ for (const promiseBenchmark of benchmarks) {
     }
 
     const tempTables = [];
+    let headerSize = "###";
     for (const [group, value] of Object.entries(tables)) {
-        markdown += `\n### ${group === 'null' ? 'unnamed' : group}\n`;
+        if (group !== 'null') {
+            headerSize = "####";
+            markdown += `\n### ${group}\n`;
+        }
+
         for (const [key, table] of Object.entries(value)) {
             table.sort(sort);
     
             tempTables.push(table.map(a => Object.assign([], a)));
             for (const b of table.slice(1)) b.pop();
     
-            markdown += `\n#### ${key}\n`
+            markdown += `\n${headerSize} ${key}\n`
             markdown += `${markdownTable(table)}\n\n`;
         }
     }
@@ -95,7 +100,7 @@ for (const promiseBenchmark of benchmarks) {
         flattedTablesArray.sort(sort);
         for (const b of flattedTablesArray.slice(1)) b.pop();
 
-        markdown += `\n### everything\n`;
+        markdown += `\n${headerSize} everything\n`;
         markdown += `${markdownTable(flattedTablesArray)}\n\n`;
     }
 

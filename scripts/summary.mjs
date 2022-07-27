@@ -4,8 +4,7 @@ let join;
 if (typeof Deno === "undefined") {
     join = (await import("node:path")).join;
 } else {
-    join = (await import('https://deno.land/std@0.141.0/node/path/mod.ts')).resolve;
-    console.log(join);
+    join = (await import('https://deno.land/std@0.141.0/node/path/mod.ts')).join;
 }
 
 /**
@@ -23,11 +22,9 @@ if (typeof Deno === "undefined") {
  * @typedef {'deno'|'bun'|'node'} Runtime
  */
 export const save = async(output, runtime, path, keepFrom) => {
-    console.log(output);
     output.benchmarks = output.benchmarks.map(b => {
         return { ...b, formattedName: `[${runtime}] ${b.name}`, id: b.name, benchmark: keepFrom ? keepFrom + b.name.split(keepFrom)[1] : b.name }
     });
-    console.log(output);
 
     if (typeof Bun !== "undefined") {
         await Bun.write(join(path, "outputs", `${runtime}.json`), JSON.stringify(output));
