@@ -1,4 +1,4 @@
-import { bench, run } from "../node_modules/mitata/src/cli.mjs";
+import { bench, run } from "../../node_modules/mitata/src/cli.mjs";
 import { save } from "../../scripts/summary.mjs";
 
 const __dirname = new URL('.', import.meta.url).pathname;

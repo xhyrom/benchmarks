@@ -1,5 +1,5 @@
 import { Buffer } from "https://deno.land/std@0.149.0/node/buffer.ts";
-import { bench, run } from "../node_modules/mitata/src/cli.mjs";
+import { bench, run } from "../../node_modules/mitata/src/cli.mjs";
 import { save } from "../../scripts/summary.mjs";
 
 const __dirname = new URL('.', import.meta.url).pathname;
