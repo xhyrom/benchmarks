@@ -2,11 +2,11 @@
   "version": "1.0.0",
   "name": "benchmarks",
   "scripts": {
-    "bench:console": "cd console && bun run bench",
-    "bench:3rd-packages": "cd 3rd-packages && bun run bench",
-    "bench:json": "cd json && bun run bench",
-    "bench:buffer": "cd buffer && bun run bench",
-    "bench": "cd benchmarks && bun run bench:console && bun run bench:3rd-packages && bun run bench:json && bun run bench:buffer",
+    "bench:console": "cd benchmarks/console && bun run bench",
+    "bench:3rd-packages": "cd benchmarks/3rd-packages && bun run bench",
+    "bench:json": "cd benchmarks/json && bun run bench",
+    "bench:buffer": "cd benchmarks/buffer && bun run bench",
+    "bench": "bun run bench:console && bun run bench:3rd-packages && bun run bench:json && bun run bench:buffer",
     "generate:readme": "bun scripts/readme.ts"
   },
   "devDependencies": {

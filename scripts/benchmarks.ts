@@ -15,10 +15,14 @@ const findBenchmarks = async(folder) => {
 }
 
 await findBenchmarks(join(__dirname, '..', 'benchmarks'));
-export default benchmarks.map(benchmark => new Object({
-    name: benchmark.split('/').pop(),
-    path: benchmark
-}));
+export default benchmarks.map(async(benchmark) => {
+    return {
+        name: benchmark.split('/').pop(),
+        path: benchmark,
+        groups: [...new Set(JSON.parse(await Bun.file(join(benchmark, 'outputs', 'bun.json')).text()).benchmarks.map(b => b.group))],
+        category: benchmark.split('/').slice(0, -1).pop() != 'benchmarks' ? benchmark.split('/').slice(0, -1).pop() : null,
+    }
+});
 
 /*export default [
     {

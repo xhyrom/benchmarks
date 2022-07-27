@@ -34,10 +34,11 @@ let head = [
     ''
 ].join('\n');
 
-let tables: Record<string, any[]> = {};
+let tables: Record<string, Record<string, any[]>> = {};
 let markdown = '';
 
-for (const benchmark of benchmarks) {
+for (const promiseBenchmark of benchmarks) {
+    const benchmark = await promiseBenchmark;
     head += `   - [${benchmark.name}](#${benchmark.name})${benchmark.category ? ` (${benchmark.category})` : ''}\n`;
     markdown += `## ${benchmark.name.at(0).toUpperCase() + benchmark.name.slice(1)}\n`;
 
@@ -50,11 +51,13 @@ for (const benchmark of benchmarks) {
 
     for (const value of Object.values(outputs)) {
         for (const b of value.benchmarks) {
-            tables[b.name] = tables[b.name] || [
+            if (tables[b.group] === undefined) tables[b.group] = {};
+
+            tables[b.group][b.name] = tables[b.group][b.name] || [
                 ['Runtime', 'Benchmark', 'Average', 'p75', 'p99', 'Min', 'Max']
             ];
 
-            tables[b.name].push([
+            tables[b.group][b.name].push([
                 value.runtime,
                 b.benchmark,
                 `${duration(b.stats.avg)}/iter`,
@@ -68,14 +71,17 @@ for (const benchmark of benchmarks) {
     }
 
     const tempTables = [];
-    for (const [key, table] of Object.entries(tables)) {
-        table.sort(sort);
+    for (const [group, value] of Object.entries(tables)) {
+        markdown += `\n### ${group === 'null' ? 'unnamed' : group}\n`;
+        for (const [key, table] of Object.entries(value)) {
+            table.sort(sort);
     
-        tempTables.push(table.map(a => Object.assign([], a)));
-        for (const b of table.slice(1)) b.pop();
-
-        markdown += `\n### ${key}\n`
-        markdown += `${markdownTable(table)}\n\n`;
+            tempTables.push(table.map(a => Object.assign([], a)));
+            for (const b of table.slice(1)) b.pop();
+    
+            markdown += `\n#### ${key}\n`
+            markdown += `${markdownTable(table)}\n\n`;
+        }
     }
 
     if (tempTables[1]) {
