@@ -38,7 +38,7 @@ let tables: Record<string, any[]> = {};
 let markdown = '';
 
 for (const benchmark of benchmarks) {
-    head += `   - [${benchmark.name}](#${benchmark.name})\n`;
+    head += `   - [${benchmark.name}](#${benchmark.name})${benchmark.category ? `(${benchmark.category})` : ''}\n`;
     markdown += `## ${benchmark.name.at(0).toUpperCase() + benchmark.name.slice(1)}\n`;
 
     const path = resolve('.', benchmark.path, 'outputs');
