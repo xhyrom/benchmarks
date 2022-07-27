@@ -16,4 +16,7 @@ group("encode", () => {
     bench("Buffer.from('hello').toString('hex')", () => Buffer.from("hello").toString("hex"));
 });
 
-await save(await run(), "deno", __dirname, ".toString");
+await save(await run(), "deno", __dirname, {
+    encode: (name) => `.toString${name.split(".toString")[1]}`,
+    decode: (name) => name.match(/\.from\('[aA-zZ0-9]+'\, '[aA-zZ0-9]+'\)/)[0]
+});

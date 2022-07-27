@@ -11,7 +11,7 @@ if (typeof Deno === "undefined") {
  * @param {Output} output 
  * @param {Runtime} runtime 
  * @param {string} path 
- * @param {string} keepFrom 
+ * @param {{[x: (name: string) => string]}} keepFrom 
  * 
  * @typedef {{
  *  benchmarks: any[];
@@ -23,7 +23,7 @@ if (typeof Deno === "undefined") {
  */
 export const save = async(output, runtime, path, keepFrom) => {
     output.benchmarks = output.benchmarks.map(b => {
-        return { ...b, formattedName: `[${runtime}] ${b.name}`, id: b.name, benchmark: keepFrom ? keepFrom + b.name.split(keepFrom)[1] : b.name }
+        return { ...b, formattedName: `[${runtime}] ${b.name}`, id: b.name, benchmark: keepFrom?.[b.group]?.(b.name) || b.name }
     });
 
     if (typeof Bun !== "undefined") {
