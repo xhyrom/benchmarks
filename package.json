@@ -5,7 +5,8 @@
     "bench:console": "cd console && bun run bench",
     "bench:3rd-packages": "cd 3rd-packages && bun run bench",
     "bench:json": "cd json && bun run bench",
-    "bench": "bun run bench:console && bun run bench:3rd-packages && bun run bench:json",
+    "bench:buffer": "cd buffer && bun run bench",
+    "bench": "bun run bench:console && bun run bench:3rd-packages && bun run bench:json && bun run bench:buffer",
     "generate:readme": "bun scripts/readme.ts"
   },
   "devDependencies": {
