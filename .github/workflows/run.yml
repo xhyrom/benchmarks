@@ -43,7 +43,7 @@ jobs:
               
               cd benchmarks/*/$dir
               bun install
-              cd ../../..
+              cd ../../
           done
       
       - name: Run benchmarks
