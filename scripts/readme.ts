@@ -78,7 +78,7 @@ for (const promiseBenchmark of benchmarks) {
             markdown += `\n### ${group}\n`;
 
             const count = head.match(new RegExp(group, 'g'))?.length || 0;
-            head += `     - [${group}](#${count > 0 ? `${group}-${count - 1}` : group})\n`;
+            head += `     - [${group}](#${count > 0 ? `${group.replaceAll(" ", "-")}-${count - 1}` : group.replaceAll(" ", "-")})\n`;
         }
 
         for (const [key, table] of Object.entries(value)) {

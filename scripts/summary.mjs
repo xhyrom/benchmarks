@@ -67,6 +67,6 @@ export function __summary(benchmarks, type = '(deno & bun & node)', { colors = t
       + benchmarks.filter(b => b !== baseline).map(b => {
         const diff = Number((1 / baseline.stats.avg * b.stats.avg).toFixed(2));
         const inv_diff = Number((1 / b.stats.avg * baseline.stats.avg).toFixed(2));
-        return `\n   ${kleur[1 > diff ? 'red' : 'green'](colors, 1 <= diff ? diff : inv_diff)}x ${1 > diff ? 'slower' : 'faster'} than ${kleur.bold(colors, kleur.cyan(colors, b.name))}`;
+        return `\n   ${kleur[1 > diff ? 'red' : 'green'](colors, 1 <= diff ? diff : inv_diff)}x ${1 > diff ? 'slower' : 'faster'} than ${kleur.bold(colors, kleur.cyan(colors, b.formattedName))}`;
       }).join('');
   }
