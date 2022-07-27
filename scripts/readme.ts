@@ -51,10 +51,21 @@ for (const benchmark of benchmarks) {
     for (const value of Object.values(outputs)) {
         for (const b of value.benchmarks) {
             tables[b.name] = tables[b.name] || [
-                ['Runtime', 'Benchmark', 'Average', 'Min', 'Max']
+                ['Runtime', 'Benchmark', 'Average', 'p75', 'p99', 'p995', 'p999', 'Min', 'Max']
             ];
 
-            tables[b.name].push([value.runtime, b.name, `${duration(b.stats.avg)}/iter`, duration(b.stats.min), duration(b.stats.max), b.stats.avg]);
+            tables[b.name].push([
+                value.runtime,
+                b.name,
+                `${duration(b.stats.avg)}/iter`,
+                duration(b.stats.min),
+                duration(b.stats.p75),
+                duration(b.stats.p99),
+                duration(b.stats.p995),
+                duration(b.stats.p999),
+                duration(b.stats.max),
+                b.stats.avg
+            ]);
         }
     }
 
