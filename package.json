@@ -6,11 +6,12 @@
     "bench:3rd-packages": "cd 3rd-packages && bun run bench",
     "bench:json": "cd json && bun run bench",
     "bench:buffer": "cd buffer && bun run bench",
-    "bench": "bun run bench:console && bun run bench:3rd-packages && bun run bench:json && bun run bench:buffer",
+    "bench": "cd benchmarks && bun run bench:console && bun run bench:3rd-packages && bun run bench:json && bun run bench:buffer",
     "generate:readme": "bun scripts/readme.ts"
   },
   "devDependencies": {
-    "bun-types": "^0.0.83"
+    "@types/node": "^18.6.1",
+    "bun-types": "^0.1.4"
   },
   "dependencies": {
     "bun-utilities": "^0.1.7",

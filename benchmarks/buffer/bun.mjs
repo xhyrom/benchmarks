@@ -1,5 +1,5 @@
 import { bench, run } from "mitata";
-import { save } from "../scripts/summary.mjs";
+import { save } from "../../scripts/summary.mjs";
 
 bench("Buffer.from('hello').toString('ascii')", () => Buffer.from("hello").toString("ascii"));
 bench("Buffer.from('hello').toString('utf8')", () => Buffer.from("hello").toString("utf8"));

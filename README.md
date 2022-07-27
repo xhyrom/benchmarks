@@ -1,40 +1,12 @@
-*Ran on Intel(R) Xeon(R) Platinum 8171M CPU @ 2.60GHz*
+*Ran on Intel(R) Core(TM) i5-9300HF CPU @ 2.40GHz*
 
 ## Table Of Contents
 
 - Benchmarks
-   - [console](#console)
-   - [nanoid](#nanoid) (3rd package)
+   - [nanoid](#nanoid)
    - [json](#json)
    - [buffer](#buffer)
-
-## Console
-
-### console.log('hello')
-| Runtime                                | Benchmark            | Average       | p75    | p99     | Min     | Max       |
-| -------------------------------------- | -------------------- | ------------- | ------ | ------- | ------- | --------- |
-| bun 0.1.5 (x64-linux)                  | console.log('hello') | 2.43 µs/iter  | 2.1 µs | 2.39 µs | 5.22 µs | 5.22 µs   |
-| node v18.7.0 (x64-linux)               | console.log('hello') | 4.89 µs/iter  | 2.7 µs | 6.8 µs  | 10.3 µs | 8.26 ms   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | console.log('hello') | 13.49 µs/iter | 7.2 µs | 14 µs   | 20.8 µs | 761.83 µs |
-
-
-### console.log({ hello: 'object' })
-| Runtime                                | Benchmark                        | Average       | p75     | p99     | Min     | Max       |
-| -------------------------------------- | -------------------------------- | ------------- | ------- | ------- | ------- | --------- |
-| bun 0.1.5 (x64-linux)                  | console.log({ hello: 'object' }) | 2.59 µs/iter  | 2.45 µs | 2.64 µs | 2.72 µs | 2.72 µs   |
-| node v18.7.0 (x64-linux)               | console.log({ hello: 'object' }) | 8.12 µs/iter  | 4.8 µs  | 9.7 µs  | 16 µs   | 2.5 ms    |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | console.log({ hello: 'object' }) | 21.16 µs/iter | 13.1 µs | 21.6 µs | 33.9 µs | 578.23 µs |
-
-
-### everything
-| Runtime                                | Benchmark                        | Average       | p75     | p99     | Min     | Max       |
-| -------------------------------------- | -------------------------------- | ------------- | ------- | ------- | ------- | --------- |
-| bun 0.1.5 (x64-linux)                  | console.log('hello')             | 2.43 µs/iter  | 2.1 µs  | 2.39 µs | 5.22 µs | 5.22 µs   |
-| bun 0.1.5 (x64-linux)                  | console.log({ hello: 'object' }) | 2.59 µs/iter  | 2.45 µs | 2.64 µs | 2.72 µs | 2.72 µs   |
-| node v18.7.0 (x64-linux)               | console.log('hello')             | 4.89 µs/iter  | 2.7 µs  | 6.8 µs  | 10.3 µs | 8.26 ms   |
-| node v18.7.0 (x64-linux)               | console.log({ hello: 'object' }) | 8.12 µs/iter  | 4.8 µs  | 9.7 µs  | 16 µs   | 2.5 ms    |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | console.log('hello')             | 13.49 µs/iter | 7.2 µs  | 14 µs   | 20.8 µs | 761.83 µs |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | console.log({ hello: 'object' }) | 21.16 µs/iter | 13.1 µs | 21.6 µs | 33.9 µs | 578.23 µs |
+   - [console](#console)
 
 ## Nanoid
 
@@ -177,4 +149,32 @@
 | deno 1.24.0 (x86_64-unknown-linux-gnu) | .toString('hex')       | 1.63 µs/iter   | 1.51 µs   | 1.68 µs   | 2.01 µs   | 2.01 µs   |
 | deno 1.24.0 (x86_64-unknown-linux-gnu) | .toString('utf8')      | 1.64 µs/iter   | 1.53 µs   | 1.66 µs   | 2.49 µs   | 2.49 µs   |
 | deno 1.24.0 (x86_64-unknown-linux-gnu) | .toString('base64url') | 2 µs/iter      | 1.91 µs   | 2.02 µs   | 2.29 µs   | 2.29 µs   |
+
+## Console
+
+### console.log('hello')
+| Runtime                                | Benchmark            | Average       | p75    | p99     | Min     | Max       |
+| -------------------------------------- | -------------------- | ------------- | ------ | ------- | ------- | --------- |
+| bun 0.1.5 (x64-linux)                  | console.log('hello') | 2.43 µs/iter  | 2.1 µs | 2.39 µs | 5.22 µs | 5.22 µs   |
+| node v18.7.0 (x64-linux)               | console.log('hello') | 4.89 µs/iter  | 2.7 µs | 6.8 µs  | 10.3 µs | 8.26 ms   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | console.log('hello') | 13.49 µs/iter | 7.2 µs | 14 µs   | 20.8 µs | 761.83 µs |
+
+
+### console.log({ hello: 'object' })
+| Runtime                                | Benchmark                        | Average       | p75     | p99     | Min     | Max       |
+| -------------------------------------- | -------------------------------- | ------------- | ------- | ------- | ------- | --------- |
+| bun 0.1.5 (x64-linux)                  | console.log({ hello: 'object' }) | 2.59 µs/iter  | 2.45 µs | 2.64 µs | 2.72 µs | 2.72 µs   |
+| node v18.7.0 (x64-linux)               | console.log({ hello: 'object' }) | 8.12 µs/iter  | 4.8 µs  | 9.7 µs  | 16 µs   | 2.5 ms    |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | console.log({ hello: 'object' }) | 21.16 µs/iter | 13.1 µs | 21.6 µs | 33.9 µs | 578.23 µs |
+
+
+### everything
+| Runtime                                | Benchmark                        | Average       | p75     | p99     | Min     | Max       |
+| -------------------------------------- | -------------------------------- | ------------- | ------- | ------- | ------- | --------- |
+| bun 0.1.5 (x64-linux)                  | console.log('hello')             | 2.43 µs/iter  | 2.1 µs  | 2.39 µs | 5.22 µs | 5.22 µs   |
+| bun 0.1.5 (x64-linux)                  | console.log({ hello: 'object' }) | 2.59 µs/iter  | 2.45 µs | 2.64 µs | 2.72 µs | 2.72 µs   |
+| node v18.7.0 (x64-linux)               | console.log('hello')             | 4.89 µs/iter  | 2.7 µs  | 6.8 µs  | 10.3 µs | 8.26 ms   |
+| node v18.7.0 (x64-linux)               | console.log({ hello: 'object' }) | 8.12 µs/iter  | 4.8 µs  | 9.7 µs  | 16 µs   | 2.5 ms    |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | console.log('hello')             | 13.49 µs/iter | 7.2 µs  | 14 µs   | 20.8 µs | 761.83 µs |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | console.log({ hello: 'object' }) | 21.16 µs/iter | 13.1 µs | 21.6 µs | 33.9 µs | 578.23 µs |
 

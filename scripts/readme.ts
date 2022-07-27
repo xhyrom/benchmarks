@@ -1,6 +1,6 @@
 import { markdownTable } from 'markdown-table';
 import { duration } from '../node_modules/mitata/reporter/fmt.mjs';
-import benchmarks from './benchmarks.json';
+import benchmarks from './benchmarks';
 import { join, resolve } from 'path';
 import { exec } from 'bun-utilities';
 
