@@ -26,7 +26,7 @@ const sort = (a: any[], b: any[]) => {
 }
 
 let head = [
-    `*Runned on ${getCPU()}*`,
+    `*Ran on ${getCPU()}*`,
     '',
     '## Table Of Contents',
     '',
