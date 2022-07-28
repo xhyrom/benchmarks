@@ -6,7 +6,8 @@
     "bench:3rd-packages": "cd benchmarks/3rd-packages && bun run bench",
     "bench:json": "cd benchmarks/json && bun run bench",
     "bench:buffer": "cd benchmarks/buffer && bun run bench",
-    "bench": "bun run bench:console && bun run bench:3rd-packages && bun run bench:json && bun run bench:buffer",
+    "bench:http": "cd benchmarks/http && bun run bench",
+    "bench": "bun run bench:console && bun run bench:3rd-packages && bun run bench:json && bun run bench:buffer && bun run bench:http",
     "generate:readme": "bun scripts/readme.ts"
   },
   "devDependencies": {
@@ -14,7 +15,7 @@
     "bun-types": "^0.1.4"
   },
   "dependencies": {
-    "bun-utilities": "^0.1.7",
+    "bun-utilities": "^0.1.8",
     "markdown-table": "^3.0.2",
     "mitata": "^0.1.6"
   }

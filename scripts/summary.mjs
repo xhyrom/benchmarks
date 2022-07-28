@@ -62,7 +62,7 @@ export function __summary(benchmarks, type = '(deno & bun & node)', { colors = t
     const baseline = benchmarks.find(b => b.baseline) || benchmarks[0];
   
     return kleur.bold(colors, type) + ((null == baseline.group || baseline.group.startsWith?.('$mitata_group')) ? '' : kleur.gray(colors, ` for ${baseline.group}`))
-      + `\n  ${kleur.bold(colors, kleur.cyan(colors, baseline.name))}`
+      + `\n  ${kleur.bold(colors, kleur.cyan(colors, baseline.formattedName))}`
   
       + benchmarks.filter(b => b !== baseline).map(b => {
         const diff = Number((1 / baseline.stats.avg * b.stats.avg).toFixed(2));

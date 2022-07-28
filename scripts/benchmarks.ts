@@ -6,6 +6,8 @@ const __dirname = new URL('.', import.meta.url).pathname;
 let benchmarks = [];
 const findBenchmarks = async(folder) => {
     for await(const file of await (await readdir(folder, { withFileTypes: true })).sort()) {
+        if (file.isDirectory() && file.name === 'servers') continue;
+        
         if (file.isDirectory()) await findBenchmarks(join(folder, file.name));
         else if (file.name === 'bun.mjs') {
             benchmarks.push(folder);

@@ -18,7 +18,12 @@ const getCPU = () => {
     return 'unknown';
 }
 
-const sort = (a: any[], b: any[]) => {
+const sort = (a: any[], b: any[], reverse: boolean = false) => {
+    if (reverse) {
+        if (a.at(-1) > b.at(-1)) return -1;
+        if (a.at(-1) < b.at(-1)) return 1;    
+    }
+
     if (a.at(-1) > b.at(-1)) return 1;
     if (a.at(-1) < b.at(-1)) return -1;
   
@@ -60,7 +65,7 @@ for (const promiseBenchmark of benchmarks) {
             tables[b.group][b.name].push([
                 value.runtime,
                 b.benchmark,
-                `${duration(b.stats.avg)}/iter`,
+                `${duration(b.stats.avg)}/iter (${b.stats.avg.toLocaleString('en-US')})`,
                 duration(b.stats.min),
                 duration(b.stats.p75),
                 duration(b.stats.p99),
@@ -82,7 +87,7 @@ for (const promiseBenchmark of benchmarks) {
         }
 
         for (const [key, table] of Object.entries(value)) {
-            table.sort(sort);
+            table.sort((a, b) => sort(a, b, key === 'http'));
     
             tempTables.push(table.map(a => Object.assign([], a)));
             for (const b of table.slice(1)) b.pop();

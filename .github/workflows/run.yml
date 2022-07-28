@@ -28,6 +28,12 @@ jobs:
         with:
           node-version: latest
 
+      - name: Install Bombardier
+        run: |-
+          wget https://github.com/codesenberg/bombardier/releases/download/v1.2.5/bombardier-linux-amd64 -O scripts/bombardier
+          chmod +x scripts/bombardier
+          echo . >> $GITHUB_PATH
+
       - name: Check if installed
         run: |
           bun -v
