@@ -8,5 +8,5 @@ const splittedPid = rawPid.stdout.split('\n');
 const pid = splittedPid[splittedPid.length - 2].split(' ')[0];
 
 await save(await run(), "bun", __dirname);
-
-exec(["kill", pid]);
+console.log(pid, splittedPid);
+exec(["sudo", "kill", pid]);
