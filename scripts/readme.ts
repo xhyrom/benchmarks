@@ -65,7 +65,7 @@ for (const promiseBenchmark of benchmarks) {
             tables[b.group][b.name].push([
                 value.runtime,
                 b.benchmark,
-                `${duration(b.stats.avg)}/iter (${b.stats.avg.toLocaleString('en-US')})`,
+                `${duration(b.stats.avg)}/${b.type || 'iter'} (${b.stats.avg.toLocaleString('en-US')})`,
                 duration(b.stats.min),
                 duration(b.stats.p75),
                 duration(b.stats.p99),
