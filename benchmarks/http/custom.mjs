@@ -53,6 +53,7 @@ const benchmarks = [
             p99: parsed.result.rps.percentiles['99'],
             p995: parsed.result.rps.percentiles['99'],
         },
+        type: 'rps',
     }
 ];
 
