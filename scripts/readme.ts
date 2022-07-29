@@ -65,11 +65,11 @@ for (const promiseBenchmark of benchmarks) {
             tables[b.group][b.name].push([
                 value.runtime,
                 b.benchmark,
-                `${duration(b.stats.avg)}/${b.type || 'iter'} (${b.stats.avg.toLocaleString('en-US')})`,
-                duration(b.stats.min),
-                duration(b.stats.p75),
-                duration(b.stats.p99),
-                duration(b.stats.max),
+                `${!b.type ? duration(b.stats.avg) : b.stats.avg.toLocaleString('en-US')}/${b.type || 'iter'}`,
+                `${!b.type ? duration(b.stats.min) : b.stats.avg.toLocaleString('en-US')}`,
+                `${!b.type ? duration(b.stats.p75) : b.stats.avg.toLocaleString('en-US')}`,
+                `${!b.type ? duration(b.stats.p99) : b.stats.avg.toLocaleString('en-US')}`,
+                `${!b.type ? duration(b.stats.max) : b.stats.avg.toLocaleString('en-US')}`,
                 b.stats.avg
             ]);
         }
