@@ -8,6 +8,7 @@
      - [encode - long data](#encode---long-data)
      - [decode - short data](#decode---short-data)
      - [decode - long data](#decode---long-data)
+   - [http](#http)
    - [json](#json)
    - [nanoid](#nanoid) (3rd-packages)
    - [console](#console)
@@ -17,149 +18,149 @@
 ### encode - short data
 
 #### Buffer.from('hello').toString('ascii')
-| Runtime                                | Benchmark                              | Average                  | p75       | p99       | Min       | Max     |
-| -------------------------------------- | -------------------------------------- | ------------------------ | --------- | --------- | --------- | ------- |
-| node v18.7.0 (x64-linux)               | Buffer.from('hello').toString('ascii') | 466.77 ns/iter (466.773) | 452.5 ns  | 465.76 ns | 603.31 ns | 1.02 µs |
-| bun 0.1.5 (x64-linux)                  | Buffer.from('hello').toString('ascii') | 876.22 ns/iter (876.22)  | 774.71 ns | 809.81 ns | 1.72 µs   | 1.72 µs |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello').toString('ascii') | 1.34 µs/iter (1,339.31)  | 1.22 µs   | 1.36 µs   | 2.1 µs    | 2.1 µs  |
+| Runtime                                | Benchmark                              | Average                  | p75       | p99       | Min       | Max       |
+| -------------------------------------- | -------------------------------------- | ------------------------ | --------- | --------- | --------- | --------- |
+| node v18.7.0 (x64-linux)               | Buffer.from('hello').toString('ascii') | 471.55 ns/iter (471.553) | 456.42 ns | 478.09 ns | 515.21 ns | 593.15 ns |
+| bun 0.1.5 (x64-linux)                  | Buffer.from('hello').toString('ascii') | 1.04 µs/iter (1,040.268) | 867.43 ns | 987.77 ns | 1.87 µs   | 1.87 µs   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello').toString('ascii') | 1.51 µs/iter (1,507.904) | 1.36 µs   | 1.52 µs   | 2.38 µs   | 2.38 µs   |
 
 
 #### Buffer.from('hello').toString('utf8')
-| Runtime                                | Benchmark                             | Average                  | p75       | p99       | Min       | Max       |
-| -------------------------------------- | ------------------------------------- | ------------------------ | --------- | --------- | --------- | --------- |
-| node v18.7.0 (x64-linux)               | Buffer.from('hello').toString('utf8') | 479.79 ns/iter (479.787) | 471.57 ns | 483.13 ns | 510.76 ns | 536.64 ns |
-| bun 0.1.5 (x64-linux)                  | Buffer.from('hello').toString('utf8') | 824.47 ns/iter (824.468) | 733.15 ns | 759.25 ns | 1.43 µs   | 1.43 µs   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello').toString('utf8') | 1.4 µs/iter (1,401.405)  | 1.33 µs   | 1.41 µs   | 1.93 µs   | 1.93 µs   |
+| Runtime                                | Benchmark                             | Average                  | p75       | p99       | Min       | Max     |
+| -------------------------------------- | ------------------------------------- | ------------------------ | --------- | --------- | --------- | ------- |
+| node v18.7.0 (x64-linux)               | Buffer.from('hello').toString('utf8') | 495.86 ns/iter (495.864) | 476.31 ns | 497.53 ns | 529.06 ns | 1.2 µs  |
+| bun 0.1.5 (x64-linux)                  | Buffer.from('hello').toString('utf8') | 970.21 ns/iter (970.213) | 843.6 ns  | 897.33 ns | 1.81 µs   | 1.81 µs |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello').toString('utf8') | 1.62 µs/iter (1,621.324) | 1.43 µs   | 1.64 µs   | 2.43 µs   | 2.43 µs |
 
 
 #### Buffer.from('hello').toString('utf16le')
 | Runtime                                | Benchmark                                | Average                  | p75       | p99       | Min       | Max       |
 | -------------------------------------- | ---------------------------------------- | ------------------------ | --------- | --------- | --------- | --------- |
-| node v18.7.0 (x64-linux)               | Buffer.from('hello').toString('utf16le') | 467.51 ns/iter (467.506) | 461.5 ns  | 471.52 ns | 495.55 ns | 525.92 ns |
-| bun 0.1.5 (x64-linux)                  | Buffer.from('hello').toString('utf16le') | 912.1 ns/iter (912.103)  | 819.62 ns | 844.29 ns | 1.48 µs   | 1.48 µs   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello').toString('utf16le') | 1.31 µs/iter (1,313.102) | 1.26 µs   | 1.34 µs   | 1.61 µs   | 1.61 µs   |
+| node v18.7.0 (x64-linux)               | Buffer.from('hello').toString('utf16le') | 475.4 ns/iter (475.402)  | 466.87 ns | 480.64 ns | 500.24 ns | 518.24 ns |
+| bun 0.1.5 (x64-linux)                  | Buffer.from('hello').toString('utf16le') | 1.06 µs/iter (1,059.875) | 920.66 ns | 970.79 ns | 1.95 µs   | 1.95 µs   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello').toString('utf16le') | 1.53 µs/iter (1,532.536) | 1.44 µs   | 1.56 µs   | 2.11 µs   | 2.11 µs   |
 
 
 #### Buffer.from('hello').toString('ucs2')
 | Runtime                                | Benchmark                             | Average                  | p75       | p99       | Min       | Max       |
 | -------------------------------------- | ------------------------------------- | ------------------------ | --------- | --------- | --------- | --------- |
-| node v18.7.0 (x64-linux)               | Buffer.from('hello').toString('ucs2') | 466.99 ns/iter (466.986) | 462.74 ns | 471.18 ns | 490.34 ns | 494.36 ns |
-| bun 0.1.5 (x64-linux)                  | Buffer.from('hello').toString('ucs2') | 860.84 ns/iter (860.836) | 775.98 ns | 795.35 ns | 1.42 µs   | 1.42 µs   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello').toString('ucs2') | 1.31 µs/iter (1,305.043) | 1.23 µs   | 1.33 µs   | 1.47 µs   | 1.47 µs   |
+| node v18.7.0 (x64-linux)               | Buffer.from('hello').toString('ucs2') | 477.27 ns/iter (477.267) | 465.54 ns | 481.63 ns | 536.41 ns | 548.67 ns |
+| bun 0.1.5 (x64-linux)                  | Buffer.from('hello').toString('ucs2') | 1.07 µs/iter (1,065.265) | 920.19 ns | 961.42 ns | 1.94 µs   | 1.94 µs   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello').toString('ucs2') | 1.5 µs/iter (1,503.829)  | 1.42 µs   | 1.53 µs   | 1.67 µs   | 1.67 µs   |
 
 
 #### Buffer.from('hello').toString('base64')
 | Runtime                                | Benchmark                               | Average                  | p75       | p99       | Min       | Max       |
 | -------------------------------------- | --------------------------------------- | ------------------------ | --------- | --------- | --------- | --------- |
-| node v18.7.0 (x64-linux)               | Buffer.from('hello').toString('base64') | 495.22 ns/iter (495.219) | 490.28 ns | 499.96 ns | 511.14 ns | 519.04 ns |
-| bun 0.1.5 (x64-linux)                  | Buffer.from('hello').toString('base64') | 906.9 ns/iter (906.9)    | 806.73 ns | 827.08 ns | 1.46 µs   | 1.46 µs   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello').toString('base64') | 1.4 µs/iter (1,400.384)  | 1.35 µs   | 1.41 µs   | 1.44 µs   | 1.44 µs   |
+| node v18.7.0 (x64-linux)               | Buffer.from('hello').toString('base64') | 498.71 ns/iter (498.705) | 490.24 ns | 499.61 ns | 527.78 ns | 528.78 ns |
+| bun 0.1.5 (x64-linux)                  | Buffer.from('hello').toString('base64') | 1.14 µs/iter (1,142.948) | 966.27 ns | 1.04 µs   | 2.09 µs   | 2.09 µs   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello').toString('base64') | 1.58 µs/iter (1,582.789) | 1.48 µs   | 1.6 µs    | 1.69 µs   | 1.69 µs   |
 
 
 #### Buffer.from('hello').toString('base64url')
 | Runtime                                | Benchmark                                  | Average                  | p75       | p99       | Min       | Max       |
 | -------------------------------------- | ------------------------------------------ | ------------------------ | --------- | --------- | --------- | --------- |
-| node v18.7.0 (x64-linux)               | Buffer.from('hello').toString('base64url') | 489.54 ns/iter (489.54)  | 483.68 ns | 490.28 ns | 505.92 ns | 514.87 ns |
-| bun 0.1.5 (x64-linux)                  | Buffer.from('hello').toString('base64url') | 940.5 ns/iter (940.497)  | 812.98 ns | 882.93 ns | 1.55 µs   | 1.55 µs   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello').toString('base64url') | 1.65 µs/iter (1,653.873) | 1.61 µs   | 1.67 µs   | 1.83 µs   | 1.83 µs   |
+| node v18.7.0 (x64-linux)               | Buffer.from('hello').toString('base64url') | 493.92 ns/iter (493.923) | 486.1 ns  | 494.62 ns | 527.27 ns | 595.33 ns |
+| bun 0.1.5 (x64-linux)                  | Buffer.from('hello').toString('base64url') | 1.14 µs/iter (1,141.613) | 966.23 ns | 1.05 µs   | 2.03 µs   | 2.03 µs   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello').toString('base64url') | 1.93 µs/iter (1,933.374) | 1.77 µs   | 1.97 µs   | 2.44 µs   | 2.44 µs   |
 
 
 #### Buffer.from('hello').toString('latin1')
 | Runtime                                | Benchmark                               | Average                  | p75       | p99       | Min       | Max       |
 | -------------------------------------- | --------------------------------------- | ------------------------ | --------- | --------- | --------- | --------- |
-| node v18.7.0 (x64-linux)               | Buffer.from('hello').toString('latin1') | 472.94 ns/iter (472.944) | 467.3 ns  | 476.6 ns  | 485.33 ns | 489.17 ns |
-| bun 0.1.5 (x64-linux)                  | Buffer.from('hello').toString('latin1') | 909.48 ns/iter (909.476) | 809.14 ns | 838.99 ns | 1.47 µs   | 1.47 µs   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello').toString('latin1') | 1.34 µs/iter (1,342.561) | 1.26 µs   | 1.37 µs   | 1.43 µs   | 1.43 µs   |
+| node v18.7.0 (x64-linux)               | Buffer.from('hello').toString('latin1') | 473.4 ns/iter (473.403)  | 465.69 ns | 475.8 ns  | 498.86 ns | 502.25 ns |
+| bun 0.1.5 (x64-linux)                  | Buffer.from('hello').toString('latin1') | 1.07 µs/iter (1,069.456) | 928.98 ns | 972.99 ns | 1.94 µs   | 1.94 µs   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello').toString('latin1') | 1.56 µs/iter (1,557.17)  | 1.39 µs   | 1.56 µs   | 2.85 µs   | 2.85 µs   |
 
 
 #### Buffer.from('hello').toString('binary')
 | Runtime                                | Benchmark                               | Average                  | p75       | p99       | Min       | Max       |
 | -------------------------------------- | --------------------------------------- | ------------------------ | --------- | --------- | --------- | --------- |
-| node v18.7.0 (x64-linux)               | Buffer.from('hello').toString('binary') | 474.37 ns/iter (474.369) | 460.78 ns | 475.13 ns | 508.11 ns | 536.53 ns |
-| bun 0.1.5 (x64-linux)                  | Buffer.from('hello').toString('binary') | 964.7 ns/iter (964.703)  | 871.52 ns | 891.63 ns | 1.55 µs   | 1.55 µs   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello').toString('binary') | 1.35 µs/iter (1,346.051) | 1.28 µs   | 1.37 µs   | 1.42 µs   | 1.42 µs   |
+| node v18.7.0 (x64-linux)               | Buffer.from('hello').toString('binary') | 475.83 ns/iter (475.833) | 456.88 ns | 482.29 ns | 499.13 ns | 513.28 ns |
+| bun 0.1.5 (x64-linux)                  | Buffer.from('hello').toString('binary') | 1.09 µs/iter (1,090.767) | 931.78 ns | 979.1 ns  | 2.02 µs   | 2.02 µs   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello').toString('binary') | 1.56 µs/iter (1,556.317) | 1.39 µs   | 1.6 µs    | 2.05 µs   | 2.05 µs   |
 
 
 #### Buffer.from('hello').toString('hex')
 | Runtime                                | Benchmark                            | Average                  | p75       | p99       | Min       | Max       |
 | -------------------------------------- | ------------------------------------ | ------------------------ | --------- | --------- | --------- | --------- |
-| node v18.7.0 (x64-linux)               | Buffer.from('hello').toString('hex') | 523.65 ns/iter (523.65)  | 513.23 ns | 527.62 ns | 538.17 ns | 538.51 ns |
-| bun 0.1.5 (x64-linux)                  | Buffer.from('hello').toString('hex') | 882.33 ns/iter (882.328) | 790.13 ns | 826.95 ns | 1.49 µs   | 1.49 µs   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello').toString('hex') | 1.41 µs/iter (1,410.549) | 1.37 µs   | 1.43 µs   | 1.49 µs   | 1.49 µs   |
+| node v18.7.0 (x64-linux)               | Buffer.from('hello').toString('hex') | 487.57 ns/iter (487.574) | 469.29 ns | 494.73 ns | 511.71 ns | 512.02 ns |
+| bun 0.1.5 (x64-linux)                  | Buffer.from('hello').toString('hex') | 1.02 µs/iter (1,023.273) | 898.69 ns | 934.46 ns | 1.87 µs   | 1.87 µs   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello').toString('hex') | 1.6 µs/iter (1,603.43)   | 1.46 µs   | 1.63 µs   | 2.53 µs   | 2.53 µs   |
 
 
 ### encode - long data
 
 #### Buffer.from(longText).toString('ascii')
-| Runtime                                | Benchmark                               | Average                  | p75       | p99       | Min      | Max     |
-| -------------------------------------- | --------------------------------------- | ------------------------ | --------- | --------- | -------- | ------- |
-| bun 0.1.5 (x64-linux)                  | Buffer.from(longText).toString('ascii') | 9.29 µs/iter (9,290)     | 6.4 µs    | 8.7 µs    | 16.5 µs  | 4.06 ms |
-| node v18.7.0 (x64-linux)               | Buffer.from(longText).toString('ascii') | 21.91 µs/iter (21,912)   | 17 µs     | 20 µs     | 118.9 µs | 2.48 ms |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText).toString('ascii') | 809.84 µs/iter (809,841) | 715.31 µs | 782.01 µs | 1.22 ms  | 1.4 ms  |
+| Runtime                                | Benchmark                               | Average                 | p75       | p99       | Min      | Max       |
+| -------------------------------------- | --------------------------------------- | ----------------------- | --------- | --------- | -------- | --------- |
+| bun 0.1.5 (x64-linux)                  | Buffer.from(longText).toString('ascii') | 16.2 µs/iter (16,197)   | 6.9 µs    | 15.3 µs   | 36.2 µs  | 795.61 µs |
+| node v18.7.0 (x64-linux)               | Buffer.from(longText).toString('ascii') | 24.95 µs/iter (24,947)  | 19.6 µs   | 23.2 µs   | 129.8 µs | 944.61 µs |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText).toString('ascii') | 901.7 µs/iter (901,704) | 775.52 µs | 971.61 µs | 1.25 ms  | 1.27 ms   |
 
 
 #### Buffer.from(longText).toString('utf8')
-| Runtime                                | Benchmark                              | Average                 | p75     | p99     | Min      | Max     |
-| -------------------------------------- | -------------------------------------- | ----------------------- | ------- | ------- | -------- | ------- |
-| bun 0.1.5 (x64-linux)                  | Buffer.from(longText).toString('utf8') | 11.16 µs/iter (11,160)  | 7.2 µs  | 10.7 µs | 29 µs    | 2 ms    |
-| node v18.7.0 (x64-linux)               | Buffer.from(longText).toString('utf8') | 20.22 µs/iter (20,221)  | 17.1 µs | 17.9 µs | 131.4 µs | 2.99 ms |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText).toString('utf8') | 1.3 ms/iter (1,304,715) | 1.15 ms | 1.2 ms  | 3.43 ms  | 3.84 ms |
+| Runtime                                | Benchmark                              | Average                  | p75     | p99     | Min      | Max       |
+| -------------------------------------- | -------------------------------------- | ------------------------ | ------- | ------- | -------- | --------- |
+| bun 0.1.5 (x64-linux)                  | Buffer.from(longText).toString('utf8') | 18.17 µs/iter (18,172)   | 9 µs    | 16.8 µs | 44.2 µs  | 2.49 ms   |
+| node v18.7.0 (x64-linux)               | Buffer.from(longText).toString('utf8') | 24.52 µs/iter (24,522)   | 19.2 µs | 22.6 µs | 126.4 µs | 894.51 µs |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText).toString('utf8') | 1.42 ms/iter (1,417,821) | 1.21 ms | 1.31 ms | 2.97 ms  | 3.11 ms   |
 
 
 #### Buffer.from(longText).toString('utf16le')
 | Runtime                                | Benchmark                                 | Average                  | p75       | p99       | Min     | Max       |
 | -------------------------------------- | ----------------------------------------- | ------------------------ | --------- | --------- | ------- | --------- |
-| bun 0.1.5 (x64-linux)                  | Buffer.from(longText).toString('utf16le') | 8.34 µs/iter (8,338)     | 6.1 µs    | 7.9 µs    | 18 µs   | 528.23 µs |
-| node v18.7.0 (x64-linux)               | Buffer.from(longText).toString('utf16le') | 18.6 µs/iter (18,600)    | 14.4 µs   | 15.8 µs   | 48.1 µs | 13.62 ms  |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText).toString('utf16le') | 772.39 µs/iter (772,395) | 681.81 µs | 708.81 µs | 1.7 ms  | 9.59 ms   |
+| bun 0.1.5 (x64-linux)                  | Buffer.from(longText).toString('utf16le') | 13.67 µs/iter (13,671)   | 8.2 µs    | 13.3 µs   | 27.5 µs | 1.12 ms   |
+| node v18.7.0 (x64-linux)               | Buffer.from(longText).toString('utf16le') | 23.77 µs/iter (23,766)   | 17.9 µs   | 22.4 µs   | 73.6 µs | 547.31 µs |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText).toString('utf16le') | 853.27 µs/iter (853,275) | 732.12 µs | 789.62 µs | 1.58 ms | 1.61 ms   |
 
 
 #### Buffer.from(longText).toString('ucs2')
-| Runtime                                | Benchmark                              | Average                  | p75       | p99       | Min     | Max     |
-| -------------------------------------- | -------------------------------------- | ------------------------ | --------- | --------- | ------- | ------- |
-| bun 0.1.5 (x64-linux)                  | Buffer.from(longText).toString('ucs2') | 8.06 µs/iter (8,056.924) | 7.9 µs    | 8.11 µs   | 8.43 µs | 8.43 µs |
-| node v18.7.0 (x64-linux)               | Buffer.from(longText).toString('ucs2') | 17.13 µs/iter (17,126)   | 14.6 µs   | 15.7 µs   | 30.2 µs | 2.88 ms |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText).toString('ucs2') | 764.53 µs/iter (764,532) | 638.41 µs | 708.71 µs | 1.68 ms | 6.89 ms |
+| Runtime                                | Benchmark                              | Average                  | p75       | p99       | Min     | Max       |
+| -------------------------------------- | -------------------------------------- | ------------------------ | --------- | --------- | ------- | --------- |
+| bun 0.1.5 (x64-linux)                  | Buffer.from(longText).toString('ucs2') | 13.7 µs/iter (13,702)    | 8.2 µs    | 13.3 µs   | 29.3 µs | 1.86 ms   |
+| node v18.7.0 (x64-linux)               | Buffer.from(longText).toString('ucs2') | 23.22 µs/iter (23,221)   | 17.8 µs   | 22 µs     | 55.1 µs | 596.51 µs |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText).toString('ucs2') | 858.16 µs/iter (858,159) | 728.02 µs | 786.92 µs | 2.15 ms | 2.33 ms   |
 
 
 #### Buffer.from(longText).toString('base64')
 | Runtime                                | Benchmark                                | Average                  | p75       | p99       | Min      | Max       |
 | -------------------------------------- | ---------------------------------------- | ------------------------ | --------- | --------- | -------- | --------- |
-| bun 0.1.5 (x64-linux)                  | Buffer.from(longText).toString('base64') | 8.77 µs/iter (8,773)     | 6.5 µs    | 8.1 µs    | 15.3 µs  | 533.51 µs |
-| node v18.7.0 (x64-linux)               | Buffer.from(longText).toString('base64') | 19.48 µs/iter (19,485)   | 16.2 µs   | 17.4 µs   | 119.6 µs | 2.89 ms   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText).toString('base64') | 855.38 µs/iter (855,379) | 796.41 µs | 824.92 µs | 1.34 ms  | 1.43 ms   |
+| bun 0.1.5 (x64-linux)                  | Buffer.from(longText).toString('base64') | 14.98 µs/iter (14,985)   | 8.9 µs    | 14.3 µs   | 34.6 µs  | 702.01 µs |
+| node v18.7.0 (x64-linux)               | Buffer.from(longText).toString('base64') | 28.67 µs/iter (28,674)   | 21.3 µs   | 27.7 µs   | 156.8 µs | 1.22 ms   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText).toString('base64') | 1.04 ms/iter (1,038,457) | 911.32 µs | 966.92 µs | 2.22 ms  | 2.3 ms    |
 
 
 #### Buffer.from(longText).toString('base64url')
 | Runtime                                | Benchmark                                   | Average                  | p75     | p99     | Min       | Max       |
 | -------------------------------------- | ------------------------------------------- | ------------------------ | ------- | ------- | --------- | --------- |
-| node v18.7.0 (x64-linux)               | Buffer.from(longText).toString('base64url') | 47.67 µs/iter (47,674)   | 44.2 µs | 46 µs   | 146.2 µs  | 578.61 µs |
-| bun 0.1.5 (x64-linux)                  | Buffer.from(longText).toString('base64url') | 50.77 µs/iter (50,771)   | 36.2 µs | 38.1 µs | 532.11 µs | 961.02 µs |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText).toString('base64url') | 1.31 ms/iter (1,310,289) | 1.13 ms | 1.17 ms | 3.06 ms   | 3.12 ms   |
+| bun 0.1.5 (x64-linux)                  | Buffer.from(longText).toString('base64url') | 59.7 µs/iter (59,697)    | 41.3 µs | 45.3 µs | 609.11 µs | 700.51 µs |
+| node v18.7.0 (x64-linux)               | Buffer.from(longText).toString('base64url') | 61.4 µs/iter (61,404)    | 56.2 µs | 58.5 µs | 238.7 µs  | 572.01 µs |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText).toString('base64url') | 1.47 ms/iter (1,467,442) | 1.26 ms | 1.34 ms | 3.13 ms   | 3.21 ms   |
 
 
 #### Buffer.from(longText).toString('latin1')
-| Runtime                                | Benchmark                                | Average                  | p75       | p99       | Min     | Max     |
-| -------------------------------------- | ---------------------------------------- | ------------------------ | --------- | --------- | ------- | ------- |
-| bun 0.1.5 (x64-linux)                  | Buffer.from(longText).toString('latin1') | 9.96 µs/iter (9,958)     | 6.3 µs    | 9.9 µs    | 18.2 µs | 1.64 ms |
-| node v18.7.0 (x64-linux)               | Buffer.from(longText).toString('latin1') | 17.87 µs/iter (17,870)   | 15.1 µs   | 17.3 µs   | 35.7 µs | 1.13 ms |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText).toString('latin1') | 802.28 µs/iter (802,278) | 729.41 µs | 749.51 µs | 1.76 ms | 1.83 ms |
+| Runtime                                | Benchmark                                | Average                  | p75       | p99       | Min     | Max       |
+| -------------------------------------- | ---------------------------------------- | ------------------------ | --------- | --------- | ------- | --------- |
+| bun 0.1.5 (x64-linux)                  | Buffer.from(longText).toString('latin1') | 16.41 µs/iter (16,409)   | 9.1 µs    | 15.6 µs   | 35.8 µs | 708.01 µs |
+| node v18.7.0 (x64-linux)               | Buffer.from(longText).toString('latin1') | 23.29 µs/iter (23,292)   | 18.3 µs   | 21.9 µs   | 52.3 µs | 317 µs    |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText).toString('latin1') | 902.15 µs/iter (902,153) | 778.62 µs | 831.92 µs | 2.28 ms | 2.32 ms   |
 
 
 #### Buffer.from(longText).toString('binary')
 | Runtime                                | Benchmark                                | Average                  | p75       | p99       | Min     | Max       |
 | -------------------------------------- | ---------------------------------------- | ------------------------ | --------- | --------- | ------- | --------- |
-| bun 0.1.5 (x64-linux)                  | Buffer.from(longText).toString('binary') | 9.7 µs/iter (9,699)      | 6.2 µs    | 9.7 µs    | 17.5 µs | 474.51 µs |
-| node v18.7.0 (x64-linux)               | Buffer.from(longText).toString('binary') | 18.35 µs/iter (18,350)   | 15.3 µs   | 18.1 µs   | 32.3 µs | 251.91 µs |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText).toString('binary') | 802.41 µs/iter (802,413) | 728.31 µs | 750.21 µs | 1.76 ms | 1.82 ms   |
+| bun 0.1.5 (x64-linux)                  | Buffer.from(longText).toString('binary') | 16.39 µs/iter (16,395)   | 7.6 µs    | 15.5 µs   | 36.1 µs | 1.12 ms   |
+| node v18.7.0 (x64-linux)               | Buffer.from(longText).toString('binary') | 25.1 µs/iter (25,098)    | 19 µs     | 24.1 µs   | 53.5 µs | 648.11 µs |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText).toString('binary') | 895.93 µs/iter (895,932) | 784.81 µs | 826.41 µs | 2.23 ms | 2.4 ms    |
 
 
 #### Buffer.from(longText).toString('hex')
-| Runtime                                | Benchmark                             | Average                  | p75       | p99       | Min      | Max       |
-| -------------------------------------- | ------------------------------------- | ------------------------ | --------- | --------- | -------- | --------- |
-| node v18.7.0 (x64-linux)               | Buffer.from(longText).toString('hex') | 60.47 µs/iter (60,471)   | 55.7 µs   | 59.7 µs   | 174.5 µs | 227 µs    |
-| bun 0.1.5 (x64-linux)                  | Buffer.from(longText).toString('hex') | 237.28 µs/iter (237,281) | 231.9 µs  | 235.5 µs  | 263.6 µs | 705.21 µs |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText).toString('hex') | 841.04 µs/iter (841,042) | 764.11 µs | 787.12 µs | 1.81 ms  | 1.84 ms   |
+| Runtime                                | Benchmark                             | Average                  | p75       | p99       | Min      | Max     |
+| -------------------------------------- | ------------------------------------- | ------------------------ | --------- | --------- | -------- | ------- |
+| node v18.7.0 (x64-linux)               | Buffer.from(longText).toString('hex') | 76.18 µs/iter (76,177)   | 70.1 µs   | 73.1 µs   | 335.1 µs | 400 µs  |
+| bun 0.1.5 (x64-linux)                  | Buffer.from(longText).toString('hex') | 277.51 µs/iter (277,511) | 263.7 µs  | 270.4 µs  | 368.3 µs | 1.13 ms |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText).toString('hex') | 927.47 µs/iter (927,468) | 818.81 µs | 856.81 µs | 2.27 ms  | 2.32 ms |
 
 
 ### decode - short data
@@ -167,323 +168,332 @@
 #### Buffer.from('hello', 'ascii').toString()
 | Runtime                                | Benchmark                                | Average                  | p75       | p99       | Min       | Max       |
 | -------------------------------------- | ---------------------------------------- | ------------------------ | --------- | --------- | --------- | --------- |
-| node v18.7.0 (x64-linux)               | Buffer.from('hello', 'ascii').toString() | 356.5 ns/iter (356.495)  | 349.62 ns | 354.97 ns | 410.42 ns | 433.57 ns |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello', 'ascii').toString() | 551.22 ns/iter (551.219) | 525.44 ns | 554.9 ns  | 576.79 ns | 992.84 ns |
-| bun 0.1.5 (x64-linux)                  | Buffer.from('hello', 'ascii').toString() | 966.1 ns/iter (966.104)  | 853.05 ns | 890.91 ns | 1.56 µs   | 1.56 µs   |
+| node v18.7.0 (x64-linux)               | Buffer.from('hello', 'ascii').toString() | 406.27 ns/iter (406.265) | 394.95 ns | 402.79 ns | 455.98 ns | 456.17 ns |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello', 'ascii').toString() | 651.58 ns/iter (651.579) | 630.49 ns | 668.31 ns | 849.37 ns | 849.37 ns |
+| bun 0.1.5 (x64-linux)                  | Buffer.from('hello', 'ascii').toString() | 1.01 µs/iter (1,008.692) | 869.02 ns | 893.55 ns | 1.92 µs   | 1.92 µs   |
 
 
 #### Buffer.from('hello', 'utf8').toString()
 | Runtime                                | Benchmark                               | Average                  | p75       | p99       | Min       | Max       |
 | -------------------------------------- | --------------------------------------- | ------------------------ | --------- | --------- | --------- | --------- |
-| node v18.7.0 (x64-linux)               | Buffer.from('hello', 'utf8').toString() | 428.43 ns/iter (428.428) | 422.48 ns | 427.25 ns | 449.96 ns | 450.99 ns |
-| bun 0.1.5 (x64-linux)                  | Buffer.from('hello', 'utf8').toString() | 928.12 ns/iter (928.123) | 838.14 ns | 855.15 ns | 1.51 µs   | 1.51 µs   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello', 'utf8').toString() | 1.18 µs/iter (1,181.675) | 1.03 µs   | 1.32 µs   | 1.43 µs   | 1.43 µs   |
+| node v18.7.0 (x64-linux)               | Buffer.from('hello', 'utf8').toString() | 498.23 ns/iter (498.234) | 486.61 ns | 495.89 ns | 544.81 ns | 546.47 ns |
+| bun 0.1.5 (x64-linux)                  | Buffer.from('hello', 'utf8').toString() | 1.02 µs/iter (1,020.234) | 892.29 ns | 911.38 ns | 1.84 µs   | 1.84 µs   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello', 'utf8').toString() | 1.62 µs/iter (1,623.675) | 1.21 µs   | 1.76 µs   | 2.01 µs   | 2.01 µs   |
 
 
 #### Buffer.from('敨汬', 'utf16le').toString()
 | Runtime                                | Benchmark                               | Average                  | p75       | p99       | Min       | Max       |
 | -------------------------------------- | --------------------------------------- | ------------------------ | --------- | --------- | --------- | --------- |
-| node v18.7.0 (x64-linux)               | Buffer.from('敨汬', 'utf16le').toString() | 359.19 ns/iter (359.19)  | 353.42 ns | 358.58 ns | 381.25 ns | 387.72 ns |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('敨汬', 'utf16le').toString() | 547.02 ns/iter (547.021) | 526.63 ns | 548.6 ns  | 557.47 ns | 1.02 µs   |
-| bun 0.1.5 (x64-linux)                  | Buffer.from('敨汬', 'utf16le').toString() | 1.02 µs/iter (1,021.686) | 922.94 ns | 943.85 ns | 1.61 µs   | 1.61 µs   |
+| node v18.7.0 (x64-linux)               | Buffer.from('敨汬', 'utf16le').toString() | 405.37 ns/iter (405.367) | 394.52 ns | 403.21 ns | 447.95 ns | 450.13 ns |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('敨汬', 'utf16le').toString() | 639.1 ns/iter (639.105)  | 616.57 ns | 651.65 ns | 1.05 µs   | 1.05 µs   |
+| bun 0.1.5 (x64-linux)                  | Buffer.from('敨汬', 'utf16le').toString() | 1.09 µs/iter (1,094.653) | 968.36 ns | 993.58 ns | 1.89 µs   | 1.89 µs   |
 
 
 #### Buffer.from('敨汬', 'ucs2').toString()
 | Runtime                                | Benchmark                            | Average                  | p75       | p99       | Min       | Max       |
 | -------------------------------------- | ------------------------------------ | ------------------------ | --------- | --------- | --------- | --------- |
-| node v18.7.0 (x64-linux)               | Buffer.from('敨汬', 'ucs2').toString() | 369.2 ns/iter (369.196)  | 348.37 ns | 384.83 ns | 414.59 ns | 432.65 ns |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('敨汬', 'ucs2').toString() | 534.87 ns/iter (534.865) | 527.28 ns | 541.59 ns | 549.83 ns | 557.8 ns  |
-| bun 0.1.5 (x64-linux)                  | Buffer.from('敨汬', 'ucs2').toString() | 952.98 ns/iter (952.979) | 866.3 ns  | 878.12 ns | 1.53 µs   | 1.53 µs   |
+| node v18.7.0 (x64-linux)               | Buffer.from('敨汬', 'ucs2').toString() | 407.47 ns/iter (407.471) | 395.93 ns | 404.35 ns | 451.8 ns  | 451.99 ns |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('敨汬', 'ucs2').toString() | 627.68 ns/iter (627.683) | 609.66 ns | 646.76 ns | 702.36 ns | 702.36 ns |
+| bun 0.1.5 (x64-linux)                  | Buffer.from('敨汬', 'ucs2').toString() | 1.04 µs/iter (1,036.025) | 922.11 ns | 941.35 ns | 1.81 µs   | 1.81 µs   |
 
 
 #### Buffer.from('aGVsbG8=', 'base64').toString()
-| Runtime                                | Benchmark                                    | Average                  | p75       | p99       | Min      | Max       |
-| -------------------------------------- | -------------------------------------------- | ------------------------ | --------- | --------- | -------- | --------- |
-| node v18.7.0 (x64-linux)               | Buffer.from('aGVsbG8=', 'base64').toString() | 428.84 ns/iter (428.841) | 414.95 ns | 432.3 ns  | 460.2 ns | 467.67 ns |
-| bun 0.1.5 (x64-linux)                  | Buffer.from('aGVsbG8=', 'base64').toString() | 1.03 µs/iter (1,031.119) | 934.57 ns | 947.79 ns | 1.6 µs   | 1.6 µs    |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('aGVsbG8=', 'base64').toString() | 1.32 µs/iter (1,323.551) | 1.29 µs   | 1.33 µs   | 1.38 µs  | 1.38 µs   |
+| Runtime                                | Benchmark                                    | Average                  | p75       | p99       | Min       | Max       |
+| -------------------------------------- | -------------------------------------------- | ------------------------ | --------- | --------- | --------- | --------- |
+| node v18.7.0 (x64-linux)               | Buffer.from('aGVsbG8=', 'base64').toString() | 505.33 ns/iter (505.327) | 469.89 ns | 521.22 ns | 562.97 ns | 571.43 ns |
+| bun 0.1.5 (x64-linux)                  | Buffer.from('aGVsbG8=', 'base64').toString() | 1.04 µs/iter (1,044.671) | 916.6 ns  | 954.12 ns | 1.84 µs   | 1.84 µs   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('aGVsbG8=', 'base64').toString() | 1.65 µs/iter (1,654.175) | 1.63 µs   | 1.67 µs   | 1.78 µs   | 1.78 µs   |
 
 
 #### Buffer.from('aGVsbG8', 'base64url').toString()
 | Runtime                                | Benchmark                                      | Average                  | p75       | p99       | Min       | Max       |
 | -------------------------------------- | ---------------------------------------------- | ------------------------ | --------- | --------- | --------- | --------- |
-| node v18.7.0 (x64-linux)               | Buffer.from('aGVsbG8', 'base64url').toString() | 432.71 ns/iter (432.71)  | 413.42 ns | 442.6 ns  | 467.29 ns | 474.12 ns |
-| bun 0.1.5 (x64-linux)                  | Buffer.from('aGVsbG8', 'base64url').toString() | 1.02 µs/iter (1,019.544) | 920.09 ns | 934.11 ns | 1.65 µs   | 1.65 µs   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('aGVsbG8', 'base64url').toString() | 1.54 µs/iter (1,543.333) | 1.53 µs   | 1.55 µs   | 1.64 µs   | 1.64 µs   |
+| node v18.7.0 (x64-linux)               | Buffer.from('aGVsbG8', 'base64url').toString() | 481.38 ns/iter (481.375) | 465.71 ns | 481.21 ns | 530.63 ns | 531.37 ns |
+| bun 0.1.5 (x64-linux)                  | Buffer.from('aGVsbG8', 'base64url').toString() | 1.12 µs/iter (1,119.065) | 980.55 ns | 1 µs      | 1.97 µs   | 1.97 µs   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('aGVsbG8', 'base64url').toString() | 1.92 µs/iter (1,921.512) | 1.89 µs   | 1.93 µs   | 2.09 µs   | 2.09 µs   |
 
 
 #### Buffer.from('hello', 'latin1').toString()
 | Runtime                                | Benchmark                                 | Average                  | p75       | p99       | Min       | Max       |
 | -------------------------------------- | ----------------------------------------- | ------------------------ | --------- | --------- | --------- | --------- |
-| node v18.7.0 (x64-linux)               | Buffer.from('hello', 'latin1').toString() | 356.49 ns/iter (356.49)  | 344.71 ns | 355.74 ns | 377.96 ns | 379.65 ns |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello', 'latin1').toString() | 566.83 ns/iter (566.831) | 558.6 ns  | 572.62 ns | 621.7 ns  | 621.7 ns  |
-| bun 0.1.5 (x64-linux)                  | Buffer.from('hello', 'latin1').toString() | 946.29 ns/iter (946.291) | 847.15 ns | 865.48 ns | 1.54 µs   | 1.54 µs   |
+| node v18.7.0 (x64-linux)               | Buffer.from('hello', 'latin1').toString() | 407.43 ns/iter (407.426) | 394.85 ns | 402.85 ns | 449.51 ns | 576.56 ns |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello', 'latin1').toString() | 662.43 ns/iter (662.432) | 645.26 ns | 681.2 ns  | 701.07 ns | 701.07 ns |
+| bun 0.1.5 (x64-linux)                  | Buffer.from('hello', 'latin1').toString() | 1.01 µs/iter (1,007.062) | 878 ns    | 897.55 ns | 1.84 µs   | 1.84 µs   |
 
 
 #### Buffer.from('hello', 'binary').toString()
 | Runtime                                | Benchmark                                 | Average                  | p75       | p99       | Min       | Max       |
 | -------------------------------------- | ----------------------------------------- | ------------------------ | --------- | --------- | --------- | --------- |
-| node v18.7.0 (x64-linux)               | Buffer.from('hello', 'binary').toString() | 357.02 ns/iter (357.017) | 350.81 ns | 355.73 ns | 382.42 ns | 382.44 ns |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello', 'binary').toString() | 565.39 ns/iter (565.392) | 549.23 ns | 574.14 ns | 581.34 ns | 581.34 ns |
-| bun 0.1.5 (x64-linux)                  | Buffer.from('hello', 'binary').toString() | 972.85 ns/iter (972.855) | 849.64 ns | 957.19 ns | 1.65 µs   | 1.65 µs   |
+| node v18.7.0 (x64-linux)               | Buffer.from('hello', 'binary').toString() | 419.13 ns/iter (419.132) | 409.08 ns | 416.56 ns | 462.73 ns | 462.87 ns |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello', 'binary').toString() | 662.79 ns/iter (662.793) | 646.79 ns | 681.9 ns  | 687.35 ns | 687.35 ns |
+| bun 0.1.5 (x64-linux)                  | Buffer.from('hello', 'binary').toString() | 1.04 µs/iter (1,042.412) | 923.33 ns | 939.01 ns | 1.86 µs   | 1.86 µs   |
 
 
 #### Buffer.from('68656c6c6f', 'hex').toString()
 | Runtime                                | Benchmark                                   | Average                  | p75       | p99       | Min       | Max       |
 | -------------------------------------- | ------------------------------------------- | ------------------------ | --------- | --------- | --------- | --------- |
-| node v18.7.0 (x64-linux)               | Buffer.from('68656c6c6f', 'hex').toString() | 410.08 ns/iter (410.08)  | 399.16 ns | 411.9 ns  | 440.83 ns | 453.65 ns |
-| bun 0.1.5 (x64-linux)                  | Buffer.from('68656c6c6f', 'hex').toString() | 907.14 ns/iter (907.136) | 803.72 ns | 822.07 ns | 1.57 µs   | 1.57 µs   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('68656c6c6f', 'hex').toString() | 963.01 ns/iter (963.008) | 947.89 ns | 970.99 ns | 994.17 ns | 994.17 ns |
+| node v18.7.0 (x64-linux)               | Buffer.from('68656c6c6f', 'hex').toString() | 477.79 ns/iter (477.793) | 451.34 ns | 489.35 ns | 536.09 ns | 537.52 ns |
+| bun 0.1.5 (x64-linux)                  | Buffer.from('68656c6c6f', 'hex').toString() | 964.3 ns/iter (964.299)  | 832.56 ns | 859.97 ns | 1.76 µs   | 1.76 µs   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('68656c6c6f', 'hex').toString() | 1.13 µs/iter (1,127.727) | 1.1 µs    | 1.15 µs   | 1.18 µs   | 1.18 µs   |
 
 
 ### decode - long data
 
 #### Buffer.from(longText, 'ascii').toString()
-| Runtime                                | Benchmark                                 | Average                  | p75    | p99     | Min     | Max     |
-| -------------------------------------- | ----------------------------------------- | ------------------------ | ------ | ------- | ------- | ------- |
-| node v18.7.0 (x64-linux)               | Buffer.from(longText, 'ascii').toString() | 11.38 µs/iter (11,384)   | 8.6 µs | 11.2 µs | 22.8 µs | 1.11 ms |
-| bun 0.1.5 (x64-linux)                  | Buffer.from(longText, 'ascii').toString() | 16.92 µs/iter (16,920)   | 8.7 µs | 16 µs   | 35.6 µs | 3.79 ms |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText, 'ascii').toString() | 1.36 ms/iter (1,362,988) | 1.2 ms | 1.23 ms | 4.11 ms | 4.27 ms |
+| Runtime                                | Benchmark                                 | Average                  | p75     | p99     | Min     | Max      |
+| -------------------------------------- | ----------------------------------------- | ------------------------ | ------- | ------- | ------- | -------- |
+| node v18.7.0 (x64-linux)               | Buffer.from(longText, 'ascii').toString() | 17.7 µs/iter (17,697)    | 12.4 µs | 16.9 µs | 41.2 µs | 448.5 µs |
+| bun 0.1.5 (x64-linux)                  | Buffer.from(longText, 'ascii').toString() | 21.09 µs/iter (21,089)   | 9.2 µs  | 18 µs   | 52.8 µs | 6.11 ms  |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText, 'ascii').toString() | 1.62 ms/iter (1,617,709) | 1.39 ms | 1.46 ms | 5.04 ms | 5.24 ms  |
 
 
 #### Buffer.from(longText, 'utf8').toString()
-| Runtime                                | Benchmark                                | Average                  | p75     | p99     | Min     | Max      |
-| -------------------------------------- | ---------------------------------------- | ------------------------ | ------- | ------- | ------- | -------- |
-| bun 0.1.5 (x64-linux)                  | Buffer.from(longText, 'utf8').toString() | 12.07 µs/iter (12,069)   | 7.9 µs  | 11.5 µs | 31.5 µs | 1.12 ms  |
-| node v18.7.0 (x64-linux)               | Buffer.from(longText, 'utf8').toString() | 20.68 µs/iter (20,675)   | 17.5 µs | 20.6 µs | 32.3 µs | 189.8 µs |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText, 'utf8').toString() | 1.19 ms/iter (1,193,749) | 1.05 ms | 1.08 ms | 3.63 ms | 3.79 ms  |
+| Runtime                                | Benchmark                                | Average                  | p75     | p99     | Min     | Max       |
+| -------------------------------------- | ---------------------------------------- | ------------------------ | ------- | ------- | ------- | --------- |
+| bun 0.1.5 (x64-linux)                  | Buffer.from(longText, 'utf8').toString() | 18.34 µs/iter (18,339)   | 12.6 µs | 16.8 µs | 43.1 µs | 1.39 ms   |
+| node v18.7.0 (x64-linux)               | Buffer.from(longText, 'utf8').toString() | 29.32 µs/iter (29,325)   | 22.3 µs | 28.1 µs | 56.4 µs | 410.61 µs |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText, 'utf8').toString() | 1.42 ms/iter (1,418,029) | 1.22 ms | 1.28 ms | 4.44 ms | 4.83 ms   |
 
 
 #### Buffer.from(longTextBuffer4, 'utf16le').toString()
-| Runtime                                | Benchmark                                          | Average                  | p75     | p99     | Min       | Max      |
-| -------------------------------------- | -------------------------------------------------- | ------------------------ | ------- | ------- | --------- | -------- |
-| node v18.7.0 (x64-linux)               | Buffer.from(longTextBuffer4, 'utf16le').toString() | 1.12 µs/iter (1,121.534) | 1.09 µs | 1.14 µs | 1.21 µs   | 1.21 µs  |
-| bun 0.1.5 (x64-linux)                  | Buffer.from(longTextBuffer4, 'utf16le').toString() | 32.56 µs/iter (32,559)   | 10.3 µs | 23.3 µs | 406.61 µs | 1.07 ms  |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longTextBuffer4, 'utf16le').toString() | 39.24 µs/iter (39,241)   | 35.7 µs | 38.6 µs | 72.3 µs   | 279.7 µs |
+| Runtime                                | Benchmark                                          | Average                  | p75     | p99     | Min      | Max      |
+| -------------------------------------- | -------------------------------------------------- | ------------------------ | ------- | ------- | -------- | -------- |
+| node v18.7.0 (x64-linux)               | Buffer.from(longTextBuffer4, 'utf16le').toString() | 1.65 µs/iter (1,645.321) | 1.58 µs | 1.67 µs | 1.77 µs  | 1.77 µs  |
+| bun 0.1.5 (x64-linux)                  | Buffer.from(longTextBuffer4, 'utf16le').toString() | 37.65 µs/iter (37,651)   | 12.1 µs | 31.6 µs | 144.9 µs | 9.38 ms  |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longTextBuffer4, 'utf16le').toString() | 48.41 µs/iter (48,405)   | 42 µs   | 47 µs   | 83.2 µs  | 490.7 µs |
 
 
 #### Buffer.from(longTextBuffer3, 'ucs2').toString()
 | Runtime                                | Benchmark                                       | Average                  | p75       | p99       | Min       | Max       |
 | -------------------------------------- | ----------------------------------------------- | ------------------------ | --------- | --------- | --------- | --------- |
-| node v18.7.0 (x64-linux)               | Buffer.from(longTextBuffer3, 'ucs2').toString() | 124.63 ns/iter (124.628) | 120.72 ns | 123.19 ns | 135.81 ns | 139.3 ns  |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longTextBuffer3, 'ucs2').toString() | 330.66 ns/iter (330.66)  | 324.22 ns | 328.47 ns | 370 ns    | 448.15 ns |
-| bun 0.1.5 (x64-linux)                  | Buffer.from(longTextBuffer3, 'ucs2').toString() | 30.48 µs/iter (30,481)   | 10.8 µs   | 22.3 µs   | 340.01 µs | 1.46 ms   |
+| node v18.7.0 (x64-linux)               | Buffer.from(longTextBuffer3, 'ucs2').toString() | 171.74 ns/iter (171.745) | 161.09 ns | 169.02 ns | 200.02 ns | 210.6 ns  |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longTextBuffer3, 'ucs2').toString() | 398.79 ns/iter (398.786) | 368.68 ns | 406.09 ns | 468.58 ns | 571.44 ns |
+| bun 0.1.5 (x64-linux)                  | Buffer.from(longTextBuffer3, 'ucs2').toString() | 35.3 µs/iter (35,298)    | 14 µs     | 31.1 µs   | 125.9 µs  | 1.46 ms   |
 
 
 #### Buffer.from(longTextBuffer0, 'base64').toString()
 | Runtime                                | Benchmark                                         | Average                  | p75     | p99     | Min     | Max       |
 | -------------------------------------- | ------------------------------------------------- | ------------------------ | ------- | ------- | ------- | --------- |
-| node v18.7.0 (x64-linux)               | Buffer.from(longTextBuffer0, 'base64').toString() | 3.05 µs/iter (3,052.897) | 3.04 µs | 3.06 µs | 3.14 µs | 3.14 µs   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longTextBuffer0, 'base64').toString() | 15.85 µs/iter (15,853)   | 14.6 µs | 15.8 µs | 21.3 µs | 469.91 µs |
-| bun 0.1.5 (x64-linux)                  | Buffer.from(longTextBuffer0, 'base64').toString() | 26.61 µs/iter (26,610)   | 21.9 µs | 25.3 µs | 46.5 µs | 1.45 ms   |
+| node v18.7.0 (x64-linux)               | Buffer.from(longTextBuffer0, 'base64').toString() | 3.58 µs/iter (3,579.718) | 3.54 µs | 3.58 µs | 3.65 µs | 3.65 µs   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longTextBuffer0, 'base64').toString() | 18.93 µs/iter (18,927)   | 16.6 µs | 19 µs   | 28.6 µs | 702.51 µs |
+| bun 0.1.5 (x64-linux)                  | Buffer.from(longTextBuffer0, 'base64').toString() | 32.36 µs/iter (32,360)   | 26.2 µs | 29.7 µs | 67 µs   | 1.66 ms   |
 
 
 #### Buffer.from(longTextBuffer1, 'base64url').toString()
-| Runtime                                | Benchmark                                            | Average                  | p75       | p99       | Min       | Max       |
-| -------------------------------------- | ---------------------------------------------------- | ------------------------ | --------- | --------- | --------- | --------- |
-| node v18.7.0 (x64-linux)               | Buffer.from(longTextBuffer1, 'base64url').toString() | 113.48 ns/iter (113.483) | 109.47 ns | 112.27 ns | 124.28 ns | 129.74 ns |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longTextBuffer1, 'base64url').toString() | 1.19 µs/iter (1,188.492) | 1.17 µs   | 1.2 µs    | 1.22 µs   | 1.22 µs   |
-| bun 0.1.5 (x64-linux)                  | Buffer.from(longTextBuffer1, 'base64url').toString() | 128.38 µs/iter (128,378) | 119.7 µs  | 123.9 µs  | 155.2 µs  | 1.29 ms   |
+| Runtime                                | Benchmark                                            | Average                  | p75       | p99       | Min      | Max       |
+| -------------------------------------- | ---------------------------------------------------- | ------------------------ | --------- | --------- | -------- | --------- |
+| node v18.7.0 (x64-linux)               | Buffer.from(longTextBuffer1, 'base64url').toString() | 137.63 ns/iter (137.627) | 127.71 ns | 135.09 ns | 170 ns   | 191.42 ns |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longTextBuffer1, 'base64url').toString() | 1.43 µs/iter (1,426.712) | 1.41 µs   | 1.44 µs   | 1.49 µs  | 1.49 µs   |
+| bun 0.1.5 (x64-linux)                  | Buffer.from(longTextBuffer1, 'base64url').toString() | 133.56 µs/iter (133,559) | 123.1 µs  | 141 µs    | 171.8 µs | 1.79 ms   |
 
 
 #### Buffer.from(longText, 'latin1').toString()
-| Runtime                                | Benchmark                                  | Average                  | p75     | p99     | Min     | Max       |
-| -------------------------------------- | ------------------------------------------ | ------------------------ | ------- | ------- | ------- | --------- |
-| node v18.7.0 (x64-linux)               | Buffer.from(longText, 'latin1').toString() | 11.92 µs/iter (11,916)   | 8.5 µs  | 11.7 µs | 24.1 µs | 616.11 µs |
-| bun 0.1.5 (x64-linux)                  | Buffer.from(longText, 'latin1').toString() | 15.3 µs/iter (15,299)    | 8.7 µs  | 14.4 µs | 34.4 µs | 1.51 ms   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText, 'latin1').toString() | 1.41 ms/iter (1,413,898) | 1.24 ms | 1.27 ms | 4.2 ms  | 4.52 ms   |
+| Runtime                                | Benchmark                                  | Average                  | p75     | p99     | Min     | Max     |
+| -------------------------------------- | ------------------------------------------ | ------------------------ | ------- | ------- | ------- | ------- |
+| node v18.7.0 (x64-linux)               | Buffer.from(longText, 'latin1').toString() | 18.47 µs/iter (18,474)   | 12.9 µs | 17.6 µs | 42.7 µs | 418 µs  |
+| bun 0.1.5 (x64-linux)                  | Buffer.from(longText, 'latin1').toString() | 20.42 µs/iter (20,419)   | 12 µs   | 17.8 µs | 53.1 µs | 2.71 ms |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText, 'latin1').toString() | 1.63 ms/iter (1,631,588) | 1.43 ms | 1.48 ms | 5.04 ms | 5.48 ms |
 
 
 #### Buffer.from(longText, 'binary').toString()
-| Runtime                                | Benchmark                                  | Average                  | p75     | p99     | Min     | Max     |
-| -------------------------------------- | ------------------------------------------ | ------------------------ | ------- | ------- | ------- | ------- |
-| node v18.7.0 (x64-linux)               | Buffer.from(longText, 'binary').toString() | 13.52 µs/iter (13,519)   | 8.7 µs  | 13 µs   | 29.2 µs | 1.19 ms |
-| bun 0.1.5 (x64-linux)                  | Buffer.from(longText, 'binary').toString() | 13.91 µs/iter (13,910)   | 8.4 µs  | 13 µs   | 32.5 µs | 1.36 ms |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText, 'binary').toString() | 1.39 ms/iter (1,394,979) | 1.24 ms | 1.26 ms | 4.19 ms | 4.25 ms |
+| Runtime                                | Benchmark                                  | Average                  | p75     | p99     | Min     | Max       |
+| -------------------------------------- | ------------------------------------------ | ------------------------ | ------- | ------- | ------- | --------- |
+| node v18.7.0 (x64-linux)               | Buffer.from(longText, 'binary').toString() | 18.7 µs/iter (18,705)    | 13.2 µs | 17.7 µs | 43.2 µs | 447.81 µs |
+| bun 0.1.5 (x64-linux)                  | Buffer.from(longText, 'binary').toString() | 19.49 µs/iter (19,488)   | 12 µs   | 17.7 µs | 48.6 µs | 4.68 ms   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText, 'binary').toString() | 1.63 ms/iter (1,634,846) | 1.43 ms | 1.48 ms | 5.05 ms | 5.12 ms   |
 
 
 #### Buffer.from(longTextBuffer2, 'hex').toString()
-| Runtime                                | Benchmark                                      | Average                  | p75       | p99      | Min       | Max       |
-| -------------------------------------- | ---------------------------------------------- | ------------------------ | --------- | -------- | --------- | --------- |
-| node v18.7.0 (x64-linux)               | Buffer.from(longTextBuffer2, 'hex').toString() | 489.47 ns/iter (489.467) | 469.61 ns | 488.8 ns | 525.62 ns | 531.15 ns |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longTextBuffer2, 'hex').toString() | 3.54 µs/iter (3,543.97)  | 2.72 µs   | 3.92 µs  | 4.6 µs    | 4.6 µs    |
-| bun 0.1.5 (x64-linux)                  | Buffer.from(longTextBuffer2, 'hex').toString() | 52.45 µs/iter (52,448)   | 45.2 µs   | 48.7 µs  | 80.1 µs   | 1.63 ms   |
+| Runtime                                | Benchmark                                      | Average                  | p75       | p99       | Min       | Max       |
+| -------------------------------------- | ---------------------------------------------- | ------------------------ | --------- | --------- | --------- | --------- |
+| node v18.7.0 (x64-linux)               | Buffer.from(longTextBuffer2, 'hex').toString() | 557.25 ns/iter (557.249) | 535.52 ns | 566.04 ns | 602.79 ns | 611.15 ns |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longTextBuffer2, 'hex').toString() | 5.22 µs/iter (5,217.282) | 3.49 µs   | 5.74 µs   | 6.1 µs    | 6.1 µs    |
+| bun 0.1.5 (x64-linux)                  | Buffer.from(longTextBuffer2, 'hex').toString() | 53.8 µs/iter (53,799)    | 47.5 µs   | 50.4 µs   | 83.1 µs   | 1.64 ms   |
 
 
 #### everything
 | Runtime                                | Benchmark                                            | Average                  | p75       | p99       | Min       | Max       |
 | -------------------------------------- | ---------------------------------------------------- | ------------------------ | --------- | --------- | --------- | --------- |
-| node v18.7.0 (x64-linux)               | Buffer.from(longTextBuffer1, 'base64url').toString() | 113.48 ns/iter (113.483) | 109.47 ns | 112.27 ns | 124.28 ns | 129.74 ns |
-| node v18.7.0 (x64-linux)               | Buffer.from(longTextBuffer3, 'ucs2').toString()      | 124.63 ns/iter (124.628) | 120.72 ns | 123.19 ns | 135.81 ns | 139.3 ns  |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longTextBuffer3, 'ucs2').toString()      | 330.66 ns/iter (330.66)  | 324.22 ns | 328.47 ns | 370 ns    | 448.15 ns |
-| node v18.7.0 (x64-linux)               | Buffer.from('hello', 'latin1').toString()            | 356.49 ns/iter (356.49)  | 344.71 ns | 355.74 ns | 377.96 ns | 379.65 ns |
-| node v18.7.0 (x64-linux)               | Buffer.from('hello', 'ascii').toString()             | 356.5 ns/iter (356.495)  | 349.62 ns | 354.97 ns | 410.42 ns | 433.57 ns |
-| node v18.7.0 (x64-linux)               | Buffer.from('hello', 'binary').toString()            | 357.02 ns/iter (357.017) | 350.81 ns | 355.73 ns | 382.42 ns | 382.44 ns |
-| node v18.7.0 (x64-linux)               | Buffer.from('敨汬', 'utf16le').toString()              | 359.19 ns/iter (359.19)  | 353.42 ns | 358.58 ns | 381.25 ns | 387.72 ns |
-| node v18.7.0 (x64-linux)               | Buffer.from('敨汬', 'ucs2').toString()                 | 369.2 ns/iter (369.196)  | 348.37 ns | 384.83 ns | 414.59 ns | 432.65 ns |
-| node v18.7.0 (x64-linux)               | Buffer.from('68656c6c6f', 'hex').toString()          | 410.08 ns/iter (410.08)  | 399.16 ns | 411.9 ns  | 440.83 ns | 453.65 ns |
-| node v18.7.0 (x64-linux)               | Buffer.from('hello', 'utf8').toString()              | 428.43 ns/iter (428.428) | 422.48 ns | 427.25 ns | 449.96 ns | 450.99 ns |
-| node v18.7.0 (x64-linux)               | Buffer.from('aGVsbG8=', 'base64').toString()         | 428.84 ns/iter (428.841) | 414.95 ns | 432.3 ns  | 460.2 ns  | 467.67 ns |
-| node v18.7.0 (x64-linux)               | Buffer.from('aGVsbG8', 'base64url').toString()       | 432.71 ns/iter (432.71)  | 413.42 ns | 442.6 ns  | 467.29 ns | 474.12 ns |
-| node v18.7.0 (x64-linux)               | Buffer.from('hello').toString('ascii')               | 466.77 ns/iter (466.773) | 452.5 ns  | 465.76 ns | 603.31 ns | 1.02 µs   |
-| node v18.7.0 (x64-linux)               | Buffer.from('hello').toString('ucs2')                | 466.99 ns/iter (466.986) | 462.74 ns | 471.18 ns | 490.34 ns | 494.36 ns |
-| node v18.7.0 (x64-linux)               | Buffer.from('hello').toString('utf16le')             | 467.51 ns/iter (467.506) | 461.5 ns  | 471.52 ns | 495.55 ns | 525.92 ns |
-| node v18.7.0 (x64-linux)               | Buffer.from('hello').toString('latin1')              | 472.94 ns/iter (472.944) | 467.3 ns  | 476.6 ns  | 485.33 ns | 489.17 ns |
-| node v18.7.0 (x64-linux)               | Buffer.from('hello').toString('binary')              | 474.37 ns/iter (474.369) | 460.78 ns | 475.13 ns | 508.11 ns | 536.53 ns |
-| node v18.7.0 (x64-linux)               | Buffer.from('hello').toString('utf8')                | 479.79 ns/iter (479.787) | 471.57 ns | 483.13 ns | 510.76 ns | 536.64 ns |
-| node v18.7.0 (x64-linux)               | Buffer.from(longTextBuffer2, 'hex').toString()       | 489.47 ns/iter (489.467) | 469.61 ns | 488.8 ns  | 525.62 ns | 531.15 ns |
-| node v18.7.0 (x64-linux)               | Buffer.from('hello').toString('base64url')           | 489.54 ns/iter (489.54)  | 483.68 ns | 490.28 ns | 505.92 ns | 514.87 ns |
-| node v18.7.0 (x64-linux)               | Buffer.from('hello').toString('base64')              | 495.22 ns/iter (495.219) | 490.28 ns | 499.96 ns | 511.14 ns | 519.04 ns |
-| node v18.7.0 (x64-linux)               | Buffer.from('hello').toString('hex')                 | 523.65 ns/iter (523.65)  | 513.23 ns | 527.62 ns | 538.17 ns | 538.51 ns |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('敨汬', 'ucs2').toString()                 | 534.87 ns/iter (534.865) | 527.28 ns | 541.59 ns | 549.83 ns | 557.8 ns  |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('敨汬', 'utf16le').toString()              | 547.02 ns/iter (547.021) | 526.63 ns | 548.6 ns  | 557.47 ns | 1.02 µs   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello', 'ascii').toString()             | 551.22 ns/iter (551.219) | 525.44 ns | 554.9 ns  | 576.79 ns | 992.84 ns |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello', 'binary').toString()            | 565.39 ns/iter (565.392) | 549.23 ns | 574.14 ns | 581.34 ns | 581.34 ns |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello', 'latin1').toString()            | 566.83 ns/iter (566.831) | 558.6 ns  | 572.62 ns | 621.7 ns  | 621.7 ns  |
-| bun 0.1.5 (x64-linux)                  | Buffer.from('hello').toString('utf8')                | 824.47 ns/iter (824.468) | 733.15 ns | 759.25 ns | 1.43 µs   | 1.43 µs   |
-| bun 0.1.5 (x64-linux)                  | Buffer.from('hello').toString('ucs2')                | 860.84 ns/iter (860.836) | 775.98 ns | 795.35 ns | 1.42 µs   | 1.42 µs   |
-| bun 0.1.5 (x64-linux)                  | Buffer.from('hello').toString('ascii')               | 876.22 ns/iter (876.22)  | 774.71 ns | 809.81 ns | 1.72 µs   | 1.72 µs   |
-| bun 0.1.5 (x64-linux)                  | Buffer.from('hello').toString('hex')                 | 882.33 ns/iter (882.328) | 790.13 ns | 826.95 ns | 1.49 µs   | 1.49 µs   |
-| bun 0.1.5 (x64-linux)                  | Buffer.from('hello').toString('base64')              | 906.9 ns/iter (906.9)    | 806.73 ns | 827.08 ns | 1.46 µs   | 1.46 µs   |
-| bun 0.1.5 (x64-linux)                  | Buffer.from('68656c6c6f', 'hex').toString()          | 907.14 ns/iter (907.136) | 803.72 ns | 822.07 ns | 1.57 µs   | 1.57 µs   |
-| bun 0.1.5 (x64-linux)                  | Buffer.from('hello').toString('latin1')              | 909.48 ns/iter (909.476) | 809.14 ns | 838.99 ns | 1.47 µs   | 1.47 µs   |
-| bun 0.1.5 (x64-linux)                  | Buffer.from('hello').toString('utf16le')             | 912.1 ns/iter (912.103)  | 819.62 ns | 844.29 ns | 1.48 µs   | 1.48 µs   |
-| bun 0.1.5 (x64-linux)                  | Buffer.from('hello', 'utf8').toString()              | 928.12 ns/iter (928.123) | 838.14 ns | 855.15 ns | 1.51 µs   | 1.51 µs   |
-| bun 0.1.5 (x64-linux)                  | Buffer.from('hello').toString('base64url')           | 940.5 ns/iter (940.497)  | 812.98 ns | 882.93 ns | 1.55 µs   | 1.55 µs   |
-| bun 0.1.5 (x64-linux)                  | Buffer.from('hello', 'latin1').toString()            | 946.29 ns/iter (946.291) | 847.15 ns | 865.48 ns | 1.54 µs   | 1.54 µs   |
-| bun 0.1.5 (x64-linux)                  | Buffer.from('敨汬', 'ucs2').toString()                 | 952.98 ns/iter (952.979) | 866.3 ns  | 878.12 ns | 1.53 µs   | 1.53 µs   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('68656c6c6f', 'hex').toString()          | 963.01 ns/iter (963.008) | 947.89 ns | 970.99 ns | 994.17 ns | 994.17 ns |
-| bun 0.1.5 (x64-linux)                  | Buffer.from('hello').toString('binary')              | 964.7 ns/iter (964.703)  | 871.52 ns | 891.63 ns | 1.55 µs   | 1.55 µs   |
-| bun 0.1.5 (x64-linux)                  | Buffer.from('hello', 'ascii').toString()             | 966.1 ns/iter (966.104)  | 853.05 ns | 890.91 ns | 1.56 µs   | 1.56 µs   |
-| bun 0.1.5 (x64-linux)                  | Buffer.from('hello', 'binary').toString()            | 972.85 ns/iter (972.855) | 849.64 ns | 957.19 ns | 1.65 µs   | 1.65 µs   |
-| bun 0.1.5 (x64-linux)                  | Buffer.from('aGVsbG8', 'base64url').toString()       | 1.02 µs/iter (1,019.544) | 920.09 ns | 934.11 ns | 1.65 µs   | 1.65 µs   |
-| bun 0.1.5 (x64-linux)                  | Buffer.from('敨汬', 'utf16le').toString()              | 1.02 µs/iter (1,021.686) | 922.94 ns | 943.85 ns | 1.61 µs   | 1.61 µs   |
-| bun 0.1.5 (x64-linux)                  | Buffer.from('aGVsbG8=', 'base64').toString()         | 1.03 µs/iter (1,031.119) | 934.57 ns | 947.79 ns | 1.6 µs    | 1.6 µs    |
-| node v18.7.0 (x64-linux)               | Buffer.from(longTextBuffer4, 'utf16le').toString()   | 1.12 µs/iter (1,121.534) | 1.09 µs   | 1.14 µs   | 1.21 µs   | 1.21 µs   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello', 'utf8').toString()              | 1.18 µs/iter (1,181.675) | 1.03 µs   | 1.32 µs   | 1.43 µs   | 1.43 µs   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longTextBuffer1, 'base64url').toString() | 1.19 µs/iter (1,188.492) | 1.17 µs   | 1.2 µs    | 1.22 µs   | 1.22 µs   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello').toString('ucs2')                | 1.31 µs/iter (1,305.043) | 1.23 µs   | 1.33 µs   | 1.47 µs   | 1.47 µs   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello').toString('utf16le')             | 1.31 µs/iter (1,313.102) | 1.26 µs   | 1.34 µs   | 1.61 µs   | 1.61 µs   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('aGVsbG8=', 'base64').toString()         | 1.32 µs/iter (1,323.551) | 1.29 µs   | 1.33 µs   | 1.38 µs   | 1.38 µs   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello').toString('ascii')               | 1.34 µs/iter (1,339.31)  | 1.22 µs   | 1.36 µs   | 2.1 µs    | 2.1 µs    |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello').toString('latin1')              | 1.34 µs/iter (1,342.561) | 1.26 µs   | 1.37 µs   | 1.43 µs   | 1.43 µs   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello').toString('binary')              | 1.35 µs/iter (1,346.051) | 1.28 µs   | 1.37 µs   | 1.42 µs   | 1.42 µs   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello').toString('base64')              | 1.4 µs/iter (1,400.384)  | 1.35 µs   | 1.41 µs   | 1.44 µs   | 1.44 µs   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello').toString('utf8')                | 1.4 µs/iter (1,401.405)  | 1.33 µs   | 1.41 µs   | 1.93 µs   | 1.93 µs   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello').toString('hex')                 | 1.41 µs/iter (1,410.549) | 1.37 µs   | 1.43 µs   | 1.49 µs   | 1.49 µs   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('aGVsbG8', 'base64url').toString()       | 1.54 µs/iter (1,543.333) | 1.53 µs   | 1.55 µs   | 1.64 µs   | 1.64 µs   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello').toString('base64url')           | 1.65 µs/iter (1,653.873) | 1.61 µs   | 1.67 µs   | 1.83 µs   | 1.83 µs   |
-| node v18.7.0 (x64-linux)               | Buffer.from(longTextBuffer0, 'base64').toString()    | 3.05 µs/iter (3,052.897) | 3.04 µs   | 3.06 µs   | 3.14 µs   | 3.14 µs   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longTextBuffer2, 'hex').toString()       | 3.54 µs/iter (3,543.97)  | 2.72 µs   | 3.92 µs   | 4.6 µs    | 4.6 µs    |
-| bun 0.1.5 (x64-linux)                  | Buffer.from(longText).toString('ucs2')               | 8.06 µs/iter (8,056.924) | 7.9 µs    | 8.11 µs   | 8.43 µs   | 8.43 µs   |
-| bun 0.1.5 (x64-linux)                  | Buffer.from(longText).toString('utf16le')            | 8.34 µs/iter (8,338)     | 6.1 µs    | 7.9 µs    | 18 µs     | 528.23 µs |
-| bun 0.1.5 (x64-linux)                  | Buffer.from(longText).toString('base64')             | 8.77 µs/iter (8,773)     | 6.5 µs    | 8.1 µs    | 15.3 µs   | 533.51 µs |
-| bun 0.1.5 (x64-linux)                  | Buffer.from(longText).toString('ascii')              | 9.29 µs/iter (9,290)     | 6.4 µs    | 8.7 µs    | 16.5 µs   | 4.06 ms   |
-| bun 0.1.5 (x64-linux)                  | Buffer.from(longText).toString('binary')             | 9.7 µs/iter (9,699)      | 6.2 µs    | 9.7 µs    | 17.5 µs   | 474.51 µs |
-| bun 0.1.5 (x64-linux)                  | Buffer.from(longText).toString('latin1')             | 9.96 µs/iter (9,958)     | 6.3 µs    | 9.9 µs    | 18.2 µs   | 1.64 ms   |
-| bun 0.1.5 (x64-linux)                  | Buffer.from(longText).toString('utf8')               | 11.16 µs/iter (11,160)   | 7.2 µs    | 10.7 µs   | 29 µs     | 2 ms      |
-| node v18.7.0 (x64-linux)               | Buffer.from(longText, 'ascii').toString()            | 11.38 µs/iter (11,384)   | 8.6 µs    | 11.2 µs   | 22.8 µs   | 1.11 ms   |
-| node v18.7.0 (x64-linux)               | Buffer.from(longText, 'latin1').toString()           | 11.92 µs/iter (11,916)   | 8.5 µs    | 11.7 µs   | 24.1 µs   | 616.11 µs |
-| bun 0.1.5 (x64-linux)                  | Buffer.from(longText, 'utf8').toString()             | 12.07 µs/iter (12,069)   | 7.9 µs    | 11.5 µs   | 31.5 µs   | 1.12 ms   |
-| node v18.7.0 (x64-linux)               | Buffer.from(longText, 'binary').toString()           | 13.52 µs/iter (13,519)   | 8.7 µs    | 13 µs     | 29.2 µs   | 1.19 ms   |
-| bun 0.1.5 (x64-linux)                  | Buffer.from(longText, 'binary').toString()           | 13.91 µs/iter (13,910)   | 8.4 µs    | 13 µs     | 32.5 µs   | 1.36 ms   |
-| bun 0.1.5 (x64-linux)                  | Buffer.from(longText, 'latin1').toString()           | 15.3 µs/iter (15,299)    | 8.7 µs    | 14.4 µs   | 34.4 µs   | 1.51 ms   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longTextBuffer0, 'base64').toString()    | 15.85 µs/iter (15,853)   | 14.6 µs   | 15.8 µs   | 21.3 µs   | 469.91 µs |
-| bun 0.1.5 (x64-linux)                  | Buffer.from(longText, 'ascii').toString()            | 16.92 µs/iter (16,920)   | 8.7 µs    | 16 µs     | 35.6 µs   | 3.79 ms   |
-| node v18.7.0 (x64-linux)               | Buffer.from(longText).toString('ucs2')               | 17.13 µs/iter (17,126)   | 14.6 µs   | 15.7 µs   | 30.2 µs   | 2.88 ms   |
-| node v18.7.0 (x64-linux)               | Buffer.from(longText).toString('latin1')             | 17.87 µs/iter (17,870)   | 15.1 µs   | 17.3 µs   | 35.7 µs   | 1.13 ms   |
-| node v18.7.0 (x64-linux)               | Buffer.from(longText).toString('binary')             | 18.35 µs/iter (18,350)   | 15.3 µs   | 18.1 µs   | 32.3 µs   | 251.91 µs |
-| node v18.7.0 (x64-linux)               | Buffer.from(longText).toString('utf16le')            | 18.6 µs/iter (18,600)    | 14.4 µs   | 15.8 µs   | 48.1 µs   | 13.62 ms  |
-| node v18.7.0 (x64-linux)               | Buffer.from(longText).toString('base64')             | 19.48 µs/iter (19,485)   | 16.2 µs   | 17.4 µs   | 119.6 µs  | 2.89 ms   |
-| node v18.7.0 (x64-linux)               | Buffer.from(longText).toString('utf8')               | 20.22 µs/iter (20,221)   | 17.1 µs   | 17.9 µs   | 131.4 µs  | 2.99 ms   |
-| node v18.7.0 (x64-linux)               | Buffer.from(longText, 'utf8').toString()             | 20.68 µs/iter (20,675)   | 17.5 µs   | 20.6 µs   | 32.3 µs   | 189.8 µs  |
-| node v18.7.0 (x64-linux)               | Buffer.from(longText).toString('ascii')              | 21.91 µs/iter (21,912)   | 17 µs     | 20 µs     | 118.9 µs  | 2.48 ms   |
-| bun 0.1.5 (x64-linux)                  | Buffer.from(longTextBuffer0, 'base64').toString()    | 26.61 µs/iter (26,610)   | 21.9 µs   | 25.3 µs   | 46.5 µs   | 1.45 ms   |
-| bun 0.1.5 (x64-linux)                  | Buffer.from(longTextBuffer3, 'ucs2').toString()      | 30.48 µs/iter (30,481)   | 10.8 µs   | 22.3 µs   | 340.01 µs | 1.46 ms   |
-| bun 0.1.5 (x64-linux)                  | Buffer.from(longTextBuffer4, 'utf16le').toString()   | 32.56 µs/iter (32,559)   | 10.3 µs   | 23.3 µs   | 406.61 µs | 1.07 ms   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longTextBuffer4, 'utf16le').toString()   | 39.24 µs/iter (39,241)   | 35.7 µs   | 38.6 µs   | 72.3 µs   | 279.7 µs  |
-| node v18.7.0 (x64-linux)               | Buffer.from(longText).toString('base64url')          | 47.67 µs/iter (47,674)   | 44.2 µs   | 46 µs     | 146.2 µs  | 578.61 µs |
-| bun 0.1.5 (x64-linux)                  | Buffer.from(longText).toString('base64url')          | 50.77 µs/iter (50,771)   | 36.2 µs   | 38.1 µs   | 532.11 µs | 961.02 µs |
-| bun 0.1.5 (x64-linux)                  | Buffer.from(longTextBuffer2, 'hex').toString()       | 52.45 µs/iter (52,448)   | 45.2 µs   | 48.7 µs   | 80.1 µs   | 1.63 ms   |
-| node v18.7.0 (x64-linux)               | Buffer.from(longText).toString('hex')                | 60.47 µs/iter (60,471)   | 55.7 µs   | 59.7 µs   | 174.5 µs  | 227 µs    |
-| bun 0.1.5 (x64-linux)                  | Buffer.from(longTextBuffer1, 'base64url').toString() | 128.38 µs/iter (128,378) | 119.7 µs  | 123.9 µs  | 155.2 µs  | 1.29 ms   |
-| bun 0.1.5 (x64-linux)                  | Buffer.from(longText).toString('hex')                | 237.28 µs/iter (237,281) | 231.9 µs  | 235.5 µs  | 263.6 µs  | 705.21 µs |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText).toString('ucs2')               | 764.53 µs/iter (764,532) | 638.41 µs | 708.71 µs | 1.68 ms   | 6.89 ms   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText).toString('utf16le')            | 772.39 µs/iter (772,395) | 681.81 µs | 708.81 µs | 1.7 ms    | 9.59 ms   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText).toString('latin1')             | 802.28 µs/iter (802,278) | 729.41 µs | 749.51 µs | 1.76 ms   | 1.83 ms   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText).toString('binary')             | 802.41 µs/iter (802,413) | 728.31 µs | 750.21 µs | 1.76 ms   | 1.82 ms   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText).toString('ascii')              | 809.84 µs/iter (809,841) | 715.31 µs | 782.01 µs | 1.22 ms   | 1.4 ms    |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText).toString('hex')                | 841.04 µs/iter (841,042) | 764.11 µs | 787.12 µs | 1.81 ms   | 1.84 ms   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText).toString('base64')             | 855.38 µs/iter (855,379) | 796.41 µs | 824.92 µs | 1.34 ms   | 1.43 ms   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText, 'utf8').toString()             | 1.19 ms/iter (1,193,749) | 1.05 ms   | 1.08 ms   | 3.63 ms   | 3.79 ms   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText).toString('utf8')               | 1.3 ms/iter (1,304,715)  | 1.15 ms   | 1.2 ms    | 3.43 ms   | 3.84 ms   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText).toString('base64url')          | 1.31 ms/iter (1,310,289) | 1.13 ms   | 1.17 ms   | 3.06 ms   | 3.12 ms   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText, 'ascii').toString()            | 1.36 ms/iter (1,362,988) | 1.2 ms    | 1.23 ms   | 4.11 ms   | 4.27 ms   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText, 'binary').toString()           | 1.39 ms/iter (1,394,979) | 1.24 ms   | 1.26 ms   | 4.19 ms   | 4.25 ms   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText, 'latin1').toString()           | 1.41 ms/iter (1,413,898) | 1.24 ms   | 1.27 ms   | 4.2 ms    | 4.52 ms   |
+| node v18.7.0 (x64-linux)               | Buffer.from(longTextBuffer1, 'base64url').toString() | 137.63 ns/iter (137.627) | 127.71 ns | 135.09 ns | 170 ns    | 191.42 ns |
+| node v18.7.0 (x64-linux)               | Buffer.from(longTextBuffer3, 'ucs2').toString()      | 171.74 ns/iter (171.745) | 161.09 ns | 169.02 ns | 200.02 ns | 210.6 ns  |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longTextBuffer3, 'ucs2').toString()      | 398.79 ns/iter (398.786) | 368.68 ns | 406.09 ns | 468.58 ns | 571.44 ns |
+| node v18.7.0 (x64-linux)               | Buffer.from('敨汬', 'utf16le').toString()              | 405.37 ns/iter (405.367) | 394.52 ns | 403.21 ns | 447.95 ns | 450.13 ns |
+| node v18.7.0 (x64-linux)               | Buffer.from('hello', 'ascii').toString()             | 406.27 ns/iter (406.265) | 394.95 ns | 402.79 ns | 455.98 ns | 456.17 ns |
+| node v18.7.0 (x64-linux)               | Buffer.from('hello', 'latin1').toString()            | 407.43 ns/iter (407.426) | 394.85 ns | 402.85 ns | 449.51 ns | 576.56 ns |
+| node v18.7.0 (x64-linux)               | Buffer.from('敨汬', 'ucs2').toString()                 | 407.47 ns/iter (407.471) | 395.93 ns | 404.35 ns | 451.8 ns  | 451.99 ns |
+| node v18.7.0 (x64-linux)               | Buffer.from('hello', 'binary').toString()            | 419.13 ns/iter (419.132) | 409.08 ns | 416.56 ns | 462.73 ns | 462.87 ns |
+| node v18.7.0 (x64-linux)               | Buffer.from('hello').toString('ascii')               | 471.55 ns/iter (471.553) | 456.42 ns | 478.09 ns | 515.21 ns | 593.15 ns |
+| node v18.7.0 (x64-linux)               | Buffer.from('hello').toString('latin1')              | 473.4 ns/iter (473.403)  | 465.69 ns | 475.8 ns  | 498.86 ns | 502.25 ns |
+| node v18.7.0 (x64-linux)               | Buffer.from('hello').toString('utf16le')             | 475.4 ns/iter (475.402)  | 466.87 ns | 480.64 ns | 500.24 ns | 518.24 ns |
+| node v18.7.0 (x64-linux)               | Buffer.from('hello').toString('binary')              | 475.83 ns/iter (475.833) | 456.88 ns | 482.29 ns | 499.13 ns | 513.28 ns |
+| node v18.7.0 (x64-linux)               | Buffer.from('hello').toString('ucs2')                | 477.27 ns/iter (477.267) | 465.54 ns | 481.63 ns | 536.41 ns | 548.67 ns |
+| node v18.7.0 (x64-linux)               | Buffer.from('68656c6c6f', 'hex').toString()          | 477.79 ns/iter (477.793) | 451.34 ns | 489.35 ns | 536.09 ns | 537.52 ns |
+| node v18.7.0 (x64-linux)               | Buffer.from('aGVsbG8', 'base64url').toString()       | 481.38 ns/iter (481.375) | 465.71 ns | 481.21 ns | 530.63 ns | 531.37 ns |
+| node v18.7.0 (x64-linux)               | Buffer.from('hello').toString('hex')                 | 487.57 ns/iter (487.574) | 469.29 ns | 494.73 ns | 511.71 ns | 512.02 ns |
+| node v18.7.0 (x64-linux)               | Buffer.from('hello').toString('base64url')           | 493.92 ns/iter (493.923) | 486.1 ns  | 494.62 ns | 527.27 ns | 595.33 ns |
+| node v18.7.0 (x64-linux)               | Buffer.from('hello').toString('utf8')                | 495.86 ns/iter (495.864) | 476.31 ns | 497.53 ns | 529.06 ns | 1.2 µs    |
+| node v18.7.0 (x64-linux)               | Buffer.from('hello', 'utf8').toString()              | 498.23 ns/iter (498.234) | 486.61 ns | 495.89 ns | 544.81 ns | 546.47 ns |
+| node v18.7.0 (x64-linux)               | Buffer.from('hello').toString('base64')              | 498.71 ns/iter (498.705) | 490.24 ns | 499.61 ns | 527.78 ns | 528.78 ns |
+| node v18.7.0 (x64-linux)               | Buffer.from('aGVsbG8=', 'base64').toString()         | 505.33 ns/iter (505.327) | 469.89 ns | 521.22 ns | 562.97 ns | 571.43 ns |
+| node v18.7.0 (x64-linux)               | Buffer.from(longTextBuffer2, 'hex').toString()       | 557.25 ns/iter (557.249) | 535.52 ns | 566.04 ns | 602.79 ns | 611.15 ns |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('敨汬', 'ucs2').toString()                 | 627.68 ns/iter (627.683) | 609.66 ns | 646.76 ns | 702.36 ns | 702.36 ns |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('敨汬', 'utf16le').toString()              | 639.1 ns/iter (639.105)  | 616.57 ns | 651.65 ns | 1.05 µs   | 1.05 µs   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello', 'ascii').toString()             | 651.58 ns/iter (651.579) | 630.49 ns | 668.31 ns | 849.37 ns | 849.37 ns |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello', 'latin1').toString()            | 662.43 ns/iter (662.432) | 645.26 ns | 681.2 ns  | 701.07 ns | 701.07 ns |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello', 'binary').toString()            | 662.79 ns/iter (662.793) | 646.79 ns | 681.9 ns  | 687.35 ns | 687.35 ns |
+| bun 0.1.5 (x64-linux)                  | Buffer.from('68656c6c6f', 'hex').toString()          | 964.3 ns/iter (964.299)  | 832.56 ns | 859.97 ns | 1.76 µs   | 1.76 µs   |
+| bun 0.1.5 (x64-linux)                  | Buffer.from('hello').toString('utf8')                | 970.21 ns/iter (970.213) | 843.6 ns  | 897.33 ns | 1.81 µs   | 1.81 µs   |
+| bun 0.1.5 (x64-linux)                  | Buffer.from('hello', 'latin1').toString()            | 1.01 µs/iter (1,007.062) | 878 ns    | 897.55 ns | 1.84 µs   | 1.84 µs   |
+| bun 0.1.5 (x64-linux)                  | Buffer.from('hello', 'ascii').toString()             | 1.01 µs/iter (1,008.692) | 869.02 ns | 893.55 ns | 1.92 µs   | 1.92 µs   |
+| bun 0.1.5 (x64-linux)                  | Buffer.from('hello', 'utf8').toString()              | 1.02 µs/iter (1,020.234) | 892.29 ns | 911.38 ns | 1.84 µs   | 1.84 µs   |
+| bun 0.1.5 (x64-linux)                  | Buffer.from('hello').toString('hex')                 | 1.02 µs/iter (1,023.273) | 898.69 ns | 934.46 ns | 1.87 µs   | 1.87 µs   |
+| bun 0.1.5 (x64-linux)                  | Buffer.from('敨汬', 'ucs2').toString()                 | 1.04 µs/iter (1,036.025) | 922.11 ns | 941.35 ns | 1.81 µs   | 1.81 µs   |
+| bun 0.1.5 (x64-linux)                  | Buffer.from('hello').toString('ascii')               | 1.04 µs/iter (1,040.268) | 867.43 ns | 987.77 ns | 1.87 µs   | 1.87 µs   |
+| bun 0.1.5 (x64-linux)                  | Buffer.from('hello', 'binary').toString()            | 1.04 µs/iter (1,042.412) | 923.33 ns | 939.01 ns | 1.86 µs   | 1.86 µs   |
+| bun 0.1.5 (x64-linux)                  | Buffer.from('aGVsbG8=', 'base64').toString()         | 1.04 µs/iter (1,044.671) | 916.6 ns  | 954.12 ns | 1.84 µs   | 1.84 µs   |
+| bun 0.1.5 (x64-linux)                  | Buffer.from('hello').toString('utf16le')             | 1.06 µs/iter (1,059.875) | 920.66 ns | 970.79 ns | 1.95 µs   | 1.95 µs   |
+| bun 0.1.5 (x64-linux)                  | Buffer.from('hello').toString('ucs2')                | 1.07 µs/iter (1,065.265) | 920.19 ns | 961.42 ns | 1.94 µs   | 1.94 µs   |
+| bun 0.1.5 (x64-linux)                  | Buffer.from('hello').toString('latin1')              | 1.07 µs/iter (1,069.456) | 928.98 ns | 972.99 ns | 1.94 µs   | 1.94 µs   |
+| bun 0.1.5 (x64-linux)                  | Buffer.from('hello').toString('binary')              | 1.09 µs/iter (1,090.767) | 931.78 ns | 979.1 ns  | 2.02 µs   | 2.02 µs   |
+| bun 0.1.5 (x64-linux)                  | Buffer.from('敨汬', 'utf16le').toString()              | 1.09 µs/iter (1,094.653) | 968.36 ns | 993.58 ns | 1.89 µs   | 1.89 µs   |
+| bun 0.1.5 (x64-linux)                  | Buffer.from('aGVsbG8', 'base64url').toString()       | 1.12 µs/iter (1,119.065) | 980.55 ns | 1 µs      | 1.97 µs   | 1.97 µs   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('68656c6c6f', 'hex').toString()          | 1.13 µs/iter (1,127.727) | 1.1 µs    | 1.15 µs   | 1.18 µs   | 1.18 µs   |
+| bun 0.1.5 (x64-linux)                  | Buffer.from('hello').toString('base64url')           | 1.14 µs/iter (1,141.613) | 966.23 ns | 1.05 µs   | 2.03 µs   | 2.03 µs   |
+| bun 0.1.5 (x64-linux)                  | Buffer.from('hello').toString('base64')              | 1.14 µs/iter (1,142.948) | 966.27 ns | 1.04 µs   | 2.09 µs   | 2.09 µs   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longTextBuffer1, 'base64url').toString() | 1.43 µs/iter (1,426.712) | 1.41 µs   | 1.44 µs   | 1.49 µs   | 1.49 µs   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello').toString('ucs2')                | 1.5 µs/iter (1,503.829)  | 1.42 µs   | 1.53 µs   | 1.67 µs   | 1.67 µs   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello').toString('ascii')               | 1.51 µs/iter (1,507.904) | 1.36 µs   | 1.52 µs   | 2.38 µs   | 2.38 µs   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello').toString('utf16le')             | 1.53 µs/iter (1,532.536) | 1.44 µs   | 1.56 µs   | 2.11 µs   | 2.11 µs   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello').toString('binary')              | 1.56 µs/iter (1,556.317) | 1.39 µs   | 1.6 µs    | 2.05 µs   | 2.05 µs   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello').toString('latin1')              | 1.56 µs/iter (1,557.17)  | 1.39 µs   | 1.56 µs   | 2.85 µs   | 2.85 µs   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello').toString('base64')              | 1.58 µs/iter (1,582.789) | 1.48 µs   | 1.6 µs    | 1.69 µs   | 1.69 µs   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello').toString('hex')                 | 1.6 µs/iter (1,603.43)   | 1.46 µs   | 1.63 µs   | 2.53 µs   | 2.53 µs   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello').toString('utf8')                | 1.62 µs/iter (1,621.324) | 1.43 µs   | 1.64 µs   | 2.43 µs   | 2.43 µs   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello', 'utf8').toString()              | 1.62 µs/iter (1,623.675) | 1.21 µs   | 1.76 µs   | 2.01 µs   | 2.01 µs   |
+| node v18.7.0 (x64-linux)               | Buffer.from(longTextBuffer4, 'utf16le').toString()   | 1.65 µs/iter (1,645.321) | 1.58 µs   | 1.67 µs   | 1.77 µs   | 1.77 µs   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('aGVsbG8=', 'base64').toString()         | 1.65 µs/iter (1,654.175) | 1.63 µs   | 1.67 µs   | 1.78 µs   | 1.78 µs   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('aGVsbG8', 'base64url').toString()       | 1.92 µs/iter (1,921.512) | 1.89 µs   | 1.93 µs   | 2.09 µs   | 2.09 µs   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from('hello').toString('base64url')           | 1.93 µs/iter (1,933.374) | 1.77 µs   | 1.97 µs   | 2.44 µs   | 2.44 µs   |
+| node v18.7.0 (x64-linux)               | Buffer.from(longTextBuffer0, 'base64').toString()    | 3.58 µs/iter (3,579.718) | 3.54 µs   | 3.58 µs   | 3.65 µs   | 3.65 µs   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longTextBuffer2, 'hex').toString()       | 5.22 µs/iter (5,217.282) | 3.49 µs   | 5.74 µs   | 6.1 µs    | 6.1 µs    |
+| bun 0.1.5 (x64-linux)                  | Buffer.from(longText).toString('utf16le')            | 13.67 µs/iter (13,671)   | 8.2 µs    | 13.3 µs   | 27.5 µs   | 1.12 ms   |
+| bun 0.1.5 (x64-linux)                  | Buffer.from(longText).toString('ucs2')               | 13.7 µs/iter (13,702)    | 8.2 µs    | 13.3 µs   | 29.3 µs   | 1.86 ms   |
+| bun 0.1.5 (x64-linux)                  | Buffer.from(longText).toString('base64')             | 14.98 µs/iter (14,985)   | 8.9 µs    | 14.3 µs   | 34.6 µs   | 702.01 µs |
+| bun 0.1.5 (x64-linux)                  | Buffer.from(longText).toString('ascii')              | 16.2 µs/iter (16,197)    | 6.9 µs    | 15.3 µs   | 36.2 µs   | 795.61 µs |
+| bun 0.1.5 (x64-linux)                  | Buffer.from(longText).toString('binary')             | 16.39 µs/iter (16,395)   | 7.6 µs    | 15.5 µs   | 36.1 µs   | 1.12 ms   |
+| bun 0.1.5 (x64-linux)                  | Buffer.from(longText).toString('latin1')             | 16.41 µs/iter (16,409)   | 9.1 µs    | 15.6 µs   | 35.8 µs   | 708.01 µs |
+| node v18.7.0 (x64-linux)               | Buffer.from(longText, 'ascii').toString()            | 17.7 µs/iter (17,697)    | 12.4 µs   | 16.9 µs   | 41.2 µs   | 448.5 µs  |
+| bun 0.1.5 (x64-linux)                  | Buffer.from(longText).toString('utf8')               | 18.17 µs/iter (18,172)   | 9 µs      | 16.8 µs   | 44.2 µs   | 2.49 ms   |
+| bun 0.1.5 (x64-linux)                  | Buffer.from(longText, 'utf8').toString()             | 18.34 µs/iter (18,339)   | 12.6 µs   | 16.8 µs   | 43.1 µs   | 1.39 ms   |
+| node v18.7.0 (x64-linux)               | Buffer.from(longText, 'latin1').toString()           | 18.47 µs/iter (18,474)   | 12.9 µs   | 17.6 µs   | 42.7 µs   | 418 µs    |
+| node v18.7.0 (x64-linux)               | Buffer.from(longText, 'binary').toString()           | 18.7 µs/iter (18,705)    | 13.2 µs   | 17.7 µs   | 43.2 µs   | 447.81 µs |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longTextBuffer0, 'base64').toString()    | 18.93 µs/iter (18,927)   | 16.6 µs   | 19 µs     | 28.6 µs   | 702.51 µs |
+| bun 0.1.5 (x64-linux)                  | Buffer.from(longText, 'binary').toString()           | 19.49 µs/iter (19,488)   | 12 µs     | 17.7 µs   | 48.6 µs   | 4.68 ms   |
+| bun 0.1.5 (x64-linux)                  | Buffer.from(longText, 'latin1').toString()           | 20.42 µs/iter (20,419)   | 12 µs     | 17.8 µs   | 53.1 µs   | 2.71 ms   |
+| bun 0.1.5 (x64-linux)                  | Buffer.from(longText, 'ascii').toString()            | 21.09 µs/iter (21,089)   | 9.2 µs    | 18 µs     | 52.8 µs   | 6.11 ms   |
+| node v18.7.0 (x64-linux)               | Buffer.from(longText).toString('ucs2')               | 23.22 µs/iter (23,221)   | 17.8 µs   | 22 µs     | 55.1 µs   | 596.51 µs |
+| node v18.7.0 (x64-linux)               | Buffer.from(longText).toString('latin1')             | 23.29 µs/iter (23,292)   | 18.3 µs   | 21.9 µs   | 52.3 µs   | 317 µs    |
+| node v18.7.0 (x64-linux)               | Buffer.from(longText).toString('utf16le')            | 23.77 µs/iter (23,766)   | 17.9 µs   | 22.4 µs   | 73.6 µs   | 547.31 µs |
+| node v18.7.0 (x64-linux)               | Buffer.from(longText).toString('utf8')               | 24.52 µs/iter (24,522)   | 19.2 µs   | 22.6 µs   | 126.4 µs  | 894.51 µs |
+| node v18.7.0 (x64-linux)               | Buffer.from(longText).toString('ascii')              | 24.95 µs/iter (24,947)   | 19.6 µs   | 23.2 µs   | 129.8 µs  | 944.61 µs |
+| node v18.7.0 (x64-linux)               | Buffer.from(longText).toString('binary')             | 25.1 µs/iter (25,098)    | 19 µs     | 24.1 µs   | 53.5 µs   | 648.11 µs |
+| node v18.7.0 (x64-linux)               | Buffer.from(longText).toString('base64')             | 28.67 µs/iter (28,674)   | 21.3 µs   | 27.7 µs   | 156.8 µs  | 1.22 ms   |
+| node v18.7.0 (x64-linux)               | Buffer.from(longText, 'utf8').toString()             | 29.32 µs/iter (29,325)   | 22.3 µs   | 28.1 µs   | 56.4 µs   | 410.61 µs |
+| bun 0.1.5 (x64-linux)                  | Buffer.from(longTextBuffer0, 'base64').toString()    | 32.36 µs/iter (32,360)   | 26.2 µs   | 29.7 µs   | 67 µs     | 1.66 ms   |
+| bun 0.1.5 (x64-linux)                  | Buffer.from(longTextBuffer3, 'ucs2').toString()      | 35.3 µs/iter (35,298)    | 14 µs     | 31.1 µs   | 125.9 µs  | 1.46 ms   |
+| bun 0.1.5 (x64-linux)                  | Buffer.from(longTextBuffer4, 'utf16le').toString()   | 37.65 µs/iter (37,651)   | 12.1 µs   | 31.6 µs   | 144.9 µs  | 9.38 ms   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longTextBuffer4, 'utf16le').toString()   | 48.41 µs/iter (48,405)   | 42 µs     | 47 µs     | 83.2 µs   | 490.7 µs  |
+| bun 0.1.5 (x64-linux)                  | Buffer.from(longTextBuffer2, 'hex').toString()       | 53.8 µs/iter (53,799)    | 47.5 µs   | 50.4 µs   | 83.1 µs   | 1.64 ms   |
+| bun 0.1.5 (x64-linux)                  | Buffer.from(longText).toString('base64url')          | 59.7 µs/iter (59,697)    | 41.3 µs   | 45.3 µs   | 609.11 µs | 700.51 µs |
+| node v18.7.0 (x64-linux)               | Buffer.from(longText).toString('base64url')          | 61.4 µs/iter (61,404)    | 56.2 µs   | 58.5 µs   | 238.7 µs  | 572.01 µs |
+| node v18.7.0 (x64-linux)               | Buffer.from(longText).toString('hex')                | 76.18 µs/iter (76,177)   | 70.1 µs   | 73.1 µs   | 335.1 µs  | 400 µs    |
+| bun 0.1.5 (x64-linux)                  | Buffer.from(longTextBuffer1, 'base64url').toString() | 133.56 µs/iter (133,559) | 123.1 µs  | 141 µs    | 171.8 µs  | 1.79 ms   |
+| bun 0.1.5 (x64-linux)                  | Buffer.from(longText).toString('hex')                | 277.51 µs/iter (277,511) | 263.7 µs  | 270.4 µs  | 368.3 µs  | 1.13 ms   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText).toString('utf16le')            | 853.27 µs/iter (853,275) | 732.12 µs | 789.62 µs | 1.58 ms   | 1.61 ms   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText).toString('ucs2')               | 858.16 µs/iter (858,159) | 728.02 µs | 786.92 µs | 2.15 ms   | 2.33 ms   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText).toString('binary')             | 895.93 µs/iter (895,932) | 784.81 µs | 826.41 µs | 2.23 ms   | 2.4 ms    |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText).toString('ascii')              | 901.7 µs/iter (901,704)  | 775.52 µs | 971.61 µs | 1.25 ms   | 1.27 ms   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText).toString('latin1')             | 902.15 µs/iter (902,153) | 778.62 µs | 831.92 µs | 2.28 ms   | 2.32 ms   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText).toString('hex')                | 927.47 µs/iter (927,468) | 818.81 µs | 856.81 µs | 2.27 ms   | 2.32 ms   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText).toString('base64')             | 1.04 ms/iter (1,038,457) | 911.32 µs | 966.92 µs | 2.22 ms   | 2.3 ms    |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText).toString('utf8')               | 1.42 ms/iter (1,417,821) | 1.21 ms   | 1.31 ms   | 2.97 ms   | 3.11 ms   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText, 'utf8').toString()             | 1.42 ms/iter (1,418,029) | 1.22 ms   | 1.28 ms   | 4.44 ms   | 4.83 ms   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText).toString('base64url')          | 1.47 ms/iter (1,467,442) | 1.26 ms   | 1.34 ms   | 3.13 ms   | 3.21 ms   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText, 'ascii').toString()            | 1.62 ms/iter (1,617,709) | 1.39 ms   | 1.46 ms   | 5.04 ms   | 5.24 ms   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText, 'latin1').toString()           | 1.63 ms/iter (1,631,588) | 1.43 ms   | 1.48 ms   | 5.04 ms   | 5.48 ms   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | Buffer.from(longText, 'binary').toString()           | 1.63 ms/iter (1,634,846) | 1.43 ms   | 1.48 ms   | 5.05 ms   | 5.12 ms   |
+
+## Http
+
+### http
+| Runtime                                | Benchmark | Average                    | p75      | p99      | Min      | Max      |
+| -------------------------------------- | --------- | -------------------------- | -------- | -------- | -------- | -------- |
+| bun 0.1.5 (x64-linux)                  | http      | 81.48 µs/iter (81,477.031) | 11.23 µs | 85.21 µs | 87.29 µs | 88.29 µs |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | http      | 45.96 µs/iter (45,957.406) | 4.53 µs  | 48.57 µs | 49.27 µs | 49.54 µs |
+| node v18.7.0 (x64-linux)               | http      | 37.47 µs/iter (37,473.75)  | 4.64 µs  | 38.95 µs | 39.95 µs | 40.67 µs |
 
 ## Json
 
 ### JSON.parse('{"hello": "world"}')
 | Runtime                                | Benchmark                        | Average                  | p75       | p99       | Min       | Max       |
 | -------------------------------------- | -------------------------------- | ------------------------ | --------- | --------- | --------- | --------- |
-| bun 0.1.5 (x64-linux)                  | JSON.parse('{"hello": "world"}') | 156.67 ns/iter (156.668) | 150.97 ns | 154.46 ns | 211.6 ns  | 317.15 ns |
-| node v18.7.0 (x64-linux)               | JSON.parse('{"hello": "world"}') | 270.1 ns/iter (270.103)  | 260.11 ns | 271.83 ns | 297.7 ns  | 403.78 ns |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | JSON.parse('{"hello": "world"}') | 281.39 ns/iter (281.393) | 270.19 ns | 280.72 ns | 304.38 ns | 337.35 ns |
+| bun 0.1.5 (x64-linux)                  | JSON.parse('{"hello": "world"}') | 161.19 ns/iter (161.186) | 154.08 ns | 158.27 ns | 216.06 ns | 307.96 ns |
+| node v18.7.0 (x64-linux)               | JSON.parse('{"hello": "world"}') | 315.4 ns/iter (315.405)  | 304.66 ns | 323.58 ns | 346.04 ns | 351.92 ns |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | JSON.parse('{"hello": "world"}') | 324.5 ns/iter (324.504)  | 316.25 ns | 326.81 ns | 372.82 ns | 392.57 ns |
 
 
 ### JSON.stringify({hello: "world"})
 | Runtime                                | Benchmark                        | Average                  | p75       | p99       | Min       | Max       |
 | -------------------------------------- | -------------------------------- | ------------------------ | --------- | --------- | --------- | --------- |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | JSON.stringify({hello: "world"}) | 210.55 ns/iter (210.545) | 201.49 ns | 213.61 ns | 227.57 ns | 228.03 ns |
-| node v18.7.0 (x64-linux)               | JSON.stringify({hello: "world"}) | 221.7 ns/iter (221.699)  | 206.81 ns | 221.53 ns | 233.55 ns | 820.82 ns |
-| bun 0.1.5 (x64-linux)                  | JSON.stringify({hello: "world"}) | 382.61 ns/iter (382.612) | 358 ns    | 408.25 ns | 429.36 ns | 445.11 ns |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | JSON.stringify({hello: "world"}) | 245.06 ns/iter (245.056) | 235.86 ns | 253.53 ns | 279.33 ns | 303.93 ns |
+| node v18.7.0 (x64-linux)               | JSON.stringify({hello: "world"}) | 257.98 ns/iter (257.979) | 241.25 ns | 257.11 ns | 275.32 ns | 981.69 ns |
+| bun 0.1.5 (x64-linux)                  | JSON.stringify({hello: "world"}) | 386.53 ns/iter (386.533) | 356.99 ns | 389.19 ns | 473.3 ns  | 485.05 ns |
 
 
 ### everything
 | Runtime                                | Benchmark                        | Average                  | p75       | p99       | Min       | Max       |
 | -------------------------------------- | -------------------------------- | ------------------------ | --------- | --------- | --------- | --------- |
-| bun 0.1.5 (x64-linux)                  | JSON.parse('{"hello": "world"}') | 156.67 ns/iter (156.668) | 150.97 ns | 154.46 ns | 211.6 ns  | 317.15 ns |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | JSON.stringify({hello: "world"}) | 210.55 ns/iter (210.545) | 201.49 ns | 213.61 ns | 227.57 ns | 228.03 ns |
-| node v18.7.0 (x64-linux)               | JSON.stringify({hello: "world"}) | 221.7 ns/iter (221.699)  | 206.81 ns | 221.53 ns | 233.55 ns | 820.82 ns |
-| node v18.7.0 (x64-linux)               | JSON.parse('{"hello": "world"}') | 270.1 ns/iter (270.103)  | 260.11 ns | 271.83 ns | 297.7 ns  | 403.78 ns |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | JSON.parse('{"hello": "world"}') | 281.39 ns/iter (281.393) | 270.19 ns | 280.72 ns | 304.38 ns | 337.35 ns |
-| bun 0.1.5 (x64-linux)                  | JSON.stringify({hello: "world"}) | 382.61 ns/iter (382.612) | 358 ns    | 408.25 ns | 429.36 ns | 445.11 ns |
+| bun 0.1.5 (x64-linux)                  | JSON.parse('{"hello": "world"}') | 161.19 ns/iter (161.186) | 154.08 ns | 158.27 ns | 216.06 ns | 307.96 ns |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | JSON.stringify({hello: "world"}) | 245.06 ns/iter (245.056) | 235.86 ns | 253.53 ns | 279.33 ns | 303.93 ns |
+| node v18.7.0 (x64-linux)               | JSON.stringify({hello: "world"}) | 257.98 ns/iter (257.979) | 241.25 ns | 257.11 ns | 275.32 ns | 981.69 ns |
+| node v18.7.0 (x64-linux)               | JSON.parse('{"hello": "world"}') | 315.4 ns/iter (315.405)  | 304.66 ns | 323.58 ns | 346.04 ns | 351.92 ns |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | JSON.parse('{"hello": "world"}') | 324.5 ns/iter (324.504)  | 316.25 ns | 326.81 ns | 372.82 ns | 392.57 ns |
+| bun 0.1.5 (x64-linux)                  | JSON.stringify({hello: "world"}) | 386.53 ns/iter (386.533) | 356.99 ns | 389.19 ns | 473.3 ns  | 485.05 ns |
 
 ## Nanoid
 
 ### nanoid(36)
-| Runtime                                | Benchmark  | Average                  | p75       | p99       | Min     | Max     |
-| -------------------------------------- | ---------- | ------------------------ | --------- | --------- | ------- | ------- |
-| node v18.7.0 (x64-linux)               | nanoid(36) | 648.18 ns/iter (648.181) | 538.27 ns | 685.25 ns | 1.27 µs | 1.27 µs |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | nanoid(36) | 1.28 µs/iter (1,284.994) | 1.16 µs   | 1.31 µs   | 1.34 µs | 1.34 µs |
-| bun 0.1.5 (x64-linux)                  | nanoid(36) | 1.76 µs/iter (1,757.586) | 1.72 µs   | 1.76 µs   | 2.01 µs | 2.01 µs |
+| Runtime                                | Benchmark  | Average                  | p75       | p99       | Min       | Max       |
+| -------------------------------------- | ---------- | ------------------------ | --------- | --------- | --------- | --------- |
+| node v18.7.0 (x64-linux)               | nanoid(36) | 650.23 ns/iter (650.233) | 538.48 ns | 693.72 ns | 744.16 ns | 744.16 ns |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | nanoid(36) | 1.54 µs/iter (1,542.803) | 1.42 µs   | 1.58 µs   | 1.62 µs   | 1.62 µs   |
+| bun 0.1.5 (x64-linux)                  | nanoid(36) | 1.87 µs/iter (1,870.667) | 1.82 µs   | 1.88 µs   | 2.13 µs   | 2.13 µs   |
 
 ## Console
 
 ### console.log('hello')
-| Runtime                                | Benchmark            | Average                  | p75    | p99     | Min     | Max       |
-| -------------------------------------- | -------------------- | ------------------------ | ------ | ------- | ------- | --------- |
-| bun 0.1.5 (x64-linux)                  | console.log('hello') | 2.2 µs/iter (2,196.5)    | 2.1 µs | 2.23 µs | 2.28 µs | 2.28 µs   |
-| node v18.7.0 (x64-linux)               | console.log('hello') | 3.52 µs/iter (3,521.149) | 2.8 µs | 3.59 µs | 5.07 µs | 5.07 µs   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | console.log('hello') | 11.86 µs/iter (11,858)   | 6.4 µs | 12.2 µs | 14.4 µs | 522.12 µs |
+| Runtime                                | Benchmark            | Average                  | p75    | p99     | Min     | Max     |
+| -------------------------------------- | -------------------- | ------------------------ | ------ | ------- | ------- | ------- |
+| bun 0.1.5 (x64-linux)                  | console.log('hello') | 2.19 µs/iter (2,187.787) | 1.7 µs | 2.24 µs | 2.29 µs | 2.29 µs |
+| node v18.7.0 (x64-linux)               | console.log('hello') | 4.72 µs/iter (4,718)     | 2.6 µs | 6.7 µs  | 9.8 µs  | 5.18 ms |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | console.log('hello') | 13.89 µs/iter (13,894)   | 7.7 µs | 13.9 µs | 18.1 µs | 1.89 ms |
 
 
 ### console.log({ hello: 'object' })
-| Runtime                                | Benchmark                        | Average                  | p75     | p99     | Min     | Max      |
-| -------------------------------------- | -------------------------------- | ------------------------ | ------- | ------- | ------- | -------- |
-| bun 0.1.5 (x64-linux)                  | console.log({ hello: 'object' }) | 2.29 µs/iter (2,289.143) | 1.92 µs | 2.33 µs | 2.47 µs | 2.47 µs  |
-| node v18.7.0 (x64-linux)               | console.log({ hello: 'object' }) | 6.06 µs/iter (6,055.333) | 5.93 µs | 6.07 µs | 6.6 µs  | 6.6 µs   |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | console.log({ hello: 'object' }) | 18.16 µs/iter (18,160)   | 11.7 µs | 18.3 µs | 21.9 µs | 354.1 µs |
+| Runtime                                | Benchmark                        | Average                  | p75     | p99     | Min     | Max       |
+| -------------------------------------- | -------------------------------- | ------------------------ | ------- | ------- | ------- | --------- |
+| bun 0.1.5 (x64-linux)                  | console.log({ hello: 'object' }) | 2.37 µs/iter (2,368.408) | 1.99 µs | 2.38 µs | 4 µs    | 4 µs      |
+| node v18.7.0 (x64-linux)               | console.log({ hello: 'object' }) | 9.91 µs/iter (9,912)     | 4.6 µs  | 10 µs   | 13.6 µs | 4.12 ms   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | console.log({ hello: 'object' }) | 19.31 µs/iter (19,307)   | 12.3 µs | 19.2 µs | 25.8 µs | 534.41 µs |
 
 
 ### everything
 | Runtime                                | Benchmark                        | Average                  | p75     | p99     | Min     | Max       |
 | -------------------------------------- | -------------------------------- | ------------------------ | ------- | ------- | ------- | --------- |
-| bun 0.1.5 (x64-linux)                  | console.log('hello')             | 2.2 µs/iter (2,196.5)    | 2.1 µs  | 2.23 µs | 2.28 µs | 2.28 µs   |
-| bun 0.1.5 (x64-linux)                  | console.log({ hello: 'object' }) | 2.29 µs/iter (2,289.143) | 1.92 µs | 2.33 µs | 2.47 µs | 2.47 µs   |
-| node v18.7.0 (x64-linux)               | console.log('hello')             | 3.52 µs/iter (3,521.149) | 2.8 µs  | 3.59 µs | 5.07 µs | 5.07 µs   |
-| node v18.7.0 (x64-linux)               | console.log({ hello: 'object' }) | 6.06 µs/iter (6,055.333) | 5.93 µs | 6.07 µs | 6.6 µs  | 6.6 µs    |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | console.log('hello')             | 11.86 µs/iter (11,858)   | 6.4 µs  | 12.2 µs | 14.4 µs | 522.12 µs |
-| deno 1.24.0 (x86_64-unknown-linux-gnu) | console.log({ hello: 'object' }) | 18.16 µs/iter (18,160)   | 11.7 µs | 18.3 µs | 21.9 µs | 354.1 µs  |
+| bun 0.1.5 (x64-linux)                  | console.log('hello')             | 2.19 µs/iter (2,187.787) | 1.7 µs  | 2.24 µs | 2.29 µs | 2.29 µs   |
+| bun 0.1.5 (x64-linux)                  | console.log({ hello: 'object' }) | 2.37 µs/iter (2,368.408) | 1.99 µs | 2.38 µs | 4 µs    | 4 µs      |
+| node v18.7.0 (x64-linux)               | console.log('hello')             | 4.72 µs/iter (4,718)     | 2.6 µs  | 6.7 µs  | 9.8 µs  | 5.18 ms   |
+| node v18.7.0 (x64-linux)               | console.log({ hello: 'object' }) | 9.91 µs/iter (9,912)     | 4.6 µs  | 10 µs   | 13.6 µs | 4.12 ms   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | console.log('hello')             | 13.89 µs/iter (13,894)   | 7.7 µs  | 13.9 µs | 18.1 µs | 1.89 ms   |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | console.log({ hello: 'object' }) | 19.31 µs/iter (19,307)   | 12.3 µs | 19.2 µs | 25.8 µs | 534.41 µs |
 
