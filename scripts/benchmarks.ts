@@ -9,7 +9,7 @@ const findBenchmarks = async(folder) => {
         if (file.isDirectory() && file.name === 'servers') continue;
         
         if (file.isDirectory()) await findBenchmarks(join(folder, file.name));
-        else if (file.name === 'bun.mjs') {
+        else if (file.name === 'bun.mjs' || file.name === 'start.mjs') {
             benchmarks.push(folder);
             break;
         }

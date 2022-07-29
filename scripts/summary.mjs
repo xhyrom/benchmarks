@@ -35,28 +35,29 @@ export const save = async(output, runtime, path, keepFrom) => {
     }
 }
 
-export default async(summaries, benchmarks) => {
+export default async(summaries, benchmarks, reverse) => {
     for (const summaryName of summaries) {
         console.log(kleur.bold(true, `Summary for ${kleur.green(true, summaryName)}`));
 
         // Node & Deno
         const nodeAndDeno = [benchmarks.find(b => b.formattedName.includes('node') && b.id === summaryName), benchmarks.find(b => b.formattedName.includes('deno') && b.id === summaryName)];
-        console.log(__summary(nodeAndDeno, '(node & deno)'));
+        console.log(__summary(nodeAndDeno, '(node & deno)', reverse));
 
         // Node & Bun
         const nodeAndBun = [benchmarks.find(b => b.formattedName.includes('node') && b.id === summaryName), benchmarks.find(b => b.formattedName.includes('bun') && b.id === summaryName)];
-        console.log(__summary(nodeAndBun, '(node & bun)'));
+        console.log(__summary(nodeAndBun, '(node & bun)', reverse));
 
         // Deno & Bun
         const denoAndBun = [benchmarks.find(b => b.formattedName.includes('deno') && b.id === summaryName), benchmarks.find(b => b.formattedName.includes('bun') && b.id === summaryName)];
-        console.log(__summary(denoAndBun, '(deno & bun)'));
+        console.log(__summary(denoAndBun, '(deno & bun)', reverse));
 
         // All
-        console.log(__summary(benchmarks.filter(b => b.id === summaryName)));
+        console.log(__summary(benchmarks.filter(b => b.id === summaryName), '(deno & bun & node)', reverse));
     }
 }
 
-export function __summary(benchmarks, type = '(deno & bun & node)', { colors = true } = {}) {
+export function __summary(benchmarks, type = '(deno & bun & node)', reverse, { colors = true } = {}) {
+    // TODO: IMPLEMENT REVERSE
     benchmarks = benchmarks.filter(b => !b.error);
     benchmarks.sort((a, b) => a.stats.avg - b.stats.avg);
     const baseline = benchmarks.find(b => b.baseline) || benchmarks[0];

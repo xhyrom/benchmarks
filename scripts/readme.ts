@@ -87,7 +87,7 @@ for (const promiseBenchmark of benchmarks) {
         }
 
         for (const [key, table] of Object.entries(value)) {
-            table.sort((a, b) => sort(a, b, key === 'http'));
+            table.sort((a, b) => sort(a, b, benchmark.name === 'http'));
     
             tempTables.push(table.map(a => Object.assign([], a)));
             for (const b of table.slice(1)) b.pop();
@@ -105,7 +105,7 @@ for (const promiseBenchmark of benchmarks) {
             }
         }
         
-        flattedTablesArray.sort(sort);
+        flattedTablesArray.sort((a, b) => sort(a, b, benchmark.name === 'http'));
         for (const b of flattedTablesArray.slice(1)) b.pop();
 
         markdown += `\n${headerSize} everything\n`;
