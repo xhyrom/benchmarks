@@ -66,10 +66,10 @@ for (const promiseBenchmark of benchmarks) {
                 value.runtime,
                 b.benchmark,
                 `${!b.type ? duration(b.stats.avg) : b.stats.avg.toLocaleString('en-US')}/${b.type || 'iter'}`,
-                `${!b.type ? duration(b.stats.min) : b.stats.avg.toLocaleString('en-US')}`,
-                `${!b.type ? duration(b.stats.p75) : b.stats.avg.toLocaleString('en-US')}`,
-                `${!b.type ? duration(b.stats.p99) : b.stats.avg.toLocaleString('en-US')}`,
-                `${!b.type ? duration(b.stats.max) : b.stats.avg.toLocaleString('en-US')}`,
+                `${!b.type ? duration(b.stats.min) : b.stats.min.toLocaleString('en-US')}`,
+                `${!b.type ? duration(b.stats.p75) : b.stats.p75.toLocaleString('en-US')}`,
+                `${!b.type ? duration(b.stats.p99) : b.stats.p99.toLocaleString('en-US')}`,
+                `${!b.type ? duration(b.stats.max) : b.stats.max.toLocaleString('en-US')}`,
                 b.stats.avg
             ]);
         }
