@@ -7,7 +7,8 @@
     "bench:json": "cd benchmarks/json && bun run bench",
     "bench:buffer": "cd benchmarks/buffer && bun run bench",
     "bench:http": "cd benchmarks/http && bun run bench",
-    "bench": "bun run bench:console && bun run bench:3rd-packages && bun run bench:json && bun run bench:buffer && bun run bench:http",
+    "bench:sqlite": "cd benchmarks/sqlite && bun run bench",
+    "bench": "bun run bench:console && bun run bench:3rd-packages && bun run bench:json && bun run bench:buffer && bun run bench:http && bun run bench:sqlite",
     "generate:readme": "bun scripts/readme.ts"
   },
   "devDependencies": {

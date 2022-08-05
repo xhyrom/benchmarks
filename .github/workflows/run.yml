@@ -28,6 +28,11 @@ jobs:
         with:
           node-version: latest
 
+      - name: Install python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10' 
+
       - name: Install Bombardier
         run: |-
           wget https://github.com/codesenberg/bombardier/releases/download/v1.2.5/bombardier-linux-amd64 -O scripts/bombardier
@@ -49,9 +54,28 @@ jobs:
               
               cd benchmarks/3rd-packages/$dir
               bun install
-              cd ../../
+              cd ../../../
           done
-      
+
+          for dir in benchmarks/*/ ; do
+              dir=${dir%*/}
+              dir="${dir##*/}"
+              
+              if [ "$dir" != "3rd-packages" ]
+              then
+                cd benchmarks/$dir/
+                
+                if [ "$dir" == "sqlite" ]
+                then
+                  npm install
+                else 
+                  bun install
+                fi
+
+                cd ../../
+              fi
+          done
+
       - name: Run benchmarks
         run: bun run bench
 

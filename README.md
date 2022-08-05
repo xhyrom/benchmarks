@@ -1,17 +1,125 @@
-*Ran on Intel(R) Xeon(R) Platinum 8272CL CPU @ 2.60GHz*
+*Ran on Intel(R) Core(TM) i5-9300HF CPU @ 2.40GHz*
 
 ## Table Of Contents
 
 - Benchmarks
+   - [nanoid](#nanoid) (3rd-packages)
+   - [http](#http)
+   - [json](#json)
+   - [sqlite](#sqlite)
    - [buffer](#buffer)
      - [encode - short data](#encode---short-data)
      - [encode - long data](#encode---long-data)
      - [decode - short data](#decode---short-data)
      - [decode - long data](#decode---long-data)
-   - [http](#http)
-   - [json](#json)
-   - [nanoid](#nanoid) (3rd-packages)
    - [console](#console)
+
+## Nanoid
+
+### nanoid(36)
+| Runtime                                | Benchmark  | Average       | p75       | p99       | Min       | Max       |
+| -------------------------------------- | ---------- | ------------- | --------- | --------- | --------- | --------- |
+| node v18.7.0 (x64-linux)               | nanoid(36) | 642.7 ns/iter | 687.64 ns | 701.82 ns | 533.94 ns | 701.82 ns |
+| deno 1.24.2 (x86_64-unknown-linux-gnu) | nanoid(36) | 1.43 µs/iter  | 1.44 µs   | 1.5 µs    | 1.37 µs   | 1.5 µs    |
+| bun 0.1.6 (x64-linux)                  | nanoid(36) | 1.82 µs/iter  | 1.82 µs   | 2.04 µs   | 1.78 µs   | 2.04 µs   |
+
+## Http
+
+### http
+| Runtime                                | Benchmark | Average        | p75        | p99        | Min        | Max        |
+| -------------------------------------- | --------- | -------------- | ---------- | ---------- | ---------- | ---------- |
+| bun 0.1.6 (x64-linux)                  | http      | 82,447.811/rps | 85,814.758 | 88,145.67  | 10,195.915 | 92,204.202 |
+| deno 1.24.2 (x86_64-unknown-linux-gnu) | http      | 46,784.119/rps | 49,298.247 | 50,147.495 | 4,389.318  | 50,413.986 |
+| node v18.7.0 (x64-linux)               | http      | 39,749.446/rps | 41,062.806 | 42,067.276 | 4,642.742  | 43,001.941 |
+
+## Json
+
+### JSON.parse('{"hello": "world"}')
+| Runtime                                | Benchmark                        | Average        | p75       | p99       | Min       | Max       |
+| -------------------------------------- | -------------------------------- | -------------- | --------- | --------- | --------- | --------- |
+| bun 0.1.6 (x64-linux)                  | JSON.parse('{"hello": "world"}') | 151.54 ns/iter | 149.05 ns | 208.57 ns | 143.4 ns  | 281.11 ns |
+| node v18.7.0 (x64-linux)               | JSON.parse('{"hello": "world"}') | 306.12 ns/iter | 310.37 ns | 330.96 ns | 298.51 ns | 333.33 ns |
+| deno 1.24.2 (x86_64-unknown-linux-gnu) | JSON.parse('{"hello": "world"}') | 324.52 ns/iter | 327.16 ns | 359.26 ns | 317.7 ns  | 391.91 ns |
+
+
+### JSON.stringify({hello: "world"})
+| Runtime                                | Benchmark                        | Average        | p75       | p99       | Min       | Max       |
+| -------------------------------------- | -------------------------------- | -------------- | --------- | --------- | --------- | --------- |
+| bun 0.1.6 (x64-linux)                  | JSON.stringify({hello: "world"}) | 86.13 ns/iter  | 86.15 ns  | 127.41 ns | 70.07 ns  | 136.73 ns |
+| deno 1.24.2 (x86_64-unknown-linux-gnu) | JSON.stringify({hello: "world"}) | 239.25 ns/iter | 244.22 ns | 260.52 ns | 233.64 ns | 267.05 ns |
+| node v18.7.0 (x64-linux)               | JSON.stringify({hello: "world"}) | 252.17 ns/iter | 249.83 ns | 276.08 ns | 239.6 ns  | 938.64 ns |
+
+
+### everything
+| Runtime                                | Benchmark                        | Average        | p75       | p99       | Min       | Max       |
+| -------------------------------------- | -------------------------------- | -------------- | --------- | --------- | --------- | --------- |
+| bun 0.1.6 (x64-linux)                  | JSON.stringify({hello: "world"}) | 86.13 ns/iter  | 86.15 ns  | 127.41 ns | 70.07 ns  | 136.73 ns |
+| bun 0.1.6 (x64-linux)                  | JSON.parse('{"hello": "world"}') | 151.54 ns/iter | 149.05 ns | 208.57 ns | 143.4 ns  | 281.11 ns |
+| deno 1.24.2 (x86_64-unknown-linux-gnu) | JSON.stringify({hello: "world"}) | 239.25 ns/iter | 244.22 ns | 260.52 ns | 233.64 ns | 267.05 ns |
+| node v18.7.0 (x64-linux)               | JSON.stringify({hello: "world"}) | 252.17 ns/iter | 249.83 ns | 276.08 ns | 239.6 ns  | 938.64 ns |
+| node v18.7.0 (x64-linux)               | JSON.parse('{"hello": "world"}') | 306.12 ns/iter | 310.37 ns | 330.96 ns | 298.51 ns | 333.33 ns |
+| deno 1.24.2 (x86_64-unknown-linux-gnu) | JSON.parse('{"hello": "world"}') | 324.52 ns/iter | 327.16 ns | 359.26 ns | 317.7 ns  | 391.91 ns |
+
+## Sqlite
+
+### SELECT * FROM "Orders"
+| Runtime                                | Benchmark              | Average      | p75     | p99     | Min     | Max     |
+| -------------------------------------- | ---------------------- | ------------ | ------- | ------- | ------- | ------- |
+| bun 0.1.6 (x64-linux)                  | SELECT * FROM "Orders" | 1.38 ms/iter | 1.35 ms | 2.48 ms | 1.18 ms | 6.2 ms  |
+| node v16.16.0 (x64-linux)              | SELECT * FROM "Orders" | 3.86 ms/iter | 3.9 ms  | 4.64 ms | 3.63 ms | 5.41 ms |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | SELECT * FROM "Orders" | 9.01 ms/iter | 9.29 ms | 13 ms   | 7.98 ms | 13 ms   |
+
+
+### SELECT * FROM "Products"
+| Runtime                                | Benchmark                | Average        | p75      | p99      | Min      | Max      |
+| -------------------------------------- | ------------------------ | -------------- | -------- | -------- | -------- | -------- |
+| bun 0.1.6 (x64-linux)                  | SELECT * FROM "Products" | 80.76 µs/iter  | 83.1 µs  | 158.2 µs | 68.7 µs  | 1.73 ms  |
+| node v16.16.0 (x64-linux)              | SELECT * FROM "Products" | 245.61 µs/iter | 244.9 µs | 464.5 µs | 223.3 µs | 659.6 µs |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | SELECT * FROM "Products" | 320.13 µs/iter | 311.1 µs | 750.4 µs | 281.7 µs | 1.31 ms  |
+
+
+### SELECT * FROM "Suppliers"
+| Runtime                                | Benchmark                 | Average        | p75      | p99      | Min      | Max      |
+| -------------------------------------- | ------------------------- | -------------- | -------- | -------- | -------- | -------- |
+| bun 0.1.6 (x64-linux)                  | SELECT * FROM "Suppliers" | 47.31 µs/iter  | 53.1 µs  | 94.9 µs  | 39.6 µs  | 1.11 ms  |
+| node v16.16.0 (x64-linux)              | SELECT * FROM "Suppliers" | 126.4 µs/iter  | 120.7 µs | 259.1 µs | 114.5 µs | 620.7 µs |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | SELECT * FROM "Suppliers" | 279.39 µs/iter | 272.8 µs | 737.1 µs | 245 µs   | 1.75 ms  |
+
+
+### SELECT * FROM "Employees"
+| Runtime                                | Benchmark                 | Average        | p75      | p99      | Min     | Max     |
+| -------------------------------------- | ------------------------- | -------------- | -------- | -------- | ------- | ------- |
+| bun 0.1.6 (x64-linux)                  | SELECT * FROM "Employees" | 50.02 µs/iter  | 47.2 µs  | 119.7 µs | 33.5 µs | 4.68 ms |
+| node v16.16.0 (x64-linux)              | SELECT * FROM "Employees" | 94.86 µs/iter  | 92 µs    | 281.7 µs | 74.9 µs | 3.5 ms  |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | SELECT * FROM "Employees" | 248.81 µs/iter | 229.4 µs | 653.4 µs | 207 µs  | 4.13 ms |
+
+
+### SELECT * FROM "Customers"
+| Runtime                                | Benchmark                 | Average        | p75      | p99      | Min      | Max      |
+| -------------------------------------- | ------------------------- | -------------- | -------- | -------- | -------- | -------- |
+| bun 0.1.6 (x64-linux)                  | SELECT * FROM "Customers" | 138.43 µs/iter | 137.4 µs | 191.9 µs | 120.9 µs | 950.3 µs |
+| node v16.16.0 (x64-linux)              | SELECT * FROM "Customers" | 412.87 µs/iter | 409.8 µs | 909.8 µs | 331.9 µs | 2.64 ms  |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | SELECT * FROM "Customers" | 703.21 µs/iter | 700.2 µs | 1.16 ms  | 638.7 µs | 1.65 ms  |
+
+
+### everything
+| Runtime                                | Benchmark                 | Average        | p75      | p99      | Min      | Max      |
+| -------------------------------------- | ------------------------- | -------------- | -------- | -------- | -------- | -------- |
+| bun 0.1.6 (x64-linux)                  | SELECT * FROM "Suppliers" | 47.31 µs/iter  | 53.1 µs  | 94.9 µs  | 39.6 µs  | 1.11 ms  |
+| bun 0.1.6 (x64-linux)                  | SELECT * FROM "Employees" | 50.02 µs/iter  | 47.2 µs  | 119.7 µs | 33.5 µs  | 4.68 ms  |
+| bun 0.1.6 (x64-linux)                  | SELECT * FROM "Products"  | 80.76 µs/iter  | 83.1 µs  | 158.2 µs | 68.7 µs  | 1.73 ms  |
+| node v16.16.0 (x64-linux)              | SELECT * FROM "Employees" | 94.86 µs/iter  | 92 µs    | 281.7 µs | 74.9 µs  | 3.5 ms   |
+| node v16.16.0 (x64-linux)              | SELECT * FROM "Suppliers" | 126.4 µs/iter  | 120.7 µs | 259.1 µs | 114.5 µs | 620.7 µs |
+| bun 0.1.6 (x64-linux)                  | SELECT * FROM "Customers" | 138.43 µs/iter | 137.4 µs | 191.9 µs | 120.9 µs | 950.3 µs |
+| node v16.16.0 (x64-linux)              | SELECT * FROM "Products"  | 245.61 µs/iter | 244.9 µs | 464.5 µs | 223.3 µs | 659.6 µs |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | SELECT * FROM "Employees" | 248.81 µs/iter | 229.4 µs | 653.4 µs | 207 µs   | 4.13 ms  |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | SELECT * FROM "Suppliers" | 279.39 µs/iter | 272.8 µs | 737.1 µs | 245 µs   | 1.75 ms  |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | SELECT * FROM "Products"  | 320.13 µs/iter | 311.1 µs | 750.4 µs | 281.7 µs | 1.31 ms  |
+| node v16.16.0 (x64-linux)              | SELECT * FROM "Customers" | 412.87 µs/iter | 409.8 µs | 909.8 µs | 331.9 µs | 2.64 ms  |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | SELECT * FROM "Customers" | 703.21 µs/iter | 700.2 µs | 1.16 ms  | 638.7 µs | 1.65 ms  |
+| bun 0.1.6 (x64-linux)                  | SELECT * FROM "Orders"    | 1.38 ms/iter   | 1.35 ms  | 2.48 ms  | 1.18 ms  | 6.2 ms   |
+| node v16.16.0 (x64-linux)              | SELECT * FROM "Orders"    | 3.86 ms/iter   | 3.9 ms   | 4.64 ms  | 3.63 ms  | 5.41 ms  |
+| deno 1.24.0 (x86_64-unknown-linux-gnu) | SELECT * FROM "Orders"    | 9.01 ms/iter   | 9.29 ms  | 13 ms    | 7.98 ms  | 13 ms    |
 
 ## Buffer
 
@@ -422,52 +530,6 @@
 | deno 1.24.2 (x86_64-unknown-linux-gnu) | Buffer.from(longText, 'ascii').toString()            | 1.54 ms/iter   | 1.4 ms    | 4.68 ms   | 1.34 ms   | 4.89 ms   |
 | deno 1.24.2 (x86_64-unknown-linux-gnu) | Buffer.from(longText, 'binary').toString()           | 1.6 ms/iter    | 1.46 ms   | 4.89 ms   | 1.41 ms   | 4.93 ms   |
 | deno 1.24.2 (x86_64-unknown-linux-gnu) | Buffer.from(longText, 'latin1').toString()           | 1.61 ms/iter   | 1.45 ms   | 4.82 ms   | 1.41 ms   | 4.89 ms   |
-
-## Http
-
-### http
-| Runtime                                | Benchmark | Average        | p75        | p99        | Min        | Max        |
-| -------------------------------------- | --------- | -------------- | ---------- | ---------- | ---------- | ---------- |
-| bun 0.1.6 (x64-linux)                  | http      | 82,447.811/rps | 85,814.758 | 88,145.67  | 10,195.915 | 92,204.202 |
-| deno 1.24.2 (x86_64-unknown-linux-gnu) | http      | 46,784.119/rps | 49,298.247 | 50,147.495 | 4,389.318  | 50,413.986 |
-| node v18.7.0 (x64-linux)               | http      | 39,749.446/rps | 41,062.806 | 42,067.276 | 4,642.742  | 43,001.941 |
-
-## Json
-
-### JSON.parse('{"hello": "world"}')
-| Runtime                                | Benchmark                        | Average        | p75       | p99       | Min       | Max       |
-| -------------------------------------- | -------------------------------- | -------------- | --------- | --------- | --------- | --------- |
-| bun 0.1.6 (x64-linux)                  | JSON.parse('{"hello": "world"}') | 151.54 ns/iter | 149.05 ns | 208.57 ns | 143.4 ns  | 281.11 ns |
-| node v18.7.0 (x64-linux)               | JSON.parse('{"hello": "world"}') | 306.12 ns/iter | 310.37 ns | 330.96 ns | 298.51 ns | 333.33 ns |
-| deno 1.24.2 (x86_64-unknown-linux-gnu) | JSON.parse('{"hello": "world"}') | 324.52 ns/iter | 327.16 ns | 359.26 ns | 317.7 ns  | 391.91 ns |
-
-
-### JSON.stringify({hello: "world"})
-| Runtime                                | Benchmark                        | Average        | p75       | p99       | Min       | Max       |
-| -------------------------------------- | -------------------------------- | -------------- | --------- | --------- | --------- | --------- |
-| bun 0.1.6 (x64-linux)                  | JSON.stringify({hello: "world"}) | 86.13 ns/iter  | 86.15 ns  | 127.41 ns | 70.07 ns  | 136.73 ns |
-| deno 1.24.2 (x86_64-unknown-linux-gnu) | JSON.stringify({hello: "world"}) | 239.25 ns/iter | 244.22 ns | 260.52 ns | 233.64 ns | 267.05 ns |
-| node v18.7.0 (x64-linux)               | JSON.stringify({hello: "world"}) | 252.17 ns/iter | 249.83 ns | 276.08 ns | 239.6 ns  | 938.64 ns |
-
-
-### everything
-| Runtime                                | Benchmark                        | Average        | p75       | p99       | Min       | Max       |
-| -------------------------------------- | -------------------------------- | -------------- | --------- | --------- | --------- | --------- |
-| bun 0.1.6 (x64-linux)                  | JSON.stringify({hello: "world"}) | 86.13 ns/iter  | 86.15 ns  | 127.41 ns | 70.07 ns  | 136.73 ns |
-| bun 0.1.6 (x64-linux)                  | JSON.parse('{"hello": "world"}') | 151.54 ns/iter | 149.05 ns | 208.57 ns | 143.4 ns  | 281.11 ns |
-| deno 1.24.2 (x86_64-unknown-linux-gnu) | JSON.stringify({hello: "world"}) | 239.25 ns/iter | 244.22 ns | 260.52 ns | 233.64 ns | 267.05 ns |
-| node v18.7.0 (x64-linux)               | JSON.stringify({hello: "world"}) | 252.17 ns/iter | 249.83 ns | 276.08 ns | 239.6 ns  | 938.64 ns |
-| node v18.7.0 (x64-linux)               | JSON.parse('{"hello": "world"}') | 306.12 ns/iter | 310.37 ns | 330.96 ns | 298.51 ns | 333.33 ns |
-| deno 1.24.2 (x86_64-unknown-linux-gnu) | JSON.parse('{"hello": "world"}') | 324.52 ns/iter | 327.16 ns | 359.26 ns | 317.7 ns  | 391.91 ns |
-
-## Nanoid
-
-### nanoid(36)
-| Runtime                                | Benchmark  | Average       | p75       | p99       | Min       | Max       |
-| -------------------------------------- | ---------- | ------------- | --------- | --------- | --------- | --------- |
-| node v18.7.0 (x64-linux)               | nanoid(36) | 642.7 ns/iter | 687.64 ns | 701.82 ns | 533.94 ns | 701.82 ns |
-| deno 1.24.2 (x86_64-unknown-linux-gnu) | nanoid(36) | 1.43 µs/iter  | 1.44 µs   | 1.5 µs    | 1.37 µs   | 1.5 µs    |
-| bun 0.1.6 (x64-linux)                  | nanoid(36) | 1.82 µs/iter  | 1.82 µs   | 2.04 µs   | 1.78 µs   | 2.04 µs   |
 
 ## Console
 
