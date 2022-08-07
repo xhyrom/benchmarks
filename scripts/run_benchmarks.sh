@@ -16,8 +16,12 @@ for benchmark in scripts/.cache/benchmarks/* ; do
         content=${MAPFILE[@]}
 
         output=$( jq -r ".enviroment[] | select(.name == \"$filename\")" <<< $content)
+
+        # Command for build file into binary
         buildfilecommand=$( jq -r ".build" <<< $output )
         buildfilecommand=${buildfilecommand/'$FILE'/"$filename"}
+
+        # Command for run file
         runfilecommand=$( jq -r ".run" <<< $output)
         runfilecommand=${runfilecommand/'$FILE'/"benchmarks/$benchmark/${filename/".${extension}"/""}"}
         runfilecommand=${runfilecommand/'$EXTENSION'/".$extension"}
@@ -32,12 +36,13 @@ for benchmark in scripts/.cache/benchmarks/* ; do
         nohup $runfilecommand > /dev/null 2>&1 &
         sleep 5s
 
-        output=$( $run )
+        o=$( $run )
+        echo $o
 
         kill $!
 
         if [[ "$buildfilecommand" != "null" ]]; then
-            rm benchmarks/$benchmark/${filename/".${extension}"/""}
+            rm "benchmarks/$benchmark/${filename/".${extension}"/""}"
         fi
     done
 done
