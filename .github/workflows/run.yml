@@ -35,7 +35,7 @@ jobs:
 
       - name: Install Oha
         run: |-
-          wget https://github.com/xHyroM/oha/releases/download/latest/oha-linux-amd64 -O scripts/oha
+          wget https://github.com/xhyrom-forks/oha/releases/download/aug.0.6/oha-linux-amd64 -O scripts/oha
           chmod +x scripts/oha
           echo . >> $GITHUB_PATH
 
