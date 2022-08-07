@@ -3,13 +3,15 @@
   "type": "commonjs",
   "scripts": {
     "setup": "bun scripts/init.ts && bun scripts/setup_benchmarks.ts && bun scripts/setup_languages.ts",
-    "bench": "./scripts/run_benchmarks.sh"
+    "bench": "./scripts/run_benchmarks.sh",
+    "generate": "bun scripts/generate.ts"
   },
   "devDependencies": {
     "bun-types": "^0.1.5"
   },
   "dependencies": {
     "@paperdave/logger": "^2.0.5",
-    "bun-utilities": "^0.2.0"
+    "bun-utilities": "^0.2.0",
+    "markdown-table": "^3.0.2"
   }
 }

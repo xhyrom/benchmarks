@@ -19,7 +19,11 @@ for benchmark in scripts/.cache/benchmarks/* ; do
         mapfile < ./scripts/.cache/languages/$extension.json
         content=${MAPFILE[@]}
 
+        language=$( jq -r ".language" <<< $content)
         output=$( jq -r ".enviroment[] | select(.name == \"$filename\")" <<< $content)
+
+        runtime=$( jq -r ".runtime" <<< $output )
+        versioncommand=$( jq -r ".version" <<< $output )
 
         # Command for build file into binary
         buildfilecommand=$( jq -r ".build" <<< $output )
@@ -52,8 +56,8 @@ for benchmark in scripts/.cache/benchmarks/* ; do
             mapfile < ./scripts/.cache/tmp/tmp.json
             output="${MAPFILE[@]}"
         fi
-
-        bun ./scripts/utils.ts "save" "$output" "$benchmark" "$filename" "$tool_name"
+        
+        bun ./scripts/utils.ts "save" "$output" "$benchmark" "$filename" "$tool_name" "$language" "$versioncommand" "$runtime"
 
         if [[ "$buildfilecommand" != "null" ]]; then
             rm "benchmarks/$benchmark/${filename/".${extension}"/""}"
