@@ -2,8 +2,8 @@ import { bench, group, run } from "mitata";
 import { join } from "node:path";
 import { save } from "../../../scripts/summary.mjs";
 
-const longText = await Bun.file(join(__dirname, "..", "..", "utils", "long-text.txt")).text();
-const longTextBuffer = (await Bun.file(join(__dirname, "..", "..", "utils", "long-text-buffer.txt")).text()).split('\n');
+const longText = await Bun.file(join(__dirname, "..", "..", "..", "utils", "long-text.txt")).text();
+const longTextBuffer = (await Bun.file(join(__dirname, "..", "..", "..", "utils", "long-text-buffer.txt")).text()).split('\n');
 
 group("encode - short data", () => {
     bench("Buffer.from('hello').toString('ascii')", () => Buffer.from("hello").toString("ascii"));

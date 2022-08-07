@@ -6,7 +6,7 @@ const require = createRequire(import.meta.url);
 
 const __dirname = new URL('.', import.meta.url).pathname;
 
-const db = require("better-sqlite3")("../../utils/northwind-SQLite3/dist/northwind.db");
+const db = require("better-sqlite3")("../../../utils/northwind-SQLite3/dist/northwind.db");
 
 {
     const sql = db.prepare('SELECT * FROM "Orders"');

@@ -2,7 +2,7 @@ import { bench, run } from "../../../node_modules/mitata/src/cli.mjs";
 import { save } from "../../../scripts/summary.mjs";
 import { DB } from "https://deno.land/x/sqlite/mod.ts";
 
-const db = new DB("../../utils/northwind-SQLite3/dist/northwind.db");
+const db = new DB("../../../utils/northwind-SQLite3/dist/northwind.db");
 
 const __dirname = new URL('.', import.meta.url).pathname;
 

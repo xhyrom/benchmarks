@@ -4,8 +4,8 @@ import { join } from "https://deno.land/std@0.141.0/node/path/mod.ts";
 import { save } from "../../../scripts/summary.mjs";
 
 const __dirname = new URL('.', import.meta.url).pathname;
-const longText = await Deno.readTextFile(join(__dirname, "..", "..", "utils", "long-text.txt"));
-const longTextBuffer = (await Deno.readTextFile(join(__dirname, "..", "..", "utils", "long-text.txt"))).split('\n');
+const longText = await Deno.readTextFile(join(__dirname, "..", "..", "..", "utils", "long-text.txt"));
+const longTextBuffer = (await Deno.readTextFile(join(__dirname, "..", "..", "..", "utils", "long-text.txt"))).split('\n');
 
 group("encode - short data", () => {
     bench("Buffer.from('hello').toString('ascii')", () => Buffer.from("hello").toString("ascii"));

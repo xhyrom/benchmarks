@@ -4,8 +4,8 @@ import { join } from "path";
 import { save } from "../../../scripts/summary.mjs";
 
 const __dirname = new URL('.', import.meta.url).pathname;
-const longText = (await readFile(join(__dirname, "..", "..", "utils", "long-text.txt"))).toString();
-const longTextBuffer = (await readFile(join(__dirname, "..", "..", "utils", "long-text.txt"))).toString().split('\n');
+const longText = (await readFile(join(__dirname, "..", "..", "..", "utils", "long-text.txt"))).toString();
+const longTextBuffer = (await readFile(join(__dirname, "..", "..", "..", "utils", "long-text.txt"))).toString().split('\n');
 
 group("encode - short data", () => {
     bench("Buffer.from('hello').toString('ascii')", () => Buffer.from("hello").toString("ascii"));
