@@ -1,7 +1,7 @@
 import { readFile } from "fs/promises";
 import { bench, group, run } from "mitata";
 import { join } from "path";
-import { save } from "../../scripts/summary.mjs";
+import { save } from "../../../scripts/summary.mjs";
 
 const __dirname = new URL('.', import.meta.url).pathname;
 const longText = (await readFile(join(__dirname, "..", "..", "utils", "long-text.txt"))).toString();

@@ -1,5 +1,5 @@
 import { bench, run } from "mitata";
-import { save } from "../../scripts/summary.mjs";
+import { save } from "../../../scripts/summary.mjs";
 
 bench("JSON.parse('{\"hello\": \"world\"}')", () => JSON.parse("{\"hello\": \"world\"}"));
 bench("JSON.stringify({hello: \"world\"})", () => JSON.stringify({ hello: "world" }));

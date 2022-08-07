@@ -1,6 +1,6 @@
 import { bench, group, run } from "mitata";
 import { join } from "node:path";
-import { save } from "../../scripts/summary.mjs";
+import { save } from "../../../scripts/summary.mjs";
 
 const longText = await Bun.file(join(__dirname, "..", "..", "utils", "long-text.txt")).text();
 const longTextBuffer = (await Bun.file(join(__dirname, "..", "..", "utils", "long-text-buffer.txt")).text()).split('\n');

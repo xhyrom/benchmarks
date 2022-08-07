@@ -1,5 +1,5 @@
 import { bench, run } from "mitata";
-import { save } from "../../scripts/summary.mjs";
+import { save } from "../../../scripts/summary.mjs";
 
 bench("console.log('hello')", () => console.log("hello"));
 bench("console.log({ hello: 'object' })", () => console.log({ hello: "object" }));

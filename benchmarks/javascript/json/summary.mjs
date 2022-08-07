@@ -1,4 +1,4 @@
-import summary from "../../scripts/summary.mjs";
+import summary from "../../../scripts/summary.mjs";
 import { join } from "node:path";
 
 const outputBun = JSON.parse(await Bun.file(join(__dirname, "outputs", "bun.json")).text()).benchmarks;

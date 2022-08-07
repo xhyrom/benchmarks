@@ -1,6 +1,6 @@
 import { bench, run } from "mitata";
 import { nanoid } from "nanoid";
-import { save } from "../../../scripts/summary.mjs";
+import { save } from "../../../../scripts/summary.mjs";
 
 bench("nanoid(36)", () => nanoid(36));
 

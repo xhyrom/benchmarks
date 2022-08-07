@@ -1,7 +1,7 @@
 import { Buffer } from "https://deno.land/std@0.149.0/node/buffer.ts";
-import { bench, group, run } from "../../node_modules/mitata/src/cli.mjs";
+import { bench, group, run } from "../../../node_modules/mitata/src/cli.mjs";
 import { join } from "https://deno.land/std@0.141.0/node/path/mod.ts";
-import { save } from "../../scripts/summary.mjs";
+import { save } from "../../../scripts/summary.mjs";
 
 const __dirname = new URL('.', import.meta.url).pathname;
 const longText = await Deno.readTextFile(join(__dirname, "..", "..", "utils", "long-text.txt"));

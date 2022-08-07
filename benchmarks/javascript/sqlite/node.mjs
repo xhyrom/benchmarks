@@ -1,5 +1,5 @@
 import { bench, run } from "mitata";
-import { save } from "../../scripts/summary.mjs";
+import { save } from "../../../scripts/summary.mjs";
 import { createRequire } from "module";
 
 const require = createRequire(import.meta.url);

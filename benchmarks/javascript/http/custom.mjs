@@ -1,5 +1,5 @@
-import { benchmark, br, header, size } from '../../node_modules/mitata/reporter/table.mjs';
-import { save } from '../../scripts/summary.mjs';
+import { benchmark, br, header, size } from '../../../node_modules/mitata/reporter/table.mjs';
+import { save } from '../../../scripts/summary.mjs';
 
 const __dirname = new URL('.', import.meta.url).pathname;
 
