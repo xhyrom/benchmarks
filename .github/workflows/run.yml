@@ -48,22 +48,22 @@ jobs:
       - name: Install dependencies
         run: |
           bun install
-          for dir in benchmarks/javascript/3rd-packages/*/ ; do
+          for dir in benchmarks/3rd-packages/*/ ; do
               dir=${dir%*/}
               dir="${dir##*/}"
               
-              cd benchmarks/javascript/3rd-packages/$dir
+              cd benchmarks/3rd-packages/$dir
               bun install
-              cd ../../../../
+              cd ../../../
           done
 
-          for dir in benchmarks/javascript/*/ ; do
+          for dir in benchmarks/*/ ; do
               dir=${dir%*/}
               dir="${dir##*/}"
               
               if [ "$dir" != "3rd-packages" ]
               then
-                cd benchmarks/javascript/$dir/
+                cd benchmarks/$dir/
                 
                 if [ "$dir" == "sqlite" ]
                 then
@@ -71,8 +71,7 @@ jobs:
                 else 
                   bun install
                 fi
-
-                cd ../../../
+                cd ../../
               fi
           done
 

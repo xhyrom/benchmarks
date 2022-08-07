@@ -1,0 +1,1 @@
+{"benchmarks":[{"name":"http","group":null,"warmup":true,"baseline":false,"async":true,"stats":{"avg":120722.14007317337,"min":18927.560051958717,"max":165307.221322033,"p75":129487.468785,"p99":154983.649649,"p995":154983.649649},"type":"rps","formattedName":"[bun] http","id":"http","benchmark":"http"}],"runtime":"bun 0.1.7 (x64-linux)","language":"javascript"}
