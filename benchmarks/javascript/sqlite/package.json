@@ -6,8 +6,8 @@
     "bench:deno": "deno run -A --unstable --allow-write deno.mjs",
     "summary": "bun run summary.mjs",
     "bench": "bun run bench:bun && bun run bench:node && bun run bench:deno && bun run summary",
-    "postinstall": "cd ../../utils/northwind-SQLite3/ && make unzip timestamp=1659689066",
-    "create-db": "cd ../../utils/northwind-SQLite3/ && make build && make populate && make publish"
+    "postinstall": "cd ../../../utils/northwind-SQLite3/ && make unzip timestamp=1659689066",
+    "create-db": "cd ../../../utils/northwind-SQLite3/ && make build && make populate && make publish"
   },
   "dependencies": {
     "better-sqlite3": "^7.6.2"
