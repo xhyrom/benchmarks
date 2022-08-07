@@ -3,7 +3,7 @@
   "type": "commonjs",
   "scripts": {
     "setup": "bun scripts/init.ts && bun scripts/setup_benchmarks.ts && bun scripts/setup_languages.ts",
-    "run": "./scripts/run_benchmarks.sh"
+    "bench": "./scripts/run_benchmarks.sh"
   },
   "devDependencies": {
     "bun-types": "^0.1.5"
