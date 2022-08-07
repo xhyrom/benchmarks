@@ -8,7 +8,8 @@
     "bench:javascript:buffer": "cd benchmarks/javascript/buffer && bun run bench",
     "bench:javascript:http": "cd benchmarks/javascript/http && bun run bench",
     "bench:javascript:sqlite": "cd benchmarks/javascript/sqlite && bun run bench",
-    "bench": "bun run bench:javascript:console && bun run bench:javascript:3rd-packages && bun run bench:javascript:json && bun run bench:javascript:buffer && bun run bench:javascript:http && bun run bench:javascript:sqlite",
+    "bench:javascript": "bun run bench:javascript:console && bun run bench:javascript:3rd-packages && bun run bench:javascript:json && bun run bench:javascript:buffer && bun run bench:javascript:http && bun run bench:javascript:sqlite",
+    "bench": "bun run bench:javascript",
     "generate:readme": "bun scripts/readme.ts"
   },
   "devDependencies": {
