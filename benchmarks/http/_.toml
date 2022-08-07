@@ -1,0 +1,7 @@
+name = "http"
+
+install = "wget https://github.com/xhyrom-forks/oha/releases/download/aug.0.6/oha-linux-amd64 -O scripts/tools/oha && chmod +x scripts/tools/oha && if [ -n '$GITHUB_PATH' ]; then echo . >> $GITHUB_PATH; fi"
+
+run = "scripts/tools/oha -j -z 10s -m GET http://localhost:3000"
+
+version = "scripts/tools/oha --version"
