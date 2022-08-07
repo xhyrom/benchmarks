@@ -2,13 +2,13 @@
   "version": "1.0.0",
   "name": "benchmarks",
   "scripts": {
-    "bench:console": "cd benchmarks/console && bun run bench",
-    "bench:3rd-packages": "cd benchmarks/3rd-packages && bun run bench",
-    "bench:json": "cd benchmarks/json && bun run bench",
-    "bench:buffer": "cd benchmarks/buffer && bun run bench",
-    "bench:http": "cd benchmarks/http && bun run bench",
-    "bench:sqlite": "cd benchmarks/sqlite && bun run bench",
-    "bench": "bun run bench:console && bun run bench:3rd-packages && bun run bench:json && bun run bench:buffer && bun run bench:http && bun run bench:sqlite",
+    "bench:javascript:console": "cd benchmarks/javascript/console && bun run bench",
+    "bench:javascript:3rd-packages": "cd benchmarks/javascript/3rd-packages && bun run bench",
+    "bench:javascript:json": "cd benchmarks/javascript/json && bun run bench",
+    "bench:javascript:buffer": "cd benchmarks/javascript/buffer && bun run bench",
+    "bench:javascript:http": "cd benchmarks/javascript/http && bun run bench",
+    "bench:javascript:sqlite": "cd benchmarks/javascript/sqlite && bun run bench",
+    "bench": "bun run bench:javascript:console && bun run bench:javascript:3rd-packages && bun run bench:javascript:json && bun run bench:javascript:buffer && bun run bench:javascript:http && bun run bench:javascript:sqlite",
     "generate:readme": "bun scripts/readme.ts"
   },
   "devDependencies": {
