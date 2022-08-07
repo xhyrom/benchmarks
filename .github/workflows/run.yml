@@ -52,9 +52,9 @@ jobs:
               dir=${dir%*/}
               dir="${dir##*/}"
               
-              cd benchmarks/3rd-packages/$dir
+              cd benchmarks/javascript/3rd-packages/$dir
               bun install
-              cd ../../../
+              cd ../../../../
           done
 
           for dir in benchmarks/javascript/*/ ; do
@@ -63,7 +63,7 @@ jobs:
               
               if [ "$dir" != "3rd-packages" ]
               then
-                cd benchmarks/$dir/
+                cd benchmarks/javascript/$dir/
                 
                 if [ "$dir" == "sqlite" ]
                 then
@@ -72,7 +72,7 @@ jobs:
                   bun install
                 fi
 
-                cd ../../
+                cd ../../../
               fi
           done
 
