@@ -34,11 +34,11 @@ export const save = async(content: string, benchmark: string, name: string, tool
                 p99: tool === 'oha' ? parsed.latencyDistribution['p99'] : parsed.results[0].times[98],
             },
             language,
-            runtime: runtime ? `${runtime} ${installed(`${versionCommand} | grep -m1 "" | perl -pe '($_)=/([0-9]+([.][0-9]+)+)/'`)} (${process.arch}-${process.platform})` : null,
+            runtime: runtime !== 'null' ? `${runtime} ${installed(`${versionCommand} | grep -m1 "" | perl -pe '($_)=/([0-9]+([.][0-9]+)+)/'`)} (${process.arch}-${process.platform})` : null,
         })
     );
 }
 
 const argv = process.argv.slice(2);
 
-if (argv[0] == 'save') await save(argv[1], argv[2], argv[3], argv[4] as any, argv[5], argv[6], argv[7] || null)
+if (argv[0] == 'save') await save(argv[1], argv[2], argv[3], argv[4] as any, argv[5], argv[6], argv[7])
