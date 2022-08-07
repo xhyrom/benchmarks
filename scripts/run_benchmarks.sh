@@ -3,14 +3,18 @@ for benchmark in scripts/.cache/benchmarks/* ; do
     content="${MAPFILE[@]}"
 
     name=$( jq -r '.name' <<< "$content")
+    tool_name=$( jq -r '.tool_name' <<< "$content")
     run=$( jq -r '.run' <<< "$content")
     
     benchmark=$(basename $benchmark .json)
+    echo "Running benchmark $benchmark"
     for file in benchmarks/$benchmark/* ; do
         filename=$(basename $file)
         extension=${filename##*.}
 
         if [[ "$file" == *".toml"* || "$extension" == "main" ]]; then continue; fi
+
+        echo "file - $filename"
         
         mapfile < ./scripts/.cache/languages/$extension.json
         content=${MAPFILE[@]}
@@ -32,14 +36,24 @@ for benchmark in scripts/.cache/benchmarks/* ; do
             cd ../../
         fi
 
-        # Run in background
-        nohup $runfilecommand > /dev/null 2>&1 &
-        sleep 5s
+        if [[ "$tool_name" == "oha" ]]; then
+            # Run on background
+            nohup $runfilecommand > /dev/null 2>&1 &
+            sleep 5s
 
-        o=$( $run )
-        echo $o
+            output=$( $run )
 
-        kill $!
+            kill $!
+        else
+            # Run
+            runfilecommand=${run/'$COMMAND'/"'$runfilecommand'"}
+            bash -c "$runfilecommand"
+
+            mapfile < ./scripts/.cache/tmp/tmp.json
+            output="${MAPFILE[@]}"
+        fi
+
+        bun ./scripts/utils.ts "save" "$output" "$benchmark" "$filename" "$tool_name"
 
         if [[ "$buildfilecommand" != "null" ]]; then
             rm "benchmarks/$benchmark/${filename/".${extension}"/""}"
