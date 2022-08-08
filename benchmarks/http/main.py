@@ -8,6 +8,8 @@ class handler(BaseHTTPRequestHandler):
 
         message = "Hello, World!"
         self.wfile.write(bytes(message, "utf8"))
+    def log_message(self, format, *args):
+        return
 
 with HTTPServer(('', 3000), handler) as server:
     server.serve_forever()

@@ -2,9 +2,10 @@ for benchmark in scripts/.cache/benchmarks/* ; do
     mapfile < $benchmark
     content="${MAPFILE[@]}"
 
-    name=$( jq -r '.name' <<< "$content")
-    tool_name=$( jq -r '.tool_name' <<< "$content")
-    run=$( jq -r '.run' <<< "$content")
+    name=$( jq -r '.name' <<< $content )
+    tool_name=$( jq -r '.tool_name' <<< $content )
+    type=$( jq -r ".type" <<< $content )
+    run=$( jq -r '.run' <<< $content )
     
     benchmark=$(basename $benchmark .json)
     echo "Running benchmark $benchmark"
@@ -19,8 +20,8 @@ for benchmark in scripts/.cache/benchmarks/* ; do
         mapfile < ./scripts/.cache/languages/$extension.json
         content=${MAPFILE[@]}
 
-        language=$( jq -r ".language" <<< $content)
-        output=$( jq -r ".enviroment[] | select(.name == \"$filename\")" <<< $content)
+        language=$( jq -r ".language" <<< $content )
+        output=$( jq -r ".enviroment[] | select(.name == \"$filename\")" <<< $content )
 
         runtime=$( jq -r ".runtime" <<< $output )
         versioncommand=$( jq -r ".version" <<< $output )
@@ -40,10 +41,10 @@ for benchmark in scripts/.cache/benchmarks/* ; do
             cd ../../
         fi
 
-        if [[ "$tool_name" == "oha" ]]; then
+        if [[ "$tool_name" == "oha" || "$tool_name" == "bombardier" ]]; then
             # Run on background
             nohup $runfilecommand > /dev/null 2>&1 &
-            sleep 5s
+            sleep 10s
 
             output=$( $run )
 
@@ -57,7 +58,7 @@ for benchmark in scripts/.cache/benchmarks/* ; do
             output="${MAPFILE[@]}"
         fi
         
-        bun ./scripts/utils.ts "save" "$output" "$benchmark" "$filename" "$tool_name" "$language" "$versioncommand" "$runtime"
+        bun ./scripts/utils.ts "save" "$output" "$benchmark" "$filename" "$tool_name" "$language" "$versioncommand" "/$type" "$runtime"
 
         if [[ "$buildfilecommand" != "null" ]]; then
             rm "benchmarks/$benchmark/${filename/".${extension}"/""}"

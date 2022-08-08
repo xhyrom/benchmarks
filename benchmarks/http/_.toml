@@ -1,9 +1,21 @@
 name = "http"
 
-tool_name = "oha"
+tool_name = "bombardier"
 
-install = "wget https://github.com/xhyrom-forks/oha/releases/download/aug.0.6/oha-linux-amd64 -O scripts/tools/oha && chmod +x scripts/tools/oha"
+type = "rps"
 
-run = "scripts/tools/oha -j -z 10s -m GET http://localhost:3000"
+install = "wget https://github.com/codesenberg/bombardier/releases/download/v1.2.5/bombardier-linux-amd64 -O scripts/tools/bombardier && chmod +x scripts/tools/bombardier"
 
-version = "scripts/tools/oha --version"
+run = "scripts/tools/bombardier -p r -o j -l -c 50 -d 10s -m GET http://localhost:3000"
+
+version = "scripts/tools/bombardier --version"
+# TODO: USE OHA, WAIT FOR - https://github.com/hatoo/oha/issues/177
+#tool_name = "oha"
+
+#type = "rps"
+
+#install = "wget https://github.com/xhyrom-forks/oha/releases/download/aug.0.6/oha-linux-amd64 -O scripts/tools/oha && chmod +x scripts/tools/oha"
+
+#run = "scripts/tools/oha -j -z 10s -m GET http://localhost:3000"
+
+#version = "scripts/tools/oha --version"

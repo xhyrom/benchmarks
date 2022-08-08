@@ -4,7 +4,8 @@
   "scripts": {
     "setup": "bun scripts/init.ts && bun scripts/setup_benchmarks.ts && bun scripts/setup_languages.ts",
     "bench": "./scripts/run_benchmarks.sh",
-    "generate": "bun scripts/generate.ts"
+    "generate": "bun scripts/generate.ts",
+    "all": "bun run setup && bun run bench && bun run generate"
   },
   "devDependencies": {
     "bun-types": "^0.1.5"
