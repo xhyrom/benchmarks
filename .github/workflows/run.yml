@@ -24,8 +24,6 @@ jobs:
       - name: Run setup
         run: PROFILE=$GITHUB_PATH bun run setup
 
-      - run: $HOME/.deno/bin/deno && cat $GITHUB_PATH
-
       - name: Run benchmarks
         run: bun run bench
 
