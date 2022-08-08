@@ -22,7 +22,7 @@ jobs:
         run: bun install
 
       - name: Run setup
-        run: bun run setup
+        run: PROFILE=$GITHUB_PATH bun run setup
 
       - name: Run benchmarks
         run: bun run bench
