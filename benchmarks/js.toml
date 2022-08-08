@@ -2,7 +2,7 @@ language = "JavaScript"
 ext = "mjs"
 
 enviroment = [
-  { name = "main.bun.mjs", runtime = "bun", install = "curl https://bun.sh/install | bash && echo 'export PATH=$HOME/.bun/bin:$PATH' >> $PROFILE && echo '$HOME/.bun/bin:$PATH' >> $PROFILE", run = "bun $FILE$EXTENSION", version = "bun -v" },
-  { name = "main.deno.mjs", runtime = "deno", install = "curl -fsSL https://deno.land/install.sh | bash && echo 'export PATH=$HOME/.deno/bin:$PATH' >> $PROFILE && echo '$HOME/.deno/bin:$PATH' >> $PROFILE", run = "deno run --allow-net $FILE$EXTENSION", version = "deno --version" },
+  { name = "main.bun.mjs", runtime = "bun", install = "curl https://bun.sh/install | bash && echo 'export PATH=$HOME/.bun/bin:$PATH' >> $PROFILE && echo '$HOME/.bun/bin' >> $PROFILE", run = "bun $FILE$EXTENSION", version = "bun -v" },
+  { name = "main.deno.mjs", runtime = "deno", install = "curl -fsSL https://deno.land/install.sh | bash && echo 'export PATH=$HOME/.deno/bin:$PATH' >> $PROFILE && echo '$HOME/.deno/bin' >> $PROFILE", run = "deno run --allow-net $FILE$EXTENSION", version = "deno --version" },
   { name = "main.node.mjs", runtime = "node", install = "curl -sL https://deb.nodesource.com/setup_current.x | bash", run = "node $FILE$EXTENSION", version = "node --version" }
 ]
