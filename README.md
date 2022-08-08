@@ -1,4 +1,4 @@
-*Ran on Intel(R) Xeon(R) Platinum 8272CL CPU @ 2.60GHz*
+*Ran on Intel(R) Xeon(R) Platinum 8171M CPU @ 2.60GHz*
 
 ## Table Of Contents
 
@@ -19,65 +19,65 @@
 ## http
 ### <a name="http-go">Go</a>
 
-| Language | Average      | p75      | p99       | Min       | Max       | Latency   |
-| -------- | ------------ | -------- | --------- | --------- | --------- | --------- |
-| Go       | 60,213.5/rps | 3,991.66 | 66,485.64 | 62,830.65 | 66,079.95 | 829.02 ns |
+| Language | Average       | p75      | p99      | Min       | Max      | Latency   |
+| -------- | ------------- | -------- | -------- | --------- | -------- | --------- |
+| Go       | 57,451.59/rps | 6,705.74 | 70,189.4 | 61,670.53 | 68,370.5 | 868.83 ns |
 
 ### <a name="http-ruby">Ruby</a>
 
 | Language | Average       | p75    | p99       | Min       | Max       | Latency |
 | -------- | ------------- | ------ | --------- | --------- | --------- | ------- |
-| Ruby     | 12,498.59/rps | 773.37 | 14,608.45 | 13,016.96 | 14,061.02 | 4 µs    |
+| Ruby     | 11,356.06/rps | 882.03 | 13,839.72 | 11,924.86 | 13,277.63 | 4.4 µs  |
 
 ### <a name="http-javascript">JavaScript</a>
 
-| Language                              | Average       | p75       | p99        | Min       | Max       | Latency   |
-| ------------------------------------- | ------------- | --------- | ---------- | --------- | --------- | --------- |
-| JavaScript / bun 0.1.7 (x64-linux)    | 86,526.54/rps | 10,337.23 | 101,050.19 | 89,632.05 | 91,591.55 | 575.74 ns |
-| JavaScript / node 16.16.0 (x64-linux) | 41,202.58/rps | 5,494.78  | 44,493.51  | 42,732.85 | 43,577.83 | 1.21 µs   |
-| JavaScript / deno null (x64-linux)    | 21,722.12/rps | 1,364.76  | 25,484.24  | 22,644.42 | 24,284.29 | 2.3 µs    |
+| Language                              | Average       | p75       | p99       | Min       | Max       | Latency   |
+| ------------------------------------- | ------------- | --------- | --------- | --------- | --------- | --------- |
+| JavaScript / bun 0.1.7 (x64-linux)    | 83,503.44/rps | 12,707.98 | 98,027.19 | 88,922.24 | 95,814.88 | 596.55 ns |
+| JavaScript / node 16.16.0 (x64-linux) | 37,775.53/rps | 5,649.17  | 44,253.42 | 39,981.28 | 43,431.63 | 1.32 µs   |
+| JavaScript / deno null (x64-linux)    | 20,465.06/rps | 1,401.96  | 23,994.3  | 21,349.62 | 23,452.28 | 2.44 µs   |
 
 ### <a name="http-crystal">Crystal</a>
 
-| Language | Average       | p75      | p99       | Min       | Max       | Latency   |
-| -------- | ------------- | -------- | --------- | --------- | --------- | --------- |
-| Crystal  | 80,960.39/rps | 3,188.09 | 94,053.73 | 82,857.15 | 84,319.33 | 616.34 ns |
+| Language | Average       | p75     | p99       | Min       | Max       | Latency   |
+| -------- | ------------- | ------- | --------- | --------- | --------- | --------- |
+| Crystal  | 71,654.59/rps | 5,055.5 | 79,349.72 | 74,762.64 | 78,601.74 | 696.06 ns |
 
 ### <a name="http-python">Python</a>
 
-| Language | Average      | p75    | p99      | Min      | Max      | Latency |
-| -------- | ------------ | ------ | -------- | -------- | -------- | ------- |
-| Python   | 5,855.68/rps | 644.19 | 6,922.82 | 6,365.98 | 6,725.22 | 8.87 µs |
+| Language | Average      | p75    | p99      | Min      | Max      | Latency  |
+| -------- | ------------ | ------ | -------- | -------- | -------- | -------- |
+| Python   | 5,182.26/rps | 680.88 | 6,856.17 | 5,709.52 | 6,396.62 | 10.12 µs |
 
 ## console
 ### <a name="console-go">Go</a>
 
-| Language | Average      | p75  | p99     | Min     | Max     |
-| -------- | ------------ | ---- | ------- | ------- | ------- |
-| Go       | 1.26/iter ps | 1 ps | 2.23 ps | 1.25 ps | 1.17 ps |
+| Language | Average      | p75     | p99     | Min     | Max    |
+| -------- | ------------ | ------- | ------- | ------- | ------ |
+| Go       | 1.32/iter ps | 0.79 ps | 2.72 ps | 1.32 ps | 1.2 ps |
 
 ### <a name="console-ruby">Ruby</a>
 
-| Language | Average       | p75      | p99      | Min      | Max      |
-| -------- | ------------- | -------- | -------- | -------- | -------- |
-| Ruby     | 56.55/iter ps | 55.45 ps | 59.87 ps | 56.52 ps | 56.54 ps |
+| Language | Average       | p75      | p99     | Min      | Max      |
+| -------- | ------------- | -------- | ------- | -------- | -------- |
+| Ruby     | 60.79/iter ps | 53.87 ps | 67.2 ps | 63.45 ps | 60.63 ps |
 
 ### <a name="console-javascript">JavaScript</a>
 
 | Language                              | Average       | p75      | p99      | Min      | Max      |
 | ------------------------------------- | ------------- | -------- | -------- | -------- | -------- |
-| JavaScript / bun 0.1.7 (x64-linux)    | 15.2/iter ps  | 14.03 ps | 22.55 ps | 15.87 ps | 15.81 ps |
-| JavaScript / node 16.16.0 (x64-linux) | 41.53/iter ps | 39.82 ps | 46.32 ps | 42.05 ps | 40.51 ps |
+| JavaScript / bun 0.1.7 (x64-linux)    | 15.98/iter ps | 13.76 ps | 19.02 ps | 15.49 ps | 15.64 ps |
+| JavaScript / node 16.16.0 (x64-linux) | 43.43/iter ps | 38.46 ps | 52.08 ps | 39.9 ps  | 41.17 ps |
 
 ### <a name="console-crystal">Crystal</a>
 
-| Language | Average      | p75     | p99    | Min    | Max     |
-| -------- | ------------ | ------- | ------ | ------ | ------- |
-| Crystal  | 2.15/iter ps | 1.94 ps | 2.7 ps | 2.7 ps | 2.08 ps |
+| Language | Average      | p75     | p99     | Min     | Max     |
+| -------- | ------------ | ------- | ------- | ------- | ------- |
+| Crystal  | 2.46/iter ps | 1.88 ps | 4.35 ps | 2.45 ps | 2.33 ps |
 
 ### <a name="console-python">Python</a>
 
 | Language | Average       | p75      | p99      | Min      | Max      |
 | -------- | ------------- | -------- | -------- | -------- | -------- |
-| Python   | 19.37/iter ps | 18.87 ps | 22.52 ps | 19.07 ps | 19.25 ps |
+| Python   | 20.42/iter ps | 17.62 ps | 29.85 ps | 18.58 ps | 18.23 ps |
 
