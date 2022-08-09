@@ -83,7 +83,12 @@ export const save = async(
     runtime?: string
 ): Promise<void> => {
     const parsed = JSON.parse(content);
-    try { mkdirSync(join(import.meta.dir, '.cache', 'outputs', ...benchmark.split('/'))) } catch {};
+
+    let path = join(import.meta.dir, '.cache', 'outputs');
+    for (const benchPath of benchmark.split('/')) {
+        path = join(path, benchPath);
+        try { mkdirSync(path) } catch {};
+    }
 
     let output = '';
 
