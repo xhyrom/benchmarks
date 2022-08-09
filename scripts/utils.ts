@@ -1,6 +1,6 @@
 import { spawn } from 'bun-utilities/spawn';
 import { mkdirSync } from 'fs';
-import { join } from 'path';
+import { join, parse } from 'path';
 
 export const runCommand = (command: string): string => {
     const run = spawn('bash', ['-c', command]);
@@ -84,6 +84,7 @@ export const save = async(
 ): Promise<void> => {
     const parsed = JSON.parse(content);
     try { mkdirSync(join(import.meta.dir, '.cache', 'outputs', benchmark)) } catch {};
+    try { mkdirSync(join(import.meta.dir, '.cache', 'outputs', benchmark, parse(name).dir)) } catch {};
 
     let output = '';
 
