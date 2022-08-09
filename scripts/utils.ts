@@ -38,6 +38,7 @@ export const save = async(
 
     switch (tool) {
         case 'oha': {
+            // Must wait for https://github.com/hatoo/oha/issues/177
             output = JSON.stringify({
                 stats: {
                     avg: parsed.summary.average,
@@ -74,11 +75,11 @@ export const save = async(
         case 'hyperfine': {
             output = JSON.stringify({
                 stats: {
-                    avg: parsed.results[0].mean,
-                    min: parsed.results[0].min,
-                    max: parsed.results[0].max,
-                    p75: parsed.results[0].times[74],
-                    p99: parsed.results[0].times[98],
+                    avg: parsed.results[0].mean * 1000000000,
+                    min: parsed.results[0].min * 1000000000,
+                    max: parsed.results[0].max * 1000000000,
+                    p75: parsed.results[0].times[74] * 1000000000,
+                    p99: parsed.results[0].times[98] * 1000000000,
                     latency: null,
                 },
                 language,
