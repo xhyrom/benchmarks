@@ -26,12 +26,9 @@ jobs:
       - name: Run setup
         run: bun run setup
 
-      - run: cat $GITHUB_PATH && ls $HOME && echo $PROFILE && cat $PROFILE
-
       - name: Run benchmarks
         run: |
           source $PROFILE
-          echo $PROFILE && ls -l -a -h $HOME/ && cat $PROFILE
           bun run bench
 
       - name: Generate README
