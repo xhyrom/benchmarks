@@ -19,6 +19,57 @@ export const installed = (command: string): string | null => {
     return run.split('\n')[0];
 }
 
+export const toObject = (array: any[]): Record<string, any[]> => {
+    return array.reduce((result, item) => {
+        const key = Object.keys(item)[0];
+        result[key] = item[key];
+        return result;
+    }, {});
+}
+
+export const getCPU = () => {
+    if (process.platform === 'linux') {
+        return runCommand(`lscpu | grep 'Model name' | cut -f 2 -d ":" | awk '{$1=$1}1'`).replace(/\n|\r/g, '');
+    }
+
+    if (process.platform === 'darwin') {
+        return runCommand("sysctl -n machdep.cpu.brand_string'").replace(/\n|\r/g, '');
+    }
+
+    return 'unknown';
+}
+
+export const format = (time: number, tool: Tool, type?: NumberType | '', locale = 'en-us') => {
+    type = type || '';
+    
+    if (tool === 'hyperfine') {
+        if (time < 1e0) return `${Number((time * 1e3).toFixed(2)).toLocaleString(locale)}${type} ps`
+  
+        if (time < 1e3) return `${Number(time.toFixed(2)).toLocaleString(locale)}${type} ns`;
+        if (time < 1e6) return `${Number((time / 1e3).toFixed(2)).toLocaleString(locale)}${type} µs`;
+        if (time < 1e9) return `${Number((time / 1e6).toFixed(2)).toLocaleString(locale)}${type} ms`;
+        if (time < 1e12) return `${Number((time / 1e9).toFixed(2)).toLocaleString(locale)}${type} s`;
+        if (time < 36e11) return `${Number((time / 60e9).toFixed(2)).toLocaleString(locale)}${type} m`;
+      
+        return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
+    }
+    
+    return `${Number(time.toFixed(2)).toLocaleString(locale)}${type}`;
+}
+
+export const sort = (a: any[], b: any[]) => {
+    const reverse = ['bombardier', 'oha'].some(t => a.find(e => e === t))
+    if (reverse) {
+        if (a.at(-1) > b.at(-1)) return -1;
+        if (a.at(-1) < b.at(-1)) return 1;    
+    }
+
+    if (a.at(-1) > b.at(-1)) return 1;
+    if (a.at(-1) < b.at(-1)) return -1;
+  
+    return 0;
+}
+
 export type Tool = 'oha' | 'bombardier' | 'hyperfine';
 export type NumberType = '/iter' | '/rps';
 export const save = async(

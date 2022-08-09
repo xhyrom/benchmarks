@@ -5,6 +5,7 @@ function run_benchmark {
     benchmark=$3
     type=$4
     run=$5
+    group=$6
 
     filename=$(basename $file)
     extension=${filename##*.}
@@ -28,13 +29,14 @@ function run_benchmark {
 
     # Command for run file
     runfilecommand=$( jq -r ".run" <<< $output)
-    runfilecommand=${runfilecommand/'$FILE'/"benchmarks/$benchmark/${filename/".${extension}"/""}"}
+    runfilecommand=${runfilecommand/'$FILE'/"${file/".${extension}"/""}"}
     runfilecommand=${runfilecommand/'$EXTENSION'/".$extension"}
     
     if [[ "$buildfilecommand" != "null" ]]; then
-        cd "benchmarks/$benchmark"
+        current=$( pwd )
+        cd "${file/$filename/""}"
         $buildfilecommand
-        cd ../../
+        cd $current
     fi
 
     if [[ "$tool_name" == "oha" || "$tool_name" == "bombardier" ]]; then
@@ -54,10 +56,11 @@ function run_benchmark {
         output="${MAPFILE[@]}"
     fi
     
-    bun ./scripts/utils.ts "save" "$output" "$benchmark" "$filename" "$tool_name" "$language" "$versioncommand" "/$type" "$runtime"
+
+    bun ./scripts/utils.ts "save" "$output" "$benchmark$group" "$filename" "$tool_name" "$language" "$versioncommand" "/$type" "$runtime"
 
     if [[ "$buildfilecommand" != "null" ]]; then
-        rm "benchmarks/$benchmark/${filename/".${extension}"/""}"
+        rm "${file/".${extension}"/""}"
     fi
 }
 
@@ -65,13 +68,20 @@ for benchmark in scripts/.cache/benchmarks/* ; do
     mapfile < $benchmark
     content="${MAPFILE[@]}"
 
+    groups=$( jq -r '.groups' <<< $content )
     tool_name=$( jq -r '.tool_name' <<< $content )
     type=$( jq -r ".type" <<< $content )
     run=$( jq -r '.run' <<< $content )
-    
+
     benchmark=$(basename $benchmark .json)
     echo "Running benchmark $benchmark"
-    for file in benchmarks/$benchmark/* ; do
-        run_benchmark "$file" "$tool_name" "$benchmark" "$type" "$run"
+    for fileOrFolder in benchmarks/$benchmark/* ; do
+        if [[ -d "$fileOrFolder" ]]; then
+            for file in $fileOrFolder/*; do
+                run_benchmark "$file" "$tool_name" "$benchmark" "$type" "$run" "/${fileOrFolder/"benchmarks/$benchmark/"/""}"
+            done
+        else
+            run_benchmark "$fileOrFolder" "$tool_name" "$benchmark" "$type" "$run"
+        fi
     done
 done

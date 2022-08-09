@@ -1,7 +1,7 @@
 import { installed, runCommand } from './utils';
 //import log, { setLevel } from '@paperdave/logger';
 import { readdirSync } from 'fs';
-import { join } from 'path';
+import { join, dirname } from 'path';
 
 //setLevel('debug');
 
@@ -19,7 +19,10 @@ const getBenchmarks = async(folder: string = join(import.meta.dir, '..', 'benchm
 await getBenchmarks();
 
 for (const benchmark of benchmarks) {
+    const groups = readdirSync(dirname(benchmark), { withFileTypes: true }).filter(f => f.isDirectory()).map(f => f.name);
+
     const content = (await import(benchmark)).default;
+    content.groups = groups;
     await Bun.write(join(import.meta.dir, '.cache', 'benchmarks', `${content.name}.json`), JSON.stringify(content));
     
     const installCheck = installed(content.version);
