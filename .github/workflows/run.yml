@@ -5,6 +5,8 @@ on:
     - cron: 0 0 * * *
   push:
   workflow_dispatch:
+env:
+  PROFILE: /tmp/.benchmarksprofile
 
 jobs:
   run:
@@ -22,12 +24,15 @@ jobs:
         run: bun install
 
       - name: Run setup
-        run: PROFILE=$GITHUB_PATH bun run setup
+        run: bun run setup
 
-      - run: cat $GITHUB_PATH && ls -a
+      - run: cat $GITHUB_PATH && ls $HOME && echo $PROFILE && cat $PROFILE
 
       - name: Run benchmarks
-        run: bun run bench
+        run: |
+          source $PROFILE
+          echo $PROFILE && ls -l -a -h $HOME/ && cat $PROFILE
+          bun run bench
 
       - name: Generate README
         run: bun run generate
