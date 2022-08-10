@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdint.h>
 
-uint64_t fibo(register uint64_t n) {
+uint64_t fibo(uint64_t n) {
     if (n <= 1) {
         return n;
     }
