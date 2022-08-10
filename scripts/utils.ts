@@ -119,7 +119,7 @@ export const save = async(
                     max: parsed.result.rps.max,
                     p75: parsed.result.rps.percentiles['75'],
                     p99: parsed.result.rps.percentiles['99'],
-                    latency: parsed.result.latency.mean,
+                    latency: parsed.result.latency.mean * 1000,
                 },
                 language,
                 tool,
