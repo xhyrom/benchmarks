@@ -8,7 +8,7 @@
     "all": "bun run setup && bun run bench && bun run generate"
   },
   "devDependencies": {
-    "bun-types": "^0.1.5"
+    "bun-types": "^0.1.8"
   },
   "dependencies": {
     "bun-utilities": "^0.2.1",
