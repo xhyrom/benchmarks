@@ -115,7 +115,6 @@ out
 # Nuxt.js build / generate output
 
 .nuxt
-dist
 
 # Gatsby files
 
@@ -169,4 +168,5 @@ dist
 .pnp.\*
 
 # My
-tools/
+tools/bombardier
+tools/oha

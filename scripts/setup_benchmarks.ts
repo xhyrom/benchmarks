@@ -1,9 +1,9 @@
 import { installed, runCommand } from './utils';
-//import log, { setLevel } from '@paperdave/logger';
+import log, { setLevel } from './tools/paperdave-logger';
 import { readdirSync } from 'fs';
 import { join, dirname } from 'path';
 
-//setLevel('debug');
+setLevel('debug');
 
 const benchmarks = [];
 const getBenchmarks = async(folder: string = join(import.meta.dir, '..', 'benchmarks')) => {
@@ -27,14 +27,14 @@ for (const benchmark of benchmarks) {
     
     const installCheck = installed(content.version);
     if (installCheck) {
-        console.info(`Skipping install step for ${content.name}`);
-        console.info(`Founded version: ${installCheck}`);
+        log.info(`Skipping install step for ${content.name}`);
+        log.info(`Founded version: ${installCheck}`);
     } else {
-        console.info(`Installing tools for ${content.name}`);
-        console.debug(runCommand(content.install));
+        log.info(`Installing tools for ${content.name}`);
+        log.debug(runCommand(content.install));
 
         const output = installed(content.version);
-        if (!output) console.error(`Failed to install tools for ${content.name}`);
-        else console.log(`Installed tools for ${content.name}, ${output}`);
+        if (!output) log.fail(`Failed to install tools for ${content.name}`);
+        else log.success(`Installed tools for ${content.name}, ${output}`);
     }
 }
