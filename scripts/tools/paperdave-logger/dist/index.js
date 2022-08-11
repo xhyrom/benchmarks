@@ -77,7 +77,6 @@ __export(log_exports, {
   writeLine: () => writeLine
 });
 import wrapAnsi2 from "wrap-ansi";
-import { writeSync as writeSync2 } from "fs";
 
 // src/ansi.ts
 import supportsColor from "supports-color";
@@ -364,7 +363,6 @@ var logSymbols = isUnicodeSupported ? {
 };
 
 // src/widget.ts
-import { writeSync } from "fs";
 var widgets = [];
 var widgetLineCount = 0;
 var widgetTimer;
@@ -378,7 +376,7 @@ var _LogWidget = class {
     widgets.push(this);
     if (!widgetTimer) {
       widgetTimer = setInterval(redrawWidgets, 1e3 / 60);
-      writeSync(STDOUT, ansi.hide);
+      console.log(ansi.hide);
     }
   }
   remove(finalMessage) {
@@ -388,12 +386,12 @@ var _LogWidget = class {
     }
     clearWidgets();
     if (finalMessage) {
-      writeSync(STDOUT, finalMessage + "\n");
+      console.log(finalMessage);
     }
     if (widgets.length === 0) {
       clearInterval(widgetTimer);
       widgetTimer = void 0;
-      writeSync(STDOUT, ansi.show);
+      console.log(ansi.show);
     } else {
       redrawWidgets();
     }
@@ -443,9 +441,8 @@ _text = new WeakMap();
 _newlines = new WeakMap();
 function clearWidgets() {
   if (widgetLineCount) {
-    writeSync(
-      STDOUT,
-      ansi.clearLine + (ansi.up(1) + ansi.clearLine).repeat(widgetLineCount) + "\r"
+    console.log(
+      ansi.clearLine + (ansi.up(1) + ansi.clearLine).repeat(widgetLineCount)
     );
     widgetLineCount = 0;
   }
@@ -458,7 +455,7 @@ function redrawWidgets() {
   const hasUpdate = widgets.filter((widget) => widget["__internalUpdate"](now)).length > 0;
   if (hasUpdate || widgetLineCount === 0) {
     clearWidgets();
-    writeSync(STDOUT, widgets.map((widget) => widget["__internalGetText"]()).join(""));
+    console.log(widgets.map((widget) => widget["__internalGetText"]()).join(""));
   }
 }
 
@@ -466,11 +463,11 @@ function redrawWidgets() {
 function log(prefix, content) {
   clearWidgets();
   if (content === "") {
-    writeSync2(STDOUT, "\n");
+    console.log("");
     return;
   }
   const wrapped = wrapAnsi2(content, 90 - PREFIX_LENGTH, wrapOptions).replace(/\n\s*/g, "\n" + " ".repeat(PREFIX_LENGTH));
-  writeSync2(STDOUT, prefix + wrapped + "\n");
+  console.log(STDOUT, prefix + wrapped);
   redrawWidgets();
 }
 function info(...data) {
@@ -504,15 +501,14 @@ function success(...data) {
     const str = stringify(...data);
     clearWidgets();
     if (str === "") {
-      writeSync2(0, "\n");
+      console.log("");
     } else {
-      writeSync2(
-        0,
+      console.log(
         wrapAnsi2(
           colorize(ansi.green + ansi.bold, logSymbols.success + " " + str),
           90,
           wrapOptions
-        ) + "\n"
+        )
       );
     }
     redrawWidgets();
@@ -523,15 +519,14 @@ function fail(...data) {
     const str = stringify(...data);
     clearWidgets();
     if (str === "") {
-      writeSync2(0, "\n");
+      console.log("");
     } else {
-      writeSync2(
-        0,
+      console.log(
         data.length === 1 && data[0] instanceof Error ? formatErrorObj(data[0], true) : wrapAnsi2(
           colorize(ansi.red + ansi.bold, logSymbols.error + " " + stringify(...data)),
           90,
           wrapOptions
-        ) + "\n"
+        )
       );
     }
     redrawWidgets();
@@ -540,7 +535,7 @@ function fail(...data) {
 function writeLine(data) {
   if (level > 0 /* Silent */) {
     clearWidgets();
-    writeSync2(STDOUT, data + "\n");
+    console.log(data);
     redrawWidgets();
   }
 }
