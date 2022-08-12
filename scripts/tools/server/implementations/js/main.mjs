@@ -25,9 +25,9 @@ export const output = async() => {
     }).catch(() => {});
 
     const content = await res.json();
-    if (typeof Bun !== 'undefined') Bun.write('./scripts/.cache/tmp/tmp.json', JSON.stringify(content));
-    else if (typeof Deno !== 'undefined') Deno.writeTextFile('./scripts/.cache/tmp/tmp.json', JSON.stringify(content));
-    else (await import('fs')).writeFileSync('./scripts/.cache/tmp/tmp.json', JSON.stringify(content));
+    if (typeof Bun !== 'undefined') await Bun.write('./scripts/.cache/tmp/tmp.json', JSON.stringify(content));
+    else if (typeof Deno !== 'undefined') await Deno.writeTextFile('./scripts/.cache/tmp/tmp.json', JSON.stringify(content));
+    else await (await import('fs')).writeFileSync('./scripts/.cache/tmp/tmp.json', JSON.stringify(content));
 }
 
 export const time = () => {
