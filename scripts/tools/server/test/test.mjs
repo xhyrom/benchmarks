@@ -1,7 +1,7 @@
-import { bench, output } from "../implementations/js/index.mjs";
+import { bench, output } from "../implementations/js/main.mjs";
 
-bench(() => {
-    Buffer.from("test").toString("base64")
-})
+await bench(() => {
+    Buffer.from("SGVsbG8sIFdvcmxkIQ==", "base64").toString();
+});
 
-console.log(output())
+await output();
