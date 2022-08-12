@@ -22,7 +22,7 @@ get "/bench" do |env|
   end
 
   n = benchmarks.size
-  avg = 0
+  avg = 0_i128
   benchmarks = benchmarks.sort { |x, y| x.diff <=> y.diff }
   benchmarks.each { |x| avg += x.diff }
   avg = avg / benchmarks.size
@@ -30,9 +30,11 @@ get "/bench" do |env|
   p75 = benchmarks[(n * (75 / 100)).ceil().to_i - 1].diff
   p99 = benchmarks[(n * (99 / 100)).ceil().to_i - 1].diff
 
-  env.response.print({"min": benchmarks[0].diff, "max": benchmarks[benchmarks.size - 1].diff, "avg": avg, "p75": p75, "p99": p99}.to_json)
+  {"min": benchmarks[0].diff, "max": benchmarks[benchmarks.size - 1].diff, "avg": avg, "p75": p75, "p99": p99}.to_json
+end
 
-  benchmarks.clear
+delete "/bench" do
+  exit 0
 end
 
 Kemal.config.port = 3001

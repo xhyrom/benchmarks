@@ -10,6 +10,10 @@ def send(start, end):
 
 def output():
     r = requests.get(url = BASE_URL)
+    try:
+        requests.delete(url = BASE_URL)
+    except:
+        pass
 
     print(r.json())
 

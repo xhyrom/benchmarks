@@ -49,7 +49,7 @@ function run_benchmark {
         kill $!
     else
         # Run
-        runfilecommand=${run/'$COMMAND'/"'$runfilecommand'"}
+        runfilecommand=${run/'$COMMAND'/"$runfilecommand"}
         bash -c "$runfilecommand"
 
         mapfile < ./scripts/.cache/tmp/tmp.json

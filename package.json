@@ -2,7 +2,10 @@
   "name": "benchmarks",
   "type": "module",
   "scripts": {
-    "setup": "bun scripts/init.ts && bun scripts/setup_benchmarks.ts && bun scripts/setup_languages.ts",
+    "setup": "bun run setup:init && bun run setup:languages && bun run setup:benchmarks",
+    "setup:init": "bun scripts/init.ts",
+    "setup:languages": "bun scripts/setup_languages.ts",
+    "setup:benchmarks": "bun scripts/setup_benchmarks.ts",
     "bench": "./scripts/run_benchmarks.sh",
     "generate": "bun scripts/generate.ts",
     "all": "bun run setup && bun run bench && bun run generate"
@@ -11,6 +14,7 @@
     "bun-types": "^0.1.8"
   },
   "dependencies": {
+    "better-sqlite3": "^7.6.2",
     "bun-utilities": "^0.2.1",
     "markdown-table": "^3.0.2"
   }

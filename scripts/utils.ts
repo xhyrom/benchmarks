@@ -42,7 +42,7 @@ export const getCPU = () => {
 export const format = (time: number, tool: Tool, type?: NumberType | '', locale = 'en-us') => {
     type = type || '';
     
-    if (tool === 'hyperfine') {
+    if (!['oha', 'bombardier'].some(t => tool === t)) {
         if (time < 1e0) return `${Number((time * 1e3).toFixed(2)).toLocaleString(locale)}${type} ps`
   
         if (time < 1e3) return `${Number(time.toFixed(2)).toLocaleString(locale)}${type} ns`;
@@ -70,7 +70,7 @@ export const sort = (a: any[], b: any[]) => {
     return 0;
 }
 
-export type Tool = 'oha' | 'bombardier' | 'hyperfine';
+export type Tool = 'oha' | 'bombardier' | 'hyperfine' | 'server';
 export type NumberType = '/iter' | '/rps';
 export const save = async(
     content: string,
@@ -136,6 +136,19 @@ export const save = async(
                     max: parsed.results[0].max * 1000000000,
                     p75: parsed.results[0].times[74] * 1000000000,
                     p99: parsed.results[0].times[98] * 1000000000,
+                    latency: null,
+                },
+                language,
+                tool,
+                type,
+                runtime: runtime !== 'null' ? `${runtime} ${installed(`${versionCommand} | grep -m1 "" | perl -pe '($_)=/([0-9]+([.][0-9]+)+)/'`)} (${process.arch}-${process.platform})` : null,
+            });
+            break;
+        }
+        case 'server': {
+            output = JSON.stringify({
+                stats: {
+                    ...parsed,
                     latency: null,
                 },
                 language,

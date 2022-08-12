@@ -20,7 +20,14 @@ export const output = async() => {
         method: 'GET'
     });
 
-    console.log(await res.json());
+    await fetch(BASE_URL, {
+        method: 'DELETE'
+    }).catch(() => {});
+
+    const content = await res.json();
+    if (typeof Bun !== 'undefined') Bun.write('./scripts/.cache/tmp/tmp.json', JSON.stringify(content));
+    else if (typeof Deno !== 'undefined') Deno.writeTextFile('./scripts/.cache/tmp/tmp.json', JSON.stringify(content));
+    else (await import('fs')).writeFileSync('./scripts/.cache/tmp/tmp.json', JSON.stringify(content));
 }
 
 export const time = () => {

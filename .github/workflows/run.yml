@@ -21,10 +21,15 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install dependencies
-        run: bun install && cd scripts/tools/paperdave-logger && bun install
+        # Use npm because bun doesn't support install field
+        run: npm install && rm package-lock.json && bun install && cd scripts/tools/paperdave-logger && bun install
 
       - name: Run setup
-        run: bun run setup
+        run: |
+          bun run setup:init
+          bun run setup:languages
+          source $PROFILE
+          bun run setup:benchmarks
 
       - name: Run benchmarks
         run: |

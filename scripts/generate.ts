@@ -67,8 +67,8 @@ for (const [benchmarkName, files] of Object.entries(outputs)) {
             header: 3,
         };
         if (group !== 'main') {
-            markdown += `### <a name="${benchmarkName}-${group}">${group}</a>\n\n`
-            head += `      - [${group}](#${benchmarkName}-${group})\n`;
+            markdown += `### <a name="${benchmarkName}-${group}">${group.replaceAll('-', ' ')}</a>\n\n`
+            head += `      - [${group.replaceAll('-', ' ')}](#${benchmarkName}-${group})\n`;
             size.spaces += 3;
             size.header++;
         };
