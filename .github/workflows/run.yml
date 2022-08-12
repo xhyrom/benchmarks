@@ -33,7 +33,7 @@ jobs:
       - name: Run setup
         run: |
           bun run setup:init
-          bun run setup:languages
+          bun run setup:languages GITHUB_ACTIONS
           source $PROFILE
           bun run setup:benchmarks
 
