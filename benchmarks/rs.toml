@@ -1,0 +1,6 @@
+language = "Rust"
+ext = "rs"
+
+enviroment = [
+  { name = "main.rs", install = "curl https://sh.rustup.rs -sSf | sh -s -- -y && source $HOME/.cargo/env", build = "rustc $FILE -C debuginfo=0 -C opt-level=3", run = "./$FILE", version = "rustc -V" }
+]
