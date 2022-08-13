@@ -26,7 +26,7 @@ for (const benchmark of benchmarks) {
     await Bun.write(join(import.meta.dir, '.cache', 'benchmarks', `${content.name}.json`), JSON.stringify(content));
     
     const installCheck = installed(content.version);
-    if (installCheck) {
+    if (installCheck && !content.bypass) {
         log.info(`Skipping install step for ${content.name}`);
         log.info(`Founded version: ${installCheck}`);
     } else {

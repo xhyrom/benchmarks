@@ -1,10 +1,10 @@
-name = "sqlite"
+name = "nanoid"
 
 tool_name = "server"
 
 type = "iter"
 
-install = "cd files/ && unzip -o northwind-1659689066.zip && cd .. && cd scripts/tools/server && shards build"
+install = "cd scripts/tools/server && shards build"
 
 run = "bash -c 'nohup scripts/tools/server/bin/server > /dev/null 2>&1 &' && sleep 5s && $COMMAND"
 
