@@ -43,7 +43,7 @@ export const format = (time: number, tool: Tool, type?: NumberType | '', locale 
     type = type || '';
     
     if (!['oha', 'bombardier'].some(t => tool === t)) {
-        if (time < 1e0) return `${Number((time * 1e3).toFixed(2)).toLocaleString(locale)}${type} ps`
+        if (time < 1e0) return `${Number((time * 1e3).toFixed(2)).toLocaleString(locale)}${type} ps`;
   
         if (time < 1e3) return `${Number(time.toFixed(2)).toLocaleString(locale)}${type} ns`;
         if (time < 1e6) return `${Number((time / 1e3).toFixed(2)).toLocaleString(locale)}${type} µs`;
