@@ -1,5 +1,7 @@
 import requests
+import json
 from time import perf_counter_ns as time
+from os.path import dirname, join, abspath
 
 BASE_URL = 'http://localhost:3001/bench'
 
@@ -15,7 +17,8 @@ def output():
     except:
         pass
 
-    print(r.json())
+    with open("scripts/.cache/tmp/tmp.json", "w") as file:
+        file.write(json.dumps(r.json()))
 
 def bench(fn):
     i = 100
