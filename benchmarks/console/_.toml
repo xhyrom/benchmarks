@@ -1,0 +1,11 @@
+name = "console"
+
+tool_name = "hyperfine"
+
+type = "iter"
+
+install = "wget https://github.com/sharkdp/hyperfine/releases/download/v1.14.0/hyperfine_1.14.0_amd64.deb && sudo dpkg -i hyperfine_1.14.0_amd64.deb && rm hyperfine_1.14.0_amd64.deb"
+
+run = "hyperfine --runs 100 --warmup 5 --export-json ./scripts/.cache/tmp/tmp.json '$COMMAND'"
+
+version = "hyperfine --version"

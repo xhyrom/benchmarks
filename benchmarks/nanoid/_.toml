@@ -1,0 +1,13 @@
+name = "nanoid"
+
+tool_name = "server"
+
+type = "iter"
+
+install = "cd scripts/tools/server && shards build"
+
+run = "bash -c 'nohup scripts/tools/server/bin/server > /dev/null 2>&1 &' && sleep 5s && $COMMAND"
+
+bypass = true
+
+version = "scripts/tools/server/bin/server --help"

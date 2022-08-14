@@ -1,0 +1,17 @@
+name: server
+version: 0.1.0
+
+authors:
+  - xHyroM <generalkubo@gmail.com>
+
+targets:
+  server:
+    main: src/server.cr
+
+dependencies:
+  kemal:
+    github: kemalcr/kemal
+
+crystal: 1.5.0
+
+license: MIT

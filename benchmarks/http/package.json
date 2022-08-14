@@ -1,7 +1,0 @@
-{
-    "name": "logging",
-    "scripts": {
-        "summary": "bun run summary.mjs",
-        "bench": "./start.sh && bun run summary"
-    }
-}

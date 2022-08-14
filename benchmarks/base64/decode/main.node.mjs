@@ -1,0 +1,1 @@
+Buffer.from('SGVsbG8sIFdvcmxkIQ==', 'base64').toString();

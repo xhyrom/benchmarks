@@ -1,0 +1,10 @@
+POST http://localhost:3001/bench
+content-type: application/json
+
+{
+    "diff": 0
+}
+
+###
+
+GET http://localhost:3001/bench
