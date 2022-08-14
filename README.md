@@ -1,4 +1,4 @@
-# benchmarks
+# benchmarks
 
 To setup:
 
