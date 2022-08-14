@@ -42,7 +42,10 @@ let head = [
 ].join('\n');
 let markdown = '';
 for (const [benchmarkName, files] of Object.entries(outputs)) {
-    head += `   - [${benchmarkName}](#${benchmarkName})\n`;
+    let perBenchMarkdown = '';
+    let perBenchHead = '';
+    
+    head += `   - [${benchmarkName}](./${benchmarkName}.md)\n`;
     markdown += `## ${benchmarkName}\n\n`;
 
     const content: Record<string, Record<string, Benchmark>> = {};
@@ -67,8 +70,10 @@ for (const [benchmarkName, files] of Object.entries(outputs)) {
             header: 3,
         };
         if (group !== 'main') {
-            markdown += `### <a name="${benchmarkName}-${group}">${group.replaceAll('-', ' ')}</a>\n\n`
-            head += `      - [${group.replaceAll('-', ' ')}](#${benchmarkName}-${group})\n`;
+            markdown += `### <a name="${benchmarkName}-${group}">${group.replaceAll('-', ' ')}</a>\n\n`;
+            perBenchMarkdown += `### <a name="${benchmarkName}-${group}">${group.replaceAll('-', ' ')}</a>\n\n`;
+            head += `      - [${group.replaceAll('-', ' ')}](./${benchmarkName}.md#${benchmarkName}-${group})\n`;
+            perBenchHead += `- [${group.replaceAll('-', ' ')}](#${benchmarkName}-${group})\n`;
             size.spaces += 3;
             size.header++;
         };
@@ -76,8 +81,10 @@ for (const [benchmarkName, files] of Object.entries(outputs)) {
         for (const language of [...new Set(Object.values(results).map(b => b.language))]) {
             let tables: Record<string, any[]> = {};
             const hasGroup = group !== 'main';
-            head += `${' '.repeat(size.spaces)}- [${language}](#${benchmarkName}${hasGroup ? `-${group}` : ''}-${language.toLowerCase()})\n`;
+            head += `${' '.repeat(size.spaces)}- [${language}](./${benchmarkName}.md#${benchmarkName}${hasGroup ? `-${group}` : ''}-${language.toLowerCase()})\n`;
+            perBenchHead += `${size.spaces === 9 ? '    ' : ''}- [${language}](#${benchmarkName}${hasGroup ? `-${group}` : ''}-${language.toLowerCase()})\n`;
             markdown += `${'#'.repeat(size.header)} <a name="${benchmarkName}${hasGroup ? `-${group}` : ''}-${language.toLowerCase()}">${language}</a>\n`;
+            perBenchMarkdown += `${'#'.repeat(size.header)} <a name="${benchmarkName}${hasGroup ? `-${group}` : ''}-${language.toLowerCase()}">${language}</a>\n`;
     
             tables[language] = tables[language] || [
                 ['Language', 'Average', 'p75', 'p99', 'Min', 'Max']
@@ -110,9 +117,12 @@ for (const [benchmarkName, files] of Object.entries(outputs)) {
                 for (const c of table.slice(1)) c.splice(c.length - 2, 2);
     
                 markdown += '\n' + markdownTable(table) + '\n\n';
+                perBenchMarkdown += '\n' + markdownTable(table) + '\n\n';
             }
         }
     }
+
+    await Bun.write(join(import.meta.dir, '..', 'docs', `${benchmarkName}.md`), `${perBenchHead}\n${perBenchMarkdown}`);
 }
 
-await Bun.write(join(import.meta.dir, '..', 'README.md'), `${head}\n${markdown}`);
+await Bun.write(join(import.meta.dir, '..', 'docs', 'README.md'), head);
