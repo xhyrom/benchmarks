@@ -31,6 +31,8 @@ get "/bench" do |env|
   p99 = benchmarks[(n * (99 / 100)).ceil().to_i - 1].diff
 
   {"min": benchmarks[0].diff, "max": benchmarks[benchmarks.size - 1].diff, "avg": avg, "p75": p75, "p99": p99}.to_json
+
+  benchmarks.clear
 end
 
 delete "/bench" do
