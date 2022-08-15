@@ -1,1 +1,0 @@
-{"benchmarks":[{"name":"http","group":null,"warmup":true,"baseline":false,"async":true,"stats":{"avg":50737.73153032619,"min":6022.277299885298,"max":53447.773116748256,"p75":52383.675063,"p99":53091.36469,"p995":53091.36469},"type":"rps","formattedName":"[node] http","id":"http","benchmark":"http"}],"runtime":"node v18.7.0 (x64-linux)"}
