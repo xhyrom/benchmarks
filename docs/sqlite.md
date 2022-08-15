@@ -13,21 +13,21 @@
 
 #### <a name="sqlite-SELECT-ALL-FROM-Customers-javascript">JavaScript</a>
 
-| Language                             | Average        | p75       | p99      | Min      | Max      |
-| ------------------------------------ | -------------- | --------- | -------- | -------- | -------- |
-| JavaScript / bun 0.1.8 (x64-linux)   | 190.97/iter µs | 160.3 µs  | 539.9 µs | 178.6 µs | 539.3 µs |
-| JavaScript / node 18.7.0 (x64-linux) | 521.76/iter µs | 479.2 µs  | 1.26 ms  | 521.8 µs | 1.19 ms  |
-| JavaScript / deno 1.24.3 (x64-linux) | 1.69/iter ms   | 885.21 µs | 4.78 ms  | 2.11 ms  | 2.56 ms  |
+| Language                             | Average        | p75       | p99       | Min       | Max       |
+| ------------------------------------ | -------------- | --------- | --------- | --------- | --------- |
+| JavaScript / bun 0.1.8 (x64-linux)   | 187.1/iter µs  | 159.2 µs  | 698.21 µs | 175.2 µs  | 686.61 µs |
+| JavaScript / node 18.7.0 (x64-linux) | 513.97/iter µs | 480.01 µs | 1.3 ms    | 519.61 µs | 1.21 ms   |
+| JavaScript / deno 1.24.3 (x64-linux) | 1.66/iter ms   | 914.61 µs | 4.77 ms   | 2.07 ms   | 2.56 ms   |
 
 ### <a name="sqlite-SELECT-ALL-FROM-Products">SELECT ALL FROM Products</a>
 
 #### <a name="sqlite-SELECT-ALL-FROM-Products-javascript">JavaScript</a>
 
-| Language                             | Average        | p75       | p99       | Min       | Max      |
-| ------------------------------------ | -------------- | --------- | --------- | --------- | -------- |
-| JavaScript / bun 0.1.8 (x64-linux)   | 110.62/iter µs | 94.3 µs   | 465.61 µs | 105.9 µs  | 428.5 µs |
-| JavaScript / node 18.7.0 (x64-linux) | 355.71/iter µs | 336.7 µs  | 1.1 ms    | 354.8 µs  | 380.7 µs |
-| JavaScript / deno 1.24.3 (x64-linux) | 927.71/iter µs | 848.71 µs | 2.32 ms   | 904.91 µs | 1.56 ms  |
+| Language                             | Average        | p75       | p99     | Min       | Max       |
+| ------------------------------------ | -------------- | --------- | ------- | --------- | --------- |
+| JavaScript / bun 0.1.8 (x64-linux)   | 126.42/iter µs | 93.2 µs   | 1.53 ms | 104.2 µs  | 600.01 µs |
+| JavaScript / node 18.7.0 (x64-linux) | 364.26/iter µs | 334 µs    | 1.54 ms | 352.11 µs | 1.09 ms   |
+| JavaScript / deno 1.24.3 (x64-linux) | 943.44/iter µs | 869.41 µs | 2.21 ms | 914.11 µs | 1.57 ms   |
 
 ### <a name="sqlite-SELECT-ALL-FROM-Suppliers">SELECT ALL FROM Suppliers</a>
 
@@ -35,19 +35,19 @@
 
 | Language                             | Average        | p75       | p99       | Min       | Max      |
 | ------------------------------------ | -------------- | --------- | --------- | --------- | -------- |
-| JavaScript / bun 0.1.8 (x64-linux)   | 72.65/iter µs  | 56.8 µs   | 685.71 µs | 63 µs     | 407.4 µs |
-| JavaScript / node 18.7.0 (x64-linux) | 210.02/iter µs | 188.8 µs  | 1 ms      | 206 µs    | 253.7 µs |
-| JavaScript / deno 1.24.3 (x64-linux) | 814.5/iter µs  | 732.01 µs | 2.14 ms   | 806.41 µs | 1.69 ms  |
+| JavaScript / bun 0.1.8 (x64-linux)   | 65.42/iter µs  | 56.4 µs   | 209.5 µs  | 64.7 µs   | 136.2 µs |
+| JavaScript / node 18.7.0 (x64-linux) | 200.87/iter µs | 185.1 µs  | 921.11 µs | 197.8 µs  | 219.5 µs |
+| JavaScript / deno 1.24.3 (x64-linux) | 812.26/iter µs | 735.31 µs | 2.07 ms   | 795.21 µs | 1.68 ms  |
 
 ### <a name="sqlite-SELECT-ALL-FROM-Employees">SELECT ALL FROM Employees</a>
 
 #### <a name="sqlite-SELECT-ALL-FROM-Employees-javascript">JavaScript</a>
 
-| Language                             | Average        | p75       | p99      | Min       | Max      |
-| ------------------------------------ | -------------- | --------- | -------- | --------- | -------- |
-| JavaScript / bun 0.1.8 (x64-linux)   | 83.36/iter µs  | 47 µs     | 415.3 µs | 58.5 µs   | 414.1 µs |
-| JavaScript / node 18.7.0 (x64-linux) | 172.77/iter µs | 129.5 µs  | 1.19 ms  | 158.6 µs  | 1.11 ms  |
-| JavaScript / deno 1.24.3 (x64-linux) | 613.54/iter µs | 537.71 µs | 2.16 ms  | 634.31 µs | 1.03 ms  |
+| Language                             | Average        | p75       | p99       | Min       | Max       |
+| ------------------------------------ | -------------- | --------- | --------- | --------- | --------- |
+| JavaScript / bun 0.1.8 (x64-linux)   | 94.14/iter µs  | 48.8 µs   | 579.91 µs | 64.6 µs   | 569.21 µs |
+| JavaScript / node 18.7.0 (x64-linux) | 165.29/iter µs | 143.1 µs  | 303.7 µs  | 166.4 µs  | 221.2 µs  |
+| JavaScript / deno 1.24.3 (x64-linux) | 650.39/iter µs | 576.11 µs | 2.19 ms   | 673.11 µs | 1.04 ms   |
 
 ### <a name="sqlite-SELECT-ALL-FROM-Orders">SELECT ALL FROM Orders</a>
 
@@ -55,7 +55,7 @@
 
 | Language                             | Average        | p75       | p99       | Min       | Max       |
 | ------------------------------------ | -------------- | --------- | --------- | --------- | --------- |
-| JavaScript / bun 0.1.8 (x64-linux)   | 34.44/iter ms  | 32.66 ms  | 41.44 ms  | 33.78 ms  | 41.23 ms  |
-| JavaScript / node 18.7.0 (x64-linux) | 100.03/iter ms | 94.66 ms  | 122.72 ms | 99.73 ms  | 119.77 ms |
-| JavaScript / deno 1.24.3 (x64-linux) | 226.12/iter ms | 220.66 ms | 341.32 ms | 225.99 ms | 241.92 ms |
+| JavaScript / bun 0.1.8 (x64-linux)   | 35.3/iter ms   | 33.74 ms  | 44.18 ms  | 34.59 ms  | 43.22 ms  |
+| JavaScript / node 18.7.0 (x64-linux) | 103.96/iter ms | 95.88 ms  | 130.27 ms | 103.87 ms | 128.67 ms |
+| JavaScript / deno 1.24.3 (x64-linux) | 221.88/iter ms | 213.61 ms | 333.5 ms  | 222.36 ms | 246.54 ms |
 

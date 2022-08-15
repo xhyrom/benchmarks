@@ -15,67 +15,67 @@
 
 #### <a name="base64-decode-go">Go</a>
 
-| Language | Average        | p75       | p99     | Min       | Max     |
-| -------- | -------------- | --------- | ------- | --------- | ------- |
-| Go       | 961.07/iter µs | 874.14 µs | 1.28 ms | 975.74 µs | 1.14 ms |
+| Language | Average      | p75       | p99    | Min     | Max    |
+| -------- | ------------ | --------- | ------ | ------- | ------ |
+| Go       | 1.02/iter ms | 867.05 µs | 1.7 ms | 1.02 ms | 1.3 ms |
 
 #### <a name="base64-decode-ruby">Ruby</a>
 
-| Language | Average       | p75      | p99      | Min     | Max      |
-| -------- | ------------- | -------- | -------- | ------- | -------- |
-| Ruby     | 55.03/iter ms | 53.98 ms | 56.04 ms | 54.3 ms | 54.21 ms |
+| Language | Average       | p75      | p99      | Min      | Max      |
+| -------- | ------------- | -------- | -------- | -------- | -------- |
+| Ruby     | 55.32/iter ms | 53.07 ms | 57.18 ms | 53.94 ms | 55.45 ms |
 
 #### <a name="base64-decode-javascript">JavaScript</a>
 
 | Language                             | Average       | p75      | p99      | Min      | Max      |
 | ------------------------------------ | ------------- | -------- | -------- | -------- | -------- |
-| JavaScript / bun 0.1.8 (x64-linux)   | 11.75/iter ms | 10.68 ms | 13.77 ms | 11.46 ms | 11.34 ms |
-| JavaScript / deno 1.24.3 (x64-linux) | 24.83/iter ms | 23.9 ms  | 25.88 ms | 24.99 ms | 25.01 ms |
-| JavaScript / node 18.7.0 (x64-linux) | 46.66/iter ms | 45.56 ms | 55.94 ms | 46.06 ms | 46.27 ms |
+| JavaScript / bun 0.1.8 (x64-linux)   | 12.62/iter ms | 11.42 ms | 14.06 ms | 12.22 ms | 12.81 ms |
+| JavaScript / deno 1.24.3 (x64-linux) | 24.51/iter ms | 23.39 ms | 26.46 ms | 25.07 ms | 24.14 ms |
+| JavaScript / node 18.7.0 (x64-linux) | 46.81/iter ms | 44.81 ms | 50.98 ms | 45.57 ms | 49.3 ms  |
 
 #### <a name="base64-decode-crystal">Crystal</a>
 
 | Language | Average      | p75     | p99     | Min     | Max     |
 | -------- | ------------ | ------- | ------- | ------- | ------- |
-| Crystal  | 1.99/iter ms | 1.86 ms | 2.44 ms | 2.09 ms | 1.98 ms |
+| Crystal  | 2.03/iter ms | 1.88 ms | 2.63 ms | 2.18 ms | 1.93 ms |
 
 #### <a name="base64-decode-python">Python</a>
 
 | Language | Average       | p75      | p99      | Min      | Max      |
 | -------- | ------------- | -------- | -------- | -------- | -------- |
-| Python   | 21.04/iter ms | 20.81 ms | 21.87 ms | 20.88 ms | 21.09 ms |
+| Python   | 21.58/iter ms | 21.07 ms | 22.51 ms | 21.51 ms | 21.36 ms |
 
 ### <a name="base64-encode">encode</a>
 
 #### <a name="base64-encode-go">Go</a>
 
-| Language | Average       | p75       | p99     | Min       | Max       |
-| -------- | ------------- | --------- | ------- | --------- | --------- |
-| Go       | 988.9/iter µs | 859.87 µs | 2.18 ms | 900.77 µs | 867.67 µs |
+| Language | Average      | p75       | p99     | Min    | Max     |
+| -------- | ------------ | --------- | ------- | ------ | ------- |
+| Go       | 1.02/iter ms | 891.98 µs | 1.54 ms | 1.1 ms | 1.09 ms |
 
 #### <a name="base64-encode-ruby">Ruby</a>
 
 | Language | Average       | p75      | p99      | Min      | Max      |
 | -------- | ------------- | -------- | -------- | -------- | -------- |
-| Ruby     | 55.06/iter ms | 53.97 ms | 59.71 ms | 54.91 ms | 54.72 ms |
+| Ruby     | 55.02/iter ms | 53.25 ms | 59.73 ms | 54.19 ms | 55.61 ms |
 
 #### <a name="base64-encode-javascript">JavaScript</a>
 
 | Language                             | Average       | p75      | p99      | Min      | Max      |
 | ------------------------------------ | ------------- | -------- | -------- | -------- | -------- |
-| JavaScript / bun 0.1.8 (x64-linux)   | 11.6/iter ms  | 10.76 ms | 13.54 ms | 11.5 ms  | 11.19 ms |
-| JavaScript / deno 1.24.3 (x64-linux) | 25.15/iter ms | 23.85 ms | 26.68 ms | 24.96 ms | 26.05 ms |
-| JavaScript / node 18.7.0 (x64-linux) | 47.13/iter ms | 45.95 ms | 51.2 ms  | 47.04 ms | 46.63 ms |
+| JavaScript / bun 0.1.8 (x64-linux)   | 12.96/iter ms | 12.03 ms | 15 ms    | 13.33 ms | 12.84 ms |
+| JavaScript / deno 1.24.3 (x64-linux) | 24.77/iter ms | 23.37 ms | 27.19 ms | 24.45 ms | 24.26 ms |
+| JavaScript / node 18.7.0 (x64-linux) | 47.71/iter ms | 45 ms    | 53.89 ms | 47.1 ms  | 47.93 ms |
 
 #### <a name="base64-encode-crystal">Crystal</a>
 
-| Language | Average      | p75     | p99    | Min     | Max  |
-| -------- | ------------ | ------- | ------ | ------- | ---- |
-| Crystal  | 1.99/iter ms | 1.87 ms | 2.3 ms | 1.93 ms | 2 ms |
+| Language | Average      | p75     | p99     | Min     | Max     |
+| -------- | ------------ | ------- | ------- | ------- | ------- |
+| Crystal  | 2.01/iter ms | 1.86 ms | 2.56 ms | 1.91 ms | 1.94 ms |
 
 #### <a name="base64-encode-python">Python</a>
 
-| Language | Average       | p75      | p99      | Min     | Max      |
-| -------- | ------------- | -------- | -------- | ------- | -------- |
-| Python   | 21.11/iter ms | 20.83 ms | 21.59 ms | 21.1 ms | 21.07 ms |
+| Language | Average       | p75     | p99      | Min      | Max      |
+| -------- | ------------- | ------- | -------- | -------- | -------- |
+| Python   | 21.66/iter ms | 21.3 ms | 23.33 ms | 21.45 ms | 21.93 ms |
 

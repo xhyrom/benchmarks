@@ -3,15 +3,15 @@
 
 ### <a name="nanoid-javascript">JavaScript</a>
 
-| Language                             | Average       | p75    | p99       | Min     | Max      |
-| ------------------------------------ | ------------- | ------ | --------- | ------- | -------- |
-| JavaScript / node 18.7.0 (x64-linux) | 6.99/iter µs  | 2.7 µs | 224.9 µs  | 4.8 µs  | 105.9 µs |
-| JavaScript / bun 0.1.8 (x64-linux)   | 16.42/iter µs | 2.5 µs | 661.7 µs  | 5 µs    | 256.2 µs |
-| JavaScript / deno 1.24.3 (x64-linux) | 21.44/iter µs | 7.4 µs | 588.01 µs | 10.7 µs | 230.2 µs |
+| Language                             | Average       | p75    | p99       | Min     | Max       |
+| ------------------------------------ | ------------- | ------ | --------- | ------- | --------- |
+| JavaScript / node 18.7.0 (x64-linux) | 7.23/iter µs  | 3.1 µs | 215.6 µs  | 4.9 µs  | 99.2 µs   |
+| JavaScript / bun 0.1.8 (x64-linux)   | 17.39/iter µs | 2.4 µs | 683.61 µs | 5.5 µs  | 277.11 µs |
+| JavaScript / deno 1.24.3 (x64-linux) | 23.58/iter µs | 5.6 µs | 640.7 µs  | 12.6 µs | 254.8 µs  |
 
 ### <a name="nanoid-python">Python</a>
 
-| Language | Average      | p75    | p99      | Min    | Max      |
-| -------- | ------------ | ------ | -------- | ------ | -------- |
-| Python   | 6.99/iter µs | 2.7 µs | 224.9 µs | 4.8 µs | 105.9 µs |
+| Language | Average      | p75    | p99      | Min    | Max     |
+| -------- | ------------ | ------ | -------- | ------ | ------- |
+| Python   | 7.23/iter µs | 3.1 µs | 215.6 µs | 4.9 µs | 99.2 µs |
 
