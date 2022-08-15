@@ -15,67 +15,67 @@
 
 #### <a name="json-stringify-go">Go</a>
 
-| Language | Average      | p75       | p99     | Min     | Max     |
-| -------- | ------------ | --------- | ------- | ------- | ------- |
-| Go       | 1.06/iter ms | 958.65 µs | 1.59 ms | 1.17 ms | 1.06 ms |
+| Language | Average      | p75     | p99     | Min     | Max     |
+| -------- | ------------ | ------- | ------- | ------- | ------- |
+| Go       | 1.45/iter ms | 1.04 ms | 4.01 ms | 1.34 ms | 1.66 ms |
 
 #### <a name="json-stringify-ruby">Ruby</a>
 
-| Language | Average       | p75      | p99      | Min     | Max      |
-| -------- | ------------- | -------- | -------- | ------- | -------- |
-| Ruby     | 61.39/iter ms | 59.05 ms | 64.42 ms | 62.1 ms | 59.66 ms |
+| Language | Average       | p75      | p99      | Min      | Max      |
+| -------- | ------------- | -------- | -------- | -------- | -------- |
+| Ruby     | 71.19/iter ms | 64.91 ms | 76.62 ms | 71.12 ms | 74.72 ms |
 
 #### <a name="json-stringify-javascript">JavaScript</a>
 
 | Language                             | Average       | p75      | p99      | Min      | Max      |
 | ------------------------------------ | ------------- | -------- | -------- | -------- | -------- |
-| JavaScript / bun 0.1.8 (x64-linux)   | 13.75/iter ms | 12.05 ms | 16 ms    | 14.33 ms | 15.04 ms |
-| JavaScript / deno 1.24.3 (x64-linux) | 24.64/iter ms | 23.35 ms | 26.24 ms | 24.54 ms | 25.59 ms |
-| JavaScript / node 18.7.0 (x64-linux) | 47.15/iter ms | 45.03 ms | 52.02 ms | 48.79 ms | 46.6 ms  |
+| JavaScript / bun 0.1.8 (x64-linux)   | 16.98/iter ms | 14.65 ms | 21.89 ms | 17.81 ms | 17.31 ms |
+| JavaScript / deno 1.24.3 (x64-linux) | 31.67/iter ms | 29.68 ms | 51.22 ms | 31.05 ms | 31.77 ms |
+| JavaScript / node 18.7.0 (x64-linux) | 57.29/iter ms | 51.32 ms | 62.48 ms | 57.65 ms | 59.07 ms |
 
 #### <a name="json-stringify-crystal">Crystal</a>
 
 | Language | Average      | p75     | p99     | Min     | Max     |
 | -------- | ------------ | ------- | ------- | ------- | ------- |
-| Crystal  | 2.12/iter ms | 1.92 ms | 2.63 ms | 2.08 ms | 1.98 ms |
+| Crystal  | 2.47/iter ms | 2.14 ms | 3.27 ms | 2.51 ms | 2.39 ms |
 
 #### <a name="json-stringify-python">Python</a>
 
-| Language | Average       | p75      | p99      | Min      | Max      |
-| -------- | ------------- | -------- | -------- | -------- | -------- |
-| Python   | 23.07/iter ms | 22.38 ms | 24.77 ms | 23.09 ms | 22.57 ms |
+| Language | Average       | p75      | p99      | Min     | Max      |
+| -------- | ------------- | -------- | -------- | ------- | -------- |
+| Python   | 27.81/iter ms | 25.23 ms | 34.69 ms | 25.5 ms | 25.94 ms |
 
 ### <a name="json-parse">parse</a>
 
 #### <a name="json-parse-go">Go</a>
 
-| Language | Average      | p75       | p99     | Min     | Max     |
-| -------- | ------------ | --------- | ------- | ------- | ------- |
-| Go       | 1.12/iter ms | 960.03 µs | 1.65 ms | 1.12 ms | 1.16 ms |
+| Language | Average      | p75     | p99     | Min     | Max     |
+| -------- | ------------ | ------- | ------- | ------- | ------- |
+| Go       | 1.52/iter ms | 1.01 ms | 8.08 ms | 1.63 ms | 1.67 ms |
 
 #### <a name="json-parse-ruby">Ruby</a>
 
-| Language | Average       | p75      | p99      | Min      | Max      |
-| -------- | ------------- | -------- | -------- | -------- | -------- |
-| Ruby     | 61.71/iter ms | 58.95 ms | 65.35 ms | 60.88 ms | 60.44 ms |
+| Language | Average       | p75      | p99     | Min      | Max     |
+| -------- | ------------- | -------- | ------- | -------- | ------- |
+| Ruby     | 74.12/iter ms | 69.06 ms | 77.5 ms | 73.78 ms | 72.6 ms |
 
 #### <a name="json-parse-javascript">JavaScript</a>
 
 | Language                             | Average       | p75      | p99      | Min      | Max      |
 | ------------------------------------ | ------------- | -------- | -------- | -------- | -------- |
-| JavaScript / bun 0.1.8 (x64-linux)   | 12.71/iter ms | 11.26 ms | 14.41 ms | 11.83 ms | 12.31 ms |
-| JavaScript / deno 1.24.3 (x64-linux) | 24.93/iter ms | 23.84 ms | 31.6 ms  | 24.23 ms | 24.91 ms |
-| JavaScript / node 18.7.0 (x64-linux) | 48.76/iter ms | 45.22 ms | 52.49 ms | 50.52 ms | 52.08 ms |
+| JavaScript / bun 0.1.8 (x64-linux)   | 16.83/iter ms | 14.9 ms  | 20.93 ms | 16.62 ms | 18.08 ms |
+| JavaScript / deno 1.24.3 (x64-linux) | 30.47/iter ms | 25.91 ms | 34.94 ms | 30.32 ms | 34.94 ms |
+| JavaScript / node 18.7.0 (x64-linux) | 57.97/iter ms | 52.95 ms | 63.9 ms  | 56.65 ms | 60.05 ms |
 
 #### <a name="json-parse-crystal">Crystal</a>
 
 | Language | Average      | p75     | p99     | Min     | Max     |
 | -------- | ------------ | ------- | ------- | ------- | ------- |
-| Crystal  | 2.17/iter ms | 1.96 ms | 3.03 ms | 2.17 ms | 2.08 ms |
+| Crystal  | 2.56/iter ms | 2.01 ms | 4.78 ms | 2.36 ms | 2.01 ms |
 
 #### <a name="json-parse-python">Python</a>
 
-| Language | Average       | p75      | p99      | Min      | Max      |
-| -------- | ------------- | -------- | -------- | -------- | -------- |
-| Python   | 23.68/iter ms | 22.53 ms | 25.61 ms | 22.98 ms | 22.99 ms |
+| Language | Average       | p75      | p99      | Min      | Max     |
+| -------- | ------------- | -------- | -------- | -------- | ------- |
+| Python   | 28.51/iter ms | 25.67 ms | 33.89 ms | 31.32 ms | 27.5 ms |
 
