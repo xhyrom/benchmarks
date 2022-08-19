@@ -47,7 +47,7 @@ for (const [benchmarkName, files] of Object.entries(outputs)) {
     let perBenchMarkdown = '';
     let perBenchHead = `<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>\n`;
     
-    head += `   - [${benchmarkName}](./${benchmarkName}.md)\n`;
+    head += `   - [${benchmarkName}](./${benchmarkName})\n`;
 
     const content: Record<string, Record<string, Benchmark>> = {};
     for (const file of files) {
@@ -72,7 +72,7 @@ for (const [benchmarkName, files] of Object.entries(outputs)) {
         };
         if (group !== 'main') {
             perBenchMarkdown += `### <a name="${benchmarkName}-${group}">${group.replaceAll('-', ' ')}</a>\n\n`;
-            head += `      - [${group.replaceAll('-', ' ')}](./${benchmarkName}.md#${benchmarkName}-${group})\n`;
+            head += `      - [${group.replaceAll('-', ' ')}](./${benchmarkName}#${benchmarkName}-${group})\n`;
             perBenchHead += `- [${group.replaceAll('-', ' ')}](#${benchmarkName}-${group})\n`;
             size.spaces += 3;
             size.header++;
@@ -82,7 +82,7 @@ for (const [benchmarkName, files] of Object.entries(outputs)) {
             let charts: Record<string, any> = {};
             let tables: Record<string, any[]> = {};
             const hasGroup = group !== 'main';
-            head += `${' '.repeat(size.spaces)}- [${language}](./${benchmarkName}.md#${benchmarkName}${hasGroup ? `-${group}` : ''}-${language.toLowerCase()})\n`;
+            head += `${' '.repeat(size.spaces)}- [${language}](./${benchmarkName}#${benchmarkName}${hasGroup ? `-${group}` : ''}-${language.toLowerCase()})\n`;
             perBenchHead += `${size.spaces === 9 ? '    ' : ''}- [${language}](#${benchmarkName}${hasGroup ? `-${group}` : ''}-${language.toLowerCase()})\n`;
             perBenchMarkdown += `${'#'.repeat(size.header)} <a name="${benchmarkName}${hasGroup ? `-${group}` : ''}-${language.toLowerCase()}">${language}</a>\n`;
     
