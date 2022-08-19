@@ -40,13 +40,12 @@ let head = [
     '- Benchmarks',
     ''
 ].join('\n');
-let markdown = '';
+
 for (const [benchmarkName, files] of Object.entries(outputs)) {
     let perBenchMarkdown = '';
     let perBenchHead = '';
     
     head += `   - [${benchmarkName}](./${benchmarkName}.md)\n`;
-    markdown += `## ${benchmarkName}\n\n`;
 
     const content: Record<string, Record<string, Benchmark>> = {};
     for (const file of files) {
@@ -70,7 +69,6 @@ for (const [benchmarkName, files] of Object.entries(outputs)) {
             header: 3,
         };
         if (group !== 'main') {
-            markdown += `### <a name="${benchmarkName}-${group}">${group.replaceAll('-', ' ')}</a>\n\n`;
             perBenchMarkdown += `### <a name="${benchmarkName}-${group}">${group.replaceAll('-', ' ')}</a>\n\n`;
             head += `      - [${group.replaceAll('-', ' ')}](./${benchmarkName}.md#${benchmarkName}-${group})\n`;
             perBenchHead += `- [${group.replaceAll('-', ' ')}](#${benchmarkName}-${group})\n`;
@@ -83,7 +81,6 @@ for (const [benchmarkName, files] of Object.entries(outputs)) {
             const hasGroup = group !== 'main';
             head += `${' '.repeat(size.spaces)}- [${language}](./${benchmarkName}.md#${benchmarkName}${hasGroup ? `-${group}` : ''}-${language.toLowerCase()})\n`;
             perBenchHead += `${size.spaces === 9 ? '    ' : ''}- [${language}](#${benchmarkName}${hasGroup ? `-${group}` : ''}-${language.toLowerCase()})\n`;
-            markdown += `${'#'.repeat(size.header)} <a name="${benchmarkName}${hasGroup ? `-${group}` : ''}-${language.toLowerCase()}">${language}</a>\n`;
             perBenchMarkdown += `${'#'.repeat(size.header)} <a name="${benchmarkName}${hasGroup ? `-${group}` : ''}-${language.toLowerCase()}">${language}</a>\n`;
     
             tables[language] = tables[language] || [
@@ -115,8 +112,7 @@ for (const [benchmarkName, files] of Object.entries(outputs)) {
             for (const table of Object.values(tables)) {
                 table.sort(sort);
                 for (const c of table.slice(1)) c.splice(c.length - 2, 2);
-    
-                markdown += '\n' + markdownTable(table) + '\n\n';
+
                 perBenchMarkdown += '\n' + markdownTable(table) + '\n\n';
             }
         }
