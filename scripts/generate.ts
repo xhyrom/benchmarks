@@ -92,7 +92,6 @@ for (const [benchmarkName, files] of Object.entries(outputs)) {
             charts[language] = charts[language] || {
                 chart: {
                     stacked: true,
-                    height: 320,
                     type: 'bar',
                     toolbar: {
                         show: true,
@@ -100,12 +99,6 @@ for (const [benchmarkName, files] of Object.entries(outputs)) {
                     animations: {
                         enabled: false,
                     },
-                },
-                plotOptions: {
-                    bar: {
-                      columnWidth: '45%',
-                      distributed: true,
-                    }
                 },
                 series: [
                     {
@@ -168,7 +161,7 @@ for (const [benchmarkName, files] of Object.entries(outputs)) {
                 table.sort(sort);
                 for (const c of table.slice(1)) c.splice(c.length - 2, 2);
 
-                perBenchMarkdown += '\n' + markdownTable(table) + '\n\n' + [
+                perBenchMarkdown += '\n' + markdownTable(table) + '\n\n\n' + [
                     `<div id="chart-${x}"></div>`,
                     `<script>`,
                     `new ApexCharts(document.querySelector('#chart-${x}'), ${JSON.stringify(chart)}).render()`,
