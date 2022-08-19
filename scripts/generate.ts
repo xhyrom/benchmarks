@@ -122,14 +122,11 @@ for (const [benchmarkName, files] of Object.entries(outputs)) {
                         enabled: false,
                     },
                 },
-                grid: {
-                    row: {
-                      colors: ['#F44336', '#E91E63', '#9C27B0']
-                    },
-                    column: {
-                      colors: ['#F44336', '#E91E63', '#9C27B0']
+                plotOptions: {
+                    bar: {
+                        distributed: true
                     }
-                },
+                }
             }
 
             for (const bench of Object.values(results)) {
