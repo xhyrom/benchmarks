@@ -1,14 +1,14 @@
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 - [SELECT ALL FROM Employees](#sqlite-SELECT-ALL-FROM-Employees)
     - [JavaScript](#sqlite-SELECT-ALL-FROM-Employees-javascript)
-- [SELECT ALL FROM Orders](#sqlite-SELECT-ALL-FROM-Orders)
-    - [JavaScript](#sqlite-SELECT-ALL-FROM-Orders-javascript)
-- [SELECT ALL FROM Suppliers](#sqlite-SELECT-ALL-FROM-Suppliers)
-    - [JavaScript](#sqlite-SELECT-ALL-FROM-Suppliers-javascript)
 - [SELECT ALL FROM Products](#sqlite-SELECT-ALL-FROM-Products)
     - [JavaScript](#sqlite-SELECT-ALL-FROM-Products-javascript)
+- [SELECT ALL FROM Suppliers](#sqlite-SELECT-ALL-FROM-Suppliers)
+    - [JavaScript](#sqlite-SELECT-ALL-FROM-Suppliers-javascript)
 - [SELECT ALL FROM Customers](#sqlite-SELECT-ALL-FROM-Customers)
     - [JavaScript](#sqlite-SELECT-ALL-FROM-Customers-javascript)
+- [SELECT ALL FROM Orders](#sqlite-SELECT-ALL-FROM-Orders)
+    - [JavaScript](#sqlite-SELECT-ALL-FROM-Orders-javascript)
 
 ### <a name="sqlite-SELECT-ALL-FROM-Employees">SELECT ALL FROM Employees</a>
 
@@ -16,46 +16,14 @@
 
 | Language                             | Average        | p75       | p99       | Min       | Max       |
 | ------------------------------------ | -------------- | --------- | --------- | --------- | --------- |
-| JavaScript / bun 0.1.10 (x64-linux)  | 63.84/iter µs  | 41.48 µs  | 263.88 µs | 53.68 µs  | 216.98 µs |
-| JavaScript / node 18.7.0 (x64-linux) | 434.2/iter µs  | 128.48 µs | 22.73 ms  | 217.65 µs | 982.85 µs |
-| JavaScript / deno 1.24.2 (x64-linux) | 547.34/iter µs | 247.06 µs | 3.95 ms   | 557.92 µs | 2.67 ms   |
+| JavaScript / bun 0.1.10 (x64-linux)  | 100.21/iter µs | 52.8 µs   | 609.31 µs | 67.5 µs   | 587.51 µs |
+| JavaScript / node 18.7.0 (x64-linux) | 175.69/iter µs | 155.2 µs  | 305.7 µs  | 188.4 µs  | 245.6 µs  |
+| JavaScript / deno 1.24.3 (x64-linux) | 715.69/iter µs | 637.51 µs | 2.32 ms   | 747.61 µs | 1.13 ms   |
 
 
-<div id="chart-0"></div>
+<div id="chart-25"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-0'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"sqlite","data":[{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":63839.66},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":434200.76},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":547335.79}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
-</script>
-
-### <a name="sqlite-SELECT-ALL-FROM-Orders">SELECT ALL FROM Orders</a>
-
-#### <a name="sqlite-SELECT-ALL-FROM-Orders-javascript">JavaScript</a>
-
-| Language                             | Average       | p75       | p99       | Min       | Max       |
-| ------------------------------------ | ------------- | --------- | --------- | --------- | --------- |
-| JavaScript / bun 0.1.10 (x64-linux)  | 28.39/iter ms | 25.59 ms  | 38.48 ms  | 28.54 ms  | 38.26 ms  |
-| JavaScript / node 18.7.0 (x64-linux) | 94.03/iter ms | 86.36 ms  | 137.03 ms | 93.5 ms   | 131.4 ms  |
-| JavaScript / deno 1.24.2 (x64-linux) | 189.9/iter ms | 170.79 ms | 265.23 ms | 194.42 ms | 258.25 ms |
-
-
-<div id="chart-1"></div>
-<script>
-new ApexCharts(document.querySelector('#chart-1'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"sqlite","data":[{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":28385006.98},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":94030386.73},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":189903571.37}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
-</script>
-
-### <a name="sqlite-SELECT-ALL-FROM-Suppliers">SELECT ALL FROM Suppliers</a>
-
-#### <a name="sqlite-SELECT-ALL-FROM-Suppliers-javascript">JavaScript</a>
-
-| Language                             | Average        | p75       | p99       | Min       | Max       |
-| ------------------------------------ | -------------- | --------- | --------- | --------- | --------- |
-| JavaScript / bun 0.1.10 (x64-linux)  | 69.15/iter µs  | 43.88 µs  | 236.72 µs | 81.56 µs  | 144.43 µs |
-| JavaScript / node 18.7.0 (x64-linux) | 184.48/iter µs | 152.27 µs | 903.93 µs | 173.49 µs | 364.68 µs |
-| JavaScript / deno 1.24.2 (x64-linux) | 625.25/iter µs | 289.39 µs | 4.78 ms   | 658.31 µs | 1.98 ms   |
-
-
-<div id="chart-2"></div>
-<script>
-new ApexCharts(document.querySelector('#chart-2'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"sqlite","data":[{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":69154.28},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":184479.71},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":625245.45}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
+new ApexCharts(document.querySelector('#chart-25'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"sqlite","data":[{"x":"JavaScript / deno 1.24.3 (x64-linux)","y":715690.73},{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":100205.69},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":175688.85}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
 </script>
 
 ### <a name="sqlite-SELECT-ALL-FROM-Products">SELECT ALL FROM Products</a>
@@ -64,14 +32,30 @@ new ApexCharts(document.querySelector('#chart-2'), {"chart":{"height":320,"type"
 
 | Language                             | Average        | p75       | p99       | Min       | Max       |
 | ------------------------------------ | -------------- | --------- | --------- | --------- | --------- |
-| JavaScript / bun 0.1.10 (x64-linux)  | 118.94/iter µs | 74.18 µs  | 371.05 µs | 138.37 µs | 332.58 µs |
-| JavaScript / node 18.7.0 (x64-linux) | 391.43/iter µs | 293.04 µs | 1.31 ms   | 421.36 µs | 1.23 ms   |
-| JavaScript / deno 1.24.2 (x64-linux) | 590.24/iter µs | 316.27 µs | 3.58 ms   | 605.23 µs | 1.82 ms   |
+| JavaScript / bun 0.1.10 (x64-linux)  | 117.43/iter µs | 99.1 µs   | 648.41 µs | 106.6 µs  | 619.11 µs |
+| JavaScript / node 18.7.0 (x64-linux) | 379.99/iter µs | 342.2 µs  | 1.33 ms   | 358.01 µs | 1.3 ms    |
+| JavaScript / deno 1.24.3 (x64-linux) | 947.73/iter µs | 859.12 µs | 2.27 ms   | 927.01 µs | 1.6 ms    |
 
 
-<div id="chart-3"></div>
+<div id="chart-26"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-3'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"sqlite","data":[{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":118941.91},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":391432.46},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":590237.49}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
+new ApexCharts(document.querySelector('#chart-26'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"sqlite","data":[{"x":"JavaScript / deno 1.24.3 (x64-linux)","y":947729.58},{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":117429.86},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":379986.25}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
+</script>
+
+### <a name="sqlite-SELECT-ALL-FROM-Suppliers">SELECT ALL FROM Suppliers</a>
+
+#### <a name="sqlite-SELECT-ALL-FROM-Suppliers-javascript">JavaScript</a>
+
+| Language                             | Average        | p75       | p99       | Min       | Max      |
+| ------------------------------------ | -------------- | --------- | --------- | --------- | -------- |
+| JavaScript / bun 0.1.10 (x64-linux)  | 80.11/iter µs  | 59.9 µs   | 579.91 µs | 81.6 µs   | 139.7 µs |
+| JavaScript / node 18.7.0 (x64-linux) | 227.91/iter µs | 186.1 µs  | 1.54 ms   | 199.7 µs  | 1.28 ms  |
+| JavaScript / deno 1.24.3 (x64-linux) | 847.94/iter µs | 763.91 µs | 2.2 ms    | 828.41 µs | 1.81 ms  |
+
+
+<div id="chart-27"></div>
+<script>
+new ApexCharts(document.querySelector('#chart-27'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"sqlite","data":[{"x":"JavaScript / deno 1.24.3 (x64-linux)","y":847937.94},{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":80108.33},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":227913.73}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
 </script>
 
 ### <a name="sqlite-SELECT-ALL-FROM-Customers">SELECT ALL FROM Customers</a>
@@ -80,13 +64,29 @@ new ApexCharts(document.querySelector('#chart-3'), {"chart":{"height":320,"type"
 
 | Language                             | Average        | p75       | p99       | Min       | Max       |
 | ------------------------------------ | -------------- | --------- | --------- | --------- | --------- |
-| JavaScript / bun 0.1.10 (x64-linux)  | 140.32/iter µs | 127.83 µs | 325.01 µs | 138.15 µs | 281.22 µs |
-| JavaScript / node 18.7.0 (x64-linux) | 704.41/iter µs | 389.89 µs | 17.54 ms  | 630.62 µs | 1.37 ms   |
-| JavaScript / deno 1.24.2 (x64-linux) | 1.19/iter ms   | 709.68 µs | 7.13 ms   | 1.39 ms   | 2.66 ms   |
+| JavaScript / bun 0.1.10 (x64-linux)  | 199.54/iter µs | 171.2 µs  | 729.91 µs | 179.5 µs  | 728.81 µs |
+| JavaScript / node 18.7.0 (x64-linux) | 527.97/iter µs | 479.81 µs | 1.54 ms   | 516.81 µs | 1.46 ms   |
+| JavaScript / deno 1.24.3 (x64-linux) | 1.83/iter ms   | 926.62 µs | 5.06 ms   | 2.24 ms   | 2.7 ms    |
 
 
-<div id="chart-4"></div>
+<div id="chart-28"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-4'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"sqlite","data":[{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":140320.16},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":704411.58},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":1189436.91}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
+new ApexCharts(document.querySelector('#chart-28'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"sqlite","data":[{"x":"JavaScript / deno 1.24.3 (x64-linux)","y":1832940.9},{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":199538.31},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":527973.66}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
+</script>
+
+### <a name="sqlite-SELECT-ALL-FROM-Orders">SELECT ALL FROM Orders</a>
+
+#### <a name="sqlite-SELECT-ALL-FROM-Orders-javascript">JavaScript</a>
+
+| Language                             | Average        | p75       | p99       | Min       | Max       |
+| ------------------------------------ | -------------- | --------- | --------- | --------- | --------- |
+| JavaScript / bun 0.1.10 (x64-linux)  | 35.14/iter ms  | 34.14 ms  | 39.49 ms  | 34.93 ms  | 38.84 ms  |
+| JavaScript / node 18.7.0 (x64-linux) | 100.05/iter ms | 92.81 ms  | 127.13 ms | 99.67 ms  | 124.23 ms |
+| JavaScript / deno 1.24.3 (x64-linux) | 228.51/iter ms | 221.25 ms | 351.35 ms | 228.63 ms | 247.91 ms |
+
+
+<div id="chart-29"></div>
+<script>
+new ApexCharts(document.querySelector('#chart-29'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"sqlite","data":[{"x":"JavaScript / deno 1.24.3 (x64-linux)","y":228510994.15},{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":35139615.22},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":100049739.67}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
 </script>
 

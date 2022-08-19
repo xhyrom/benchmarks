@@ -1,30 +1,30 @@
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-- [Python](#nanoid-python)
 - [JavaScript](#nanoid-javascript)
-
-### <a name="nanoid-python">Python</a>
-
-| Language | Average       | p75   | p99       | Min      | Max     |
-| -------- | ------------- | ----- | --------- | -------- | ------- |
-| Python   | 21.09/iter µs | 14 µs | 289.58 µs | 18.97 µs | 58.4 µs |
-
-
-<div id="chart-15"></div>
-<script>
-new ApexCharts(document.querySelector('#chart-15'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"nanoid","data":[{"x":"Python","y":21095}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
-</script>
+- [Python](#nanoid-python)
 
 ### <a name="nanoid-javascript">JavaScript</a>
 
-| Language                             | Average       | p75     | p99       | Min      | Max       |
-| ------------------------------------ | ------------- | ------- | --------- | -------- | --------- |
-| JavaScript / bun 0.1.10 (x64-linux)  | 6.84/iter µs  | 1.96 µs | 205.66 µs | 4.74 µs  | 38.75 µs  |
-| JavaScript / node 18.7.0 (x64-linux) | 11.29/iter µs | 2.18 µs | 611.16 µs | 5.45 µs  | 94.12 µs  |
-| JavaScript / deno 1.24.2 (x64-linux) | 37.69/iter µs | 6.25 µs | 775.66 µs | 36.78 µs | 276.73 µs |
+| Language                             | Average       | p75    | p99       | Min     | Max      |
+| ------------------------------------ | ------------- | ------ | --------- | ------- | -------- |
+| JavaScript / node 18.7.0 (x64-linux) | 7.36/iter µs  | 3.1 µs | 230.6 µs  | 4.4 µs  | 96.5 µs  |
+| JavaScript / bun 0.1.10 (x64-linux)  | 9.48/iter µs  | 2.8 µs | 292 µs    | 4.4 µs  | 130.4 µs |
+| JavaScript / deno 1.24.3 (x64-linux) | 23.77/iter µs | 5.5 µs | 687.31 µs | 12.6 µs | 251.6 µs |
 
 
-<div id="chart-16"></div>
+<div id="chart-36"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-16'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"nanoid","data":[{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":6844.96},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":11288.98},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":37691.57}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
+new ApexCharts(document.querySelector('#chart-36'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"nanoid","data":[{"x":"JavaScript / deno 1.24.3 (x64-linux)","y":23768.41},{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":9477.16},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":7362.11}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
+</script>
+
+### <a name="nanoid-python">Python</a>
+
+| Language | Average       | p75     | p99     | Min   | Max   |
+| -------- | ------------- | ------- | ------- | ----- | ----- |
+| Python   | 21.81/iter µs | 20.8 µs | 27.7 µs | 22 µs | 24 µs |
+
+
+<div id="chart-37"></div>
+<script>
+new ApexCharts(document.querySelector('#chart-37'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"nanoid","data":[{"x":"Python","y":21805.34}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
 </script>
 
