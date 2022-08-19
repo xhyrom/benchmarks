@@ -1,81 +1,141 @@
-- [decode](#base64-decode)
-    - [JavaScript](#base64-decode-javascript)
-    - [Python](#base64-decode-python)
-    - [Crystal](#base64-decode-crystal)
-    - [Go](#base64-decode-go)
-    - [Ruby](#base64-decode-ruby)
 - [encode](#base64-encode)
-    - [JavaScript](#base64-encode-javascript)
     - [Python](#base64-encode-python)
     - [Crystal](#base64-encode-crystal)
-    - [Go](#base64-encode-go)
+    - [JavaScript](#base64-encode-javascript)
     - [Ruby](#base64-encode-ruby)
+    - [Go](#base64-encode-go)
+- [decode](#base64-decode)
+    - [Python](#base64-decode-python)
+    - [Crystal](#base64-decode-crystal)
+    - [JavaScript](#base64-decode-javascript)
+    - [Ruby](#base64-decode-ruby)
+    - [Go](#base64-decode-go)
 
-### <a name="base64-decode">decode</a>
+### <a name="base64-encode">encode</a>
 
-#### <a name="base64-decode-javascript">JavaScript</a>
-
-| Language                             | Average       | p75      | p99      | Min      | Max      |
-| ------------------------------------ | ------------- | -------- | -------- | -------- | -------- |
-| JavaScript / bun 0.1.10 (x64-linux)  | 17.18/iter ms | 14.2 ms  | 32.35 ms | 16.2 ms  | 16.19 ms |
-| JavaScript / deno 1.24.3 (x64-linux) | 30.25/iter ms | 25.52 ms | 37.09 ms | 31.22 ms | 30.66 ms |
-| JavaScript / node 18.7.0 (x64-linux) | 56.96/iter ms | 47.88 ms | 74.08 ms | 54.64 ms | 56.84 ms |
-
-#### <a name="base64-decode-python">Python</a>
+#### <a name="base64-encode-python">Python</a>
 
 | Language | Average       | p75      | p99      | Min      | Max      |
 | -------- | ------------- | -------- | -------- | -------- | -------- |
-| Python   | 25.14/iter ms | 21.59 ms | 31.33 ms | 24.19 ms | 26.91 ms |
+| Python   | 15.36/iter ms | 14.56 ms | 17.87 ms | 15.06 ms | 15.19 ms |
 
-#### <a name="base64-decode-crystal">Crystal</a>
+<div id="chart-17"></div>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+new ApexCharts(document.querySelector('chart-17'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"series":[{"name":"base64","data":[15359079.400000002]}],"stroke":{"width":1,"curve":"straight"},"xaxis":{"categories":["Python"],"tooltip":{"enabled":false}}})
+</script>
 
-| Language | Average      | p75     | p99     | Min     | Max     |
-| -------- | ------------ | ------- | ------- | ------- | ------- |
-| Crystal  | 2.52/iter ms | 1.64 ms | 4.15 ms | 2.28 ms | 2.34 ms |
+#### <a name="base64-encode-crystal">Crystal</a>
 
-#### <a name="base64-decode-go">Go</a>
+| Language | Average        | p75       | p99     | Min       | Max       |
+| -------- | -------------- | --------- | ------- | --------- | --------- |
+| Crystal  | 725.58/iter µs | 199.82 µs | 2.59 ms | 555.65 µs | 903.07 µs |
 
-| Language | Average      | p75       | p99     | Min     | Max     |
-| -------- | ------------ | --------- | ------- | ------- | ------- |
-| Go       | 1.41/iter ms | 765.73 µs | 8.44 ms | 1.02 ms | 1.52 ms |
-
-#### <a name="base64-decode-ruby">Ruby</a>
-
-| Language | Average      | p75      | p99      | Min      | Max      |
-| -------- | ------------ | -------- | -------- | -------- | -------- |
-| Ruby     | 64.1/iter ms | 58.72 ms | 74.89 ms | 65.59 ms | 62.96 ms |
-
-### <a name="base64-encode">encode</a>
+<div id="chart-18"></div>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+new ApexCharts(document.querySelector('chart-18'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"series":[{"name":"base64","data":[725582.8600000002]}],"stroke":{"width":1,"curve":"straight"},"xaxis":{"categories":["Crystal"],"tooltip":{"enabled":false}}})
+</script>
 
 #### <a name="base64-encode-javascript">JavaScript</a>
 
 | Language                             | Average       | p75      | p99      | Min      | Max      |
 | ------------------------------------ | ------------- | -------- | -------- | -------- | -------- |
-| JavaScript / bun 0.1.10 (x64-linux)  | 16.36/iter ms | 14.11 ms | 21.1 ms  | 16.29 ms | 16.53 ms |
-| JavaScript / deno 1.24.3 (x64-linux) | 29.63/iter ms | 26.62 ms | 51.37 ms | 30.46 ms | 30.25 ms |
-| JavaScript / node 18.7.0 (x64-linux) | 55.63/iter ms | 49.42 ms | 63.19 ms | 54.46 ms | 58.06 ms |
+| JavaScript / bun 0.1.10 (x64-linux)  | 10.4/iter ms  | 8.6 ms   | 34.29 ms | 9.62 ms  | 9.82 ms  |
+| JavaScript / deno 1.24.2 (x64-linux) | 14.86/iter ms | 13.62 ms | 18.14 ms | 14.87 ms | 14.94 ms |
+| JavaScript / node 18.7.0 (x64-linux) | 38.94/iter ms | 35.95 ms | 51.5 ms  | 39.01 ms | 36.16 ms |
 
-#### <a name="base64-encode-python">Python</a>
-
-| Language | Average      | p75      | p99      | Min      | Max      |
-| -------- | ------------ | -------- | -------- | -------- | -------- |
-| Python   | 25.4/iter ms | 22.63 ms | 31.44 ms | 25.83 ms | 25.37 ms |
-
-#### <a name="base64-encode-crystal">Crystal</a>
-
-| Language | Average      | p75     | p99    | Min     | Max     |
-| -------- | ------------ | ------- | ------ | ------- | ------- |
-| Crystal  | 2.53/iter ms | 1.71 ms | 4.2 ms | 2.49 ms | 2.56 ms |
-
-#### <a name="base64-encode-go">Go</a>
-
-| Language | Average      | p75       | p99     | Min     | Max     |
-| -------- | ------------ | --------- | ------- | ------- | ------- |
-| Go       | 1.37/iter ms | 889.05 µs | 4.18 ms | 1.76 ms | 1.13 ms |
+<div id="chart-19"></div>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+new ApexCharts(document.querySelector('chart-19'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"series":[{"name":"base64","data":[10398234.270000007,38938822.12000001,14858302.299999999]}],"stroke":{"width":1,"curve":"straight"},"xaxis":{"categories":["JavaScript / bun 0.1.10 (x64-linux)","JavaScript / node 18.7.0 (x64-linux)","JavaScript / deno 1.24.2 (x64-linux)"],"tooltip":{"enabled":false}}})
+</script>
 
 #### <a name="base64-encode-ruby">Ruby</a>
 
-| Language | Average      | p75     | p99      | Min     | Max      |
-| -------- | ------------ | ------- | -------- | ------- | -------- |
-| Ruby     | 65.4/iter ms | 59.6 ms | 75.34 ms | 66.8 ms | 65.99 ms |
+| Language | Average       | p75     | p99      | Min      | Max      |
+| -------- | ------------- | ------- | -------- | -------- | -------- |
+| Ruby     | 46.46/iter ms | 39.6 ms | 73.32 ms | 42.98 ms | 73.32 ms |
+
+<div id="chart-20"></div>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+new ApexCharts(document.querySelector('chart-20'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"series":[{"name":"base64","data":[46455320.02000001]}],"stroke":{"width":1,"curve":"straight"},"xaxis":{"categories":["Ruby"],"tooltip":{"enabled":false}}})
+</script>
+
+#### <a name="base64-encode-go">Go</a>
+
+| Language | Average        | p75       | p99     | Min       | Max       |
+| -------- | -------------- | --------- | ------- | --------- | --------- |
+| Go       | 625.45/iter µs | 124.75 µs | 3.15 ms | 244.77 µs | 239.85 µs |
+
+<div id="chart-21"></div>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+new ApexCharts(document.querySelector('chart-21'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"series":[{"name":"base64","data":[625445.9200000002]}],"stroke":{"width":1,"curve":"straight"},"xaxis":{"categories":["Go"],"tooltip":{"enabled":false}}})
+</script>
+
+### <a name="base64-decode">decode</a>
+
+#### <a name="base64-decode-python">Python</a>
+
+| Language | Average       | p75      | p99      | Min      | Max      |
+| -------- | ------------- | -------- | -------- | -------- | -------- |
+| Python   | 15.98/iter ms | 14.62 ms | 18.66 ms | 16.56 ms | 14.68 ms |
+
+<div id="chart-22"></div>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+new ApexCharts(document.querySelector('chart-22'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"series":[{"name":"base64","data":[15980830.970000006]}],"stroke":{"width":1,"curve":"straight"},"xaxis":{"categories":["Python"],"tooltip":{"enabled":false}}})
+</script>
+
+#### <a name="base64-decode-crystal">Crystal</a>
+
+| Language | Average       | p75  | p99     | Min     | Max       |
+| -------- | ------------- | ---- | ------- | ------- | --------- |
+| Crystal  | 583.9/iter µs | 0 ps | 2.64 ms | 1.11 ms | 335.09 µs |
+
+<div id="chart-23"></div>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+new ApexCharts(document.querySelector('chart-23'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"series":[{"name":"base64","data":[583902.6469999999]}],"stroke":{"width":1,"curve":"straight"},"xaxis":{"categories":["Crystal"],"tooltip":{"enabled":false}}})
+</script>
+
+#### <a name="base64-decode-javascript">JavaScript</a>
+
+| Language                             | Average       | p75      | p99      | Min      | Max      |
+| ------------------------------------ | ------------- | -------- | -------- | -------- | -------- |
+| JavaScript / bun 0.1.10 (x64-linux)  | 9.75/iter ms  | 8.05 ms  | 15.29 ms | 12.35 ms | 8.24 ms  |
+| JavaScript / deno 1.24.2 (x64-linux) | 15.09/iter ms | 13.2 ms  | 20.96 ms | 15.84 ms | 17.15 ms |
+| JavaScript / node 18.7.0 (x64-linux) | 39.04/iter ms | 35.36 ms | 69.35 ms | 38.28 ms | 40.35 ms |
+
+<div id="chart-24"></div>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+new ApexCharts(document.querySelector('chart-24'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"series":[{"name":"base64","data":[9750371.05,39036516.80000002,15094611.859999998]}],"stroke":{"width":1,"curve":"straight"},"xaxis":{"categories":["JavaScript / bun 0.1.10 (x64-linux)","JavaScript / node 18.7.0 (x64-linux)","JavaScript / deno 1.24.2 (x64-linux)"],"tooltip":{"enabled":false}}})
+</script>
+
+#### <a name="base64-decode-ruby">Ruby</a>
+
+| Language | Average       | p75      | p99      | Min      | Max      |
+| -------- | ------------- | -------- | -------- | -------- | -------- |
+| Ruby     | 42.89/iter ms | 40.01 ms | 51.38 ms | 40.48 ms | 42.65 ms |
+
+<div id="chart-25"></div>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+new ApexCharts(document.querySelector('chart-25'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"series":[{"name":"base64","data":[42886882.51000001]}],"stroke":{"width":1,"curve":"straight"},"xaxis":{"categories":["Ruby"],"tooltip":{"enabled":false}}})
+</script>
+
+#### <a name="base64-decode-go">Go</a>
+
+| Language | Average        | p75  | p99     | Min  | Max       |
+| -------- | -------------- | ---- | ------- | ---- | --------- |
+| Go       | 359.28/iter µs | 0 ps | 7.67 ms | 0 ps | 333.05 µs |
+
+<div id="chart-26"></div>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+new ApexCharts(document.querySelector('chart-26'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"series":[{"name":"base64","data":[359281.322]}],"stroke":{"width":1,"curve":"straight"},"xaxis":{"categories":["Go"],"tooltip":{"enabled":false}}})
+</script>
 

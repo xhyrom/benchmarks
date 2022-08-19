@@ -2,6 +2,7 @@
   "name": "benchmarks",
   "type": "module",
   "scripts": {
+    "postinstall": "cd node_modules/better-sqlite3 && bun run install",
     "setup": "bun run setup:init && bun run setup:languages && bun run setup:benchmarks",
     "setup:init": "bun scripts/init.ts",
     "setup:languages": "bun scripts/setup_languages.ts",
@@ -14,7 +15,6 @@
     "bun-types": "^0.1.8"
   },
   "dependencies": {
-    "apexcharts": "^3.35.4",
     "better-sqlite3": "^7.6.2",
     "bun-utilities": "^0.2.1",
     "markdown-table": "^3.0.2",

@@ -41,6 +41,7 @@ let head = [
     ''
 ].join('\n');
 
+let x = 0;
 for (const [benchmarkName, files] of Object.entries(outputs)) {
     let perBenchMarkdown = '';
     let perBenchHead = '';
@@ -77,6 +78,7 @@ for (const [benchmarkName, files] of Object.entries(outputs)) {
         };
 
         for (const language of [...new Set(Object.values(results).map(b => b.language))]) {
+            let charts: Record<string, any> = {};
             let tables: Record<string, any[]> = {};
             const hasGroup = group !== 'main';
             head += `${' '.repeat(size.spaces)}- [${language}](./${benchmarkName}.md#${benchmarkName}${hasGroup ? `-${group}` : ''}-${language.toLowerCase()})\n`;
@@ -86,11 +88,41 @@ for (const [benchmarkName, files] of Object.entries(outputs)) {
             tables[language] = tables[language] || [
                 ['Language', 'Average', 'p75', 'p99', 'Min', 'Max']
             ];
+            charts[language] = charts[language] || {
+                chart: {
+                    height: 320,
+                    type: 'bar',
+                    toolbar: {
+                        show: true,
+                    },
+                    animations: {
+                        enabled: false,
+                    },
+                },
+                series: [
+                    {
+                        name: benchmarkName,
+                        data: []
+                    }
+                ],
+                stroke: {
+                    width: 1,
+                    curve: "straight",
+                },
+                xaxis: {
+                    categories: [],
+                    tooltip: {
+                        enabled: false,
+                    },
+                }
+            }
 
             for (const bench of Object.values(results)) {
 
                 if (bench.language !== language) continue;
                 if (bench.stats.latency && tables[language][0].at(-1) !== 'Latency') tables[language][0].push('Latency');
+
+                charts[language].xaxis.categories.push(bench.runtime ? `${bench.language} / ${bench.runtime}` : bench.language);
     
                 const forPush = [
                     bench.runtime ? `${bench.language} / ${bench.runtime}` : bench.language,
@@ -107,13 +139,28 @@ for (const [benchmarkName, files] of Object.entries(outputs)) {
                 forPush.push(bench.stats.avg);
     
                 tables[language].push(forPush);
+                charts[language].series[0].data.push(bench.stats.avg);
             }
-    
-            for (const table of Object.values(tables)) {
+
+            const tablesArray = Object.values(tables);
+            const chartsArray = Object.values(charts);
+
+            for (let i = 0; i < tablesArray.length; i++) {
+                const table = tablesArray[i];
+                const chart = chartsArray[i];
+
                 table.sort(sort);
                 for (const c of table.slice(1)) c.splice(c.length - 2, 2);
 
-                perBenchMarkdown += '\n' + markdownTable(table) + '\n\n';
+                perBenchMarkdown += '\n' + markdownTable(table) + '\n\n' + [
+                    `<div id="chart-${x}"></div>`,
+                    `<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>`,
+                    `<script>`,
+                    `new ApexCharts(document.querySelector('chart-${x}'), ${JSON.stringify(chart)})`,
+                    `</script>`
+                ].join('\n') + '\n\n';
+
+                x++;
             }
         }
     }

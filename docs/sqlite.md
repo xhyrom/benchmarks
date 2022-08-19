@@ -1,13 +1,13 @@
 - [SELECT ALL FROM Employees](#sqlite-SELECT-ALL-FROM-Employees)
     - [JavaScript](#sqlite-SELECT-ALL-FROM-Employees-javascript)
-- [SELECT ALL FROM Products](#sqlite-SELECT-ALL-FROM-Products)
-    - [JavaScript](#sqlite-SELECT-ALL-FROM-Products-javascript)
-- [SELECT ALL FROM Suppliers](#sqlite-SELECT-ALL-FROM-Suppliers)
-    - [JavaScript](#sqlite-SELECT-ALL-FROM-Suppliers-javascript)
-- [SELECT ALL FROM Customers](#sqlite-SELECT-ALL-FROM-Customers)
-    - [JavaScript](#sqlite-SELECT-ALL-FROM-Customers-javascript)
 - [SELECT ALL FROM Orders](#sqlite-SELECT-ALL-FROM-Orders)
     - [JavaScript](#sqlite-SELECT-ALL-FROM-Orders-javascript)
+- [SELECT ALL FROM Suppliers](#sqlite-SELECT-ALL-FROM-Suppliers)
+    - [JavaScript](#sqlite-SELECT-ALL-FROM-Suppliers-javascript)
+- [SELECT ALL FROM Products](#sqlite-SELECT-ALL-FROM-Products)
+    - [JavaScript](#sqlite-SELECT-ALL-FROM-Products-javascript)
+- [SELECT ALL FROM Customers](#sqlite-SELECT-ALL-FROM-Customers)
+    - [JavaScript](#sqlite-SELECT-ALL-FROM-Customers-javascript)
 
 ### <a name="sqlite-SELECT-ALL-FROM-Employees">SELECT ALL FROM Employees</a>
 
@@ -15,19 +15,31 @@
 
 | Language                             | Average        | p75       | p99       | Min       | Max       |
 | ------------------------------------ | -------------- | --------- | --------- | --------- | --------- |
-| JavaScript / bun 0.1.10 (x64-linux)  | 108.09/iter µs | 56.7 µs   | 771.76 µs | 81.01 µs  | 634.85 µs |
-| JavaScript / node 18.7.0 (x64-linux) | 220.47/iter µs | 180.51 µs | 1.99 ms   | 208.92 µs | 351.13 µs |
-| JavaScript / deno 1.24.3 (x64-linux) | 810.21/iter µs | 647.45 µs | 2.74 ms   | 820.86 µs | 1.73 ms   |
+| JavaScript / bun 0.1.10 (x64-linux)  | 63.84/iter µs  | 41.48 µs  | 263.88 µs | 53.68 µs  | 216.98 µs |
+| JavaScript / node 18.7.0 (x64-linux) | 434.2/iter µs  | 128.48 µs | 22.73 ms  | 217.65 µs | 982.85 µs |
+| JavaScript / deno 1.24.2 (x64-linux) | 547.34/iter µs | 247.06 µs | 3.95 ms   | 557.92 µs | 2.67 ms   |
 
-### <a name="sqlite-SELECT-ALL-FROM-Products">SELECT ALL FROM Products</a>
+<div id="chart-0"></div>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+new ApexCharts(document.querySelector('chart-0'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"series":[{"name":"sqlite","data":[63839.66,434200.76,547335.79]}],"stroke":{"width":1,"curve":"straight"},"xaxis":{"categories":["JavaScript / bun 0.1.10 (x64-linux)","JavaScript / node 18.7.0 (x64-linux)","JavaScript / deno 1.24.2 (x64-linux)"],"tooltip":{"enabled":false}}})
+</script>
 
-#### <a name="sqlite-SELECT-ALL-FROM-Products-javascript">JavaScript</a>
+### <a name="sqlite-SELECT-ALL-FROM-Orders">SELECT ALL FROM Orders</a>
 
-| Language                             | Average        | p75       | p99       | Min       | Max       |
-| ------------------------------------ | -------------- | --------- | --------- | --------- | --------- |
-| JavaScript / bun 0.1.10 (x64-linux)  | 138.85/iter µs | 107.81 µs | 719.46 µs | 125.51 µs | 713.55 µs |
-| JavaScript / node 18.7.0 (x64-linux) | 420.08/iter µs | 341.43 µs | 1.31 ms   | 423.83 µs | 483.14 µs |
-| JavaScript / deno 1.24.3 (x64-linux) | 1.11/iter ms   | 951.07 µs | 2.6 ms    | 1.07 ms   | 1.85 ms   |
+#### <a name="sqlite-SELECT-ALL-FROM-Orders-javascript">JavaScript</a>
+
+| Language                             | Average       | p75       | p99       | Min       | Max       |
+| ------------------------------------ | ------------- | --------- | --------- | --------- | --------- |
+| JavaScript / bun 0.1.10 (x64-linux)  | 28.39/iter ms | 25.59 ms  | 38.48 ms  | 28.54 ms  | 38.26 ms  |
+| JavaScript / node 18.7.0 (x64-linux) | 94.03/iter ms | 86.36 ms  | 137.03 ms | 93.5 ms   | 131.4 ms  |
+| JavaScript / deno 1.24.2 (x64-linux) | 189.9/iter ms | 170.79 ms | 265.23 ms | 194.42 ms | 258.25 ms |
+
+<div id="chart-1"></div>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+new ApexCharts(document.querySelector('chart-1'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"series":[{"name":"sqlite","data":[28385006.98,94030386.73,189903571.37]}],"stroke":{"width":1,"curve":"straight"},"xaxis":{"categories":["JavaScript / bun 0.1.10 (x64-linux)","JavaScript / node 18.7.0 (x64-linux)","JavaScript / deno 1.24.2 (x64-linux)"],"tooltip":{"enabled":false}}})
+</script>
 
 ### <a name="sqlite-SELECT-ALL-FROM-Suppliers">SELECT ALL FROM Suppliers</a>
 
@@ -35,9 +47,31 @@
 
 | Language                             | Average        | p75       | p99       | Min       | Max       |
 | ------------------------------------ | -------------- | --------- | --------- | --------- | --------- |
-| JavaScript / bun 0.1.10 (x64-linux)  | 92.43/iter µs  | 64.81 µs  | 770.86 µs | 83.81 µs  | 624.05 µs |
-| JavaScript / node 18.7.0 (x64-linux) | 242.57/iter µs | 208.12 µs | 1.39 ms   | 236.92 µs | 266.62 µs |
-| JavaScript / deno 1.24.3 (x64-linux) | 1.04/iter ms   | 889.77 µs | 2.6 ms    | 1.09 ms   | 2.26 ms   |
+| JavaScript / bun 0.1.10 (x64-linux)  | 69.15/iter µs  | 43.88 µs  | 236.72 µs | 81.56 µs  | 144.43 µs |
+| JavaScript / node 18.7.0 (x64-linux) | 184.48/iter µs | 152.27 µs | 903.93 µs | 173.49 µs | 364.68 µs |
+| JavaScript / deno 1.24.2 (x64-linux) | 625.25/iter µs | 289.39 µs | 4.78 ms   | 658.31 µs | 1.98 ms   |
+
+<div id="chart-2"></div>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+new ApexCharts(document.querySelector('chart-2'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"series":[{"name":"sqlite","data":[69154.28,184479.71,625245.45]}],"stroke":{"width":1,"curve":"straight"},"xaxis":{"categories":["JavaScript / bun 0.1.10 (x64-linux)","JavaScript / node 18.7.0 (x64-linux)","JavaScript / deno 1.24.2 (x64-linux)"],"tooltip":{"enabled":false}}})
+</script>
+
+### <a name="sqlite-SELECT-ALL-FROM-Products">SELECT ALL FROM Products</a>
+
+#### <a name="sqlite-SELECT-ALL-FROM-Products-javascript">JavaScript</a>
+
+| Language                             | Average        | p75       | p99       | Min       | Max       |
+| ------------------------------------ | -------------- | --------- | --------- | --------- | --------- |
+| JavaScript / bun 0.1.10 (x64-linux)  | 118.94/iter µs | 74.18 µs  | 371.05 µs | 138.37 µs | 332.58 µs |
+| JavaScript / node 18.7.0 (x64-linux) | 391.43/iter µs | 293.04 µs | 1.31 ms   | 421.36 µs | 1.23 ms   |
+| JavaScript / deno 1.24.2 (x64-linux) | 590.24/iter µs | 316.27 µs | 3.58 ms   | 605.23 µs | 1.82 ms   |
+
+<div id="chart-3"></div>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+new ApexCharts(document.querySelector('chart-3'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"series":[{"name":"sqlite","data":[118941.91,391432.46,590237.49]}],"stroke":{"width":1,"curve":"straight"},"xaxis":{"categories":["JavaScript / bun 0.1.10 (x64-linux)","JavaScript / node 18.7.0 (x64-linux)","JavaScript / deno 1.24.2 (x64-linux)"],"tooltip":{"enabled":false}}})
+</script>
 
 ### <a name="sqlite-SELECT-ALL-FROM-Customers">SELECT ALL FROM Customers</a>
 
@@ -45,17 +79,13 @@
 
 | Language                             | Average        | p75       | p99       | Min       | Max       |
 | ------------------------------------ | -------------- | --------- | --------- | --------- | --------- |
-| JavaScript / bun 0.1.10 (x64-linux)  | 252.37/iter µs | 179.51 µs | 826.76 µs | 237.72 µs | 811.36 µs |
-| JavaScript / node 18.7.0 (x64-linux) | 623.52/iter µs | 578.54 µs | 1.58 ms   | 623.35 µs | 1.54 ms   |
-| JavaScript / deno 1.24.3 (x64-linux) | 2.09/iter ms   | 1.1 ms    | 5.58 ms   | 2.54 ms   | 3.08 ms   |
+| JavaScript / bun 0.1.10 (x64-linux)  | 140.32/iter µs | 127.83 µs | 325.01 µs | 138.15 µs | 281.22 µs |
+| JavaScript / node 18.7.0 (x64-linux) | 704.41/iter µs | 389.89 µs | 17.54 ms  | 630.62 µs | 1.37 ms   |
+| JavaScript / deno 1.24.2 (x64-linux) | 1.19/iter ms   | 709.68 µs | 7.13 ms   | 1.39 ms   | 2.66 ms   |
 
-### <a name="sqlite-SELECT-ALL-FROM-Orders">SELECT ALL FROM Orders</a>
-
-#### <a name="sqlite-SELECT-ALL-FROM-Orders-javascript">JavaScript</a>
-
-| Language                             | Average        | p75       | p99       | Min       | Max       |
-| ------------------------------------ | -------------- | --------- | --------- | --------- | --------- |
-| JavaScript / bun 0.1.10 (x64-linux)  | 42.68/iter ms  | 40.02 ms  | 51.95 ms  | 43.57 ms  | 49.55 ms  |
-| JavaScript / node 18.7.0 (x64-linux) | 119.76/iter ms | 111.33 ms | 157.72 ms | 120.23 ms | 156.57 ms |
-| JavaScript / deno 1.24.3 (x64-linux) | 250.26/iter ms | 221.66 ms | 394.82 ms | 254.29 ms | 291.75 ms |
+<div id="chart-4"></div>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+new ApexCharts(document.querySelector('chart-4'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"series":[{"name":"sqlite","data":[140320.16,704411.58,1189436.91]}],"stroke":{"width":1,"curve":"straight"},"xaxis":{"categories":["JavaScript / bun 0.1.10 (x64-linux)","JavaScript / node 18.7.0 (x64-linux)","JavaScript / deno 1.24.2 (x64-linux)"],"tooltip":{"enabled":false}}})
+</script>
 

@@ -1,45 +1,81 @@
-- [JavaScript](#http-javascript)
 - [Python](#http-python)
 - [Crystal](#http-crystal)
-- [Go](#http-go)
+- [JavaScript](#http-javascript)
 - [Ruby](#http-ruby)
 - [Rust](#http-rust)
-
-### <a name="http-javascript">JavaScript</a>
-
-| Language                             | Average       | p75       | p99       | Min       | Max       | Latency   |
-| ------------------------------------ | ------------- | --------- | --------- | --------- | --------- | --------- |
-| JavaScript / bun 0.1.10 (x64-linux)  | 73,843.55/rps | 10,983.69 | 106,331.7 | 78,016.57 | 81,874.99 | 675.26 µs |
-| JavaScript / deno 1.24.3 (x64-linux) | 39,982.43/rps | 4,513.74  | 44,505.55 | 42,799.56 | 43,867.35 | 1.25 ms   |
-| JavaScript / node 18.7.0 (x64-linux) | 34,265.37/rps | 4,452.41  | 38,450.96 | 35,578.94 | 37,519.62 | 1.46 ms   |
+- [Go](#http-go)
 
 ### <a name="http-python">Python</a>
 
-| Language | Average     | p75    | p99      | Min      | Max      | Latency  |
-| -------- | ----------- | ------ | -------- | -------- | -------- | -------- |
-| Python   | 5,168.6/rps | 601.36 | 6,370.92 | 5,646.49 | 6,071.18 | 10.09 ms |
+| Language | Average    | p75    | p99      | Min      | Max      | Latency  |
+| -------- | ---------- | ------ | -------- | -------- | -------- | -------- |
+| Python   | 899.44/rps | 196.01 | 1,649.62 | 1,055.36 | 1,352.17 | 57.12 ms |
+
+<div id="chart-27"></div>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+new ApexCharts(document.querySelector('chart-27'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"series":[{"name":"http","data":[899.4350731548585]}],"stroke":{"width":1,"curve":"straight"},"xaxis":{"categories":["Python"],"tooltip":{"enabled":false}}})
+</script>
 
 ### <a name="http-crystal">Crystal</a>
 
-| Language | Average       | p75      | p99      | Min       | Max       | Latency   |
-| -------- | ------------- | -------- | -------- | --------- | --------- | --------- |
-| Crystal  | 66,254.01/rps | 7,542.47 | 75,032.8 | 71,022.12 | 74,477.41 | 752.67 µs |
+| Language | Average        | p75       | p99        | Min        | Max        | Latency   |
+| -------- | -------------- | --------- | ---------- | ---------- | ---------- | --------- |
+| Crystal  | 100,988.38/rps | 18,702.11 | 155,505.67 | 110,098.43 | 146,126.95 | 493.81 µs |
 
-### <a name="http-go">Go</a>
+<div id="chart-28"></div>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+new ApexCharts(document.querySelector('chart-28'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"series":[{"name":"http","data":[100988.38250060278]}],"stroke":{"width":1,"curve":"straight"},"xaxis":{"categories":["Crystal"],"tooltip":{"enabled":false}}})
+</script>
 
-| Language | Average       | p75      | p99       | Min       | Max       | Latency |
-| -------- | ------------- | -------- | --------- | --------- | --------- | ------- |
-| Go       | 49,618.61/rps | 3,388.35 | 57,635.47 | 51,820.09 | 55,483.45 | 1.01 ms |
+### <a name="http-javascript">JavaScript</a>
+
+| Language                             | Average        | p75       | p99        | Min        | Max        | Latency   |
+| ------------------------------------ | -------------- | --------- | ---------- | ---------- | ---------- | --------- |
+| JavaScript / bun 0.1.10 (x64-linux)  | 146,839.37/rps | 25,467.15 | 183,751.25 | 161,365.51 | 173,620.81 | 339.14 µs |
+| JavaScript / deno 1.24.2 (x64-linux) | 71,604.01/rps  | 10,961.18 | 80,980.76  | 77,892.73  | 80,443.28  | 696.75 µs |
+| JavaScript / node 18.7.0 (x64-linux) | 43,768.85/rps  | 6,866.16  | 51,223.83  | 48,425.66  | 51,027.39  | 1.14 ms   |
+
+<div id="chart-29"></div>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+new ApexCharts(document.querySelector('chart-29'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"series":[{"name":"http","data":[146839.3667041421,43768.85160568122,71604.01296393623]}],"stroke":{"width":1,"curve":"straight"},"xaxis":{"categories":["JavaScript / bun 0.1.10 (x64-linux)","JavaScript / node 18.7.0 (x64-linux)","JavaScript / deno 1.24.2 (x64-linux)"],"tooltip":{"enabled":false}}})
+</script>
 
 ### <a name="http-ruby">Ruby</a>
 
-| Language | Average       | p75    | p99       | Min       | Max       | Latency |
-| -------- | ------------- | ------ | --------- | --------- | --------- | ------- |
-| Ruby     | 11,175.27/rps | 893.21 | 13,487.09 | 11,741.76 | 13,050.23 | 4.47 ms |
+| Language | Average      | p75      | p99      | Min      | Max      | Latency  |
+| -------- | ------------ | -------- | -------- | -------- | -------- | -------- |
+| Ruby     | 3,442.58/rps | 2,398.89 | 9,820.55 | 6,885.76 | 8,395.94 | 14.52 ms |
+
+<div id="chart-30"></div>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+new ApexCharts(document.querySelector('chart-30'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"series":[{"name":"http","data":[3442.5822459009405]}],"stroke":{"width":1,"curve":"straight"},"xaxis":{"categories":["Ruby"],"tooltip":{"enabled":false}}})
+</script>
 
 ### <a name="http-rust">Rust</a>
 
-| Language | Average      | p75    | p99      | Min      | Max      | Latency |
-| -------- | ------------ | ------ | -------- | -------- | -------- | ------- |
-| Rust     | 6,542.27/rps | 779.71 | 8,976.44 | 7,041.29 | 8,312.04 | 7.66 ms |
+| Language | Average      | p75      | p99       | Min      | Max      | Latency  |
+| -------- | ------------ | -------- | --------- | -------- | -------- | -------- |
+| Rust     | 3,529.86/rps | 2,587.38 | 10,026.46 | 7,449.59 | 9,985.96 | 14.16 ms |
+
+<div id="chart-31"></div>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+new ApexCharts(document.querySelector('chart-31'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"series":[{"name":"http","data":[3529.8601865488545]}],"stroke":{"width":1,"curve":"straight"},"xaxis":{"categories":["Rust"],"tooltip":{"enabled":false}}})
+</script>
+
+### <a name="http-go">Go</a>
+
+| Language | Average        | p75       | p99        | Min        | Max        | Latency   |
+| -------- | -------------- | --------- | ---------- | ---------- | ---------- | --------- |
+| Go       | 167,199.06/rps | 43,962.24 | 239,460.41 | 201,060.02 | 236,264.08 | 297.07 µs |
+
+<div id="chart-32"></div>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+new ApexCharts(document.querySelector('chart-32'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"series":[{"name":"http","data":[167199.05923304163]}],"stroke":{"width":1,"curve":"straight"},"xaxis":{"categories":["Go"],"tooltip":{"enabled":false}}})
+</script>
 
