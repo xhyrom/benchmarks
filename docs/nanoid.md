@@ -8,9 +8,10 @@
 | -------- | ------------- | ----- | --------- | -------- | ------- |
 | Python   | 21.09/iter µs | 14 µs | 289.58 µs | 18.97 µs | 58.4 µs |
 
+
 <div id="chart-15"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-15'), {"chart":{"stacked":true,"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"plotOptions":{"bar":{"columnWidth":"45%","distributed":true}},"series":[{"name":"nanoid","data":[{"x":"Python","y":21095}]}],"tooltip":{"label":{"show":true}},"legend":{"show":false},"stroke":{"width":1,"curve":"straight"},"xaxis":{"type":"category"}}).render()
+new ApexCharts(document.querySelector('#chart-15'), {"chart":{"stacked":true,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"series":[{"name":"nanoid","data":[{"x":"Python","y":21095}]}],"tooltip":{"label":{"show":true}},"legend":{"show":false},"stroke":{"width":1,"curve":"straight"},"xaxis":{"type":"category"}}).render()
 </script>
 
 ### <a name="nanoid-javascript">JavaScript</a>
@@ -21,8 +22,9 @@ new ApexCharts(document.querySelector('#chart-15'), {"chart":{"stacked":true,"he
 | JavaScript / node 18.7.0 (x64-linux) | 11.29/iter µs | 2.18 µs | 611.16 µs | 5.45 µs  | 94.12 µs  |
 | JavaScript / deno 1.24.2 (x64-linux) | 37.69/iter µs | 6.25 µs | 775.66 µs | 36.78 µs | 276.73 µs |
 
+
 <div id="chart-16"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-16'), {"chart":{"stacked":true,"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"plotOptions":{"bar":{"columnWidth":"45%","distributed":true}},"series":[{"name":"nanoid","data":[{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":6844.96},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":11288.98},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":37691.57}]}],"tooltip":{"label":{"show":true}},"legend":{"show":false},"stroke":{"width":1,"curve":"straight"},"xaxis":{"type":"category"}}).render()
+new ApexCharts(document.querySelector('#chart-16'), {"chart":{"stacked":true,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"series":[{"name":"nanoid","data":[{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":6844.96},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":11288.98},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":37691.57}]}],"tooltip":{"label":{"show":true}},"legend":{"show":false},"stroke":{"width":1,"curve":"straight"},"xaxis":{"type":"category"}}).render()
 </script>
 
