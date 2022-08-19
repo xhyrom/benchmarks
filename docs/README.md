@@ -1,4 +1,4 @@
-*Ran on Intel(R) Xeon(R) Platinum 8370C CPU @ 2.80GHz*
+*Ran on Intel(R) Xeon(R) Platinum 8171M CPU @ 2.60GHz*
 
 ## Table Of Contents
 
@@ -7,27 +7,32 @@
       - [decode](./base64.md#base64-decode)
          - [JavaScript](./base64.md#base64-decode-javascript)
          - [Python](./base64.md#base64-decode-python)
+         - [Crystal](./base64.md#base64-decode-crystal)
          - [Go](./base64.md#base64-decode-go)
          - [Ruby](./base64.md#base64-decode-ruby)
       - [encode](./base64.md#base64-encode)
          - [JavaScript](./base64.md#base64-encode-javascript)
          - [Python](./base64.md#base64-encode-python)
+         - [Crystal](./base64.md#base64-encode-crystal)
          - [Go](./base64.md#base64-encode-go)
          - [Ruby](./base64.md#base64-encode-ruby)
    - [json](./json.md)
       - [parse](./json.md#json-parse)
          - [JavaScript](./json.md#json-parse-javascript)
          - [Python](./json.md#json-parse-python)
+         - [Crystal](./json.md#json-parse-crystal)
          - [Go](./json.md#json-parse-go)
          - [Ruby](./json.md#json-parse-ruby)
       - [stringify](./json.md#json-stringify)
          - [JavaScript](./json.md#json-stringify-javascript)
          - [Python](./json.md#json-stringify-python)
+         - [Crystal](./json.md#json-stringify-crystal)
          - [Go](./json.md#json-stringify-go)
          - [Ruby](./json.md#json-stringify-ruby)
    - [console](./console.md)
       - [JavaScript](./console.md#console-javascript)
       - [Python](./console.md#console-python)
+      - [Crystal](./console.md#console-crystal)
       - [Go](./console.md#console-go)
       - [Ruby](./console.md#console-ruby)
    - [sqlite](./sqlite.md)
