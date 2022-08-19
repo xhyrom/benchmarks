@@ -2,6 +2,7 @@ import { markdownTable } from 'markdown-table';
 import { readdirSync, readFileSync } from 'fs';
 import { join, extname } from 'path';
 import { NumberType, Tool, toObject, sort, format, getCPU } from './utils';
+import { marked } from 'marked';
 
 const outputs = toObject(
     readdirSync(join(import.meta.dir, '.cache', 'outputs'))
@@ -44,7 +45,7 @@ let head = [
 let x = 0;
 for (const [benchmarkName, files] of Object.entries(outputs)) {
     let perBenchMarkdown = '';
-    let perBenchHead = '';
+    let perBenchHead = `<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>\n`;
     
     head += `   - [${benchmarkName}](./${benchmarkName}.md)\n`;
 
@@ -90,6 +91,7 @@ for (const [benchmarkName, files] of Object.entries(outputs)) {
             ];
             charts[language] = charts[language] || {
                 chart: {
+                    stacked: true,
                     height: 320,
                     type: 'bar',
                     toolbar: {
@@ -99,22 +101,33 @@ for (const [benchmarkName, files] of Object.entries(outputs)) {
                         enabled: false,
                     },
                 },
+                plotOptions: {
+                    bar: {
+                      columnWidth: '45%',
+                      distributed: true,
+                    }
+                },
                 series: [
                     {
                         name: benchmarkName,
-                        data: []
+                        data: [],
                     }
                 ],
+                tooltip: {
+                    label: {
+                        show: true
+                    }
+                },
+                legend: {
+                    show: false,
+                },
                 stroke: {
                     width: 1,
                     curve: "straight",
                 },
                 xaxis: {
-                    categories: [],
-                    tooltip: {
-                        enabled: false,
-                    },
-                }
+                    type: 'category'
+                },
             }
 
             for (const bench of Object.values(results)) {
@@ -122,7 +135,7 @@ for (const [benchmarkName, files] of Object.entries(outputs)) {
                 if (bench.language !== language) continue;
                 if (bench.stats.latency && tables[language][0].at(-1) !== 'Latency') tables[language][0].push('Latency');
 
-                charts[language].xaxis.categories.push(bench.runtime ? `${bench.language} / ${bench.runtime}` : bench.language);
+                //charts[language].xaxis.categories.push(bench.runtime ? `${bench.language} / ${bench.runtime}` : bench.language);
     
                 const forPush = [
                     bench.runtime ? `${bench.language} / ${bench.runtime}` : bench.language,
@@ -139,7 +152,10 @@ for (const [benchmarkName, files] of Object.entries(outputs)) {
                 forPush.push(bench.stats.avg);
     
                 tables[language].push(forPush);
-                charts[language].series[0].data.push(bench.stats.avg);
+                charts[language].series[0].data.push({
+                    x: bench.runtime ? `${bench.language} / ${bench.runtime}` : bench.language,
+                    y: bench.stats.avg,
+                });
             }
 
             const tablesArray = Object.values(tables);
@@ -154,9 +170,8 @@ for (const [benchmarkName, files] of Object.entries(outputs)) {
 
                 perBenchMarkdown += '\n' + markdownTable(table) + '\n\n' + [
                     `<div id="chart-${x}"></div>`,
-                    `<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>`,
                     `<script>`,
-                    `new ApexCharts(document.querySelector('chart-${x}'), ${JSON.stringify(chart)})`,
+                    `new ApexCharts(document.querySelector('#chart-${x}'), ${JSON.stringify(chart)}).render()`,
                     `</script>`
                 ].join('\n') + '\n\n';
 
@@ -165,7 +180,7 @@ for (const [benchmarkName, files] of Object.entries(outputs)) {
         }
     }
 
-    await Bun.write(join(import.meta.dir, '..', 'docs', `${benchmarkName}.md`), `${perBenchHead}\n${perBenchMarkdown}`);
+    await Bun.write(join(import.meta.dir, '..', 'docs', `${benchmarkName}.html`), marked.parse(`${perBenchHead}\n${perBenchMarkdown}`)/*`${perBenchHead}\n${perBenchMarkdown}`*/);
 }
 
 await Bun.write(join(import.meta.dir, '..', 'docs', 'README.md'), head);

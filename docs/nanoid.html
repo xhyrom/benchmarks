@@ -1,0 +1,73 @@
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<ul>
+<li><a href="#nanoid-python">Python</a></li>
+<li><a href="#nanoid-javascript">JavaScript</a></li>
+</ul>
+<h3 id="python"><a name="nanoid-python">Python</a></h3>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Average</th>
+<th>p75</th>
+<th>p99</th>
+<th>Min</th>
+<th>Max</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Python</td>
+<td>21.09/iter µs</td>
+<td>14 µs</td>
+<td>289.58 µs</td>
+<td>18.97 µs</td>
+<td>58.4 µs</td>
+</tr>
+</tbody></table>
+<div id="chart-15"></div>
+<script>
+new ApexCharts(document.querySelector('#chart-15'), {"chart":{"stacked":true,"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"plotOptions":{"bar":{"columnWidth":"45%","distributed":true}},"series":[{"name":"nanoid","data":[{"x":"Python","y":21095}]}],"tooltip":{"label":{"show":true}},"legend":{"show":false},"stroke":{"width":1,"curve":"straight"},"xaxis":{"type":"category"}}).render()
+</script>
+
+<h3 id="javascript"><a name="nanoid-javascript">JavaScript</a></h3>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Average</th>
+<th>p75</th>
+<th>p99</th>
+<th>Min</th>
+<th>Max</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>JavaScript / bun 0.1.10 (x64-linux)</td>
+<td>6.84/iter µs</td>
+<td>1.96 µs</td>
+<td>205.66 µs</td>
+<td>4.74 µs</td>
+<td>38.75 µs</td>
+</tr>
+<tr>
+<td>JavaScript / node 18.7.0 (x64-linux)</td>
+<td>11.29/iter µs</td>
+<td>2.18 µs</td>
+<td>611.16 µs</td>
+<td>5.45 µs</td>
+<td>94.12 µs</td>
+</tr>
+<tr>
+<td>JavaScript / deno 1.24.2 (x64-linux)</td>
+<td>37.69/iter µs</td>
+<td>6.25 µs</td>
+<td>775.66 µs</td>
+<td>36.78 µs</td>
+<td>276.73 µs</td>
+</tr>
+</tbody></table>
+<div id="chart-16"></div>
+<script>
+new ApexCharts(document.querySelector('#chart-16'), {"chart":{"stacked":true,"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"plotOptions":{"bar":{"columnWidth":"45%","distributed":true}},"series":[{"name":"nanoid","data":[{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":6844.96},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":11288.98},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":37691.57}]}],"tooltip":{"label":{"show":true}},"legend":{"show":false},"stroke":{"width":1,"curve":"straight"},"xaxis":{"type":"category"}}).render()
+</script>
+

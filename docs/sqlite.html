@@ -1,0 +1,238 @@
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<ul>
+<li><a href="#sqlite-SELECT-ALL-FROM-Employees">SELECT ALL FROM Employees</a><ul>
+<li><a href="#sqlite-SELECT-ALL-FROM-Employees-javascript">JavaScript</a></li>
+</ul>
+</li>
+<li><a href="#sqlite-SELECT-ALL-FROM-Orders">SELECT ALL FROM Orders</a><ul>
+<li><a href="#sqlite-SELECT-ALL-FROM-Orders-javascript">JavaScript</a></li>
+</ul>
+</li>
+<li><a href="#sqlite-SELECT-ALL-FROM-Suppliers">SELECT ALL FROM Suppliers</a><ul>
+<li><a href="#sqlite-SELECT-ALL-FROM-Suppliers-javascript">JavaScript</a></li>
+</ul>
+</li>
+<li><a href="#sqlite-SELECT-ALL-FROM-Products">SELECT ALL FROM Products</a><ul>
+<li><a href="#sqlite-SELECT-ALL-FROM-Products-javascript">JavaScript</a></li>
+</ul>
+</li>
+<li><a href="#sqlite-SELECT-ALL-FROM-Customers">SELECT ALL FROM Customers</a><ul>
+<li><a href="#sqlite-SELECT-ALL-FROM-Customers-javascript">JavaScript</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="select-all-from-employees"><a name="sqlite-SELECT-ALL-FROM-Employees">SELECT ALL FROM Employees</a></h3>
+<h4 id="javascript"><a name="sqlite-SELECT-ALL-FROM-Employees-javascript">JavaScript</a></h4>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Average</th>
+<th>p75</th>
+<th>p99</th>
+<th>Min</th>
+<th>Max</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>JavaScript / bun 0.1.10 (x64-linux)</td>
+<td>63.84/iter µs</td>
+<td>41.48 µs</td>
+<td>263.88 µs</td>
+<td>53.68 µs</td>
+<td>216.98 µs</td>
+</tr>
+<tr>
+<td>JavaScript / node 18.7.0 (x64-linux)</td>
+<td>434.2/iter µs</td>
+<td>128.48 µs</td>
+<td>22.73 ms</td>
+<td>217.65 µs</td>
+<td>982.85 µs</td>
+</tr>
+<tr>
+<td>JavaScript / deno 1.24.2 (x64-linux)</td>
+<td>547.34/iter µs</td>
+<td>247.06 µs</td>
+<td>3.95 ms</td>
+<td>557.92 µs</td>
+<td>2.67 ms</td>
+</tr>
+</tbody></table>
+<div id="chart-0"></div>
+<script>
+new ApexCharts(document.querySelector('#chart-0'), {"chart":{"stacked":true,"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"plotOptions":{"bar":{"columnWidth":"45%","distributed":true}},"series":[{"name":"sqlite","data":[{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":63839.66},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":434200.76},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":547335.79}]}],"tooltip":{"label":{"show":true}},"legend":{"show":false},"stroke":{"width":1,"curve":"straight"},"xaxis":{"type":"category"}}).render()
+</script>
+
+<h3 id="select-all-from-orders"><a name="sqlite-SELECT-ALL-FROM-Orders">SELECT ALL FROM Orders</a></h3>
+<h4 id="javascript-1"><a name="sqlite-SELECT-ALL-FROM-Orders-javascript">JavaScript</a></h4>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Average</th>
+<th>p75</th>
+<th>p99</th>
+<th>Min</th>
+<th>Max</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>JavaScript / bun 0.1.10 (x64-linux)</td>
+<td>28.39/iter ms</td>
+<td>25.59 ms</td>
+<td>38.48 ms</td>
+<td>28.54 ms</td>
+<td>38.26 ms</td>
+</tr>
+<tr>
+<td>JavaScript / node 18.7.0 (x64-linux)</td>
+<td>94.03/iter ms</td>
+<td>86.36 ms</td>
+<td>137.03 ms</td>
+<td>93.5 ms</td>
+<td>131.4 ms</td>
+</tr>
+<tr>
+<td>JavaScript / deno 1.24.2 (x64-linux)</td>
+<td>189.9/iter ms</td>
+<td>170.79 ms</td>
+<td>265.23 ms</td>
+<td>194.42 ms</td>
+<td>258.25 ms</td>
+</tr>
+</tbody></table>
+<div id="chart-1"></div>
+<script>
+new ApexCharts(document.querySelector('#chart-1'), {"chart":{"stacked":true,"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"plotOptions":{"bar":{"columnWidth":"45%","distributed":true}},"series":[{"name":"sqlite","data":[{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":28385006.98},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":94030386.73},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":189903571.37}]}],"tooltip":{"label":{"show":true}},"legend":{"show":false},"stroke":{"width":1,"curve":"straight"},"xaxis":{"type":"category"}}).render()
+</script>
+
+<h3 id="select-all-from-suppliers"><a name="sqlite-SELECT-ALL-FROM-Suppliers">SELECT ALL FROM Suppliers</a></h3>
+<h4 id="javascript-2"><a name="sqlite-SELECT-ALL-FROM-Suppliers-javascript">JavaScript</a></h4>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Average</th>
+<th>p75</th>
+<th>p99</th>
+<th>Min</th>
+<th>Max</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>JavaScript / bun 0.1.10 (x64-linux)</td>
+<td>69.15/iter µs</td>
+<td>43.88 µs</td>
+<td>236.72 µs</td>
+<td>81.56 µs</td>
+<td>144.43 µs</td>
+</tr>
+<tr>
+<td>JavaScript / node 18.7.0 (x64-linux)</td>
+<td>184.48/iter µs</td>
+<td>152.27 µs</td>
+<td>903.93 µs</td>
+<td>173.49 µs</td>
+<td>364.68 µs</td>
+</tr>
+<tr>
+<td>JavaScript / deno 1.24.2 (x64-linux)</td>
+<td>625.25/iter µs</td>
+<td>289.39 µs</td>
+<td>4.78 ms</td>
+<td>658.31 µs</td>
+<td>1.98 ms</td>
+</tr>
+</tbody></table>
+<div id="chart-2"></div>
+<script>
+new ApexCharts(document.querySelector('#chart-2'), {"chart":{"stacked":true,"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"plotOptions":{"bar":{"columnWidth":"45%","distributed":true}},"series":[{"name":"sqlite","data":[{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":69154.28},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":184479.71},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":625245.45}]}],"tooltip":{"label":{"show":true}},"legend":{"show":false},"stroke":{"width":1,"curve":"straight"},"xaxis":{"type":"category"}}).render()
+</script>
+
+<h3 id="select-all-from-products"><a name="sqlite-SELECT-ALL-FROM-Products">SELECT ALL FROM Products</a></h3>
+<h4 id="javascript-3"><a name="sqlite-SELECT-ALL-FROM-Products-javascript">JavaScript</a></h4>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Average</th>
+<th>p75</th>
+<th>p99</th>
+<th>Min</th>
+<th>Max</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>JavaScript / bun 0.1.10 (x64-linux)</td>
+<td>118.94/iter µs</td>
+<td>74.18 µs</td>
+<td>371.05 µs</td>
+<td>138.37 µs</td>
+<td>332.58 µs</td>
+</tr>
+<tr>
+<td>JavaScript / node 18.7.0 (x64-linux)</td>
+<td>391.43/iter µs</td>
+<td>293.04 µs</td>
+<td>1.31 ms</td>
+<td>421.36 µs</td>
+<td>1.23 ms</td>
+</tr>
+<tr>
+<td>JavaScript / deno 1.24.2 (x64-linux)</td>
+<td>590.24/iter µs</td>
+<td>316.27 µs</td>
+<td>3.58 ms</td>
+<td>605.23 µs</td>
+<td>1.82 ms</td>
+</tr>
+</tbody></table>
+<div id="chart-3"></div>
+<script>
+new ApexCharts(document.querySelector('#chart-3'), {"chart":{"stacked":true,"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"plotOptions":{"bar":{"columnWidth":"45%","distributed":true}},"series":[{"name":"sqlite","data":[{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":118941.91},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":391432.46},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":590237.49}]}],"tooltip":{"label":{"show":true}},"legend":{"show":false},"stroke":{"width":1,"curve":"straight"},"xaxis":{"type":"category"}}).render()
+</script>
+
+<h3 id="select-all-from-customers"><a name="sqlite-SELECT-ALL-FROM-Customers">SELECT ALL FROM Customers</a></h3>
+<h4 id="javascript-4"><a name="sqlite-SELECT-ALL-FROM-Customers-javascript">JavaScript</a></h4>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Average</th>
+<th>p75</th>
+<th>p99</th>
+<th>Min</th>
+<th>Max</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>JavaScript / bun 0.1.10 (x64-linux)</td>
+<td>140.32/iter µs</td>
+<td>127.83 µs</td>
+<td>325.01 µs</td>
+<td>138.15 µs</td>
+<td>281.22 µs</td>
+</tr>
+<tr>
+<td>JavaScript / node 18.7.0 (x64-linux)</td>
+<td>704.41/iter µs</td>
+<td>389.89 µs</td>
+<td>17.54 ms</td>
+<td>630.62 µs</td>
+<td>1.37 ms</td>
+</tr>
+<tr>
+<td>JavaScript / deno 1.24.2 (x64-linux)</td>
+<td>1.19/iter ms</td>
+<td>709.68 µs</td>
+<td>7.13 ms</td>
+<td>1.39 ms</td>
+<td>2.66 ms</td>
+</tr>
+</tbody></table>
+<div id="chart-4"></div>
+<script>
+new ApexCharts(document.querySelector('#chart-4'), {"chart":{"stacked":true,"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"plotOptions":{"bar":{"columnWidth":"45%","distributed":true}},"series":[{"name":"sqlite","data":[{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":140320.16},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":704411.58},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":1189436.91}]}],"tooltip":{"label":{"show":true}},"legend":{"show":false},"stroke":{"width":1,"curve":"straight"},"xaxis":{"type":"category"}}).render()
+</script>
+
