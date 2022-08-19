@@ -180,7 +180,7 @@ for (const [benchmarkName, files] of Object.entries(outputs)) {
         }
     }
 
-    await Bun.write(join(import.meta.dir, '..', 'docs', `${benchmarkName}.html`), marked.parse(`${perBenchHead}\n${perBenchMarkdown}`)/*`${perBenchHead}\n${perBenchMarkdown}`*/);
+    await Bun.write(join(import.meta.dir, '..', 'docs', `${benchmarkName}.md`), /*marked.parse(`${perBenchHead}\n${perBenchMarkdown}`)*/`${perBenchHead}\n${perBenchMarkdown}`);
 }
 
 await Bun.write(join(import.meta.dir, '..', 'docs', 'README.md'), head);
