@@ -1,91 +1,91 @@
 - [SELECT ALL FROM Employees](#sqlite-SELECT-ALL-FROM-Employees)
     - [JavaScript](#sqlite-SELECT-ALL-FROM-Employees-javascript)
-- [SELECT ALL FROM Orders](#sqlite-SELECT-ALL-FROM-Orders)
-    - [JavaScript](#sqlite-SELECT-ALL-FROM-Orders-javascript)
-- [SELECT ALL FROM Suppliers](#sqlite-SELECT-ALL-FROM-Suppliers)
-    - [JavaScript](#sqlite-SELECT-ALL-FROM-Suppliers-javascript)
 - [SELECT ALL FROM Products](#sqlite-SELECT-ALL-FROM-Products)
     - [JavaScript](#sqlite-SELECT-ALL-FROM-Products-javascript)
+- [SELECT ALL FROM Suppliers](#sqlite-SELECT-ALL-FROM-Suppliers)
+    - [JavaScript](#sqlite-SELECT-ALL-FROM-Suppliers-javascript)
 - [SELECT ALL FROM Customers](#sqlite-SELECT-ALL-FROM-Customers)
     - [JavaScript](#sqlite-SELECT-ALL-FROM-Customers-javascript)
+- [SELECT ALL FROM Orders](#sqlite-SELECT-ALL-FROM-Orders)
+    - [JavaScript](#sqlite-SELECT-ALL-FROM-Orders-javascript)
 
 ### <a name="sqlite-SELECT-ALL-FROM-Employees">SELECT ALL FROM Employees</a>
 
 #### <a name="sqlite-SELECT-ALL-FROM-Employees-javascript">JavaScript</a>
 
-| Language                             | Average        | p75       | p99       | Min       | Max       |
-| ------------------------------------ | -------------- | --------- | --------- | --------- | --------- |
-| JavaScript / bun 0.1.10 (x64-linux)  | 63.84/iter µs  | 41.48 µs  | 263.88 µs | 53.68 µs  | 216.98 µs |
-| JavaScript / node 18.7.0 (x64-linux) | 434.2/iter µs  | 128.48 µs | 22.73 ms  | 217.65 µs | 982.85 µs |
-| JavaScript / deno 1.24.2 (x64-linux) | 547.34/iter µs | 247.06 µs | 3.95 ms   | 557.92 µs | 2.67 ms   |
+| Language                             | Average        | p75      | p99      | Min      | Max      |
+| ------------------------------------ | -------------- | -------- | -------- | -------- | -------- |
+| JavaScript / bun 0.1.10 (x64-linux)  | 82.04/iter µs  | 46.1 µs  | 424.3 µs | 58.2 µs  | 410.4 µs |
+| JavaScript / node 18.7.0 (x64-linux) | 152.19/iter µs | 128.8 µs | 282.6 µs | 152.4 µs | 236 µs   |
+| JavaScript / deno 1.24.3 (x64-linux) | 615.5/iter µs  | 544.6 µs | 2.14 ms  | 636.2 µs | 1.02 ms  |
 
-<div id="chart-0"></div>
+<div id="chart-25"></div>
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script>
-new ApexCharts(document.querySelector('chart-0'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"series":[{"name":"sqlite","data":[63839.66,434200.76,547335.79]}],"stroke":{"width":1,"curve":"straight"},"xaxis":{"categories":["JavaScript / bun 0.1.10 (x64-linux)","JavaScript / node 18.7.0 (x64-linux)","JavaScript / deno 1.24.2 (x64-linux)"],"tooltip":{"enabled":false}}})
-</script>
-
-### <a name="sqlite-SELECT-ALL-FROM-Orders">SELECT ALL FROM Orders</a>
-
-#### <a name="sqlite-SELECT-ALL-FROM-Orders-javascript">JavaScript</a>
-
-| Language                             | Average       | p75       | p99       | Min       | Max       |
-| ------------------------------------ | ------------- | --------- | --------- | --------- | --------- |
-| JavaScript / bun 0.1.10 (x64-linux)  | 28.39/iter ms | 25.59 ms  | 38.48 ms  | 28.54 ms  | 38.26 ms  |
-| JavaScript / node 18.7.0 (x64-linux) | 94.03/iter ms | 86.36 ms  | 137.03 ms | 93.5 ms   | 131.4 ms  |
-| JavaScript / deno 1.24.2 (x64-linux) | 189.9/iter ms | 170.79 ms | 265.23 ms | 194.42 ms | 258.25 ms |
-
-<div id="chart-1"></div>
-<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-<script>
-new ApexCharts(document.querySelector('chart-1'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"series":[{"name":"sqlite","data":[28385006.98,94030386.73,189903571.37]}],"stroke":{"width":1,"curve":"straight"},"xaxis":{"categories":["JavaScript / bun 0.1.10 (x64-linux)","JavaScript / node 18.7.0 (x64-linux)","JavaScript / deno 1.24.2 (x64-linux)"],"tooltip":{"enabled":false}}})
-</script>
-
-### <a name="sqlite-SELECT-ALL-FROM-Suppliers">SELECT ALL FROM Suppliers</a>
-
-#### <a name="sqlite-SELECT-ALL-FROM-Suppliers-javascript">JavaScript</a>
-
-| Language                             | Average        | p75       | p99       | Min       | Max       |
-| ------------------------------------ | -------------- | --------- | --------- | --------- | --------- |
-| JavaScript / bun 0.1.10 (x64-linux)  | 69.15/iter µs  | 43.88 µs  | 236.72 µs | 81.56 µs  | 144.43 µs |
-| JavaScript / node 18.7.0 (x64-linux) | 184.48/iter µs | 152.27 µs | 903.93 µs | 173.49 µs | 364.68 µs |
-| JavaScript / deno 1.24.2 (x64-linux) | 625.25/iter µs | 289.39 µs | 4.78 ms   | 658.31 µs | 1.98 ms   |
-
-<div id="chart-2"></div>
-<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-<script>
-new ApexCharts(document.querySelector('chart-2'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"series":[{"name":"sqlite","data":[69154.28,184479.71,625245.45]}],"stroke":{"width":1,"curve":"straight"},"xaxis":{"categories":["JavaScript / bun 0.1.10 (x64-linux)","JavaScript / node 18.7.0 (x64-linux)","JavaScript / deno 1.24.2 (x64-linux)"],"tooltip":{"enabled":false}}})
+new ApexCharts(document.querySelector('chart-25'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"series":[{"name":"sqlite","data":[615495.23,82040.73,152190.92]}],"stroke":{"width":1,"curve":"straight"},"xaxis":{"categories":["JavaScript / deno 1.24.3 (x64-linux)","JavaScript / bun 0.1.10 (x64-linux)","JavaScript / node 18.7.0 (x64-linux)"],"tooltip":{"enabled":false}}})
 </script>
 
 ### <a name="sqlite-SELECT-ALL-FROM-Products">SELECT ALL FROM Products</a>
 
 #### <a name="sqlite-SELECT-ALL-FROM-Products-javascript">JavaScript</a>
 
-| Language                             | Average        | p75       | p99       | Min       | Max       |
-| ------------------------------------ | -------------- | --------- | --------- | --------- | --------- |
-| JavaScript / bun 0.1.10 (x64-linux)  | 118.94/iter µs | 74.18 µs  | 371.05 µs | 138.37 µs | 332.58 µs |
-| JavaScript / node 18.7.0 (x64-linux) | 391.43/iter µs | 293.04 µs | 1.31 ms   | 421.36 µs | 1.23 ms   |
-| JavaScript / deno 1.24.2 (x64-linux) | 590.24/iter µs | 316.27 µs | 3.58 ms   | 605.23 µs | 1.82 ms   |
+| Language                             | Average        | p75      | p99      | Min      | Max      |
+| ------------------------------------ | -------------- | -------- | -------- | -------- | -------- |
+| JavaScript / bun 0.1.10 (x64-linux)  | 117.26/iter µs | 103.3 µs | 439.9 µs | 111.3 µs | 437.2 µs |
+| JavaScript / node 18.7.0 (x64-linux) | 365.99/iter µs | 335.2 µs | 1.09 ms  | 366.5 µs | 390.5 µs |
+| JavaScript / deno 1.24.3 (x64-linux) | 927.11/iter µs | 853.5 µs | 2.22 ms  | 901.8 µs | 1.54 ms  |
 
-<div id="chart-3"></div>
+<div id="chart-26"></div>
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script>
-new ApexCharts(document.querySelector('chart-3'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"series":[{"name":"sqlite","data":[118941.91,391432.46,590237.49]}],"stroke":{"width":1,"curve":"straight"},"xaxis":{"categories":["JavaScript / bun 0.1.10 (x64-linux)","JavaScript / node 18.7.0 (x64-linux)","JavaScript / deno 1.24.2 (x64-linux)"],"tooltip":{"enabled":false}}})
+new ApexCharts(document.querySelector('chart-26'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"series":[{"name":"sqlite","data":[927114.37,117264.81,365992.44]}],"stroke":{"width":1,"curve":"straight"},"xaxis":{"categories":["JavaScript / deno 1.24.3 (x64-linux)","JavaScript / bun 0.1.10 (x64-linux)","JavaScript / node 18.7.0 (x64-linux)"],"tooltip":{"enabled":false}}})
+</script>
+
+### <a name="sqlite-SELECT-ALL-FROM-Suppliers">SELECT ALL FROM Suppliers</a>
+
+#### <a name="sqlite-SELECT-ALL-FROM-Suppliers-javascript">JavaScript</a>
+
+| Language                             | Average        | p75      | p99      | Min      | Max      |
+| ------------------------------------ | -------------- | -------- | -------- | -------- | -------- |
+| JavaScript / bun 0.1.10 (x64-linux)  | 72.7/iter µs   | 65.4 µs  | 135.1 µs | 73.6 µs  | 107.2 µs |
+| JavaScript / node 18.7.0 (x64-linux) | 199.23/iter µs | 179.1 µs | 919.1 µs | 197 µs   | 254.5 µs |
+| JavaScript / deno 1.24.3 (x64-linux) | 815.08/iter µs | 728.7 µs | 2.13 ms  | 791.8 µs | 2.01 ms  |
+
+<div id="chart-27"></div>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+new ApexCharts(document.querySelector('chart-27'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"series":[{"name":"sqlite","data":[815080.44,72700.84,199232.09]}],"stroke":{"width":1,"curve":"straight"},"xaxis":{"categories":["JavaScript / deno 1.24.3 (x64-linux)","JavaScript / bun 0.1.10 (x64-linux)","JavaScript / node 18.7.0 (x64-linux)"],"tooltip":{"enabled":false}}})
 </script>
 
 ### <a name="sqlite-SELECT-ALL-FROM-Customers">SELECT ALL FROM Customers</a>
 
 #### <a name="sqlite-SELECT-ALL-FROM-Customers-javascript">JavaScript</a>
 
-| Language                             | Average        | p75       | p99       | Min       | Max       |
-| ------------------------------------ | -------------- | --------- | --------- | --------- | --------- |
-| JavaScript / bun 0.1.10 (x64-linux)  | 140.32/iter µs | 127.83 µs | 325.01 µs | 138.15 µs | 281.22 µs |
-| JavaScript / node 18.7.0 (x64-linux) | 704.41/iter µs | 389.89 µs | 17.54 ms  | 630.62 µs | 1.37 ms   |
-| JavaScript / deno 1.24.2 (x64-linux) | 1.19/iter ms   | 709.68 µs | 7.13 ms   | 1.39 ms   | 2.66 ms   |
+| Language                             | Average        | p75      | p99     | Min      | Max      |
+| ------------------------------------ | -------------- | -------- | ------- | -------- | -------- |
+| JavaScript / bun 0.1.10 (x64-linux)  | 179.59/iter µs | 156.7 µs | 528 µs  | 177.2 µs | 508.9 µs |
+| JavaScript / node 18.7.0 (x64-linux) | 527.88/iter µs | 463.1 µs | 1.64 ms | 507.5 µs | 1.38 ms  |
+| JavaScript / deno 1.24.3 (x64-linux) | 1.74/iter ms   | 887.8 µs | 4.76 ms | 2.11 ms  | 3.67 ms  |
 
-<div id="chart-4"></div>
+<div id="chart-28"></div>
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script>
-new ApexCharts(document.querySelector('chart-4'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"series":[{"name":"sqlite","data":[140320.16,704411.58,1189436.91]}],"stroke":{"width":1,"curve":"straight"},"xaxis":{"categories":["JavaScript / bun 0.1.10 (x64-linux)","JavaScript / node 18.7.0 (x64-linux)","JavaScript / deno 1.24.2 (x64-linux)"],"tooltip":{"enabled":false}}})
+new ApexCharts(document.querySelector('chart-28'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"series":[{"name":"sqlite","data":[1744331.76,179587.59,527876.58]}],"stroke":{"width":1,"curve":"straight"},"xaxis":{"categories":["JavaScript / deno 1.24.3 (x64-linux)","JavaScript / bun 0.1.10 (x64-linux)","JavaScript / node 18.7.0 (x64-linux)"],"tooltip":{"enabled":false}}})
+</script>
+
+### <a name="sqlite-SELECT-ALL-FROM-Orders">SELECT ALL FROM Orders</a>
+
+#### <a name="sqlite-SELECT-ALL-FROM-Orders-javascript">JavaScript</a>
+
+| Language                             | Average        | p75       | p99       | Min       | Max       |
+| ------------------------------------ | -------------- | --------- | --------- | --------- | --------- |
+| JavaScript / bun 0.1.10 (x64-linux)  | 32.99/iter ms  | 32.21 ms  | 36.84 ms  | 32.87 ms  | 36.09 ms  |
+| JavaScript / node 18.7.0 (x64-linux) | 100.49/iter ms | 94.94 ms  | 125.19 ms | 100.01 ms | 119.68 ms |
+| JavaScript / deno 1.24.3 (x64-linux) | 226.23/iter ms | 220.23 ms | 335.76 ms | 226.44 ms | 244.21 ms |
+
+<div id="chart-29"></div>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+new ApexCharts(document.querySelector('chart-29'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"series":[{"name":"sqlite","data":[226225059.15,32990005.13,100491977.99]}],"stroke":{"width":1,"curve":"straight"},"xaxis":{"categories":["JavaScript / deno 1.24.3 (x64-linux)","JavaScript / bun 0.1.10 (x64-linux)","JavaScript / node 18.7.0 (x64-linux)"],"tooltip":{"enabled":false}}})
 </script>
 
