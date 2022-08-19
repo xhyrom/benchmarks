@@ -1,6 +1,5 @@
 - [JavaScript](#console-javascript)
 - [Python](#console-python)
-- [Crystal](#console-crystal)
 - [Go](#console-go)
 - [Ruby](#console-ruby)
 
@@ -8,31 +7,25 @@
 
 | Language                             | Average       | p75      | p99      | Min      | Max      |
 | ------------------------------------ | ------------- | -------- | -------- | -------- | -------- |
-| JavaScript / bun 0.1.8 (x64-linux)   | 11.52/iter ms | 10.46 ms | 13.91 ms | 11.65 ms | 11.26 ms |
-| JavaScript / deno 1.24.3 (x64-linux) | 25.11/iter ms | 24.31 ms | 27.42 ms | 24.78 ms | 24.9 ms  |
-| JavaScript / node 18.7.0 (x64-linux) | 48.55/iter ms | 47.32 ms | 51.57 ms | 47.84 ms | 51.2 ms  |
+| JavaScript / bun 0.1.9 (x64-linux)   | 14.36/iter ms | 13.51 ms | 16.72 ms | 15.51 ms | 14.57 ms |
+| JavaScript / deno 1.24.3 (x64-linux) | 27.17/iter ms | 26.03 ms | 28.68 ms | 26.36 ms | 26.91 ms |
+| JavaScript / node 18.7.0 (x64-linux) | 51.94/iter ms | 50.71 ms | 55.57 ms | 55.57 ms | 51.75 ms |
 
 ### <a name="console-python">Python</a>
 
-| Language | Average       | p75      | p99     | Min      | Max      |
-| -------- | ------------- | -------- | ------- | -------- | -------- |
-| Python   | 17.95/iter ms | 17.75 ms | 18.2 ms | 17.93 ms | 17.95 ms |
-
-### <a name="console-crystal">Crystal</a>
-
-| Language | Average      | p75     | p99     | Min     | Max     |
-| -------- | ------------ | ------- | ------- | ------- | ------- |
-| Crystal  | 1.89/iter ms | 1.77 ms | 2.18 ms | 1.83 ms | 1.81 ms |
+| Language | Average       | p75     | p99      | Min      | Max     |
+| -------- | ------------- | ------- | -------- | -------- | ------- |
+| Python   | 19.36/iter ms | 18.8 ms | 20.07 ms | 19.11 ms | 18.9 ms |
 
 ### <a name="console-go">Go</a>
 
-| Language | Average        | p75       | p99     | Min       | Max       |
-| -------- | -------------- | --------- | ------- | --------- | --------- |
-| Go       | 954.72/iter µs | 848.74 µs | 1.38 ms | 888.34 µs | 900.64 µs |
+| Language | Average      | p75       | p99     | Min     | Max     |
+| -------- | ------------ | --------- | ------- | ------- | ------- |
+| Go       | 1.11/iter ms | 945.82 µs | 1.89 ms | 1.05 ms | 1.05 ms |
 
 ### <a name="console-ruby">Ruby</a>
 
-| Language | Average       | p75     | p99      | Min      | Max      |
-| -------- | ------------- | ------- | -------- | -------- | -------- |
-| Ruby     | 53.92/iter ms | 53.3 ms | 55.44 ms | 53.95 ms | 53.51 ms |
+| Language | Average       | p75      | p99      | Min      | Max      |
+| -------- | ------------- | -------- | -------- | -------- | -------- |
+| Ruby     | 57.46/iter ms | 56.71 ms | 60.66 ms | 57.64 ms | 57.19 ms |
 
