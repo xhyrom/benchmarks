@@ -23,7 +23,7 @@
 
 <div id="chart-17"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-17'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"Python","y":15359079.400000002}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}}}).render()
+new ApexCharts(document.querySelector('#chart-17'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"Python","y":15359079.400000002}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"grid":{"row":{"colors":["#F44336","#E91E63","#9C27B0"]},"column":{"colors":["#F44336","#E91E63","#9C27B0"]}}}).render()
 </script>
 
 #### <a name="base64-encode-crystal">Crystal</a>
@@ -35,7 +35,7 @@ new ApexCharts(document.querySelector('#chart-17'), {"chart":{"height":320,"type
 
 <div id="chart-18"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-18'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"Crystal","y":725582.8600000002}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}}}).render()
+new ApexCharts(document.querySelector('#chart-18'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"Crystal","y":725582.8600000002}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"grid":{"row":{"colors":["#F44336","#E91E63","#9C27B0"]},"column":{"colors":["#F44336","#E91E63","#9C27B0"]}}}).render()
 </script>
 
 #### <a name="base64-encode-javascript">JavaScript</a>
@@ -49,7 +49,7 @@ new ApexCharts(document.querySelector('#chart-18'), {"chart":{"height":320,"type
 
 <div id="chart-19"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-19'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":10398234.270000007},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":38938822.12000001},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":14858302.299999999}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}}}).render()
+new ApexCharts(document.querySelector('#chart-19'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":10398234.270000007},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":38938822.12000001},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":14858302.299999999}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"grid":{"row":{"colors":["#F44336","#E91E63","#9C27B0"]},"column":{"colors":["#F44336","#E91E63","#9C27B0"]}}}).render()
 </script>
 
 #### <a name="base64-encode-ruby">Ruby</a>
@@ -61,7 +61,7 @@ new ApexCharts(document.querySelector('#chart-19'), {"chart":{"height":320,"type
 
 <div id="chart-20"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-20'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"Ruby","y":46455320.02000001}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}}}).render()
+new ApexCharts(document.querySelector('#chart-20'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"Ruby","y":46455320.02000001}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"grid":{"row":{"colors":["#F44336","#E91E63","#9C27B0"]},"column":{"colors":["#F44336","#E91E63","#9C27B0"]}}}).render()
 </script>
 
 #### <a name="base64-encode-go">Go</a>
@@ -73,7 +73,7 @@ new ApexCharts(document.querySelector('#chart-20'), {"chart":{"height":320,"type
 
 <div id="chart-21"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-21'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"Go","y":625445.9200000002}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}}}).render()
+new ApexCharts(document.querySelector('#chart-21'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"Go","y":625445.9200000002}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"grid":{"row":{"colors":["#F44336","#E91E63","#9C27B0"]},"column":{"colors":["#F44336","#E91E63","#9C27B0"]}}}).render()
 </script>
 
 ### <a name="base64-decode">decode</a>
@@ -87,7 +87,7 @@ new ApexCharts(document.querySelector('#chart-21'), {"chart":{"height":320,"type
 
 <div id="chart-22"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-22'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"Python","y":15980830.970000006}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}}}).render()
+new ApexCharts(document.querySelector('#chart-22'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"Python","y":15980830.970000006}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"grid":{"row":{"colors":["#F44336","#E91E63","#9C27B0"]},"column":{"colors":["#F44336","#E91E63","#9C27B0"]}}}).render()
 </script>
 
 #### <a name="base64-decode-crystal">Crystal</a>
@@ -99,7 +99,7 @@ new ApexCharts(document.querySelector('#chart-22'), {"chart":{"height":320,"type
 
 <div id="chart-23"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-23'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"Crystal","y":583902.6469999999}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}}}).render()
+new ApexCharts(document.querySelector('#chart-23'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"Crystal","y":583902.6469999999}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"grid":{"row":{"colors":["#F44336","#E91E63","#9C27B0"]},"column":{"colors":["#F44336","#E91E63","#9C27B0"]}}}).render()
 </script>
 
 #### <a name="base64-decode-javascript">JavaScript</a>
@@ -113,7 +113,7 @@ new ApexCharts(document.querySelector('#chart-23'), {"chart":{"height":320,"type
 
 <div id="chart-24"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-24'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":9750371.05},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":39036516.80000002},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":15094611.859999998}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}}}).render()
+new ApexCharts(document.querySelector('#chart-24'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":9750371.05},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":39036516.80000002},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":15094611.859999998}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"grid":{"row":{"colors":["#F44336","#E91E63","#9C27B0"]},"column":{"colors":["#F44336","#E91E63","#9C27B0"]}}}).render()
 </script>
 
 #### <a name="base64-decode-ruby">Ruby</a>
@@ -125,7 +125,7 @@ new ApexCharts(document.querySelector('#chart-24'), {"chart":{"height":320,"type
 
 <div id="chart-25"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-25'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"Ruby","y":42886882.51000001}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}}}).render()
+new ApexCharts(document.querySelector('#chart-25'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"Ruby","y":42886882.51000001}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"grid":{"row":{"colors":["#F44336","#E91E63","#9C27B0"]},"column":{"colors":["#F44336","#E91E63","#9C27B0"]}}}).render()
 </script>
 
 #### <a name="base64-decode-go">Go</a>
@@ -137,6 +137,6 @@ new ApexCharts(document.querySelector('#chart-25'), {"chart":{"height":320,"type
 
 <div id="chart-26"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-26'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"Go","y":359281.322}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}}}).render()
+new ApexCharts(document.querySelector('#chart-26'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"Go","y":359281.322}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"grid":{"row":{"colors":["#F44336","#E91E63","#9C27B0"]},"column":{"colors":["#F44336","#E91E63","#9C27B0"]}}}).render()
 </script>
 

@@ -11,7 +11,7 @@
 
 <div id="chart-15"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-15'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"nanoid","data":[{"x":"Python","y":21095}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}}}).render()
+new ApexCharts(document.querySelector('#chart-15'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"nanoid","data":[{"x":"Python","y":21095}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"grid":{"row":{"colors":["#F44336","#E91E63","#9C27B0"]},"column":{"colors":["#F44336","#E91E63","#9C27B0"]}}}).render()
 </script>
 
 ### <a name="nanoid-javascript">JavaScript</a>
@@ -25,6 +25,6 @@ new ApexCharts(document.querySelector('#chart-15'), {"chart":{"height":320,"type
 
 <div id="chart-16"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-16'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"nanoid","data":[{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":6844.96},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":11288.98},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":37691.57}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}}}).render()
+new ApexCharts(document.querySelector('#chart-16'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"nanoid","data":[{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":6844.96},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":11288.98},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":37691.57}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"grid":{"row":{"colors":["#F44336","#E91E63","#9C27B0"]},"column":{"colors":["#F44336","#E91E63","#9C27B0"]}}}).render()
 </script>
 
