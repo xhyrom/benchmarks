@@ -91,13 +91,13 @@ for (const [benchmarkName, files] of Object.entries(outputs)) {
             ];
             charts[language] = charts[language] || {
                 chart: {
-                    stacked: true,
+                    height: 320,
                     type: 'bar',
                     toolbar: {
                         show: true,
                     },
                     animations: {
-                        enabled: false,
+                        enabled: true,
                     },
                 },
                 series: [
@@ -106,20 +106,23 @@ for (const [benchmarkName, files] of Object.entries(outputs)) {
                         data: [],
                     }
                 ],
-                tooltip: {
-                    label: {
-                        show: true
-                    }
-                },
-                legend: {
-                    show: false,
-                },
                 stroke: {
                     width: 1,
                     curve: "straight",
                 },
+                legend: {
+                    show: true,
+                    showForSingleSeries: true,
+                    position: "bottom",
+                },
                 xaxis: {
-                    type: 'category'
+                    type: 'category',
+                    labels: {
+                        show: false,
+                    },
+                    tooltip: {
+                        enabled: false,
+                    },
                 },
             }
 

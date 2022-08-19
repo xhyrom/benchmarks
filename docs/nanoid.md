@@ -11,7 +11,7 @@
 
 <div id="chart-15"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-15'), {"chart":{"stacked":true,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"series":[{"name":"nanoid","data":[{"x":"Python","y":21095}]}],"tooltip":{"label":{"show":true}},"legend":{"show":false},"stroke":{"width":1,"curve":"straight"},"xaxis":{"type":"category"}}).render()
+new ApexCharts(document.querySelector('#chart-15'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"nanoid","data":[{"x":"Python","y":21095}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":true,"showForSingleSeries":true,"position":"bottom"},"xaxis":{"type":"category","labels":{"show":false},"tooltip":{"enabled":false}}}).render()
 </script>
 
 ### <a name="nanoid-javascript">JavaScript</a>
@@ -25,6 +25,6 @@ new ApexCharts(document.querySelector('#chart-15'), {"chart":{"stacked":true,"ty
 
 <div id="chart-16"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-16'), {"chart":{"stacked":true,"type":"bar","toolbar":{"show":true},"animations":{"enabled":false}},"series":[{"name":"nanoid","data":[{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":6844.96},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":11288.98},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":37691.57}]}],"tooltip":{"label":{"show":true}},"legend":{"show":false},"stroke":{"width":1,"curve":"straight"},"xaxis":{"type":"category"}}).render()
+new ApexCharts(document.querySelector('#chart-16'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"nanoid","data":[{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":6844.96},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":11288.98},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":37691.57}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":true,"showForSingleSeries":true,"position":"bottom"},"xaxis":{"type":"category","labels":{"show":false},"tooltip":{"enabled":false}}}).render()
 </script>
 
