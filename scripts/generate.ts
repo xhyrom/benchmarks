@@ -111,14 +111,12 @@ for (const [benchmarkName, files] of Object.entries(outputs)) {
                     curve: "straight",
                 },
                 legend: {
-                    show: true,
-                    showForSingleSeries: true,
-                    position: "bottom",
+                    show: false,
                 },
                 xaxis: {
                     type: 'category',
                     labels: {
-                        show: false,
+                        show: true,
                     },
                     tooltip: {
                         enabled: false,

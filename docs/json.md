@@ -23,7 +23,7 @@
 
 <div id="chart-5"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-5'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"json","data":[{"x":"Python","y":16925761.339999996}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":true,"showForSingleSeries":true,"position":"bottom"},"xaxis":{"type":"category","labels":{"show":false},"tooltip":{"enabled":false}}}).render()
+new ApexCharts(document.querySelector('#chart-5'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"json","data":[{"x":"Python","y":16925761.339999996}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}}}).render()
 </script>
 
 #### <a name="json-parse-crystal">Crystal</a>
@@ -35,7 +35,7 @@ new ApexCharts(document.querySelector('#chart-5'), {"chart":{"height":320,"type"
 
 <div id="chart-6"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-6'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"json","data":[{"x":"Crystal","y":794137.9300000005}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":true,"showForSingleSeries":true,"position":"bottom"},"xaxis":{"type":"category","labels":{"show":false},"tooltip":{"enabled":false}}}).render()
+new ApexCharts(document.querySelector('#chart-6'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"json","data":[{"x":"Crystal","y":794137.9300000005}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}}}).render()
 </script>
 
 #### <a name="json-parse-javascript">JavaScript</a>
@@ -49,7 +49,7 @@ new ApexCharts(document.querySelector('#chart-6'), {"chart":{"height":320,"type"
 
 <div id="chart-7"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-7'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"json","data":[{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":9557953.670000002},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":37713541.769999996},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":14630682.240000002}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":true,"showForSingleSeries":true,"position":"bottom"},"xaxis":{"type":"category","labels":{"show":false},"tooltip":{"enabled":false}}}).render()
+new ApexCharts(document.querySelector('#chart-7'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"json","data":[{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":9557953.670000002},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":37713541.769999996},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":14630682.240000002}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}}}).render()
 </script>
 
 #### <a name="json-parse-ruby">Ruby</a>
@@ -61,7 +61,7 @@ new ApexCharts(document.querySelector('#chart-7'), {"chart":{"height":320,"type"
 
 <div id="chart-8"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-8'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"json","data":[{"x":"Ruby","y":48382977.14000001}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":true,"showForSingleSeries":true,"position":"bottom"},"xaxis":{"type":"category","labels":{"show":false},"tooltip":{"enabled":false}}}).render()
+new ApexCharts(document.querySelector('#chart-8'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"json","data":[{"x":"Ruby","y":48382977.14000001}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}}}).render()
 </script>
 
 #### <a name="json-parse-go">Go</a>
@@ -73,7 +73,7 @@ new ApexCharts(document.querySelector('#chart-8'), {"chart":{"height":320,"type"
 
 <div id="chart-9"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-9'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"json","data":[{"x":"Go","y":684981.2500000006}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":true,"showForSingleSeries":true,"position":"bottom"},"xaxis":{"type":"category","labels":{"show":false},"tooltip":{"enabled":false}}}).render()
+new ApexCharts(document.querySelector('#chart-9'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"json","data":[{"x":"Go","y":684981.2500000006}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}}}).render()
 </script>
 
 ### <a name="json-stringify">stringify</a>
@@ -87,7 +87,7 @@ new ApexCharts(document.querySelector('#chart-9'), {"chart":{"height":320,"type"
 
 <div id="chart-10"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-10'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"json","data":[{"x":"Python","y":17580645.97}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":true,"showForSingleSeries":true,"position":"bottom"},"xaxis":{"type":"category","labels":{"show":false},"tooltip":{"enabled":false}}}).render()
+new ApexCharts(document.querySelector('#chart-10'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"json","data":[{"x":"Python","y":17580645.97}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}}}).render()
 </script>
 
 #### <a name="json-stringify-crystal">Crystal</a>
@@ -99,7 +99,7 @@ new ApexCharts(document.querySelector('#chart-10'), {"chart":{"height":320,"type
 
 <div id="chart-11"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-11'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"json","data":[{"x":"Crystal","y":1184985.019999999}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":true,"showForSingleSeries":true,"position":"bottom"},"xaxis":{"type":"category","labels":{"show":false},"tooltip":{"enabled":false}}}).render()
+new ApexCharts(document.querySelector('#chart-11'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"json","data":[{"x":"Crystal","y":1184985.019999999}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}}}).render()
 </script>
 
 #### <a name="json-stringify-javascript">JavaScript</a>
@@ -113,7 +113,7 @@ new ApexCharts(document.querySelector('#chart-11'), {"chart":{"height":320,"type
 
 <div id="chart-12"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-12'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"json","data":[{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":9581205.91},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":39171075.14},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":15571829.240000008}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":true,"showForSingleSeries":true,"position":"bottom"},"xaxis":{"type":"category","labels":{"show":false},"tooltip":{"enabled":false}}}).render()
+new ApexCharts(document.querySelector('#chart-12'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"json","data":[{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":9581205.91},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":39171075.14},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":15571829.240000008}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}}}).render()
 </script>
 
 #### <a name="json-stringify-ruby">Ruby</a>
@@ -125,7 +125,7 @@ new ApexCharts(document.querySelector('#chart-12'), {"chart":{"height":320,"type
 
 <div id="chart-13"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-13'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"json","data":[{"x":"Ruby","y":47381079.30000002}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":true,"showForSingleSeries":true,"position":"bottom"},"xaxis":{"type":"category","labels":{"show":false},"tooltip":{"enabled":false}}}).render()
+new ApexCharts(document.querySelector('#chart-13'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"json","data":[{"x":"Ruby","y":47381079.30000002}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}}}).render()
 </script>
 
 #### <a name="json-stringify-go">Go</a>
@@ -137,6 +137,6 @@ new ApexCharts(document.querySelector('#chart-13'), {"chart":{"height":320,"type
 
 <div id="chart-14"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-14'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"json","data":[{"x":"Go","y":758780.1900000003}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":true,"showForSingleSeries":true,"position":"bottom"},"xaxis":{"type":"category","labels":{"show":false},"tooltip":{"enabled":false}}}).render()
+new ApexCharts(document.querySelector('#chart-14'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"json","data":[{"x":"Go","y":758780.1900000003}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}}}).render()
 </script>
 

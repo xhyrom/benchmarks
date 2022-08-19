@@ -23,7 +23,7 @@
 
 <div id="chart-0"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-0'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"sqlite","data":[{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":63839.66},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":434200.76},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":547335.79}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":true,"showForSingleSeries":true,"position":"bottom"},"xaxis":{"type":"category","labels":{"show":false},"tooltip":{"enabled":false}}}).render()
+new ApexCharts(document.querySelector('#chart-0'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"sqlite","data":[{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":63839.66},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":434200.76},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":547335.79}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}}}).render()
 </script>
 
 ### <a name="sqlite-SELECT-ALL-FROM-Orders">SELECT ALL FROM Orders</a>
@@ -39,7 +39,7 @@ new ApexCharts(document.querySelector('#chart-0'), {"chart":{"height":320,"type"
 
 <div id="chart-1"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-1'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"sqlite","data":[{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":28385006.98},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":94030386.73},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":189903571.37}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":true,"showForSingleSeries":true,"position":"bottom"},"xaxis":{"type":"category","labels":{"show":false},"tooltip":{"enabled":false}}}).render()
+new ApexCharts(document.querySelector('#chart-1'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"sqlite","data":[{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":28385006.98},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":94030386.73},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":189903571.37}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}}}).render()
 </script>
 
 ### <a name="sqlite-SELECT-ALL-FROM-Suppliers">SELECT ALL FROM Suppliers</a>
@@ -55,7 +55,7 @@ new ApexCharts(document.querySelector('#chart-1'), {"chart":{"height":320,"type"
 
 <div id="chart-2"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-2'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"sqlite","data":[{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":69154.28},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":184479.71},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":625245.45}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":true,"showForSingleSeries":true,"position":"bottom"},"xaxis":{"type":"category","labels":{"show":false},"tooltip":{"enabled":false}}}).render()
+new ApexCharts(document.querySelector('#chart-2'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"sqlite","data":[{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":69154.28},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":184479.71},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":625245.45}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}}}).render()
 </script>
 
 ### <a name="sqlite-SELECT-ALL-FROM-Products">SELECT ALL FROM Products</a>
@@ -71,7 +71,7 @@ new ApexCharts(document.querySelector('#chart-2'), {"chart":{"height":320,"type"
 
 <div id="chart-3"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-3'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"sqlite","data":[{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":118941.91},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":391432.46},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":590237.49}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":true,"showForSingleSeries":true,"position":"bottom"},"xaxis":{"type":"category","labels":{"show":false},"tooltip":{"enabled":false}}}).render()
+new ApexCharts(document.querySelector('#chart-3'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"sqlite","data":[{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":118941.91},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":391432.46},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":590237.49}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}}}).render()
 </script>
 
 ### <a name="sqlite-SELECT-ALL-FROM-Customers">SELECT ALL FROM Customers</a>
@@ -87,6 +87,6 @@ new ApexCharts(document.querySelector('#chart-3'), {"chart":{"height":320,"type"
 
 <div id="chart-4"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-4'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"sqlite","data":[{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":140320.16},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":704411.58},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":1189436.91}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":true,"showForSingleSeries":true,"position":"bottom"},"xaxis":{"type":"category","labels":{"show":false},"tooltip":{"enabled":false}}}).render()
+new ApexCharts(document.querySelector('#chart-4'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"sqlite","data":[{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":140320.16},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":704411.58},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":1189436.91}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}}}).render()
 </script>
 
