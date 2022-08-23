@@ -18,62 +18,62 @@
 
 | Language                             | Average       | p75      | p99      | Min      | Max      |
 | ------------------------------------ | ------------- | -------- | -------- | -------- | -------- |
-| JavaScript / bun 0.1.10 (x64-linux)  | 15.78/iter ms | 12.5 ms  | 22.57 ms | 12.85 ms | 19.82 ms |
-| JavaScript / deno 1.24.3 (x64-linux) | 29.97/iter ms | 24.68 ms | 54.54 ms | 27.24 ms | 25.89 ms |
-| JavaScript / node 18.7.0 (x64-linux) | 54.12/iter ms | 47.51 ms | 64.1 ms  | 56.1 ms  | 51.53 ms |
+| JavaScript / bun 0.1.10 (x64-linux)  | 13.03/iter ms | 11.28 ms | 15.03 ms | 12.23 ms | 12.65 ms |
+| JavaScript / deno 1.24.3 (x64-linux) | 22.77/iter ms | 21.46 ms | 24.67 ms | 23.29 ms | 21.95 ms |
+| JavaScript / node 18.7.0 (x64-linux) | 44.28/iter ms | 40.54 ms | 51.88 ms | 42.25 ms | 41.87 ms |
 
 
 <div id="chart-0"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-0'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"JavaScript / deno 1.24.3 (x64-linux)","y":29967047.159999985},{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":15781293.949999994},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":54118516.22000002}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
+new ApexCharts(document.querySelector('#chart-0'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"JavaScript / deno 1.24.3 (x64-linux)","y":22769566.04000001},{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":13032930.250000006},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":44281492.22000001}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
 </script>
 
 #### <a name="base64-decode-python">Python</a>
 
 | Language | Average      | p75      | p99      | Min      | Max      |
 | -------- | ------------ | -------- | -------- | -------- | -------- |
-| Python   | 26.1/iter ms | 22.45 ms | 32.39 ms | 24.65 ms | 27.26 ms |
+| Python   | 19.3/iter ms | 18.85 ms | 22.76 ms | 19.19 ms | 19.19 ms |
 
 
 <div id="chart-1"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-1'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"Python","y":26101438.030000012}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
+new ApexCharts(document.querySelector('#chart-1'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"Python","y":19301558.500000004}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
 </script>
 
 #### <a name="base64-decode-crystal">Crystal</a>
 
-| Language | Average      | p75     | p99      | Min     | Max     |
-| -------- | ------------ | ------- | -------- | ------- | ------- |
-| Crystal  | 2.59/iter ms | 1.51 ms | 10.18 ms | 2.52 ms | 1.88 ms |
+| Language | Average   | p75     | p99     | Min     | Max     |
+| -------- | --------- | ------- | ------- | ------- | ------- |
+| Crystal  | 2/iter ms | 1.75 ms | 2.59 ms | 1.97 ms | 1.75 ms |
 
 
 <div id="chart-2"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-2'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"Crystal","y":2585635.8599999994}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
+new ApexCharts(document.querySelector('#chart-2'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"Crystal","y":2003360.0000000005}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
 </script>
 
 #### <a name="base64-decode-go">Go</a>
 
-| Language | Average      | p75       | p99     | Min     | Max     |
-| -------- | ------------ | --------- | ------- | ------- | ------- |
-| Go       | 1.19/iter ms | 527.21 µs | 7.24 ms | 2.16 ms | 1.32 ms |
+| Language | Average        | p75       | p99     | Min       | Max     |
+| -------- | -------------- | --------- | ------- | --------- | ------- |
+| Go       | 973.96/iter µs | 813.68 µs | 1.36 ms | 872.98 µs | 1.01 ms |
 
 
 <div id="chart-3"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-3'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"Go","y":1191189.1199999999}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
+new ApexCharts(document.querySelector('#chart-3'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"Go","y":973960.8899999993}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
 </script>
 
 #### <a name="base64-decode-ruby">Ruby</a>
 
-| Language | Average       | p75     | p99      | Min      | Max      |
-| -------- | ------------- | ------- | -------- | -------- | -------- |
-| Ruby     | 68.55/iter ms | 61.8 ms | 77.71 ms | 77.71 ms | 76.07 ms |
+| Language | Average       | p75      | p99      | Min      | Max      |
+| -------- | ------------- | -------- | -------- | -------- | -------- |
+| Ruby     | 50.51/iter ms | 49.67 ms | 52.64 ms | 50.91 ms | 50.27 ms |
 
 
 <div id="chart-4"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-4'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"Ruby","y":68550633.96000002}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
+new ApexCharts(document.querySelector('#chart-4'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"Ruby","y":50505983.88999997}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
 </script>
 
 ### <a name="base64-encode">encode</a>
@@ -82,61 +82,61 @@ new ApexCharts(document.querySelector('#chart-4'), {"chart":{"height":320,"type"
 
 | Language                             | Average       | p75      | p99      | Min      | Max      |
 | ------------------------------------ | ------------- | -------- | -------- | -------- | -------- |
-| JavaScript / bun 0.1.10 (x64-linux)  | 15.93/iter ms | 12.24 ms | 21.62 ms | 16.84 ms | 18 ms    |
-| JavaScript / deno 1.24.3 (x64-linux) | 28.87/iter ms | 24.88 ms | 38.09 ms | 28.07 ms | 28.34 ms |
-| JavaScript / node 18.7.0 (x64-linux) | 54.95/iter ms | 45.98 ms | 68.75 ms | 55.07 ms | 55.45 ms |
+| JavaScript / bun 0.1.10 (x64-linux)  | 13.18/iter ms | 11.85 ms | 15.68 ms | 13.68 ms | 13.11 ms |
+| JavaScript / deno 1.24.3 (x64-linux) | 23.23/iter ms | 21.49 ms | 30.18 ms | 23.38 ms | 22.46 ms |
+| JavaScript / node 18.7.0 (x64-linux) | 43.62/iter ms | 41.04 ms | 49.36 ms | 42.49 ms | 45.06 ms |
 
 
 <div id="chart-5"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-5'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"JavaScript / deno 1.24.3 (x64-linux)","y":28874620.35},{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":15926456.789999997},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":54953431.75000003}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
+new ApexCharts(document.querySelector('#chart-5'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"JavaScript / deno 1.24.3 (x64-linux)","y":23227008.539999995},{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":13182309.570000002},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":43618225.65000001}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
 </script>
 
 #### <a name="base64-encode-python">Python</a>
 
 | Language | Average       | p75      | p99      | Min      | Max      |
 | -------- | ------------- | -------- | -------- | -------- | -------- |
-| Python   | 27.04/iter ms | 23.75 ms | 32.93 ms | 28.46 ms | 25.97 ms |
+| Python   | 19.45/iter ms | 18.88 ms | 21.02 ms | 19.44 ms | 19.58 ms |
 
 
 <div id="chart-6"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-6'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"Python","y":27036887.61999999}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
+new ApexCharts(document.querySelector('#chart-6'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"Python","y":19450270.57000001}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
 </script>
 
 #### <a name="base64-encode-crystal">Crystal</a>
 
 | Language | Average      | p75     | p99     | Min     | Max     |
 | -------- | ------------ | ------- | ------- | ------- | ------- |
-| Crystal  | 2.38/iter ms | 1.39 ms | 7.06 ms | 2.44 ms | 2.04 ms |
+| Crystal  | 1.93/iter ms | 1.63 ms | 4.42 ms | 1.63 ms | 1.68 ms |
 
 
 <div id="chart-7"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-7'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"Crystal","y":2382959.5}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
+new ApexCharts(document.querySelector('#chart-7'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"Crystal","y":1925250.8299999994}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
 </script>
 
 #### <a name="base64-encode-go">Go</a>
 
-| Language | Average      | p75       | p99     | Min       | Max     |
-| -------- | ------------ | --------- | ------- | --------- | ------- |
-| Go       | 1.21/iter ms | 766.85 µs | 3.33 ms | 863.55 µs | 1.08 ms |
+| Language | Average      | p75       | p99     | Min     | Max     |
+| -------- | ------------ | --------- | ------- | ------- | ------- |
+| Go       | 1.22/iter ms | 924.32 µs | 4.59 ms | 1.56 ms | 1.44 ms |
 
 
 <div id="chart-8"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-8'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"Go","y":1208727.1900000002}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
+new ApexCharts(document.querySelector('#chart-8'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"Go","y":1215080.5300000003}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
 </script>
 
 #### <a name="base64-encode-ruby">Ruby</a>
 
-| Language | Average       | p75      | p99      | Min      | Max      |
-| -------- | ------------- | -------- | -------- | -------- | -------- |
-| Ruby     | 69.36/iter ms | 60.18 ms | 82.55 ms | 78.18 ms | 70.46 ms |
+| Language | Average       | p75      | p99      | Min     | Max      |
+| -------- | ------------- | -------- | -------- | ------- | -------- |
+| Ruby     | 54.23/iter ms | 51.41 ms | 70.82 ms | 53.1 ms | 51.67 ms |
 
 
 <div id="chart-9"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-9'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"Ruby","y":69360698.51999998}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
+new ApexCharts(document.querySelector('#chart-9'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"base64","data":[{"x":"Ruby","y":54231589.75999996}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
 </script>
 
