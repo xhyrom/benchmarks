@@ -1,6 +1,6 @@
 language = "Ruby"
 ext = "rb"
 
-enviroment = [
+environment = [
   { name = "main.rb", install = "sudo apt update && sudo apt -y upgrade && sudo apt install ruby-full", run = "ruby $FILE$EXTENSION", version = "ruby --version" }
 ]

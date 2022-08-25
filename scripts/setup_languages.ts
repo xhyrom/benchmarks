@@ -8,13 +8,23 @@ const languages = readdirSync(join(import.meta.dir, '..', 'benchmarks'), { withF
 const argv = process.argv.slice(2);
 
 for (const language of languages) {
-    const content = (await import(language)).default;
-    content.enviroment = content.enviroment.map(step => ({ ...step, build: step.build || null }))
+    let content = (await import(language)).default;
+    content.environment = content.environment.map(step => ({ ...step, build: step.build || null }))
 
-    await Bun.write(join(import.meta.dir, '.cache', 'languages', `${content.ext}.json`), JSON.stringify(content));
     log.info(`Installing ${content.language}`);
 
-    for (const step of content.enviroment) {
+    for (let step of content.environment) {
+        if (step.extend) {
+            step = {
+                ...content.environment.find(e => e.name === step.extend),
+                ...step,
+            };
+            delete step['extend'];
+
+            const i = content.environment.findIndex(e => e.name === step.name);
+            content.environment[i] = step;
+        }
+
         log.info(`Step ${step.name}`);
 
         const installCheck = installed(step.version);
@@ -29,5 +39,6 @@ for (const language of languages) {
         }
     }
 
+    await Bun.write(join(import.meta.dir, '.cache', 'languages', `${content.ext}.json`), JSON.stringify(content));
     log.success(`${content.language} installed`);
 }

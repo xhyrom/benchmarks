@@ -1,122 +1,29 @@
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 - [parse](#json-parse)
-    - [JavaScript](#json-parse-javascript)
     - [Python](#json-parse-python)
     - [Crystal](#json-parse-crystal)
-    - [Go](#json-parse-go)
+    - [JavaScript](#json-parse-javascript)
     - [Ruby](#json-parse-ruby)
+    - [Go](#json-parse-go)
 - [stringify](#json-stringify)
-    - [JavaScript](#json-stringify-javascript)
     - [Python](#json-stringify-python)
     - [Crystal](#json-stringify-crystal)
-    - [Go](#json-stringify-go)
+    - [JavaScript](#json-stringify-javascript)
     - [Ruby](#json-stringify-ruby)
+    - [Go](#json-stringify-go)
 
 ### <a name="json-parse">parse</a>
 
-#### <a name="json-parse-javascript">JavaScript</a>
-
-| Language                             | Average       | p75      | p99      | Min      | Max      |
-| ------------------------------------ | ------------- | -------- | -------- | -------- | -------- |
-| JavaScript / bun 0.1.10 (x64-linux)  | 12.39/iter ms | 11.6 ms  | 16.52 ms | 11.99 ms | 12.36 ms |
-| JavaScript / deno 1.25.0 (x64-linux) | 28.51/iter ms | 27.49 ms | 29.22 ms | 28.26 ms | 28.43 ms |
-| JavaScript / node 18.8.0 (x64-linux) | 48.07/iter ms | 46.69 ms | 55.42 ms | 49.23 ms | 47.87 ms |
-
-
-<div id="chart-10"></div>
-<script>
-new ApexCharts(document.querySelector('#chart-10'), {
-                    chart: {
-                        height: 320,
-                        type: 'bar',
-                        toolbar: {
-                            show: true,
-                        },
-                        animations: {
-                            enabled: true,
-                        },
-                    },
-                    series: [
-                        {
-                            name: "json",
-                            data: [{"x":"JavaScript / deno 1.25.0 (x64-linux)","y":28505256.090000004},{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":12393258.219999995},{"x":"JavaScript / node 18.8.0 (x64-linux)","y":48066736.80999998}]
-                        }
-                    ],
-                    stroke: {
-                        width: 1,
-                        curve: "straight",
-                    },
-                    legend: {
-                        show: true,
-                        showForSingleSeries: true,
-                        position: "bottom",
-                    },
-                    yaxis: {
-                        labels: {
-                            formatter: function (v) {
-                    const time = v;
-                    const locale = 'en-US';
-                    const type = '/iter';
-
-                    if (time < 1e0) return `${Number((time * 1e3).toFixed(2)).toLocaleString(locale)}${type} ps`;
-  
-                    if (time < 1e3) return `${Number(time.toFixed(2)).toLocaleString(locale)}${type} ns`;
-                    if (time < 1e6) return `${Number((time / 1e3).toFixed(2)).toLocaleString(locale)}${type} µs`;
-                    if (time < 1e9) return `${Number((time / 1e6).toFixed(2)).toLocaleString(locale)}${type} ms`;
-                    if (time < 1e12) return `${Number((time / 1e9).toFixed(2)).toLocaleString(locale)}${type} s`;
-                    if (time < 36e11) return `${Number((time / 60e9).toFixed(2)).toLocaleString(locale)}${type} m`;
-                  
-                    return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
-                }
-                        },
-                        title: {
-                            text: "time per iteration"
-                        },
-                    },
-                    dataLabels: {
-                        formatter: function (v) {
-                    const time = v;
-                    const locale = 'en-US';
-                    const type = '/iter';
-
-                    if (time < 1e0) return `${Number((time * 1e3).toFixed(2)).toLocaleString(locale)}${type} ps`;
-  
-                    if (time < 1e3) return `${Number(time.toFixed(2)).toLocaleString(locale)}${type} ns`;
-                    if (time < 1e6) return `${Number((time / 1e3).toFixed(2)).toLocaleString(locale)}${type} µs`;
-                    if (time < 1e9) return `${Number((time / 1e6).toFixed(2)).toLocaleString(locale)}${type} ms`;
-                    if (time < 1e12) return `${Number((time / 1e9).toFixed(2)).toLocaleString(locale)}${type} s`;
-                    if (time < 36e11) return `${Number((time / 60e9).toFixed(2)).toLocaleString(locale)}${type} m`;
-                  
-                    return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
-                }
-                    },
-                    xaxis: {
-                        type: 'category',
-                        labels: {
-                            show: false,
-                        },
-                        tooltip: {
-                            enabled: false,
-                        },
-                    },
-                    plotOptions: {
-                        bar: {
-                            distributed: true
-                        }
-                    }
-                }).render()
-</script>
-
 #### <a name="json-parse-python">Python</a>
 
-| Language | Average       | p75      | p99      | Min      | Max      |
-| -------- | ------------- | -------- | -------- | -------- | -------- |
-| Python   | 23.17/iter ms | 22.76 ms | 23.71 ms | 23.38 ms | 23.12 ms |
+| Language | Average       | p75      | p99      | Min      | Max     |
+| -------- | ------------- | -------- | -------- | -------- | ------- |
+| Python   | 16.41/iter ms | 15.63 ms | 21.61 ms | 16.21 ms | 17.5 ms |
 
 
-<div id="chart-11"></div>
+<div id="chart-5"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-11'), {
+new ApexCharts(document.querySelector('#chart-5'), {
                     chart: {
                         height: 320,
                         type: 'bar',
@@ -130,7 +37,7 @@ new ApexCharts(document.querySelector('#chart-11'), {
                     series: [
                         {
                             name: "json",
-                            data: [{"x":"Python","y":23169572.71000002}]
+                            data: [{"x":"Python","y":16412173.780000005}]
                         }
                     ],
                     stroke: {
@@ -200,14 +107,14 @@ new ApexCharts(document.querySelector('#chart-11'), {
 
 #### <a name="json-parse-crystal">Crystal</a>
 
-| Language | Average      | p75     | p99     | Min    | Max    |
-| -------- | ------------ | ------- | ------- | ------ | ------ |
-| Crystal  | 2.12/iter ms | 1.93 ms | 3.43 ms | 2.3 ms | 2.4 ms |
+| Language | Average     | p75       | p99     | Min     | Max    |
+| -------- | ----------- | --------- | ------- | ------- | ------ |
+| Crystal  | 1.4/iter ms | 913.49 µs | 2.42 ms | 1.32 ms | 1.3 ms |
 
 
-<div id="chart-12"></div>
+<div id="chart-6"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-12'), {
+new ApexCharts(document.querySelector('#chart-6'), {
                     chart: {
                         height: 320,
                         type: 'bar',
@@ -221,7 +128,7 @@ new ApexCharts(document.querySelector('#chart-12'), {
                     series: [
                         {
                             name: "json",
-                            data: [{"x":"Crystal","y":2117397.100000001}]
+                            data: [{"x":"Crystal","y":1401534.0099999995}]
                         }
                     ],
                     stroke: {
@@ -289,16 +196,18 @@ new ApexCharts(document.querySelector('#chart-12'), {
                 }).render()
 </script>
 
-#### <a name="json-parse-go">Go</a>
+#### <a name="json-parse-javascript">JavaScript</a>
 
-| Language | Average      | p75       | p99     | Min       | Max       |
-| -------- | ------------ | --------- | ------- | --------- | --------- |
-| Go       | 1.04/iter ms | 944.91 µs | 1.39 ms | 988.31 µs | 946.71 µs |
+| Language                             | Average       | p75      | p99      | Min      | Max      |
+| ------------------------------------ | ------------- | -------- | -------- | -------- | -------- |
+| JavaScript / bun 0.1.10 (x64-linux)  | 10.55/iter ms | 8.98 ms  | 29.13 ms | 10.7 ms  | 10.15 ms |
+| JavaScript / deno 1.25.0 (x64-linux) | 19.84/iter ms | 16.93 ms | 45.44 ms | 18.12 ms | 22.77 ms |
+| JavaScript / node 18.7.0 (x64-linux) | 37.75/iter ms | 35.87 ms | 43.89 ms | 37.34 ms | 37.77 ms |
 
 
-<div id="chart-13"></div>
+<div id="chart-7"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-13'), {
+new ApexCharts(document.querySelector('#chart-7'), {
                     chart: {
                         height: 320,
                         type: 'bar',
@@ -312,7 +221,7 @@ new ApexCharts(document.querySelector('#chart-13'), {
                     series: [
                         {
                             name: "json",
-                            data: [{"x":"Go","y":1044486.7400000003}]
+                            data: [{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":10551086.750000002},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":37754230.55999999},{"x":"JavaScript / deno 1.25.0 (x64-linux)","y":19836739.440000005}]
                         }
                     ],
                     stroke: {
@@ -382,14 +291,14 @@ new ApexCharts(document.querySelector('#chart-13'), {
 
 #### <a name="json-parse-ruby">Ruby</a>
 
-| Language | Average       | p75      | p99      | Min      | Max      |
-| -------- | ------------- | -------- | -------- | -------- | -------- |
-| Ruby     | 61.32/iter ms | 60.54 ms | 73.44 ms | 61.58 ms | 61.04 ms |
+| Language | Average       | p75     | p99      | Min      | Max      |
+| -------- | ------------- | ------- | -------- | -------- | -------- |
+| Ruby     | 45.77/iter ms | 43.3 ms | 71.72 ms | 45.03 ms | 47.22 ms |
 
 
-<div id="chart-14"></div>
+<div id="chart-8"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-14'), {
+new ApexCharts(document.querySelector('#chart-8'), {
                     chart: {
                         height: 320,
                         type: 'bar',
@@ -403,7 +312,98 @@ new ApexCharts(document.querySelector('#chart-14'), {
                     series: [
                         {
                             name: "json",
-                            data: [{"x":"Ruby","y":61317544.06999998}]
+                            data: [{"x":"Ruby","y":45765518.61000001}]
+                        }
+                    ],
+                    stroke: {
+                        width: 1,
+                        curve: "straight",
+                    },
+                    legend: {
+                        show: true,
+                        showForSingleSeries: true,
+                        position: "bottom",
+                    },
+                    yaxis: {
+                        labels: {
+                            formatter: function (v) {
+                    const time = v;
+                    const locale = 'en-US';
+                    const type = '/iter';
+
+                    if (time < 1e0) return `${Number((time * 1e3).toFixed(2)).toLocaleString(locale)}${type} ps`;
+  
+                    if (time < 1e3) return `${Number(time.toFixed(2)).toLocaleString(locale)}${type} ns`;
+                    if (time < 1e6) return `${Number((time / 1e3).toFixed(2)).toLocaleString(locale)}${type} µs`;
+                    if (time < 1e9) return `${Number((time / 1e6).toFixed(2)).toLocaleString(locale)}${type} ms`;
+                    if (time < 1e12) return `${Number((time / 1e9).toFixed(2)).toLocaleString(locale)}${type} s`;
+                    if (time < 36e11) return `${Number((time / 60e9).toFixed(2)).toLocaleString(locale)}${type} m`;
+                  
+                    return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
+                }
+                        },
+                        title: {
+                            text: "time per iteration"
+                        },
+                    },
+                    dataLabels: {
+                        formatter: function (v) {
+                    const time = v;
+                    const locale = 'en-US';
+                    const type = '/iter';
+
+                    if (time < 1e0) return `${Number((time * 1e3).toFixed(2)).toLocaleString(locale)}${type} ps`;
+  
+                    if (time < 1e3) return `${Number(time.toFixed(2)).toLocaleString(locale)}${type} ns`;
+                    if (time < 1e6) return `${Number((time / 1e3).toFixed(2)).toLocaleString(locale)}${type} µs`;
+                    if (time < 1e9) return `${Number((time / 1e6).toFixed(2)).toLocaleString(locale)}${type} ms`;
+                    if (time < 1e12) return `${Number((time / 1e9).toFixed(2)).toLocaleString(locale)}${type} s`;
+                    if (time < 36e11) return `${Number((time / 60e9).toFixed(2)).toLocaleString(locale)}${type} m`;
+                  
+                    return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
+                }
+                    },
+                    xaxis: {
+                        type: 'category',
+                        labels: {
+                            show: false,
+                        },
+                        tooltip: {
+                            enabled: false,
+                        },
+                    },
+                    plotOptions: {
+                        bar: {
+                            distributed: true
+                        }
+                    }
+                }).render()
+</script>
+
+#### <a name="json-parse-go">Go</a>
+
+| Language | Average        | p75       | p99     | Min       | Max       |
+| -------- | -------------- | --------- | ------- | --------- | --------- |
+| Go       | 714.14/iter µs | 335.76 µs | 1.25 ms | 574.34 µs | 769.59 µs |
+
+
+<div id="chart-9"></div>
+<script>
+new ApexCharts(document.querySelector('#chart-9'), {
+                    chart: {
+                        height: 320,
+                        type: 'bar',
+                        toolbar: {
+                            show: true,
+                        },
+                        animations: {
+                            enabled: true,
+                        },
+                    },
+                    series: [
+                        {
+                            name: "json",
+                            data: [{"x":"Go","y":714144.7199999999}]
                         }
                     ],
                     stroke: {
@@ -473,109 +473,16 @@ new ApexCharts(document.querySelector('#chart-14'), {
 
 ### <a name="json-stringify">stringify</a>
 
-#### <a name="json-stringify-javascript">JavaScript</a>
-
-| Language                             | Average       | p75      | p99      | Min      | Max      |
-| ------------------------------------ | ------------- | -------- | -------- | -------- | -------- |
-| JavaScript / bun 0.1.10 (x64-linux)  | 12.28/iter ms | 11.61 ms | 13.9 ms  | 12.38 ms | 12.12 ms |
-| JavaScript / deno 1.25.0 (x64-linux) | 28.72/iter ms | 27.62 ms | 29.52 ms | 28.94 ms | 28.15 ms |
-| JavaScript / node 18.8.0 (x64-linux) | 47.54/iter ms | 46.65 ms | 52.11 ms | 46.91 ms | 48.35 ms |
-
-
-<div id="chart-15"></div>
-<script>
-new ApexCharts(document.querySelector('#chart-15'), {
-                    chart: {
-                        height: 320,
-                        type: 'bar',
-                        toolbar: {
-                            show: true,
-                        },
-                        animations: {
-                            enabled: true,
-                        },
-                    },
-                    series: [
-                        {
-                            name: "json",
-                            data: [{"x":"JavaScript / deno 1.25.0 (x64-linux)","y":28717437.140000004},{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":12281701.170000002},{"x":"JavaScript / node 18.8.0 (x64-linux)","y":47537034.33}]
-                        }
-                    ],
-                    stroke: {
-                        width: 1,
-                        curve: "straight",
-                    },
-                    legend: {
-                        show: true,
-                        showForSingleSeries: true,
-                        position: "bottom",
-                    },
-                    yaxis: {
-                        labels: {
-                            formatter: function (v) {
-                    const time = v;
-                    const locale = 'en-US';
-                    const type = '/iter';
-
-                    if (time < 1e0) return `${Number((time * 1e3).toFixed(2)).toLocaleString(locale)}${type} ps`;
-  
-                    if (time < 1e3) return `${Number(time.toFixed(2)).toLocaleString(locale)}${type} ns`;
-                    if (time < 1e6) return `${Number((time / 1e3).toFixed(2)).toLocaleString(locale)}${type} µs`;
-                    if (time < 1e9) return `${Number((time / 1e6).toFixed(2)).toLocaleString(locale)}${type} ms`;
-                    if (time < 1e12) return `${Number((time / 1e9).toFixed(2)).toLocaleString(locale)}${type} s`;
-                    if (time < 36e11) return `${Number((time / 60e9).toFixed(2)).toLocaleString(locale)}${type} m`;
-                  
-                    return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
-                }
-                        },
-                        title: {
-                            text: "time per iteration"
-                        },
-                    },
-                    dataLabels: {
-                        formatter: function (v) {
-                    const time = v;
-                    const locale = 'en-US';
-                    const type = '/iter';
-
-                    if (time < 1e0) return `${Number((time * 1e3).toFixed(2)).toLocaleString(locale)}${type} ps`;
-  
-                    if (time < 1e3) return `${Number(time.toFixed(2)).toLocaleString(locale)}${type} ns`;
-                    if (time < 1e6) return `${Number((time / 1e3).toFixed(2)).toLocaleString(locale)}${type} µs`;
-                    if (time < 1e9) return `${Number((time / 1e6).toFixed(2)).toLocaleString(locale)}${type} ms`;
-                    if (time < 1e12) return `${Number((time / 1e9).toFixed(2)).toLocaleString(locale)}${type} s`;
-                    if (time < 36e11) return `${Number((time / 60e9).toFixed(2)).toLocaleString(locale)}${type} m`;
-                  
-                    return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
-                }
-                    },
-                    xaxis: {
-                        type: 'category',
-                        labels: {
-                            show: false,
-                        },
-                        tooltip: {
-                            enabled: false,
-                        },
-                    },
-                    plotOptions: {
-                        bar: {
-                            distributed: true
-                        }
-                    }
-                }).render()
-</script>
-
 #### <a name="json-stringify-python">Python</a>
 
 | Language | Average       | p75      | p99      | Min      | Max      |
 | -------- | ------------- | -------- | -------- | -------- | -------- |
-| Python   | 23.24/iter ms | 22.87 ms | 24.01 ms | 23.18 ms | 23.13 ms |
+| Python   | 16.73/iter ms | 15.57 ms | 28.48 ms | 17.16 ms | 16.92 ms |
 
 
-<div id="chart-16"></div>
+<div id="chart-10"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-16'), {
+new ApexCharts(document.querySelector('#chart-10'), {
                     chart: {
                         height: 320,
                         type: 'bar',
@@ -589,7 +496,7 @@ new ApexCharts(document.querySelector('#chart-16'), {
                     series: [
                         {
                             name: "json",
-                            data: [{"x":"Python","y":23240555.17000001}]
+                            data: [{"x":"Python","y":16731761.849999992}]
                         }
                     ],
                     stroke: {
@@ -659,14 +566,14 @@ new ApexCharts(document.querySelector('#chart-16'), {
 
 #### <a name="json-stringify-crystal">Crystal</a>
 
-| Language | Average      | p75    | p99     | Min     | Max     |
-| -------- | ------------ | ------ | ------- | ------- | ------- |
-| Crystal  | 2.03/iter ms | 1.9 ms | 2.43 ms | 1.97 ms | 1.93 ms |
+| Language | Average      | p75       | p99     | Min       | Max     |
+| -------- | ------------ | --------- | ------- | --------- | ------- |
+| Crystal  | 1.31/iter ms | 943.02 µs | 2.01 ms | 981.25 µs | 1.43 ms |
 
 
-<div id="chart-17"></div>
+<div id="chart-11"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-17'), {
+new ApexCharts(document.querySelector('#chart-11'), {
                     chart: {
                         height: 320,
                         type: 'bar',
@@ -680,7 +587,7 @@ new ApexCharts(document.querySelector('#chart-17'), {
                     series: [
                         {
                             name: "json",
-                            data: [{"x":"Crystal","y":2033369.7400000002}]
+                            data: [{"x":"Crystal","y":1311131.6500000004}]
                         }
                     ],
                     stroke: {
@@ -748,16 +655,18 @@ new ApexCharts(document.querySelector('#chart-17'), {
                 }).render()
 </script>
 
-#### <a name="json-stringify-go">Go</a>
+#### <a name="json-stringify-javascript">JavaScript</a>
 
-| Language | Average      | p75      | p99     | Min     | Max     |
-| -------- | ------------ | -------- | ------- | ------- | ------- |
-| Go       | 1.03/iter ms | 910.5 µs | 1.51 ms | 1.04 ms | 1.05 ms |
+| Language                             | Average       | p75      | p99      | Min      | Max      |
+| ------------------------------------ | ------------- | -------- | -------- | -------- | -------- |
+| JavaScript / bun 0.1.10 (x64-linux)  | 10.08/iter ms | 8.8 ms   | 25.86 ms | 10.99 ms | 10.44 ms |
+| JavaScript / deno 1.25.0 (x64-linux) | 19.31/iter ms | 17.5 ms  | 36.4 ms  | 18.9 ms  | 18.59 ms |
+| JavaScript / node 18.7.0 (x64-linux) | 37.44/iter ms | 35.99 ms | 43.18 ms | 37.81 ms | 37.18 ms |
 
 
-<div id="chart-18"></div>
+<div id="chart-12"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-18'), {
+new ApexCharts(document.querySelector('#chart-12'), {
                     chart: {
                         height: 320,
                         type: 'bar',
@@ -771,7 +680,7 @@ new ApexCharts(document.querySelector('#chart-18'), {
                     series: [
                         {
                             name: "json",
-                            data: [{"x":"Go","y":1028221.2300000003}]
+                            data: [{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":10075855.000000006},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":37443784.75000001},{"x":"JavaScript / deno 1.25.0 (x64-linux)","y":19309742.729999997}]
                         }
                     ],
                     stroke: {
@@ -841,14 +750,14 @@ new ApexCharts(document.querySelector('#chart-18'), {
 
 #### <a name="json-stringify-ruby">Ruby</a>
 
-| Language | Average       | p75      | p99      | Min      | Max      |
-| -------- | ------------- | -------- | -------- | -------- | -------- |
-| Ruby     | 61.26/iter ms | 60.03 ms | 62.13 ms | 61.29 ms | 61.18 ms |
+| Language | Average      | p75     | p99      | Min     | Max     |
+| -------- | ------------ | ------- | -------- | ------- | ------- |
+| Ruby     | 46.3/iter ms | 43.3 ms | 69.86 ms | 45.1 ms | 43.7 ms |
 
 
-<div id="chart-19"></div>
+<div id="chart-13"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-19'), {
+new ApexCharts(document.querySelector('#chart-13'), {
                     chart: {
                         height: 320,
                         type: 'bar',
@@ -862,7 +771,98 @@ new ApexCharts(document.querySelector('#chart-19'), {
                     series: [
                         {
                             name: "json",
-                            data: [{"x":"Ruby","y":61264195.65999999}]
+                            data: [{"x":"Ruby","y":46296349.390000015}]
+                        }
+                    ],
+                    stroke: {
+                        width: 1,
+                        curve: "straight",
+                    },
+                    legend: {
+                        show: true,
+                        showForSingleSeries: true,
+                        position: "bottom",
+                    },
+                    yaxis: {
+                        labels: {
+                            formatter: function (v) {
+                    const time = v;
+                    const locale = 'en-US';
+                    const type = '/iter';
+
+                    if (time < 1e0) return `${Number((time * 1e3).toFixed(2)).toLocaleString(locale)}${type} ps`;
+  
+                    if (time < 1e3) return `${Number(time.toFixed(2)).toLocaleString(locale)}${type} ns`;
+                    if (time < 1e6) return `${Number((time / 1e3).toFixed(2)).toLocaleString(locale)}${type} µs`;
+                    if (time < 1e9) return `${Number((time / 1e6).toFixed(2)).toLocaleString(locale)}${type} ms`;
+                    if (time < 1e12) return `${Number((time / 1e9).toFixed(2)).toLocaleString(locale)}${type} s`;
+                    if (time < 36e11) return `${Number((time / 60e9).toFixed(2)).toLocaleString(locale)}${type} m`;
+                  
+                    return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
+                }
+                        },
+                        title: {
+                            text: "time per iteration"
+                        },
+                    },
+                    dataLabels: {
+                        formatter: function (v) {
+                    const time = v;
+                    const locale = 'en-US';
+                    const type = '/iter';
+
+                    if (time < 1e0) return `${Number((time * 1e3).toFixed(2)).toLocaleString(locale)}${type} ps`;
+  
+                    if (time < 1e3) return `${Number(time.toFixed(2)).toLocaleString(locale)}${type} ns`;
+                    if (time < 1e6) return `${Number((time / 1e3).toFixed(2)).toLocaleString(locale)}${type} µs`;
+                    if (time < 1e9) return `${Number((time / 1e6).toFixed(2)).toLocaleString(locale)}${type} ms`;
+                    if (time < 1e12) return `${Number((time / 1e9).toFixed(2)).toLocaleString(locale)}${type} s`;
+                    if (time < 36e11) return `${Number((time / 60e9).toFixed(2)).toLocaleString(locale)}${type} m`;
+                  
+                    return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
+                }
+                    },
+                    xaxis: {
+                        type: 'category',
+                        labels: {
+                            show: false,
+                        },
+                        tooltip: {
+                            enabled: false,
+                        },
+                    },
+                    plotOptions: {
+                        bar: {
+                            distributed: true
+                        }
+                    }
+                }).render()
+</script>
+
+#### <a name="json-stringify-go">Go</a>
+
+| Language | Average        | p75      | p99     | Min       | Max       |
+| -------- | -------------- | -------- | ------- | --------- | --------- |
+| Go       | 762.04/iter µs | 478.2 µs | 1.65 ms | 787.65 µs | 882.25 µs |
+
+
+<div id="chart-14"></div>
+<script>
+new ApexCharts(document.querySelector('#chart-14'), {
+                    chart: {
+                        height: 320,
+                        type: 'bar',
+                        toolbar: {
+                            show: true,
+                        },
+                        animations: {
+                            enabled: true,
+                        },
+                    },
+                    series: [
+                        {
+                            name: "json",
+                            data: [{"x":"Go","y":762039.1900000001}]
                         }
                     ],
                     stroke: {

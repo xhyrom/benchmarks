@@ -1,6 +1,6 @@
 language = "Crystal"
 ext = "cr"
 
-enviroment = [
+environment = [
   { name = "main.cr", install = "curl -fsSL https://crystal-lang.org/install.sh | sudo bash", build = "crystal build $FILE --release --no-debug -D03", run = "./$FILE", version = "crystal -v" }
 ]

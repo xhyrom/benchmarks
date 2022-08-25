@@ -1,6 +1,6 @@
 language = "C"
 ext = "c"
 
-enviroment = [
+environment = [
   { name = "main.c", install = "sudo apt update && sudo apt -y upgrade && sudo apt install build-essential", build = "gcc -Wall -O3 $FILE",  run = "./$FILE.out", version = "gcc --version" }
 ]

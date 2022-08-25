@@ -1,6 +1,6 @@
 language = "Go"
 ext = "go"
 
-enviroment = [
+environment = [
   { name = "main.go", install = "sudo apt update && sudo apt -y upgrade && sudo apt install golang-go", build = "go build $FILE", run = "./$FILE", version = "go version" }
 ]

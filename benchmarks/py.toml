@@ -1,6 +1,6 @@
 language = "Python"
 ext = "py"
 
-enviroment = [
+environment = [
   { name = "main.py", install = "sudo apt update && sudo apt -y upgrade && sudo apt-get install python3-pip && pip install nanoid && pip install requests", run = "python3 $FILE$EXTENSION", version = "python3 -V" }
 ]

@@ -18,7 +18,7 @@ function run_benchmark {
     content=${MAPFILE[@]}
 
     language=$( jq -r ".language" <<< $content )
-    output=$( jq -r ".enviroment[] | select(.name == \"$filename\")" <<< $content )
+    output=$( jq -r ".environment[] | select(.name == \"$filename\")" <<< $content )
 
     runtime=$( jq -r ".runtime" <<< $output )
     versioncommand=$( jq -r ".version" <<< $output )

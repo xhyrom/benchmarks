@@ -1,19 +1,17 @@
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-- [JavaScript](#nanoid-javascript)
 - [Python](#nanoid-python)
+- [JavaScript](#nanoid-javascript)
 
-### <a name="nanoid-javascript">JavaScript</a>
+### <a name="nanoid-python">Python</a>
 
-| Language                             | Average       | p75    | p99       | Min     | Max       |
-| ------------------------------------ | ------------- | ------ | --------- | ------- | --------- |
-| JavaScript / node 18.8.0 (x64-linux) | 6.97/iter µs  | 2.7 µs | 228.49 µs | 4.6 µs  | 98.5 µs   |
-| JavaScript / bun 0.1.10 (x64-linux)  | 7.26/iter µs  | 2.5 µs | 263.09 µs | 4 µs    | 35.7 µs   |
-| JavaScript / deno 1.25.0 (x64-linux) | 16.84/iter µs | 5 µs   | 237.69 µs | 10.4 µs | 205.09 µs |
+| Language | Average       | p75      | p99      | Min      | Max      |
+| -------- | ------------- | -------- | -------- | -------- | -------- |
+| Python   | 19.12/iter µs | 13.55 µs | 61.41 µs | 16.66 µs | 60.51 µs |
 
 
-<div id="chart-36"></div>
+<div id="chart-15"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-36'), {
+new ApexCharts(document.querySelector('#chart-15'), {
                     chart: {
                         height: 320,
                         type: 'bar',
@@ -27,7 +25,7 @@ new ApexCharts(document.querySelector('#chart-36'), {
                     series: [
                         {
                             name: "nanoid",
-                            data: [{"x":"JavaScript / deno 1.25.0 (x64-linux)","y":16837.47},{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":7256.71},{"x":"JavaScript / node 18.8.0 (x64-linux)","y":6974.82}]
+                            data: [{"x":"Python","y":19121.48}]
                         }
                     ],
                     stroke: {
@@ -95,16 +93,18 @@ new ApexCharts(document.querySelector('#chart-36'), {
                 }).render()
 </script>
 
-### <a name="nanoid-python">Python</a>
+### <a name="nanoid-javascript">JavaScript</a>
 
-| Language | Average    | p75     | p99     | Min     | Max     |
-| -------- | ---------- | ------- | ------- | ------- | ------- |
-| Python   | 20/iter µs | 19.1 µs | 23.7 µs | 20.2 µs | 21.8 µs |
+| Language                             | Average        | p75     | p99       | Min      | Max       |
+| ------------------------------------ | -------------- | ------- | --------- | -------- | --------- |
+| JavaScript / node 18.7.0 (x64-linux) | 11.07/iter µs  | 2.19 µs | 612.1 µs  | 4.07 µs  | 58.46 µs  |
+| JavaScript / deno 1.25.0 (x64-linux) | 35.77/iter µs  | 6.71 µs | 460.18 µs | 32.48 µs | 315.17 µs |
+| JavaScript / bun 0.1.10 (x64-linux)  | 162.09/iter µs | 2.9 µs  | 14.91 ms  | 12.63 µs | 145.57 µs |
 
 
-<div id="chart-37"></div>
+<div id="chart-16"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-37'), {
+new ApexCharts(document.querySelector('#chart-16'), {
                     chart: {
                         height: 320,
                         type: 'bar',
@@ -118,7 +118,7 @@ new ApexCharts(document.querySelector('#chart-37'), {
                     series: [
                         {
                             name: "nanoid",
-                            data: [{"x":"Python","y":20004.43}]
+                            data: [{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":162089.52},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":11074.62},{"x":"JavaScript / deno 1.25.0 (x64-linux)","y":35771.53}]
                         }
                     ],
                     stroke: {
