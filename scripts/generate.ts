@@ -81,53 +81,18 @@ for (const [benchmarkName, files] of Object.entries(outputs)) {
         for (const language of [...new Set(Object.values(results).map(b => b.language))]) {
             let charts: Record<string, any> = {};
             let tables: Record<string, any[]> = {};
+            let seriesCharts: Record<string, any[]> = {};
             const hasGroup = group !== 'main';
             head += `${' '.repeat(size.spaces)}- [${language}](./${benchmarkName}#${benchmarkName}${hasGroup ? `-${group}` : ''}-${language.toLowerCase()})\n`;
             perBenchHead += `${size.spaces === 9 ? '    ' : ''}- [${language}](#${benchmarkName}${hasGroup ? `-${group}` : ''}-${language.toLowerCase()})\n`;
             perBenchMarkdown += `${'#'.repeat(size.header)} <a name="${benchmarkName}${hasGroup ? `-${group}` : ''}-${language.toLowerCase()}">${language}</a>\n`;
     
-            tables[language] = tables[language] || [
+            tables[language] = [
                 ['Language', 'Average', 'p75', 'p99', 'Min', 'Max']
             ];
-            charts[language] = charts[language] || {
-                chart: {
-                    height: 320,
-                    type: 'bar',
-                    toolbar: {
-                        show: true,
-                    },
-                    animations: {
-                        enabled: true,
-                    },
-                },
-                series: [
-                    {
-                        name: benchmarkName,
-                        data: [],
-                    }
-                ],
-                stroke: {
-                    width: 1,
-                    curve: "straight",
-                },
-                legend: {
-                    show: false,
-                },
-                xaxis: {
-                    type: 'category',
-                    labels: {
-                        show: true,
-                    },
-                    tooltip: {
-                        enabled: false,
-                    },
-                },
-                plotOptions: {
-                    bar: {
-                        distributed: true
-                    }
-                }
-            }
+
+            let chartTitle = '';
+            let formatterFunction = '';
 
             for (const bench of Object.values(results)) {
 
@@ -151,10 +116,87 @@ for (const [benchmarkName, files] of Object.entries(outputs)) {
                 forPush.push(bench.stats.avg);
     
                 tables[language].push(forPush);
-                charts[language].series[0].data.push({
+                seriesCharts[language] = seriesCharts[language] || [];
+                seriesCharts[language].push({
                     x: bench.runtime ? `${bench.language} / ${bench.runtime}` : bench.language,
                     y: bench.stats.avg,
                 });
+
+                formatterFunction = bench.type === '/iter' ? `function (v) {
+                    const time = v;
+                    const locale = 'en-US';
+                    const type = '/iter';
+
+                    if (time < 1e0) return \`\$\{Number((time * 1e3).toFixed(2)).toLocaleString(locale)}\${type} ps\`;
+  
+                    if (time < 1e3) return \`\${Number(time.toFixed(2)).toLocaleString(locale)}\${type} ns\`;
+                    if (time < 1e6) return \`\${Number((time / 1e3).toFixed(2)).toLocaleString(locale)}\${type} µs\`;
+                    if (time < 1e9) return \`\${Number((time / 1e6).toFixed(2)).toLocaleString(locale)}\${type} ms\`;
+                    if (time < 1e12) return \`\${Number((time / 1e9).toFixed(2)).toLocaleString(locale)}\${type} s\`;
+                    if (time < 36e11) return \`\${Number((time / 60e9).toFixed(2)).toLocaleString(locale)}\${type} m\`;
+                  
+                    return \`\${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}\${type} h\`;
+                }` : `function (v) {
+                    const time = v;
+                    const locale = 'en-US';
+                    const type = '/rps';
+
+                    return \`\${Number(time.toFixed(2)).toLocaleString(locale)}\${type}\`;
+                }`
+
+                chartTitle = bench.type === '/iter' ? 'time per iteration' : 'requests per second';
+                charts[language] = `{
+                    chart: {
+                        height: 320,
+                        type: 'bar',
+                        toolbar: {
+                            show: true,
+                        },
+                        animations: {
+                            enabled: true,
+                        },
+                    },
+                    series: [
+                        {
+                            name: "${benchmarkName}",
+                            data: ${JSON.stringify(seriesCharts[language])}
+                        }
+                    ],
+                    stroke: {
+                        width: 1,
+                        curve: "straight",
+                    },
+                    legend: {
+                        show: true,
+                        showForSingleSeries: true,
+                        position: "bottom",
+                    },
+                    yaxis: {
+                        labels: {
+                            formatter: ${formatterFunction}
+                        },
+                        title: {
+                            text: "${chartTitle}"
+                        },
+                    },
+                    dataLabels: {
+                        formatter: ${formatterFunction}
+                    },
+                    xaxis: {
+                        type: 'category',
+                        labels: {
+                            show: false,
+                        },
+                        tooltip: {
+                            enabled: false,
+                        },
+                    },
+                    plotOptions: {
+                        bar: {
+                            distributed: true
+                        }
+                    }
+                }`;
             }
 
             const tablesArray = Object.values(tables);
@@ -170,7 +212,7 @@ for (const [benchmarkName, files] of Object.entries(outputs)) {
                 perBenchMarkdown += '\n' + markdownTable(table) + '\n\n\n' + [
                     `<div id="chart-${x}"></div>`,
                     `<script>`,
-                    `new ApexCharts(document.querySelector('#chart-${x}'), ${JSON.stringify(chart)}).render()`,
+                    `new ApexCharts(document.querySelector('#chart-${x}'), ${chart}).render()`,
                     `</script>`
                 ].join('\n') + '\n\n';
 

@@ -1,14 +1,14 @@
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 - [SELECT ALL FROM Employees](#sqlite-SELECT-ALL-FROM-Employees)
     - [JavaScript](#sqlite-SELECT-ALL-FROM-Employees-javascript)
-- [SELECT ALL FROM Products](#sqlite-SELECT-ALL-FROM-Products)
-    - [JavaScript](#sqlite-SELECT-ALL-FROM-Products-javascript)
-- [SELECT ALL FROM Suppliers](#sqlite-SELECT-ALL-FROM-Suppliers)
-    - [JavaScript](#sqlite-SELECT-ALL-FROM-Suppliers-javascript)
-- [SELECT ALL FROM Customers](#sqlite-SELECT-ALL-FROM-Customers)
-    - [JavaScript](#sqlite-SELECT-ALL-FROM-Customers-javascript)
 - [SELECT ALL FROM Orders](#sqlite-SELECT-ALL-FROM-Orders)
     - [JavaScript](#sqlite-SELECT-ALL-FROM-Orders-javascript)
+- [SELECT ALL FROM Suppliers](#sqlite-SELECT-ALL-FROM-Suppliers)
+    - [JavaScript](#sqlite-SELECT-ALL-FROM-Suppliers-javascript)
+- [SELECT ALL FROM Products](#sqlite-SELECT-ALL-FROM-Products)
+    - [JavaScript](#sqlite-SELECT-ALL-FROM-Products-javascript)
+- [SELECT ALL FROM Customers](#sqlite-SELECT-ALL-FROM-Customers)
+    - [JavaScript](#sqlite-SELECT-ALL-FROM-Customers-javascript)
 
 ### <a name="sqlite-SELECT-ALL-FROM-Employees">SELECT ALL FROM Employees</a>
 
@@ -16,30 +16,188 @@
 
 | Language                             | Average        | p75       | p99       | Min       | Max       |
 | ------------------------------------ | -------------- | --------- | --------- | --------- | --------- |
-| JavaScript / bun 0.1.10 (x64-linux)  | 94.75/iter µs  | 51.9 µs   | 609.01 µs | 63.5 µs   | 598.31 µs |
-| JavaScript / node 18.8.0 (x64-linux) | 186.58/iter µs | 155.1 µs  | 1.39 ms   | 177 µs    | 227.5 µs  |
-| JavaScript / deno 1.25.0 (x64-linux) | 644.47/iter µs | 559.41 µs | 2.13 ms   | 660.91 µs | 1.13 ms   |
+| JavaScript / bun 0.1.10 (x64-linux)  | 63.84/iter µs  | 41.48 µs  | 263.88 µs | 53.68 µs  | 216.98 µs |
+| JavaScript / node 18.7.0 (x64-linux) | 434.2/iter µs  | 128.48 µs | 22.73 ms  | 217.65 µs | 982.85 µs |
+| JavaScript / deno 1.24.2 (x64-linux) | 547.34/iter µs | 247.06 µs | 3.95 ms   | 557.92 µs | 2.67 ms   |
 
 
-<div id="chart-25"></div>
+<div id="chart-0"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-25'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"sqlite","data":[{"x":"JavaScript / deno 1.25.0 (x64-linux)","y":644471.15},{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":94745.48},{"x":"JavaScript / node 18.8.0 (x64-linux)","y":186575.97}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
+new ApexCharts(document.querySelector('#chart-0'), {
+                    chart: {
+                        height: 320,
+                        type: 'bar',
+                        toolbar: {
+                            show: true,
+                        },
+                        animations: {
+                            enabled: true,
+                        },
+                    },
+                    series: [
+                        {
+                            name: "sqlite",
+                            data: [{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":63839.66},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":434200.76},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":547335.79}]
+                        }
+                    ],
+                    stroke: {
+                        width: 1,
+                        curve: "straight",
+                    },
+                    legend: {
+                        show: true,
+                        showForSingleSeries: true,
+                        position: "bottom",
+                    },
+                    yaxis: {
+                        labels: {
+                            formatter: function (v) {
+                    const time = v;
+                    const locale = 'en-US';
+                    const type = '/iter';
+
+                    if (time < 1e0) return `${Number((time * 1e3).toFixed(2)).toLocaleString(locale)}${type} ps`;
+  
+                    if (time < 1e3) return `${Number(time.toFixed(2)).toLocaleString(locale)}${type} ns`;
+                    if (time < 1e6) return `${Number((time / 1e3).toFixed(2)).toLocaleString(locale)}${type} µs`;
+                    if (time < 1e9) return `${Number((time / 1e6).toFixed(2)).toLocaleString(locale)}${type} ms`;
+                    if (time < 1e12) return `${Number((time / 1e9).toFixed(2)).toLocaleString(locale)}${type} s`;
+                    if (time < 36e11) return `${Number((time / 60e9).toFixed(2)).toLocaleString(locale)}${type} m`;
+                  
+                    return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
+                }
+                        },
+                        title: {
+                            text: "time per iteration"
+                        },
+                    },
+                    dataLabels: {
+                        formatter: function (v) {
+                    const time = v;
+                    const locale = 'en-US';
+                    const type = '/iter';
+
+                    if (time < 1e0) return `${Number((time * 1e3).toFixed(2)).toLocaleString(locale)}${type} ps`;
+  
+                    if (time < 1e3) return `${Number(time.toFixed(2)).toLocaleString(locale)}${type} ns`;
+                    if (time < 1e6) return `${Number((time / 1e3).toFixed(2)).toLocaleString(locale)}${type} µs`;
+                    if (time < 1e9) return `${Number((time / 1e6).toFixed(2)).toLocaleString(locale)}${type} ms`;
+                    if (time < 1e12) return `${Number((time / 1e9).toFixed(2)).toLocaleString(locale)}${type} s`;
+                    if (time < 36e11) return `${Number((time / 60e9).toFixed(2)).toLocaleString(locale)}${type} m`;
+                  
+                    return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
+                }
+                    },
+                    xaxis: {
+                        type: 'category',
+                        labels: {
+                            show: false,
+                        },
+                        tooltip: {
+                            enabled: false,
+                        },
+                    },
+                    plotOptions: {
+                        bar: {
+                            distributed: true
+                        }
+                    }
+                }).render()
 </script>
 
-### <a name="sqlite-SELECT-ALL-FROM-Products">SELECT ALL FROM Products</a>
+### <a name="sqlite-SELECT-ALL-FROM-Orders">SELECT ALL FROM Orders</a>
 
-#### <a name="sqlite-SELECT-ALL-FROM-Products-javascript">JavaScript</a>
+#### <a name="sqlite-SELECT-ALL-FROM-Orders-javascript">JavaScript</a>
 
-| Language                             | Average        | p75       | p99       | Min       | Max       |
-| ------------------------------------ | -------------- | --------- | --------- | --------- | --------- |
-| JavaScript / bun 0.1.10 (x64-linux)  | 119.8/iter µs  | 98.2 µs   | 655.91 µs | 117.8 µs  | 170.5 µs  |
-| JavaScript / node 18.8.0 (x64-linux) | 352.65/iter µs | 333.61 µs | 1.12 ms   | 350.31 µs | 400.31 µs |
-| JavaScript / deno 1.25.0 (x64-linux) | 908.93/iter µs | 825.21 µs | 2.15 ms   | 883.51 µs | 1.51 ms   |
+| Language                             | Average       | p75       | p99       | Min       | Max       |
+| ------------------------------------ | ------------- | --------- | --------- | --------- | --------- |
+| JavaScript / bun 0.1.10 (x64-linux)  | 28.39/iter ms | 25.59 ms  | 38.48 ms  | 28.54 ms  | 38.26 ms  |
+| JavaScript / node 18.7.0 (x64-linux) | 94.03/iter ms | 86.36 ms  | 137.03 ms | 93.5 ms   | 131.4 ms  |
+| JavaScript / deno 1.24.2 (x64-linux) | 189.9/iter ms | 170.79 ms | 265.23 ms | 194.42 ms | 258.25 ms |
 
 
-<div id="chart-26"></div>
+<div id="chart-1"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-26'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"sqlite","data":[{"x":"JavaScript / deno 1.25.0 (x64-linux)","y":908934.48},{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":119799.95},{"x":"JavaScript / node 18.8.0 (x64-linux)","y":352653.67}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
+new ApexCharts(document.querySelector('#chart-1'), {
+                    chart: {
+                        height: 320,
+                        type: 'bar',
+                        toolbar: {
+                            show: true,
+                        },
+                        animations: {
+                            enabled: true,
+                        },
+                    },
+                    series: [
+                        {
+                            name: "sqlite",
+                            data: [{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":28385006.98},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":94030386.73},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":189903571.37}]
+                        }
+                    ],
+                    stroke: {
+                        width: 1,
+                        curve: "straight",
+                    },
+                    legend: {
+                        show: true,
+                        showForSingleSeries: true,
+                        position: "bottom",
+                    },
+                    yaxis: {
+                        labels: {
+                            formatter: function (v) {
+                    const time = v;
+                    const locale = 'en-US';
+                    const type = '/iter';
+
+                    if (time < 1e0) return `${Number((time * 1e3).toFixed(2)).toLocaleString(locale)}${type} ps`;
+  
+                    if (time < 1e3) return `${Number(time.toFixed(2)).toLocaleString(locale)}${type} ns`;
+                    if (time < 1e6) return `${Number((time / 1e3).toFixed(2)).toLocaleString(locale)}${type} µs`;
+                    if (time < 1e9) return `${Number((time / 1e6).toFixed(2)).toLocaleString(locale)}${type} ms`;
+                    if (time < 1e12) return `${Number((time / 1e9).toFixed(2)).toLocaleString(locale)}${type} s`;
+                    if (time < 36e11) return `${Number((time / 60e9).toFixed(2)).toLocaleString(locale)}${type} m`;
+                  
+                    return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
+                }
+                        },
+                        title: {
+                            text: "time per iteration"
+                        },
+                    },
+                    dataLabels: {
+                        formatter: function (v) {
+                    const time = v;
+                    const locale = 'en-US';
+                    const type = '/iter';
+
+                    if (time < 1e0) return `${Number((time * 1e3).toFixed(2)).toLocaleString(locale)}${type} ps`;
+  
+                    if (time < 1e3) return `${Number(time.toFixed(2)).toLocaleString(locale)}${type} ns`;
+                    if (time < 1e6) return `${Number((time / 1e3).toFixed(2)).toLocaleString(locale)}${type} µs`;
+                    if (time < 1e9) return `${Number((time / 1e6).toFixed(2)).toLocaleString(locale)}${type} ms`;
+                    if (time < 1e12) return `${Number((time / 1e9).toFixed(2)).toLocaleString(locale)}${type} s`;
+                    if (time < 36e11) return `${Number((time / 60e9).toFixed(2)).toLocaleString(locale)}${type} m`;
+                  
+                    return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
+                }
+                    },
+                    xaxis: {
+                        type: 'category',
+                        labels: {
+                            show: false,
+                        },
+                        tooltip: {
+                            enabled: false,
+                        },
+                    },
+                    plotOptions: {
+                        bar: {
+                            distributed: true
+                        }
+                    }
+                }).render()
 </script>
 
 ### <a name="sqlite-SELECT-ALL-FROM-Suppliers">SELECT ALL FROM Suppliers</a>
@@ -48,14 +206,188 @@ new ApexCharts(document.querySelector('#chart-26'), {"chart":{"height":320,"type
 
 | Language                             | Average        | p75       | p99       | Min       | Max       |
 | ------------------------------------ | -------------- | --------- | --------- | --------- | --------- |
-| JavaScript / bun 0.1.10 (x64-linux)  | 77.1/iter µs   | 59 µs     | 604.21 µs | 67.6 µs   | 584.91 µs |
-| JavaScript / node 18.8.0 (x64-linux) | 229.13/iter µs | 200.1 µs  | 1.63 ms   | 212.2 µs  | 940.72 µs |
-| JavaScript / deno 1.25.0 (x64-linux) | 817.76/iter µs | 731.61 µs | 2.09 ms   | 809.51 µs | 1.69 ms   |
+| JavaScript / bun 0.1.10 (x64-linux)  | 69.15/iter µs  | 43.88 µs  | 236.72 µs | 81.56 µs  | 144.43 µs |
+| JavaScript / node 18.7.0 (x64-linux) | 184.48/iter µs | 152.27 µs | 903.93 µs | 173.49 µs | 364.68 µs |
+| JavaScript / deno 1.24.2 (x64-linux) | 625.25/iter µs | 289.39 µs | 4.78 ms   | 658.31 µs | 1.98 ms   |
 
 
-<div id="chart-27"></div>
+<div id="chart-2"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-27'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"sqlite","data":[{"x":"JavaScript / deno 1.25.0 (x64-linux)","y":817759.97},{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":77100.22},{"x":"JavaScript / node 18.8.0 (x64-linux)","y":229132.64}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
+new ApexCharts(document.querySelector('#chart-2'), {
+                    chart: {
+                        height: 320,
+                        type: 'bar',
+                        toolbar: {
+                            show: true,
+                        },
+                        animations: {
+                            enabled: true,
+                        },
+                    },
+                    series: [
+                        {
+                            name: "sqlite",
+                            data: [{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":69154.28},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":184479.71},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":625245.45}]
+                        }
+                    ],
+                    stroke: {
+                        width: 1,
+                        curve: "straight",
+                    },
+                    legend: {
+                        show: true,
+                        showForSingleSeries: true,
+                        position: "bottom",
+                    },
+                    yaxis: {
+                        labels: {
+                            formatter: function (v) {
+                    const time = v;
+                    const locale = 'en-US';
+                    const type = '/iter';
+
+                    if (time < 1e0) return `${Number((time * 1e3).toFixed(2)).toLocaleString(locale)}${type} ps`;
+  
+                    if (time < 1e3) return `${Number(time.toFixed(2)).toLocaleString(locale)}${type} ns`;
+                    if (time < 1e6) return `${Number((time / 1e3).toFixed(2)).toLocaleString(locale)}${type} µs`;
+                    if (time < 1e9) return `${Number((time / 1e6).toFixed(2)).toLocaleString(locale)}${type} ms`;
+                    if (time < 1e12) return `${Number((time / 1e9).toFixed(2)).toLocaleString(locale)}${type} s`;
+                    if (time < 36e11) return `${Number((time / 60e9).toFixed(2)).toLocaleString(locale)}${type} m`;
+                  
+                    return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
+                }
+                        },
+                        title: {
+                            text: "time per iteration"
+                        },
+                    },
+                    dataLabels: {
+                        formatter: function (v) {
+                    const time = v;
+                    const locale = 'en-US';
+                    const type = '/iter';
+
+                    if (time < 1e0) return `${Number((time * 1e3).toFixed(2)).toLocaleString(locale)}${type} ps`;
+  
+                    if (time < 1e3) return `${Number(time.toFixed(2)).toLocaleString(locale)}${type} ns`;
+                    if (time < 1e6) return `${Number((time / 1e3).toFixed(2)).toLocaleString(locale)}${type} µs`;
+                    if (time < 1e9) return `${Number((time / 1e6).toFixed(2)).toLocaleString(locale)}${type} ms`;
+                    if (time < 1e12) return `${Number((time / 1e9).toFixed(2)).toLocaleString(locale)}${type} s`;
+                    if (time < 36e11) return `${Number((time / 60e9).toFixed(2)).toLocaleString(locale)}${type} m`;
+                  
+                    return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
+                }
+                    },
+                    xaxis: {
+                        type: 'category',
+                        labels: {
+                            show: false,
+                        },
+                        tooltip: {
+                            enabled: false,
+                        },
+                    },
+                    plotOptions: {
+                        bar: {
+                            distributed: true
+                        }
+                    }
+                }).render()
+</script>
+
+### <a name="sqlite-SELECT-ALL-FROM-Products">SELECT ALL FROM Products</a>
+
+#### <a name="sqlite-SELECT-ALL-FROM-Products-javascript">JavaScript</a>
+
+| Language                             | Average        | p75       | p99       | Min       | Max       |
+| ------------------------------------ | -------------- | --------- | --------- | --------- | --------- |
+| JavaScript / bun 0.1.10 (x64-linux)  | 118.94/iter µs | 74.18 µs  | 371.05 µs | 138.37 µs | 332.58 µs |
+| JavaScript / node 18.7.0 (x64-linux) | 391.43/iter µs | 293.04 µs | 1.31 ms   | 421.36 µs | 1.23 ms   |
+| JavaScript / deno 1.24.2 (x64-linux) | 590.24/iter µs | 316.27 µs | 3.58 ms   | 605.23 µs | 1.82 ms   |
+
+
+<div id="chart-3"></div>
+<script>
+new ApexCharts(document.querySelector('#chart-3'), {
+                    chart: {
+                        height: 320,
+                        type: 'bar',
+                        toolbar: {
+                            show: true,
+                        },
+                        animations: {
+                            enabled: true,
+                        },
+                    },
+                    series: [
+                        {
+                            name: "sqlite",
+                            data: [{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":118941.91},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":391432.46},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":590237.49}]
+                        }
+                    ],
+                    stroke: {
+                        width: 1,
+                        curve: "straight",
+                    },
+                    legend: {
+                        show: true,
+                        showForSingleSeries: true,
+                        position: "bottom",
+                    },
+                    yaxis: {
+                        labels: {
+                            formatter: function (v) {
+                    const time = v;
+                    const locale = 'en-US';
+                    const type = '/iter';
+
+                    if (time < 1e0) return `${Number((time * 1e3).toFixed(2)).toLocaleString(locale)}${type} ps`;
+  
+                    if (time < 1e3) return `${Number(time.toFixed(2)).toLocaleString(locale)}${type} ns`;
+                    if (time < 1e6) return `${Number((time / 1e3).toFixed(2)).toLocaleString(locale)}${type} µs`;
+                    if (time < 1e9) return `${Number((time / 1e6).toFixed(2)).toLocaleString(locale)}${type} ms`;
+                    if (time < 1e12) return `${Number((time / 1e9).toFixed(2)).toLocaleString(locale)}${type} s`;
+                    if (time < 36e11) return `${Number((time / 60e9).toFixed(2)).toLocaleString(locale)}${type} m`;
+                  
+                    return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
+                }
+                        },
+                        title: {
+                            text: "time per iteration"
+                        },
+                    },
+                    dataLabels: {
+                        formatter: function (v) {
+                    const time = v;
+                    const locale = 'en-US';
+                    const type = '/iter';
+
+                    if (time < 1e0) return `${Number((time * 1e3).toFixed(2)).toLocaleString(locale)}${type} ps`;
+  
+                    if (time < 1e3) return `${Number(time.toFixed(2)).toLocaleString(locale)}${type} ns`;
+                    if (time < 1e6) return `${Number((time / 1e3).toFixed(2)).toLocaleString(locale)}${type} µs`;
+                    if (time < 1e9) return `${Number((time / 1e6).toFixed(2)).toLocaleString(locale)}${type} ms`;
+                    if (time < 1e12) return `${Number((time / 1e9).toFixed(2)).toLocaleString(locale)}${type} s`;
+                    if (time < 36e11) return `${Number((time / 60e9).toFixed(2)).toLocaleString(locale)}${type} m`;
+                  
+                    return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
+                }
+                    },
+                    xaxis: {
+                        type: 'category',
+                        labels: {
+                            show: false,
+                        },
+                        tooltip: {
+                            enabled: false,
+                        },
+                    },
+                    plotOptions: {
+                        bar: {
+                            distributed: true
+                        }
+                    }
+                }).render()
 </script>
 
 ### <a name="sqlite-SELECT-ALL-FROM-Customers">SELECT ALL FROM Customers</a>
@@ -64,29 +396,92 @@ new ApexCharts(document.querySelector('#chart-27'), {"chart":{"height":320,"type
 
 | Language                             | Average        | p75       | p99       | Min       | Max       |
 | ------------------------------------ | -------------- | --------- | --------- | --------- | --------- |
-| JavaScript / bun 0.1.10 (x64-linux)  | 191.98/iter µs | 163.8 µs  | 694.51 µs | 172.5 µs  | 682.51 µs |
-| JavaScript / node 18.8.0 (x64-linux) | 549.41/iter µs | 492.31 µs | 1.69 ms   | 529.11 µs | 1.49 ms   |
-| JavaScript / deno 1.25.0 (x64-linux) | 1.72/iter ms   | 864.41 µs | 4.78 ms   | 2.04 ms   | 2.55 ms   |
+| JavaScript / bun 0.1.10 (x64-linux)  | 140.32/iter µs | 127.83 µs | 325.01 µs | 138.15 µs | 281.22 µs |
+| JavaScript / node 18.7.0 (x64-linux) | 704.41/iter µs | 389.89 µs | 17.54 ms  | 630.62 µs | 1.37 ms   |
+| JavaScript / deno 1.24.2 (x64-linux) | 1.19/iter ms   | 709.68 µs | 7.13 ms   | 1.39 ms   | 2.66 ms   |
 
 
-<div id="chart-28"></div>
+<div id="chart-4"></div>
 <script>
-new ApexCharts(document.querySelector('#chart-28'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"sqlite","data":[{"x":"JavaScript / deno 1.25.0 (x64-linux)","y":1723385.02},{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":191983.81},{"x":"JavaScript / node 18.8.0 (x64-linux)","y":549411.66}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
-</script>
+new ApexCharts(document.querySelector('#chart-4'), {
+                    chart: {
+                        height: 320,
+                        type: 'bar',
+                        toolbar: {
+                            show: true,
+                        },
+                        animations: {
+                            enabled: true,
+                        },
+                    },
+                    series: [
+                        {
+                            name: "sqlite",
+                            data: [{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":140320.16},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":704411.58},{"x":"JavaScript / deno 1.24.2 (x64-linux)","y":1189436.91}]
+                        }
+                    ],
+                    stroke: {
+                        width: 1,
+                        curve: "straight",
+                    },
+                    legend: {
+                        show: true,
+                        showForSingleSeries: true,
+                        position: "bottom",
+                    },
+                    yaxis: {
+                        labels: {
+                            formatter: function (v) {
+                    const time = v;
+                    const locale = 'en-US';
+                    const type = '/iter';
 
-### <a name="sqlite-SELECT-ALL-FROM-Orders">SELECT ALL FROM Orders</a>
+                    if (time < 1e0) return `${Number((time * 1e3).toFixed(2)).toLocaleString(locale)}${type} ps`;
+  
+                    if (time < 1e3) return `${Number(time.toFixed(2)).toLocaleString(locale)}${type} ns`;
+                    if (time < 1e6) return `${Number((time / 1e3).toFixed(2)).toLocaleString(locale)}${type} µs`;
+                    if (time < 1e9) return `${Number((time / 1e6).toFixed(2)).toLocaleString(locale)}${type} ms`;
+                    if (time < 1e12) return `${Number((time / 1e9).toFixed(2)).toLocaleString(locale)}${type} s`;
+                    if (time < 36e11) return `${Number((time / 60e9).toFixed(2)).toLocaleString(locale)}${type} m`;
+                  
+                    return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
+                }
+                        },
+                        title: {
+                            text: "time per iteration"
+                        },
+                    },
+                    dataLabels: {
+                        formatter: function (v) {
+                    const time = v;
+                    const locale = 'en-US';
+                    const type = '/iter';
 
-#### <a name="sqlite-SELECT-ALL-FROM-Orders-javascript">JavaScript</a>
-
-| Language                             | Average        | p75       | p99       | Min       | Max       |
-| ------------------------------------ | -------------- | --------- | --------- | --------- | --------- |
-| JavaScript / bun 0.1.10 (x64-linux)  | 34.86/iter ms  | 33.79 ms  | 39.07 ms  | 34.65 ms  | 38.53 ms  |
-| JavaScript / node 18.8.0 (x64-linux) | 110.5/iter ms  | 102.88 ms | 135.64 ms | 110.05 ms | 134.73 ms |
-| JavaScript / deno 1.25.0 (x64-linux) | 212.59/iter ms | 206.71 ms | 328.88 ms | 212.59 ms | 231.73 ms |
-
-
-<div id="chart-29"></div>
-<script>
-new ApexCharts(document.querySelector('#chart-29'), {"chart":{"height":320,"type":"bar","toolbar":{"show":true},"animations":{"enabled":true}},"series":[{"name":"sqlite","data":[{"x":"JavaScript / deno 1.25.0 (x64-linux)","y":212591717.8},{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":34856795.24},{"x":"JavaScript / node 18.8.0 (x64-linux)","y":110498832.89}]}],"stroke":{"width":1,"curve":"straight"},"legend":{"show":false},"xaxis":{"type":"category","labels":{"show":true},"tooltip":{"enabled":false}},"plotOptions":{"bar":{"distributed":true}}}).render()
+                    if (time < 1e0) return `${Number((time * 1e3).toFixed(2)).toLocaleString(locale)}${type} ps`;
+  
+                    if (time < 1e3) return `${Number(time.toFixed(2)).toLocaleString(locale)}${type} ns`;
+                    if (time < 1e6) return `${Number((time / 1e3).toFixed(2)).toLocaleString(locale)}${type} µs`;
+                    if (time < 1e9) return `${Number((time / 1e6).toFixed(2)).toLocaleString(locale)}${type} ms`;
+                    if (time < 1e12) return `${Number((time / 1e9).toFixed(2)).toLocaleString(locale)}${type} s`;
+                    if (time < 36e11) return `${Number((time / 60e9).toFixed(2)).toLocaleString(locale)}${type} m`;
+                  
+                    return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
+                }
+                    },
+                    xaxis: {
+                        type: 'category',
+                        labels: {
+                            show: false,
+                        },
+                        tooltip: {
+                            enabled: false,
+                        },
+                    },
+                    plotOptions: {
+                        bar: {
+                            distributed: true
+                        }
+                    }
+                }).render()
 </script>
 
