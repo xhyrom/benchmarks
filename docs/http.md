@@ -18,7 +18,7 @@
 new ApexCharts(document.querySelector('#chart-27'), {
                     chart: {
                         height: 320,
-                        type: 'bar',
+                        type: 'line',
                         toolbar: {
                             show: true,
                         },
@@ -26,12 +26,7 @@ new ApexCharts(document.querySelector('#chart-27'), {
                             enabled: true,
                         },
                     },
-                    series: [
-                        {
-                            name: "http",
-                            data: [{"x":"Python","y":842.6413681016869}]
-                        }
-                    ],
+                    series: [{"name":"Python","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,842.6413681016869]}],
                     stroke: {
                         width: 1,
                         curve: "straight",
@@ -55,17 +50,8 @@ new ApexCharts(document.querySelector('#chart-27'), {
                             text: "requests per second"
                         },
                     },
-                    dataLabels: {
-                        formatter: function (v) {
-                    const time = v;
-                    const locale = 'en-US';
-                    const type = '/rps';
-
-                    return `${Number(time.toFixed(2)).toLocaleString(locale)}${type}`;
-                }
-                    },
                     xaxis: {
-                        type: 'category',
+                        categories: ["2e4a95b","478dc78","e031084","4e7c8d4","75f0959","4a91113","e0e3f5e","84993b0","456fb01","659c8b9","de35d11","1038a86","63a645f","af1a4a3","3933845","9663e12","ca114bf","222f025","5910ee7"],
                         labels: {
                             show: false,
                         },
@@ -93,7 +79,7 @@ new ApexCharts(document.querySelector('#chart-27'), {
 new ApexCharts(document.querySelector('#chart-28'), {
                     chart: {
                         height: 320,
-                        type: 'bar',
+                        type: 'line',
                         toolbar: {
                             show: true,
                         },
@@ -101,12 +87,7 @@ new ApexCharts(document.querySelector('#chart-28'), {
                             enabled: true,
                         },
                     },
-                    series: [
-                        {
-                            name: "http",
-                            data: [{"x":"Crystal","y":92753.74212609377}]
-                        }
-                    ],
+                    series: [{"name":"Crystal","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,92753.74212609377]}],
                     stroke: {
                         width: 1,
                         curve: "straight",
@@ -130,17 +111,8 @@ new ApexCharts(document.querySelector('#chart-28'), {
                             text: "requests per second"
                         },
                     },
-                    dataLabels: {
-                        formatter: function (v) {
-                    const time = v;
-                    const locale = 'en-US';
-                    const type = '/rps';
-
-                    return `${Number(time.toFixed(2)).toLocaleString(locale)}${type}`;
-                }
-                    },
                     xaxis: {
-                        type: 'category',
+                        categories: ["2e4a95b","478dc78","e031084","4e7c8d4","75f0959","4a91113","e0e3f5e","84993b0","456fb01","659c8b9","de35d11","1038a86","63a645f","af1a4a3","3933845","9663e12","ca114bf","222f025","5910ee7"],
                         labels: {
                             show: false,
                         },
@@ -171,7 +143,7 @@ new ApexCharts(document.querySelector('#chart-28'), {
 new ApexCharts(document.querySelector('#chart-29'), {
                     chart: {
                         height: 320,
-                        type: 'bar',
+                        type: 'line',
                         toolbar: {
                             show: true,
                         },
@@ -179,12 +151,7 @@ new ApexCharts(document.querySelector('#chart-29'), {
                             enabled: true,
                         },
                     },
-                    series: [
-                        {
-                            name: "http",
-                            data: [{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":124900.11680362372},{"x":"JavaScript / deno 1.25.0 (x64-linux)","y":129068.22754886381},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":38603.67572702694},{"x":"JavaScript / deno 1.25.0 (x64-linux)","y":58167.33069821851}]
-                        }
-                    ],
+                    series: [{"name":"JavaScript / bun 0.1.10 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,124900.11680362372]},{"name":"JavaScript / deno 1.25.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,129068.22754886381]},{"name":"JavaScript / node 18.7.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,38603.67572702694]},{"name":"JavaScript / deno 1.25.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,129068.22754886381]}],
                     stroke: {
                         width: 1,
                         curve: "straight",
@@ -208,17 +175,8 @@ new ApexCharts(document.querySelector('#chart-29'), {
                             text: "requests per second"
                         },
                     },
-                    dataLabels: {
-                        formatter: function (v) {
-                    const time = v;
-                    const locale = 'en-US';
-                    const type = '/rps';
-
-                    return `${Number(time.toFixed(2)).toLocaleString(locale)}${type}`;
-                }
-                    },
                     xaxis: {
-                        type: 'category',
+                        categories: ["2e4a95b","478dc78","e031084","4e7c8d4","75f0959","4a91113","e0e3f5e","84993b0","456fb01","659c8b9","de35d11","1038a86","63a645f","af1a4a3","3933845","9663e12","ca114bf","222f025","5910ee7"],
                         labels: {
                             show: false,
                         },
@@ -246,7 +204,7 @@ new ApexCharts(document.querySelector('#chart-29'), {
 new ApexCharts(document.querySelector('#chart-30'), {
                     chart: {
                         height: 320,
-                        type: 'bar',
+                        type: 'line',
                         toolbar: {
                             show: true,
                         },
@@ -254,12 +212,7 @@ new ApexCharts(document.querySelector('#chart-30'), {
                             enabled: true,
                         },
                     },
-                    series: [
-                        {
-                            name: "http",
-                            data: [{"x":"Ruby","y":6491.104083528587}]
-                        }
-                    ],
+                    series: [{"name":"Ruby","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6491.104083528587]}],
                     stroke: {
                         width: 1,
                         curve: "straight",
@@ -283,17 +236,8 @@ new ApexCharts(document.querySelector('#chart-30'), {
                             text: "requests per second"
                         },
                     },
-                    dataLabels: {
-                        formatter: function (v) {
-                    const time = v;
-                    const locale = 'en-US';
-                    const type = '/rps';
-
-                    return `${Number(time.toFixed(2)).toLocaleString(locale)}${type}`;
-                }
-                    },
                     xaxis: {
-                        type: 'category',
+                        categories: ["2e4a95b","478dc78","e031084","4e7c8d4","75f0959","4a91113","e0e3f5e","84993b0","456fb01","659c8b9","de35d11","1038a86","63a645f","af1a4a3","3933845","9663e12","ca114bf","222f025","5910ee7"],
                         labels: {
                             show: false,
                         },
@@ -321,7 +265,7 @@ new ApexCharts(document.querySelector('#chart-30'), {
 new ApexCharts(document.querySelector('#chart-31'), {
                     chart: {
                         height: 320,
-                        type: 'bar',
+                        type: 'line',
                         toolbar: {
                             show: true,
                         },
@@ -329,12 +273,7 @@ new ApexCharts(document.querySelector('#chart-31'), {
                             enabled: true,
                         },
                     },
-                    series: [
-                        {
-                            name: "http",
-                            data: [{"x":"Rust","y":3885.501343499964}]
-                        }
-                    ],
+                    series: [{"name":"Rust","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3885.501343499964]}],
                     stroke: {
                         width: 1,
                         curve: "straight",
@@ -358,17 +297,8 @@ new ApexCharts(document.querySelector('#chart-31'), {
                             text: "requests per second"
                         },
                     },
-                    dataLabels: {
-                        formatter: function (v) {
-                    const time = v;
-                    const locale = 'en-US';
-                    const type = '/rps';
-
-                    return `${Number(time.toFixed(2)).toLocaleString(locale)}${type}`;
-                }
-                    },
                     xaxis: {
-                        type: 'category',
+                        categories: ["2e4a95b","478dc78","e031084","4e7c8d4","75f0959","4a91113","e0e3f5e","84993b0","456fb01","659c8b9","de35d11","1038a86","63a645f","af1a4a3","3933845","9663e12","ca114bf","222f025","5910ee7"],
                         labels: {
                             show: false,
                         },
@@ -396,7 +326,7 @@ new ApexCharts(document.querySelector('#chart-31'), {
 new ApexCharts(document.querySelector('#chart-32'), {
                     chart: {
                         height: 320,
-                        type: 'bar',
+                        type: 'line',
                         toolbar: {
                             show: true,
                         },
@@ -404,12 +334,7 @@ new ApexCharts(document.querySelector('#chart-32'), {
                             enabled: true,
                         },
                     },
-                    series: [
-                        {
-                            name: "http",
-                            data: [{"x":"Go","y":156142.77346436743}]
-                        }
-                    ],
+                    series: [{"name":"Go","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,156142.77346436743]}],
                     stroke: {
                         width: 1,
                         curve: "straight",
@@ -433,17 +358,8 @@ new ApexCharts(document.querySelector('#chart-32'), {
                             text: "requests per second"
                         },
                     },
-                    dataLabels: {
-                        formatter: function (v) {
-                    const time = v;
-                    const locale = 'en-US';
-                    const type = '/rps';
-
-                    return `${Number(time.toFixed(2)).toLocaleString(locale)}${type}`;
-                }
-                    },
                     xaxis: {
-                        type: 'category',
+                        categories: ["2e4a95b","478dc78","e031084","4e7c8d4","75f0959","4a91113","e0e3f5e","84993b0","456fb01","659c8b9","de35d11","1038a86","63a645f","af1a4a3","3933845","9663e12","ca114bf","222f025","5910ee7"],
                         labels: {
                             show: false,
                         },

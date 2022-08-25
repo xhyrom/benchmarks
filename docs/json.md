@@ -26,7 +26,7 @@
 new ApexCharts(document.querySelector('#chart-5'), {
                     chart: {
                         height: 320,
-                        type: 'bar',
+                        type: 'line',
                         toolbar: {
                             show: true,
                         },
@@ -34,12 +34,7 @@ new ApexCharts(document.querySelector('#chart-5'), {
                             enabled: true,
                         },
                     },
-                    series: [
-                        {
-                            name: "json",
-                            data: [{"x":"Python","y":16412173.780000005}]
-                        }
-                    ],
+                    series: [{"name":"Python","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,16412173.780000005]}],
                     stroke: {
                         width: 1,
                         curve: "straight",
@@ -71,25 +66,8 @@ new ApexCharts(document.querySelector('#chart-5'), {
                             text: "time per iteration"
                         },
                     },
-                    dataLabels: {
-                        formatter: function (v) {
-                    const time = v;
-                    const locale = 'en-US';
-                    const type = '/iter';
-
-                    if (time < 1e0) return `${Number((time * 1e3).toFixed(2)).toLocaleString(locale)}${type} ps`;
-  
-                    if (time < 1e3) return `${Number(time.toFixed(2)).toLocaleString(locale)}${type} ns`;
-                    if (time < 1e6) return `${Number((time / 1e3).toFixed(2)).toLocaleString(locale)}${type} µs`;
-                    if (time < 1e9) return `${Number((time / 1e6).toFixed(2)).toLocaleString(locale)}${type} ms`;
-                    if (time < 1e12) return `${Number((time / 1e9).toFixed(2)).toLocaleString(locale)}${type} s`;
-                    if (time < 36e11) return `${Number((time / 60e9).toFixed(2)).toLocaleString(locale)}${type} m`;
-                  
-                    return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
-                }
-                    },
                     xaxis: {
-                        type: 'category',
+                        categories: ["2e4a95b","478dc78","e031084","4e7c8d4","75f0959","4a91113","e0e3f5e","84993b0","456fb01","659c8b9","de35d11","1038a86","63a645f","af1a4a3","3933845","9663e12","ca114bf","222f025","5910ee7"],
                         labels: {
                             show: false,
                         },
@@ -117,7 +95,7 @@ new ApexCharts(document.querySelector('#chart-5'), {
 new ApexCharts(document.querySelector('#chart-6'), {
                     chart: {
                         height: 320,
-                        type: 'bar',
+                        type: 'line',
                         toolbar: {
                             show: true,
                         },
@@ -125,12 +103,7 @@ new ApexCharts(document.querySelector('#chart-6'), {
                             enabled: true,
                         },
                     },
-                    series: [
-                        {
-                            name: "json",
-                            data: [{"x":"Crystal","y":1401534.0099999995}]
-                        }
-                    ],
+                    series: [{"name":"Crystal","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1401534.0099999995]}],
                     stroke: {
                         width: 1,
                         curve: "straight",
@@ -162,25 +135,8 @@ new ApexCharts(document.querySelector('#chart-6'), {
                             text: "time per iteration"
                         },
                     },
-                    dataLabels: {
-                        formatter: function (v) {
-                    const time = v;
-                    const locale = 'en-US';
-                    const type = '/iter';
-
-                    if (time < 1e0) return `${Number((time * 1e3).toFixed(2)).toLocaleString(locale)}${type} ps`;
-  
-                    if (time < 1e3) return `${Number(time.toFixed(2)).toLocaleString(locale)}${type} ns`;
-                    if (time < 1e6) return `${Number((time / 1e3).toFixed(2)).toLocaleString(locale)}${type} µs`;
-                    if (time < 1e9) return `${Number((time / 1e6).toFixed(2)).toLocaleString(locale)}${type} ms`;
-                    if (time < 1e12) return `${Number((time / 1e9).toFixed(2)).toLocaleString(locale)}${type} s`;
-                    if (time < 36e11) return `${Number((time / 60e9).toFixed(2)).toLocaleString(locale)}${type} m`;
-                  
-                    return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
-                }
-                    },
                     xaxis: {
-                        type: 'category',
+                        categories: ["2e4a95b","478dc78","e031084","4e7c8d4","75f0959","4a91113","e0e3f5e","84993b0","456fb01","659c8b9","de35d11","1038a86","63a645f","af1a4a3","3933845","9663e12","ca114bf","222f025","5910ee7"],
                         labels: {
                             show: false,
                         },
@@ -210,7 +166,7 @@ new ApexCharts(document.querySelector('#chart-6'), {
 new ApexCharts(document.querySelector('#chart-7'), {
                     chart: {
                         height: 320,
-                        type: 'bar',
+                        type: 'line',
                         toolbar: {
                             show: true,
                         },
@@ -218,12 +174,7 @@ new ApexCharts(document.querySelector('#chart-7'), {
                             enabled: true,
                         },
                     },
-                    series: [
-                        {
-                            name: "json",
-                            data: [{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":10551086.750000002},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":37754230.55999999},{"x":"JavaScript / deno 1.25.0 (x64-linux)","y":19836739.440000005}]
-                        }
-                    ],
+                    series: [{"name":"JavaScript / bun 0.1.10 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10551086.750000002]},{"name":"JavaScript / node 18.7.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,37754230.55999999]},{"name":"JavaScript / deno 1.25.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,19836739.440000005]}],
                     stroke: {
                         width: 1,
                         curve: "straight",
@@ -255,25 +206,8 @@ new ApexCharts(document.querySelector('#chart-7'), {
                             text: "time per iteration"
                         },
                     },
-                    dataLabels: {
-                        formatter: function (v) {
-                    const time = v;
-                    const locale = 'en-US';
-                    const type = '/iter';
-
-                    if (time < 1e0) return `${Number((time * 1e3).toFixed(2)).toLocaleString(locale)}${type} ps`;
-  
-                    if (time < 1e3) return `${Number(time.toFixed(2)).toLocaleString(locale)}${type} ns`;
-                    if (time < 1e6) return `${Number((time / 1e3).toFixed(2)).toLocaleString(locale)}${type} µs`;
-                    if (time < 1e9) return `${Number((time / 1e6).toFixed(2)).toLocaleString(locale)}${type} ms`;
-                    if (time < 1e12) return `${Number((time / 1e9).toFixed(2)).toLocaleString(locale)}${type} s`;
-                    if (time < 36e11) return `${Number((time / 60e9).toFixed(2)).toLocaleString(locale)}${type} m`;
-                  
-                    return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
-                }
-                    },
                     xaxis: {
-                        type: 'category',
+                        categories: ["2e4a95b","478dc78","e031084","4e7c8d4","75f0959","4a91113","e0e3f5e","84993b0","456fb01","659c8b9","de35d11","1038a86","63a645f","af1a4a3","3933845","9663e12","ca114bf","222f025","5910ee7"],
                         labels: {
                             show: false,
                         },
@@ -301,7 +235,7 @@ new ApexCharts(document.querySelector('#chart-7'), {
 new ApexCharts(document.querySelector('#chart-8'), {
                     chart: {
                         height: 320,
-                        type: 'bar',
+                        type: 'line',
                         toolbar: {
                             show: true,
                         },
@@ -309,12 +243,7 @@ new ApexCharts(document.querySelector('#chart-8'), {
                             enabled: true,
                         },
                     },
-                    series: [
-                        {
-                            name: "json",
-                            data: [{"x":"Ruby","y":45765518.61000001}]
-                        }
-                    ],
+                    series: [{"name":"Ruby","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,45765518.61000001]}],
                     stroke: {
                         width: 1,
                         curve: "straight",
@@ -346,25 +275,8 @@ new ApexCharts(document.querySelector('#chart-8'), {
                             text: "time per iteration"
                         },
                     },
-                    dataLabels: {
-                        formatter: function (v) {
-                    const time = v;
-                    const locale = 'en-US';
-                    const type = '/iter';
-
-                    if (time < 1e0) return `${Number((time * 1e3).toFixed(2)).toLocaleString(locale)}${type} ps`;
-  
-                    if (time < 1e3) return `${Number(time.toFixed(2)).toLocaleString(locale)}${type} ns`;
-                    if (time < 1e6) return `${Number((time / 1e3).toFixed(2)).toLocaleString(locale)}${type} µs`;
-                    if (time < 1e9) return `${Number((time / 1e6).toFixed(2)).toLocaleString(locale)}${type} ms`;
-                    if (time < 1e12) return `${Number((time / 1e9).toFixed(2)).toLocaleString(locale)}${type} s`;
-                    if (time < 36e11) return `${Number((time / 60e9).toFixed(2)).toLocaleString(locale)}${type} m`;
-                  
-                    return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
-                }
-                    },
                     xaxis: {
-                        type: 'category',
+                        categories: ["2e4a95b","478dc78","e031084","4e7c8d4","75f0959","4a91113","e0e3f5e","84993b0","456fb01","659c8b9","de35d11","1038a86","63a645f","af1a4a3","3933845","9663e12","ca114bf","222f025","5910ee7"],
                         labels: {
                             show: false,
                         },
@@ -392,7 +304,7 @@ new ApexCharts(document.querySelector('#chart-8'), {
 new ApexCharts(document.querySelector('#chart-9'), {
                     chart: {
                         height: 320,
-                        type: 'bar',
+                        type: 'line',
                         toolbar: {
                             show: true,
                         },
@@ -400,12 +312,7 @@ new ApexCharts(document.querySelector('#chart-9'), {
                             enabled: true,
                         },
                     },
-                    series: [
-                        {
-                            name: "json",
-                            data: [{"x":"Go","y":714144.7199999999}]
-                        }
-                    ],
+                    series: [{"name":"Go","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,714144.7199999999]}],
                     stroke: {
                         width: 1,
                         curve: "straight",
@@ -437,25 +344,8 @@ new ApexCharts(document.querySelector('#chart-9'), {
                             text: "time per iteration"
                         },
                     },
-                    dataLabels: {
-                        formatter: function (v) {
-                    const time = v;
-                    const locale = 'en-US';
-                    const type = '/iter';
-
-                    if (time < 1e0) return `${Number((time * 1e3).toFixed(2)).toLocaleString(locale)}${type} ps`;
-  
-                    if (time < 1e3) return `${Number(time.toFixed(2)).toLocaleString(locale)}${type} ns`;
-                    if (time < 1e6) return `${Number((time / 1e3).toFixed(2)).toLocaleString(locale)}${type} µs`;
-                    if (time < 1e9) return `${Number((time / 1e6).toFixed(2)).toLocaleString(locale)}${type} ms`;
-                    if (time < 1e12) return `${Number((time / 1e9).toFixed(2)).toLocaleString(locale)}${type} s`;
-                    if (time < 36e11) return `${Number((time / 60e9).toFixed(2)).toLocaleString(locale)}${type} m`;
-                  
-                    return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
-                }
-                    },
                     xaxis: {
-                        type: 'category',
+                        categories: ["2e4a95b","478dc78","e031084","4e7c8d4","75f0959","4a91113","e0e3f5e","84993b0","456fb01","659c8b9","de35d11","1038a86","63a645f","af1a4a3","3933845","9663e12","ca114bf","222f025","5910ee7"],
                         labels: {
                             show: false,
                         },
@@ -485,7 +375,7 @@ new ApexCharts(document.querySelector('#chart-9'), {
 new ApexCharts(document.querySelector('#chart-10'), {
                     chart: {
                         height: 320,
-                        type: 'bar',
+                        type: 'line',
                         toolbar: {
                             show: true,
                         },
@@ -493,12 +383,7 @@ new ApexCharts(document.querySelector('#chart-10'), {
                             enabled: true,
                         },
                     },
-                    series: [
-                        {
-                            name: "json",
-                            data: [{"x":"Python","y":16731761.849999992}]
-                        }
-                    ],
+                    series: [{"name":"Python","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,16731761.849999992]}],
                     stroke: {
                         width: 1,
                         curve: "straight",
@@ -530,25 +415,8 @@ new ApexCharts(document.querySelector('#chart-10'), {
                             text: "time per iteration"
                         },
                     },
-                    dataLabels: {
-                        formatter: function (v) {
-                    const time = v;
-                    const locale = 'en-US';
-                    const type = '/iter';
-
-                    if (time < 1e0) return `${Number((time * 1e3).toFixed(2)).toLocaleString(locale)}${type} ps`;
-  
-                    if (time < 1e3) return `${Number(time.toFixed(2)).toLocaleString(locale)}${type} ns`;
-                    if (time < 1e6) return `${Number((time / 1e3).toFixed(2)).toLocaleString(locale)}${type} µs`;
-                    if (time < 1e9) return `${Number((time / 1e6).toFixed(2)).toLocaleString(locale)}${type} ms`;
-                    if (time < 1e12) return `${Number((time / 1e9).toFixed(2)).toLocaleString(locale)}${type} s`;
-                    if (time < 36e11) return `${Number((time / 60e9).toFixed(2)).toLocaleString(locale)}${type} m`;
-                  
-                    return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
-                }
-                    },
                     xaxis: {
-                        type: 'category',
+                        categories: ["2e4a95b","478dc78","e031084","4e7c8d4","75f0959","4a91113","e0e3f5e","84993b0","456fb01","659c8b9","de35d11","1038a86","63a645f","af1a4a3","3933845","9663e12","ca114bf","222f025","5910ee7"],
                         labels: {
                             show: false,
                         },
@@ -576,7 +444,7 @@ new ApexCharts(document.querySelector('#chart-10'), {
 new ApexCharts(document.querySelector('#chart-11'), {
                     chart: {
                         height: 320,
-                        type: 'bar',
+                        type: 'line',
                         toolbar: {
                             show: true,
                         },
@@ -584,12 +452,7 @@ new ApexCharts(document.querySelector('#chart-11'), {
                             enabled: true,
                         },
                     },
-                    series: [
-                        {
-                            name: "json",
-                            data: [{"x":"Crystal","y":1311131.6500000004}]
-                        }
-                    ],
+                    series: [{"name":"Crystal","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1311131.6500000004]}],
                     stroke: {
                         width: 1,
                         curve: "straight",
@@ -621,25 +484,8 @@ new ApexCharts(document.querySelector('#chart-11'), {
                             text: "time per iteration"
                         },
                     },
-                    dataLabels: {
-                        formatter: function (v) {
-                    const time = v;
-                    const locale = 'en-US';
-                    const type = '/iter';
-
-                    if (time < 1e0) return `${Number((time * 1e3).toFixed(2)).toLocaleString(locale)}${type} ps`;
-  
-                    if (time < 1e3) return `${Number(time.toFixed(2)).toLocaleString(locale)}${type} ns`;
-                    if (time < 1e6) return `${Number((time / 1e3).toFixed(2)).toLocaleString(locale)}${type} µs`;
-                    if (time < 1e9) return `${Number((time / 1e6).toFixed(2)).toLocaleString(locale)}${type} ms`;
-                    if (time < 1e12) return `${Number((time / 1e9).toFixed(2)).toLocaleString(locale)}${type} s`;
-                    if (time < 36e11) return `${Number((time / 60e9).toFixed(2)).toLocaleString(locale)}${type} m`;
-                  
-                    return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
-                }
-                    },
                     xaxis: {
-                        type: 'category',
+                        categories: ["2e4a95b","478dc78","e031084","4e7c8d4","75f0959","4a91113","e0e3f5e","84993b0","456fb01","659c8b9","de35d11","1038a86","63a645f","af1a4a3","3933845","9663e12","ca114bf","222f025","5910ee7"],
                         labels: {
                             show: false,
                         },
@@ -669,7 +515,7 @@ new ApexCharts(document.querySelector('#chart-11'), {
 new ApexCharts(document.querySelector('#chart-12'), {
                     chart: {
                         height: 320,
-                        type: 'bar',
+                        type: 'line',
                         toolbar: {
                             show: true,
                         },
@@ -677,12 +523,7 @@ new ApexCharts(document.querySelector('#chart-12'), {
                             enabled: true,
                         },
                     },
-                    series: [
-                        {
-                            name: "json",
-                            data: [{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":10075855.000000006},{"x":"JavaScript / node 18.7.0 (x64-linux)","y":37443784.75000001},{"x":"JavaScript / deno 1.25.0 (x64-linux)","y":19309742.729999997}]
-                        }
-                    ],
+                    series: [{"name":"JavaScript / bun 0.1.10 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10075855.000000006]},{"name":"JavaScript / node 18.7.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,37443784.75000001]},{"name":"JavaScript / deno 1.25.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,19309742.729999997]}],
                     stroke: {
                         width: 1,
                         curve: "straight",
@@ -714,25 +555,8 @@ new ApexCharts(document.querySelector('#chart-12'), {
                             text: "time per iteration"
                         },
                     },
-                    dataLabels: {
-                        formatter: function (v) {
-                    const time = v;
-                    const locale = 'en-US';
-                    const type = '/iter';
-
-                    if (time < 1e0) return `${Number((time * 1e3).toFixed(2)).toLocaleString(locale)}${type} ps`;
-  
-                    if (time < 1e3) return `${Number(time.toFixed(2)).toLocaleString(locale)}${type} ns`;
-                    if (time < 1e6) return `${Number((time / 1e3).toFixed(2)).toLocaleString(locale)}${type} µs`;
-                    if (time < 1e9) return `${Number((time / 1e6).toFixed(2)).toLocaleString(locale)}${type} ms`;
-                    if (time < 1e12) return `${Number((time / 1e9).toFixed(2)).toLocaleString(locale)}${type} s`;
-                    if (time < 36e11) return `${Number((time / 60e9).toFixed(2)).toLocaleString(locale)}${type} m`;
-                  
-                    return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
-                }
-                    },
                     xaxis: {
-                        type: 'category',
+                        categories: ["2e4a95b","478dc78","e031084","4e7c8d4","75f0959","4a91113","e0e3f5e","84993b0","456fb01","659c8b9","de35d11","1038a86","63a645f","af1a4a3","3933845","9663e12","ca114bf","222f025","5910ee7"],
                         labels: {
                             show: false,
                         },
@@ -760,7 +584,7 @@ new ApexCharts(document.querySelector('#chart-12'), {
 new ApexCharts(document.querySelector('#chart-13'), {
                     chart: {
                         height: 320,
-                        type: 'bar',
+                        type: 'line',
                         toolbar: {
                             show: true,
                         },
@@ -768,12 +592,7 @@ new ApexCharts(document.querySelector('#chart-13'), {
                             enabled: true,
                         },
                     },
-                    series: [
-                        {
-                            name: "json",
-                            data: [{"x":"Ruby","y":46296349.390000015}]
-                        }
-                    ],
+                    series: [{"name":"Ruby","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,46296349.390000015]}],
                     stroke: {
                         width: 1,
                         curve: "straight",
@@ -805,25 +624,8 @@ new ApexCharts(document.querySelector('#chart-13'), {
                             text: "time per iteration"
                         },
                     },
-                    dataLabels: {
-                        formatter: function (v) {
-                    const time = v;
-                    const locale = 'en-US';
-                    const type = '/iter';
-
-                    if (time < 1e0) return `${Number((time * 1e3).toFixed(2)).toLocaleString(locale)}${type} ps`;
-  
-                    if (time < 1e3) return `${Number(time.toFixed(2)).toLocaleString(locale)}${type} ns`;
-                    if (time < 1e6) return `${Number((time / 1e3).toFixed(2)).toLocaleString(locale)}${type} µs`;
-                    if (time < 1e9) return `${Number((time / 1e6).toFixed(2)).toLocaleString(locale)}${type} ms`;
-                    if (time < 1e12) return `${Number((time / 1e9).toFixed(2)).toLocaleString(locale)}${type} s`;
-                    if (time < 36e11) return `${Number((time / 60e9).toFixed(2)).toLocaleString(locale)}${type} m`;
-                  
-                    return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
-                }
-                    },
                     xaxis: {
-                        type: 'category',
+                        categories: ["2e4a95b","478dc78","e031084","4e7c8d4","75f0959","4a91113","e0e3f5e","84993b0","456fb01","659c8b9","de35d11","1038a86","63a645f","af1a4a3","3933845","9663e12","ca114bf","222f025","5910ee7"],
                         labels: {
                             show: false,
                         },
@@ -851,7 +653,7 @@ new ApexCharts(document.querySelector('#chart-13'), {
 new ApexCharts(document.querySelector('#chart-14'), {
                     chart: {
                         height: 320,
-                        type: 'bar',
+                        type: 'line',
                         toolbar: {
                             show: true,
                         },
@@ -859,12 +661,7 @@ new ApexCharts(document.querySelector('#chart-14'), {
                             enabled: true,
                         },
                     },
-                    series: [
-                        {
-                            name: "json",
-                            data: [{"x":"Go","y":762039.1900000001}]
-                        }
-                    ],
+                    series: [{"name":"Go","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,762039.1900000001]}],
                     stroke: {
                         width: 1,
                         curve: "straight",
@@ -896,25 +693,8 @@ new ApexCharts(document.querySelector('#chart-14'), {
                             text: "time per iteration"
                         },
                     },
-                    dataLabels: {
-                        formatter: function (v) {
-                    const time = v;
-                    const locale = 'en-US';
-                    const type = '/iter';
-
-                    if (time < 1e0) return `${Number((time * 1e3).toFixed(2)).toLocaleString(locale)}${type} ps`;
-  
-                    if (time < 1e3) return `${Number(time.toFixed(2)).toLocaleString(locale)}${type} ns`;
-                    if (time < 1e6) return `${Number((time / 1e3).toFixed(2)).toLocaleString(locale)}${type} µs`;
-                    if (time < 1e9) return `${Number((time / 1e6).toFixed(2)).toLocaleString(locale)}${type} ms`;
-                    if (time < 1e12) return `${Number((time / 1e9).toFixed(2)).toLocaleString(locale)}${type} s`;
-                    if (time < 36e11) return `${Number((time / 60e9).toFixed(2)).toLocaleString(locale)}${type} m`;
-                  
-                    return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
-                }
-                    },
                     xaxis: {
-                        type: 'category',
+                        categories: ["2e4a95b","478dc78","e031084","4e7c8d4","75f0959","4a91113","e0e3f5e","84993b0","456fb01","659c8b9","de35d11","1038a86","63a645f","af1a4a3","3933845","9663e12","ca114bf","222f025","5910ee7"],
                         labels: {
                             show: false,
                         },
