@@ -214,7 +214,7 @@ for (const [benchmarkName, files] of Object.entries(outputs)) {
                         },
                     },
                     xaxis: {
-                        categories: ${JSON.stringify(lastCommits)},
+                        categories: ${JSON.stringify([...lastCommits, 'Latest'])},
                         labels: {
                             show: false,
                         },
