@@ -104,7 +104,6 @@ web_modules/
 
 # parcel-bundler cache (https://parceljs.org/)
 
-.cache
 .parcel-cache
 
 # Next.js build output
@@ -117,8 +116,6 @@ out
 .nuxt
 
 # Gatsby files
-
-.cache/
 
 # Comment in the public line in if your project uses Gatsby and not Next.js
 
@@ -133,7 +130,6 @@ out
 # vuepress v2.x temp and cache directory
 
 .temp
-.cache
 
 # Docusaurus cache and generated files
 
@@ -173,4 +169,7 @@ tools/oha
 files/dist/
 __pycache__/
 tests/
-!*/.cache/outputs/*
+scripts/.cache/benchmarks/
+scripts/.cache/languages/
+scripts/.cache/tmp/
+!scripts/.cache/outputs/*
