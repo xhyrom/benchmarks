@@ -8,11 +8,11 @@
 
 ### <a name="http-javascript">JavaScript</a>
 
-| Language                             | Average       | p75      | p99       | Min       | Max       | Latency   |
-| ------------------------------------ | ------------- | -------- | --------- | --------- | --------- | --------- |
-| JavaScript / bun 0.1.10 (x64-linux)  | 83,030.15/rps | 7,132.27 | 88,854.49 | 85,086.76 | 88,205.91 | 600.57 µs |
-| JavaScript / deno 1.25.0 (x64-linux) | 45,516.87/rps | 5,396.43 | 49,941.26 | 48,793.39 | 49,648.42 | 1.1 ms    |
-| JavaScript / node 18.8.0 (x64-linux) | 37,796.77/rps | 4,583.81 | 40,396.71 | 39,131.14 | 40,122.1  | 1.32 ms   |
+| Language                             | Average       | p75       | p99        | Min       | Max       | Latency   |
+| ------------------------------------ | ------------- | --------- | ---------- | --------- | --------- | --------- |
+| JavaScript / bun 0.1.10 (x64-linux)  | 89,587.51/rps | 11,192.28 | 123,044.21 | 92,741.71 | 97,696.14 | 556.31 µs |
+| JavaScript / deno 1.25.0 (x64-linux) | 51,899.22/rps | 6,196.67  | 56,459.88  | 55,625.89 | 56,206.72 | 962.01 µs |
+| JavaScript / node 18.8.0 (x64-linux) | 47,117.01/rps | 5,632.79  | 49,730.91  | 48,644.81 | 49,415.36 | 1.06 ms   |
 
 
 <div id="chart-30"></div>
@@ -31,7 +31,7 @@ new ApexCharts(document.querySelector('#chart-30'), {
                     series: [
                         {
                             name: "http",
-                            data: [{"x":"JavaScript / deno 1.25.0 (x64-linux)","y":45516.866777157345},{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":83030.14659679723},{"x":"JavaScript / node 18.8.0 (x64-linux)","y":37796.77095070173}]
+                            data: [{"x":"JavaScript / deno 1.25.0 (x64-linux)","y":51899.219969842576},{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":89587.50759400036},{"x":"JavaScript / node 18.8.0 (x64-linux)","y":47117.00582804073}]
                         }
                     ],
                     stroke: {
@@ -85,9 +85,9 @@ new ApexCharts(document.querySelector('#chart-30'), {
 
 ### <a name="http-python">Python</a>
 
-| Language | Average      | p75    | p99      | Min     | Max      | Latency |
-| -------- | ------------ | ------ | -------- | ------- | -------- | ------- |
-| Python   | 5,844.02/rps | 642.02 | 7,142.57 | 6,384.5 | 6,852.58 | 8.9 ms  |
+| Language | Average      | p75    | p99      | Min      | Max     | Latency |
+| -------- | ------------ | ------ | -------- | -------- | ------- | ------- |
+| Python   | 6,298.63/rps | 814.12 | 7,466.14 | 7,134.48 | 7,440.2 | 8.2 ms  |
 
 
 <div id="chart-31"></div>
@@ -106,7 +106,7 @@ new ApexCharts(document.querySelector('#chart-31'), {
                     series: [
                         {
                             name: "http",
-                            data: [{"x":"Python","y":5844.020611129849}]
+                            data: [{"x":"Python","y":6298.629689979598}]
                         }
                     ],
                     stroke: {
@@ -160,9 +160,9 @@ new ApexCharts(document.querySelector('#chart-31'), {
 
 ### <a name="http-crystal">Crystal</a>
 
-| Language | Average       | p75      | p99       | Min       | Max       | Latency  |
-| -------- | ------------- | -------- | --------- | --------- | --------- | -------- |
-| Crystal  | 78,791.23/rps | 3,950.93 | 84,525.95 | 81,070.27 | 83,671.33 | 633.2 µs |
+| Language | Average       | p75      | p99       | Min       | Max       | Latency   |
+| -------- | ------------- | -------- | --------- | --------- | --------- | --------- |
+| Crystal  | 88,195.34/rps | 2,864.05 | 91,224.97 | 89,773.85 | 90,697.03 | 565.42 µs |
 
 
 <div id="chart-32"></div>
@@ -181,7 +181,7 @@ new ApexCharts(document.querySelector('#chart-32'), {
                     series: [
                         {
                             name: "http",
-                            data: [{"x":"Crystal","y":78791.22556657468}]
+                            data: [{"x":"Crystal","y":88195.33898526822}]
                         }
                     ],
                     stroke: {
@@ -237,7 +237,7 @@ new ApexCharts(document.querySelector('#chart-32'), {
 
 | Language | Average       | p75      | p99       | Min       | Max       | Latency   |
 | -------- | ------------- | -------- | --------- | --------- | --------- | --------- |
-| Go       | 56,903.96/rps | 3,059.28 | 65,474.98 | 58,970.08 | 63,425.53 | 877.15 µs |
+| Go       | 64,727.65/rps | 5,529.28 | 74,820.83 | 67,521.91 | 73,632.46 | 770.93 µs |
 
 
 <div id="chart-33"></div>
@@ -256,7 +256,7 @@ new ApexCharts(document.querySelector('#chart-33'), {
                     series: [
                         {
                             name: "http",
-                            data: [{"x":"Go","y":56903.96425039606}]
+                            data: [{"x":"Go","y":64727.65235556941}]
                         }
                     ],
                     stroke: {
@@ -310,9 +310,9 @@ new ApexCharts(document.querySelector('#chart-33'), {
 
 ### <a name="http-ruby">Ruby</a>
 
-| Language | Average       | p75    | p99       | Min       | Max       | Latency |
-| -------- | ------------- | ------ | --------- | --------- | --------- | ------- |
-| Ruby     | 12,120.15/rps | 762.11 | 13,934.64 | 12,634.29 | 13,741.56 | 4.12 ms |
+| Language | Average      | p75    | p99       | Min       | Max       | Latency |
+| -------- | ------------ | ------ | --------- | --------- | --------- | ------- |
+| Ruby     | 9,899.81/rps | 963.09 | 12,405.74 | 10,574.76 | 12,006.48 | 5.06 ms |
 
 
 <div id="chart-34"></div>
@@ -331,7 +331,7 @@ new ApexCharts(document.querySelector('#chart-34'), {
                     series: [
                         {
                             name: "http",
-                            data: [{"x":"Ruby","y":12120.154086615916}]
+                            data: [{"x":"Ruby","y":9899.80525447736}]
                         }
                     ],
                     stroke: {
@@ -385,9 +385,9 @@ new ApexCharts(document.querySelector('#chart-34'), {
 
 ### <a name="http-rust">Rust</a>
 
-| Language | Average      | p75   | p99      | Min      | Max      | Latency |
-| -------- | ------------ | ----- | -------- | -------- | -------- | ------- |
-| Rust     | 6,871.04/rps | 723.3 | 9,197.29 | 7,346.61 | 8,669.83 | 7.28 ms |
+| Language | Average      | p75   | p99       | Min      | Max      | Latency |
+| -------- | ------------ | ----- | --------- | -------- | -------- | ------- |
+| Rust     | 7,641.32/rps | 738.8 | 10,150.15 | 8,052.51 | 9,714.71 | 6.55 ms |
 
 
 <div id="chart-35"></div>
@@ -406,7 +406,7 @@ new ApexCharts(document.querySelector('#chart-35'), {
                     series: [
                         {
                             name: "http",
-                            data: [{"x":"Rust","y":6871.035458180906}]
+                            data: [{"x":"Rust","y":7641.323776725359}]
                         }
                     ],
                     stroke: {

@@ -16,9 +16,9 @@
 
 | Language                             | Average        | p75       | p99       | Min       | Max       |
 | ------------------------------------ | -------------- | --------- | --------- | --------- | --------- |
-| JavaScript / bun 0.1.10 (x64-linux)  | 125.84/iter µs | 73.7 µs   | 655.21 µs | 89.1 µs   | 641.01 µs |
-| JavaScript / node 18.8.0 (x64-linux) | 199.81/iter µs | 158.7 µs  | 1.26 ms   | 195.1 µs  | 1.1 ms    |
-| JavaScript / deno 1.25.0 (x64-linux) | 571.18/iter µs | 488.31 µs | 2.09 ms   | 595.01 µs | 1.06 ms   |
+| JavaScript / bun 0.1.10 (x64-linux)  | 77.78/iter µs  | 48 µs     | 409.29 µs | 58.8 µs   | 395.19 µs |
+| JavaScript / node 18.8.0 (x64-linux) | 159.05/iter µs | 130.4 µs  | 937.18 µs | 155.9 µs  | 216.79 µs |
+| JavaScript / deno 1.25.0 (x64-linux) | 540.75/iter µs | 458.99 µs | 2.01 ms   | 553.28 µs | 1.02 ms   |
 
 
 <div id="chart-25"></div>
@@ -37,7 +37,7 @@ new ApexCharts(document.querySelector('#chart-25'), {
                     series: [
                         {
                             name: "sqlite",
-                            data: [{"x":"JavaScript / deno 1.25.0 (x64-linux)","y":571181.01},{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":125838.58},{"x":"JavaScript / node 18.8.0 (x64-linux)","y":199810.41}]
+                            data: [{"x":"JavaScript / deno 1.25.0 (x64-linux)","y":540751.25},{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":77780.72},{"x":"JavaScript / node 18.8.0 (x64-linux)","y":159054.14}]
                         }
                     ],
                     stroke: {
@@ -111,9 +111,9 @@ new ApexCharts(document.querySelector('#chart-25'), {
 
 | Language                             | Average        | p75       | p99       | Min       | Max       |
 | ------------------------------------ | -------------- | --------- | --------- | --------- | --------- |
-| JavaScript / bun 0.1.10 (x64-linux)  | 129.83/iter µs | 108.6 µs  | 675.91 µs | 120.1 µs  | 648.41 µs |
-| JavaScript / node 18.8.0 (x64-linux) | 397.35/iter µs | 344.1 µs  | 2.17 ms   | 368.6 µs  | 1.35 ms   |
-| JavaScript / deno 1.25.0 (x64-linux) | 904.44/iter µs | 536.81 µs | 2.19 ms   | 923.11 µs | 1.56 ms   |
+| JavaScript / bun 0.1.10 (x64-linux)  | 105.67/iter µs | 93 µs     | 439.89 µs | 99.8 µs   | 427.59 µs |
+| JavaScript / node 18.8.0 (x64-linux) | 393.77/iter µs | 363.49 µs | 1.42 ms   | 379.69 µs | 1.09 ms   |
+| JavaScript / deno 1.25.0 (x64-linux) | 915.89/iter µs | 553.09 µs | 2.19 ms   | 917.48 µs | 1.56 ms   |
 
 
 <div id="chart-26"></div>
@@ -132,7 +132,7 @@ new ApexCharts(document.querySelector('#chart-26'), {
                     series: [
                         {
                             name: "sqlite",
-                            data: [{"x":"JavaScript / deno 1.25.0 (x64-linux)","y":904441.44},{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":129829.69},{"x":"JavaScript / node 18.8.0 (x64-linux)","y":397353.64}]
+                            data: [{"x":"JavaScript / deno 1.25.0 (x64-linux)","y":915888.95},{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":105668.84},{"x":"JavaScript / node 18.8.0 (x64-linux)","y":393773.88}]
                         }
                     ],
                     stroke: {
@@ -206,9 +206,9 @@ new ApexCharts(document.querySelector('#chart-26'), {
 
 | Language                             | Average        | p75       | p99       | Min       | Max       |
 | ------------------------------------ | -------------- | --------- | --------- | --------- | --------- |
-| JavaScript / bun 0.1.10 (x64-linux)  | 77.03/iter µs  | 59.3 µs   | 588.31 µs | 65.8 µs   | 586.71 µs |
-| JavaScript / node 18.8.0 (x64-linux) | 219.96/iter µs | 188.9 µs  | 1.68 ms   | 201.1 µs  | 980.41 µs |
-| JavaScript / deno 1.25.0 (x64-linux) | 837.12/iter µs | 549.21 µs | 2.18 ms   | 843.91 µs | 1.84 ms   |
+| JavaScript / bun 0.1.10 (x64-linux)  | 67.82/iter µs  | 55.6 µs   | 419.99 µs | 60.4 µs   | 398.99 µs |
+| JavaScript / node 18.8.0 (x64-linux) | 212.19/iter µs | 179.5 µs  | 1.45 ms   | 196.7 µs  | 873.48 µs |
+| JavaScript / deno 1.25.0 (x64-linux) | 810.54/iter µs | 728.48 µs | 2.01 ms   | 801.47 µs | 1.64 ms   |
 
 
 <div id="chart-27"></div>
@@ -227,7 +227,7 @@ new ApexCharts(document.querySelector('#chart-27'), {
                     series: [
                         {
                             name: "sqlite",
-                            data: [{"x":"JavaScript / deno 1.25.0 (x64-linux)","y":837118.31},{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":77033.84},{"x":"JavaScript / node 18.8.0 (x64-linux)","y":219961.66}]
+                            data: [{"x":"JavaScript / deno 1.25.0 (x64-linux)","y":810542.19},{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":67819.87},{"x":"JavaScript / node 18.8.0 (x64-linux)","y":212190.3}]
                         }
                     ],
                     stroke: {
@@ -301,9 +301,9 @@ new ApexCharts(document.querySelector('#chart-27'), {
 
 | Language                             | Average        | p75       | p99       | Min       | Max       |
 | ------------------------------------ | -------------- | --------- | --------- | --------- | --------- |
-| JavaScript / bun 0.1.10 (x64-linux)  | 196.36/iter µs | 165.3 µs  | 725.51 µs | 188.1 µs  | 714.31 µs |
-| JavaScript / node 18.8.0 (x64-linux) | 556.27/iter µs | 486.2 µs  | 1.59 ms   | 523.71 µs | 1.53 ms   |
-| JavaScript / deno 1.25.0 (x64-linux) | 1.55/iter ms   | 877.41 µs | 4.77 ms   | 2.1 ms    | 2.65 ms   |
+| JavaScript / bun 0.1.10 (x64-linux)  | 175.07/iter µs | 158.1 µs  | 511.29 µs | 166.69 µs | 509.39 µs |
+| JavaScript / node 18.8.0 (x64-linux) | 518.83/iter µs | 484.58 µs | 1.23 ms   | 517.18 µs | 1.19 ms   |
+| JavaScript / deno 1.25.0 (x64-linux) | 1.55/iter ms   | 889.88 µs | 4.66 ms   | 2.06 ms   | 2.54 ms   |
 
 
 <div id="chart-28"></div>
@@ -322,7 +322,7 @@ new ApexCharts(document.querySelector('#chart-28'), {
                     series: [
                         {
                             name: "sqlite",
-                            data: [{"x":"JavaScript / deno 1.25.0 (x64-linux)","y":1552440.09},{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":196356.57},{"x":"JavaScript / node 18.8.0 (x64-linux)","y":556273.36}]
+                            data: [{"x":"JavaScript / deno 1.25.0 (x64-linux)","y":1553317.55},{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":175069.32},{"x":"JavaScript / node 18.8.0 (x64-linux)","y":518825.83}]
                         }
                     ],
                     stroke: {
@@ -396,9 +396,9 @@ new ApexCharts(document.querySelector('#chart-28'), {
 
 | Language                             | Average        | p75       | p99       | Min       | Max       |
 | ------------------------------------ | -------------- | --------- | --------- | --------- | --------- |
-| JavaScript / bun 0.1.10 (x64-linux)  | 34.88/iter ms  | 33.94 ms  | 39.25 ms  | 34.78 ms  | 38.96 ms  |
-| JavaScript / node 18.8.0 (x64-linux) | 101.05/iter ms | 93.18 ms  | 128.19 ms | 100.7 ms  | 127.11 ms |
-| JavaScript / deno 1.25.0 (x64-linux) | 220.78/iter ms | 214.64 ms | 321.52 ms | 221.04 ms | 239.62 ms |
+| JavaScript / bun 0.1.10 (x64-linux)  | 33.27/iter ms  | 32.27 ms  | 37.49 ms  | 33.03 ms  | 36.39 ms  |
+| JavaScript / node 18.8.0 (x64-linux) | 101.63/iter ms | 95.2 ms   | 124.42 ms | 101.96 ms | 122.85 ms |
+| JavaScript / deno 1.25.0 (x64-linux) | 231.35/iter ms | 225.64 ms | 322.29 ms | 231.48 ms | 247.39 ms |
 
 
 <div id="chart-29"></div>
@@ -417,7 +417,7 @@ new ApexCharts(document.querySelector('#chart-29'), {
                     series: [
                         {
                             name: "sqlite",
-                            data: [{"x":"JavaScript / deno 1.25.0 (x64-linux)","y":220775195.04},{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":34883520.94},{"x":"JavaScript / node 18.8.0 (x64-linux)","y":101054882.28}]
+                            data: [{"x":"JavaScript / deno 1.25.0 (x64-linux)","y":231348157.23},{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":33271178.54},{"x":"JavaScript / node 18.8.0 (x64-linux)","y":101626345.5}]
                         }
                     ],
                     stroke: {

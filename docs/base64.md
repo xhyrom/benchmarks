@@ -18,9 +18,9 @@
 
 | Language                             | Average       | p75      | p99      | Min      | Max      |
 | ------------------------------------ | ------------- | -------- | -------- | -------- | -------- |
-| JavaScript / bun 0.1.10 (x64-linux)  | 15.75/iter ms | 14.93 ms | 18.13 ms | 16.36 ms | 15.48 ms |
-| JavaScript / deno 1.25.0 (x64-linux) | 30.03/iter ms | 28.39 ms | 34.58 ms | 29.36 ms | 29.68 ms |
-| JavaScript / node 18.8.0 (x64-linux) | 50.06/iter ms | 48.22 ms | 57.22 ms | 49.05 ms | 49.43 ms |
+| JavaScript / bun 0.1.10 (x64-linux)  | 11.16/iter ms | 10.36 ms | 16.84 ms | 10.63 ms | 11.08 ms |
+| JavaScript / deno 1.25.0 (x64-linux) | 27.22/iter ms | 26.11 ms | 29.16 ms | 27.16 ms | 26.87 ms |
+| JavaScript / node 18.8.0 (x64-linux) | 46.04/iter ms | 44.94 ms | 50.23 ms | 50.23 ms | 45.56 ms |
 
 
 <div id="chart-0"></div>
@@ -39,7 +39,7 @@ new ApexCharts(document.querySelector('#chart-0'), {
                     series: [
                         {
                             name: "base64",
-                            data: [{"x":"JavaScript / deno 1.25.0 (x64-linux)","y":30026216.990000006},{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":15747072.650000002},{"x":"JavaScript / node 18.8.0 (x64-linux)","y":50062673.27000003}]
+                            data: [{"x":"JavaScript / deno 1.25.0 (x64-linux)","y":27217507.640000004},{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":11160814.13},{"x":"JavaScript / node 18.8.0 (x64-linux)","y":46040120.29000001}]
                         }
                     ],
                     stroke: {
@@ -109,9 +109,9 @@ new ApexCharts(document.querySelector('#chart-0'), {
 
 #### <a name="base64-decode-python">Python</a>
 
-| Language | Average       | p75     | p99      | Min      | Max   |
-| -------- | ------------- | ------- | -------- | -------- | ----- |
-| Python   | 23.29/iter ms | 22.5 ms | 26.91 ms | 23.25 ms | 23 ms |
+| Language | Average      | p75     | p99      | Min      | Max      |
+| -------- | ------------ | ------- | -------- | -------- | -------- |
+| Python   | 21.3/iter ms | 21.1 ms | 21.81 ms | 21.24 ms | 21.32 ms |
 
 
 <div id="chart-1"></div>
@@ -130,7 +130,7 @@ new ApexCharts(document.querySelector('#chart-1'), {
                     series: [
                         {
                             name: "base64",
-                            data: [{"x":"Python","y":23287084.710000005}]
+                            data: [{"x":"Python","y":21295726.52999999}]
                         }
                     ],
                     stroke: {
@@ -202,7 +202,7 @@ new ApexCharts(document.querySelector('#chart-1'), {
 
 | Language | Average      | p75     | p99     | Min     | Max     |
 | -------- | ------------ | ------- | ------- | ------- | ------- |
-| Crystal  | 2.41/iter ms | 2.04 ms | 6.45 ms | 2.18 ms | 2.13 ms |
+| Crystal  | 2.04/iter ms | 1.89 ms | 2.43 ms | 2.28 ms | 2.07 ms |
 
 
 <div id="chart-2"></div>
@@ -221,7 +221,7 @@ new ApexCharts(document.querySelector('#chart-2'), {
                     series: [
                         {
                             name: "base64",
-                            data: [{"x":"Crystal","y":2410678.15}]
+                            data: [{"x":"Crystal","y":2041681.4999999993}]
                         }
                     ],
                     stroke: {
@@ -291,9 +291,9 @@ new ApexCharts(document.querySelector('#chart-2'), {
 
 #### <a name="base64-decode-go">Go</a>
 
-| Language | Average      | p75       | p99     | Min    | Max     |
-| -------- | ------------ | --------- | ------- | ------ | ------- |
-| Go       | 1.22/iter ms | 971.44 µs | 1.96 ms | 1.1 ms | 1.69 ms |
+| Language | Average      | p75       | p99      | Min       | Max       |
+| -------- | ------------ | --------- | -------- | --------- | --------- |
+| Go       | 1.05/iter ms | 838.11 µs | 11.03 ms | 882.21 µs | 936.01 µs |
 
 
 <div id="chart-3"></div>
@@ -312,7 +312,7 @@ new ApexCharts(document.querySelector('#chart-3'), {
                     series: [
                         {
                             name: "base64",
-                            data: [{"x":"Go","y":1217792.39}]
+                            data: [{"x":"Go","y":1046525.2700000003}]
                         }
                     ],
                     stroke: {
@@ -384,7 +384,7 @@ new ApexCharts(document.querySelector('#chart-3'), {
 
 | Language | Average       | p75      | p99      | Min      | Max      |
 | -------- | ------------- | -------- | -------- | -------- | -------- |
-| Ruby     | 59.14/iter ms | 57.58 ms | 61.21 ms | 58.33 ms | 59.94 ms |
+| Ruby     | 54.74/iter ms | 54.09 ms | 55.92 ms | 54.84 ms | 54.78 ms |
 
 
 <div id="chart-4"></div>
@@ -403,7 +403,7 @@ new ApexCharts(document.querySelector('#chart-4'), {
                     series: [
                         {
                             name: "base64",
-                            data: [{"x":"Ruby","y":59136916.790000014}]
+                            data: [{"x":"Ruby","y":54737681.129999995}]
                         }
                     ],
                     stroke: {
@@ -477,9 +477,9 @@ new ApexCharts(document.querySelector('#chart-4'), {
 
 | Language                             | Average       | p75      | p99      | Min      | Max      |
 | ------------------------------------ | ------------- | -------- | -------- | -------- | -------- |
-| JavaScript / bun 0.1.10 (x64-linux)  | 15.64/iter ms | 14.94 ms | 18.04 ms | 15.7 ms  | 15.4 ms  |
-| JavaScript / deno 1.25.0 (x64-linux) | 30.26/iter ms | 28.94 ms | 32.04 ms | 29.19 ms | 30.49 ms |
-| JavaScript / node 18.8.0 (x64-linux) | 50.62/iter ms | 48.69 ms | 53.56 ms | 49.26 ms | 50.88 ms |
+| JavaScript / bun 0.1.10 (x64-linux)  | 11.09/iter ms | 10.05 ms | 12.46 ms | 10.64 ms | 11.3 ms  |
+| JavaScript / deno 1.25.0 (x64-linux) | 27.87/iter ms | 26.48 ms | 31.54 ms | 28.17 ms | 27.38 ms |
+| JavaScript / node 18.8.0 (x64-linux) | 46.86/iter ms | 45.7 ms  | 48.38 ms | 46.12 ms | 46.97 ms |
 
 
 <div id="chart-5"></div>
@@ -498,7 +498,7 @@ new ApexCharts(document.querySelector('#chart-5'), {
                     series: [
                         {
                             name: "base64",
-                            data: [{"x":"JavaScript / deno 1.25.0 (x64-linux)","y":30262261.30000001},{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":15637693.920000007},{"x":"JavaScript / node 18.8.0 (x64-linux)","y":50618723.010000005}]
+                            data: [{"x":"JavaScript / deno 1.25.0 (x64-linux)","y":27867193.390000008},{"x":"JavaScript / bun 0.1.10 (x64-linux)","y":11087543.339999998},{"x":"JavaScript / node 18.8.0 (x64-linux)","y":46859477.87000002}]
                         }
                     ],
                     stroke: {
@@ -568,9 +568,9 @@ new ApexCharts(document.querySelector('#chart-5'), {
 
 #### <a name="base64-encode-python">Python</a>
 
-| Language | Average      | p75      | p99      | Min   | Max      |
-| -------- | ------------ | -------- | -------- | ----- | -------- |
-| Python   | 24.1/iter ms | 23.31 ms | 25.14 ms | 24 ms | 24.38 ms |
+| Language | Average       | p75      | p99      | Min      | Max      |
+| -------- | ------------- | -------- | -------- | -------- | -------- |
+| Python   | 21.27/iter ms | 21.05 ms | 21.95 ms | 21.39 ms | 21.95 ms |
 
 
 <div id="chart-6"></div>
@@ -589,7 +589,7 @@ new ApexCharts(document.querySelector('#chart-6'), {
                     series: [
                         {
                             name: "base64",
-                            data: [{"x":"Python","y":24102386.91}]
+                            data: [{"x":"Python","y":21268532.1}]
                         }
                     ],
                     stroke: {
@@ -659,9 +659,9 @@ new ApexCharts(document.querySelector('#chart-6'), {
 
 #### <a name="base64-encode-crystal">Crystal</a>
 
-| Language | Average      | p75    | p99     | Min    | Max     |
-| -------- | ------------ | ------ | ------- | ------ | ------- |
-| Crystal  | 2.37/iter ms | 2.1 ms | 3.08 ms | 2.3 ms | 2.45 ms |
+| Language | Average   | p75     | p99     | Min     | Max     |
+| -------- | --------- | ------- | ------- | ------- | ------- |
+| Crystal  | 2/iter ms | 1.87 ms | 2.39 ms | 1.97 ms | 2.39 ms |
 
 
 <div id="chart-7"></div>
@@ -680,7 +680,7 @@ new ApexCharts(document.querySelector('#chart-7'), {
                     series: [
                         {
                             name: "base64",
-                            data: [{"x":"Crystal","y":2371524.3300000005}]
+                            data: [{"x":"Crystal","y":1999891.6699999997}]
                         }
                     ],
                     stroke: {
@@ -750,9 +750,9 @@ new ApexCharts(document.querySelector('#chart-7'), {
 
 #### <a name="base64-encode-go">Go</a>
 
-| Language | Average      | p75       | p99     | Min     | Max     |
-| -------- | ------------ | --------- | ------- | ------- | ------- |
-| Go       | 1.21/iter ms | 934.61 µs | 2.03 ms | 1.11 ms | 1.15 ms |
+| Language | Average        | p75       | p99     | Min       | Max       |
+| -------- | -------------- | --------- | ------- | --------- | --------- |
+| Go       | 945.91/iter µs | 860.56 µs | 1.33 ms | 879.66 µs | 889.26 µs |
 
 
 <div id="chart-8"></div>
@@ -771,7 +771,7 @@ new ApexCharts(document.querySelector('#chart-8'), {
                     series: [
                         {
                             name: "base64",
-                            data: [{"x":"Go","y":1206074.9199999995}]
+                            data: [{"x":"Go","y":945906.6399999998}]
                         }
                     ],
                     stroke: {
@@ -841,9 +841,9 @@ new ApexCharts(document.querySelector('#chart-8'), {
 
 #### <a name="base64-encode-ruby">Ruby</a>
 
-| Language | Average      | p75      | p99      | Min      | Max      |
-| -------- | ------------ | -------- | -------- | -------- | -------- |
-| Ruby     | 60.2/iter ms | 58.23 ms | 61.76 ms | 61.22 ms | 59.45 ms |
+| Language | Average       | p75      | p99      | Min      | Max      |
+| -------- | ------------- | -------- | -------- | -------- | -------- |
+| Ruby     | 55.69/iter ms | 54.39 ms | 57.09 ms | 54.79 ms | 55.39 ms |
 
 
 <div id="chart-9"></div>
@@ -862,7 +862,7 @@ new ApexCharts(document.querySelector('#chart-9'), {
                     series: [
                         {
                             name: "base64",
-                            data: [{"x":"Ruby","y":60200882.39000002}]
+                            data: [{"x":"Ruby","y":55685219.61}]
                         }
                     ],
                     stroke: {
