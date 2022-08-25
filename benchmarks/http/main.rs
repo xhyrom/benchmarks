@@ -9,7 +9,7 @@ fn handle_read(mut stream: &TcpStream) {
 }
 
 fn handle_write(mut stream: TcpStream) {
-    let response = b"HTTP/1.1 200\r\n\r\nHello, World!";
+    let response = b"HTTP/1.1 200\r\nContent-Type: text/plain;charset=utf-8\r\nContent-Length: 13\r\n\r\nHello, World!";
     stream.write(response);
 }
 

@@ -1,15 +1,15 @@
-require "socket"
-
-socket = TCPServer.new(3000)
-
-loop do
-  client = socket.accept
-  first_line = client.gets
-
-  response = "HTTP/1.1 200\r\n\r\nHello, World!"
-  client.puts(response)
-
-  client.close
+require 'socket'
+server = TCPServer.new 3000
+ 
+while session = server.accept
+  request = session.gets
+  puts request
+ 
+  session.print "HTTP/1.1 200\r\n"
+  session.print "Content-Type: text/plain;charset=utf-8\r\n"
+  session.print "Content-Length: 13\r\n"
+  session.print "\r\n"
+  session.print "Hello, World!" 
+ 
+  session.close
 end
-
-socket.close
