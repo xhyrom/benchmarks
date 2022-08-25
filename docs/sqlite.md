@@ -14,11 +14,11 @@
 
 #### <a name="sqlite-SELECT-ALL-FROM-Employees-javascript">JavaScript</a>
 
-| Language                              | Average        | p75      | p99       | Min      | Max      |
-| ------------------------------------- | -------------- | -------- | --------- | -------- | -------- |
-| JavaScript /  bun 0.1.10 (x64-linux)  | 92.24/iter µs  | 60.9 µs  | 424.7 µs  | 69.9 µs  | 408.5 µs |
-| JavaScript /  node 18.8.0 (x64-linux) | 160.31/iter µs | 128.7 µs | 943.49 µs | 158.4 µs | 230.9 µs |
-| JavaScript /  deno 1.25.0 (x64-linux) | 540.92/iter µs | 458.1 µs | 1.99 ms   | 550.2 µs | 1.11 ms  |
+| Language                              | Average        | p75       | p99       | Min       | Max       |
+| ------------------------------------- | -------------- | --------- | --------- | --------- | --------- |
+| JavaScript /  bun 0.1.10 (x64-linux)  | 117.01/iter µs | 54.7 µs   | 695.41 µs | 89.6 µs   | 671.11 µs |
+| JavaScript /  node 18.8.0 (x64-linux) | 207.37/iter µs | 124.9 µs  | 2.03 ms   | 189.6 µs  | 1.15 ms   |
+| JavaScript /  deno 1.25.0 (x64-linux) | 622.69/iter µs | 433.41 µs | 2.15 ms   | 623.21 µs | 1.31 ms   |
 
 
 <div id="chart-25"></div>
@@ -34,7 +34,7 @@ new ApexCharts(document.querySelector('#chart-25'), {
                             enabled: true,
                         },
                     },
-                    series: [{"name":"JavaScript / deno 1.25.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,392955.41,392955.41,392955.41,392955.41,392955.41,540917.49]},{"name":"JavaScript / bun 0.1.10 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,78682.69,78682.69,78682.69,78682.69,78682.69,92236.23]},{"name":"JavaScript / node 18.8.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,713652.93,713652.93,713652.93,713652.93,713652.93,160306.56]}],
+                    series: [{"name":"JavaScript / deno 1.25.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,392955.41,392955.41,392955.41,392955.41,392955.41,540917.49,540917.49,622687.94]},{"name":"JavaScript / bun 0.1.10 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,78682.69,78682.69,78682.69,78682.69,78682.69,92236.23,92236.23,117013.47]},{"name":"JavaScript / node 18.8.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,713652.93,713652.93,713652.93,713652.93,713652.93,160306.56,160306.56,207374.36]}],
                     stroke: {
                         width: 1,
                         curve: "straight",
@@ -67,7 +67,7 @@ new ApexCharts(document.querySelector('#chart-25'), {
                         },
                     },
                     xaxis: {
-                        categories: ["75f0959","4a91113","e0e3f5e","84993b0","456fb01","659c8b9","de35d11","1038a86","63a645f","af1a4a3","3933845","9663e12","ca114bf","222f025","5910ee7","fbe56df","e905e2a","f2e77e3","b53c9bc"],
+                        categories: ["e0e3f5e","84993b0","456fb01","659c8b9","de35d11","1038a86","63a645f","af1a4a3","3933845","9663e12","ca114bf","222f025","5910ee7","fbe56df","e905e2a","f2e77e3","b53c9bc","1def946","f0d489b","Latest"],
                         labels: {
                             show: false,
                         },
@@ -87,11 +87,11 @@ new ApexCharts(document.querySelector('#chart-25'), {
 
 #### <a name="sqlite-SELECT-ALL-FROM-Products-javascript">JavaScript</a>
 
-| Language                              | Average        | p75       | p99      | Min       | Max      |
-| ------------------------------------- | -------------- | --------- | -------- | --------- | -------- |
-| JavaScript /  bun 0.1.10 (x64-linux)  | 112.39/iter µs | 102.4 µs  | 453.6 µs | 109.7 µs  | 160.1 µs |
-| JavaScript /  node 18.8.0 (x64-linux) | 374.29/iter µs | 355.1 µs  | 1.06 ms  | 372.9 µs  | 401.3 µs |
-| JavaScript /  deno 1.25.0 (x64-linux) | 915.88/iter µs | 550.79 µs | 2.19 ms  | 921.39 µs | 1.55 ms  |
+| Language                              | Average        | p75       | p99       | Min       | Max       |
+| ------------------------------------- | -------------- | --------- | --------- | --------- | --------- |
+| JavaScript /  bun 0.1.10 (x64-linux)  | 121.52/iter µs | 80.9 µs   | 671.11 µs | 129.6 µs  | 198.71 µs |
+| JavaScript /  node 18.8.0 (x64-linux) | 469.94/iter µs | 345.91 µs | 2.33 ms   | 449.61 µs | 1.25 ms   |
+| JavaScript /  deno 1.25.0 (x64-linux) | 1.1/iter ms    | 491.91 µs | 2.61 ms   | 1.22 ms   | 2.38 ms   |
 
 
 <div id="chart-26"></div>
@@ -107,7 +107,7 @@ new ApexCharts(document.querySelector('#chart-26'), {
                             enabled: true,
                         },
                     },
-                    series: [{"name":"JavaScript / deno 1.25.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,559002.01,559002.01,559002.01,559002.01,559002.01,915880.71]},{"name":"JavaScript / bun 0.1.10 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,110846.35,110846.35,110846.35,110846.35,110846.35,112391.99]},{"name":"JavaScript / node 18.8.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,342600.89,342600.89,342600.89,342600.89,342600.89,374289.22]}],
+                    series: [{"name":"JavaScript / deno 1.25.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,559002.01,559002.01,559002.01,559002.01,559002.01,915880.71,915880.71,1101136.06]},{"name":"JavaScript / bun 0.1.10 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,110846.35,110846.35,110846.35,110846.35,110846.35,112391.99,112391.99,121523.64]},{"name":"JavaScript / node 18.8.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,342600.89,342600.89,342600.89,342600.89,342600.89,374289.22,374289.22,469938.87]}],
                     stroke: {
                         width: 1,
                         curve: "straight",
@@ -140,7 +140,7 @@ new ApexCharts(document.querySelector('#chart-26'), {
                         },
                     },
                     xaxis: {
-                        categories: ["75f0959","4a91113","e0e3f5e","84993b0","456fb01","659c8b9","de35d11","1038a86","63a645f","af1a4a3","3933845","9663e12","ca114bf","222f025","5910ee7","fbe56df","e905e2a","f2e77e3","b53c9bc"],
+                        categories: ["e0e3f5e","84993b0","456fb01","659c8b9","de35d11","1038a86","63a645f","af1a4a3","3933845","9663e12","ca114bf","222f025","5910ee7","fbe56df","e905e2a","f2e77e3","b53c9bc","1def946","f0d489b","Latest"],
                         labels: {
                             show: false,
                         },
@@ -160,11 +160,11 @@ new ApexCharts(document.querySelector('#chart-26'), {
 
 #### <a name="sqlite-SELECT-ALL-FROM-Suppliers-javascript">JavaScript</a>
 
-| Language                              | Average        | p75       | p99       | Min       | Max      |
-| ------------------------------------- | -------------- | --------- | --------- | --------- | -------- |
-| JavaScript /  bun 0.1.10 (x64-linux)  | 69.76/iter µs  | 55.1 µs   | 418.9 µs  | 62.4 µs   | 403.2 µs |
-| JavaScript /  node 18.8.0 (x64-linux) | 229.04/iter µs | 210.7 µs  | 901.79 µs | 226.3 µs  | 279.7 µs |
-| JavaScript /  deno 1.25.0 (x64-linux) | 819.64/iter µs | 686.39 µs | 2.04 ms   | 800.09 µs | 1.68 ms  |
+| Language                              | Average       | p75       | p99       | Min       | Max      |
+| ------------------------------------- | ------------- | --------- | --------- | --------- | -------- |
+| JavaScript /  bun 0.1.10 (x64-linux)  | 91.56/iter µs | 57.2 µs   | 638.41 µs | 95 µs     | 166.2 µs |
+| JavaScript /  node 18.8.0 (x64-linux) | 270.8/iter µs | 185.9 µs  | 2.18 ms   | 236.91 µs | 1.35 ms  |
+| JavaScript /  deno 1.25.0 (x64-linux) | 1.09/iter ms  | 841.02 µs | 3.09 ms   | 1.07 ms   | 2.87 ms  |
 
 
 <div id="chart-27"></div>
@@ -180,7 +180,7 @@ new ApexCharts(document.querySelector('#chart-27'), {
                             enabled: true,
                         },
                     },
-                    series: [{"name":"JavaScript / deno 1.25.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,553535.01,553535.01,553535.01,553535.01,553535.01,819642.53]},{"name":"JavaScript / bun 0.1.10 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,80909.83,80909.83,80909.83,80909.83,80909.83,69758.27]},{"name":"JavaScript / node 18.8.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,190088.58,190088.58,190088.58,190088.58,190088.58,229042.01]}],
+                    series: [{"name":"JavaScript / deno 1.25.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,553535.01,553535.01,553535.01,553535.01,553535.01,819642.53,819642.53,1090198.84]},{"name":"JavaScript / bun 0.1.10 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,80909.83,80909.83,80909.83,80909.83,80909.83,69758.27,69758.27,91559.97]},{"name":"JavaScript / node 18.8.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,190088.58,190088.58,190088.58,190088.58,190088.58,229042.01,229042.01,270800.69]}],
                     stroke: {
                         width: 1,
                         curve: "straight",
@@ -213,7 +213,7 @@ new ApexCharts(document.querySelector('#chart-27'), {
                         },
                     },
                     xaxis: {
-                        categories: ["75f0959","4a91113","e0e3f5e","84993b0","456fb01","659c8b9","de35d11","1038a86","63a645f","af1a4a3","3933845","9663e12","ca114bf","222f025","5910ee7","fbe56df","e905e2a","f2e77e3","b53c9bc"],
+                        categories: ["e0e3f5e","84993b0","456fb01","659c8b9","de35d11","1038a86","63a645f","af1a4a3","3933845","9663e12","ca114bf","222f025","5910ee7","fbe56df","e905e2a","f2e77e3","b53c9bc","1def946","f0d489b","Latest"],
                         labels: {
                             show: false,
                         },
@@ -233,11 +233,11 @@ new ApexCharts(document.querySelector('#chart-27'), {
 
 #### <a name="sqlite-SELECT-ALL-FROM-Customers-javascript">JavaScript</a>
 
-| Language                              | Average        | p75       | p99       | Min      | Max      |
-| ------------------------------------- | -------------- | --------- | --------- | -------- | -------- |
-| JavaScript /  bun 0.1.10 (x64-linux)  | 185.62/iter µs | 158.9 µs  | 510.39 µs | 178.5 µs | 507.1 µs |
-| JavaScript /  node 18.8.0 (x64-linux) | 530.37/iter µs | 478.1 µs  | 1.39 ms   | 512.2 µs | 1.33 ms  |
-| JavaScript /  deno 1.25.0 (x64-linux) | 1.56/iter ms   | 903.59 µs | 4.62 ms   | 2.08 ms  | 2.52 ms  |
+| Language                              | Average        | p75       | p99       | Min       | Max       |
+| ------------------------------------- | -------------- | --------- | --------- | --------- | --------- |
+| JavaScript /  bun 0.1.10 (x64-linux)  | 201.13/iter µs | 157.7 µs  | 749.91 µs | 197.1 µs  | 749.62 µs |
+| JavaScript /  node 18.8.0 (x64-linux) | 632.1/iter µs  | 491.81 µs | 1.64 ms   | 635.71 µs | 1.54 ms   |
+| JavaScript /  deno 1.25.0 (x64-linux) | 1.85/iter ms   | 854.92 µs | 5.42 ms   | 2.38 ms   | 4.74 ms   |
 
 
 <div id="chart-28"></div>
@@ -253,7 +253,7 @@ new ApexCharts(document.querySelector('#chart-28'), {
                             enabled: true,
                         },
                     },
-                    series: [{"name":"JavaScript / deno 1.25.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,997961.34,997961.34,997961.34,997961.34,997961.34,1563233.05]},{"name":"JavaScript / bun 0.1.10 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,247406.42,247406.42,247406.42,247406.42,247406.42,185617.19]},{"name":"JavaScript / node 18.8.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,675150.05,675150.05,675150.05,675150.05,675150.05,530372.51]}],
+                    series: [{"name":"JavaScript / deno 1.25.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,997961.34,997961.34,997961.34,997961.34,997961.34,1563233.05,1563233.05,1846924.97]},{"name":"JavaScript / bun 0.1.10 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,247406.42,247406.42,247406.42,247406.42,247406.42,185617.19,185617.19,201132.15]},{"name":"JavaScript / node 18.8.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,675150.05,675150.05,675150.05,675150.05,675150.05,530372.51,530372.51,632101.02]}],
                     stroke: {
                         width: 1,
                         curve: "straight",
@@ -286,7 +286,7 @@ new ApexCharts(document.querySelector('#chart-28'), {
                         },
                     },
                     xaxis: {
-                        categories: ["75f0959","4a91113","e0e3f5e","84993b0","456fb01","659c8b9","de35d11","1038a86","63a645f","af1a4a3","3933845","9663e12","ca114bf","222f025","5910ee7","fbe56df","e905e2a","f2e77e3","b53c9bc"],
+                        categories: ["e0e3f5e","84993b0","456fb01","659c8b9","de35d11","1038a86","63a645f","af1a4a3","3933845","9663e12","ca114bf","222f025","5910ee7","fbe56df","e905e2a","f2e77e3","b53c9bc","1def946","f0d489b","Latest"],
                         labels: {
                             show: false,
                         },
@@ -306,11 +306,11 @@ new ApexCharts(document.querySelector('#chart-28'), {
 
 #### <a name="sqlite-SELECT-ALL-FROM-Orders-javascript">JavaScript</a>
 
-| Language                              | Average        | p75       | p99       | Min       | Max      |
-| ------------------------------------- | -------------- | --------- | --------- | --------- | -------- |
-| JavaScript /  bun 0.1.10 (x64-linux)  | 33.12/iter ms  | 32.33 ms  | 36.72 ms  | 32.88 ms  | 36.41 ms |
-| JavaScript /  node 18.8.0 (x64-linux) | 102.35/iter ms | 95.29 ms  | 124.58 ms | 102.95 ms | 120.2 ms |
-| JavaScript /  deno 1.25.0 (x64-linux) | 231.64/iter ms | 225.98 ms | 317.82 ms | 231.7 ms  | 247 ms   |
+| Language                              | Average        | p75       | p99       | Min       | Max       |
+| ------------------------------------- | -------------- | --------- | --------- | --------- | --------- |
+| JavaScript /  bun 0.1.10 (x64-linux)  | 38.81/iter ms  | 33.6 ms   | 65.82 ms  | 39.66 ms  | 55.02 ms  |
+| JavaScript /  node 18.8.0 (x64-linux) | 104.62/iter ms | 97.08 ms  | 138.66 ms | 106.75 ms | 137.48 ms |
+| JavaScript /  deno 1.25.0 (x64-linux) | 243.84/iter ms | 217.67 ms | 342.09 ms | 251.78 ms | 292.58 ms |
 
 
 <div id="chart-29"></div>
@@ -326,7 +326,7 @@ new ApexCharts(document.querySelector('#chart-29'), {
                             enabled: true,
                         },
                     },
-                    series: [{"name":"JavaScript / deno 1.25.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,164875128.25,164875128.25,164875128.25,164875128.25,164875128.25,231640158.3]},{"name":"JavaScript / bun 0.1.10 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,34189458.28,34189458.28,34189458.28,34189458.28,34189458.28,33115179.22]},{"name":"JavaScript / node 18.8.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,93157436.91,93157436.91,93157436.91,93157436.91,93157436.91,102353472.69]}],
+                    series: [{"name":"JavaScript / deno 1.25.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,164875128.25,164875128.25,164875128.25,164875128.25,164875128.25,231640158.3,231640158.3,243837219.95]},{"name":"JavaScript / bun 0.1.10 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,34189458.28,34189458.28,34189458.28,34189458.28,34189458.28,33115179.22,33115179.22,38805336.79]},{"name":"JavaScript / node 18.8.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,93157436.91,93157436.91,93157436.91,93157436.91,93157436.91,102353472.69,102353472.69,104619717.61]}],
                     stroke: {
                         width: 1,
                         curve: "straight",
@@ -359,7 +359,7 @@ new ApexCharts(document.querySelector('#chart-29'), {
                         },
                     },
                     xaxis: {
-                        categories: ["75f0959","4a91113","e0e3f5e","84993b0","456fb01","659c8b9","de35d11","1038a86","63a645f","af1a4a3","3933845","9663e12","ca114bf","222f025","5910ee7","fbe56df","e905e2a","f2e77e3","b53c9bc"],
+                        categories: ["e0e3f5e","84993b0","456fb01","659c8b9","de35d11","1038a86","63a645f","af1a4a3","3933845","9663e12","ca114bf","222f025","5910ee7","fbe56df","e905e2a","f2e77e3","b53c9bc","1def946","f0d489b","Latest"],
                         labels: {
                             show: false,
                         },

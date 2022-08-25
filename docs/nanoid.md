@@ -4,11 +4,11 @@
 
 ### <a name="nanoid-javascript">JavaScript</a>
 
-| Language                              | Average       | p75    | p99      | Min     | Max      |
-| ------------------------------------- | ------------- | ------ | -------- | ------- | -------- |
-| JavaScript /  node 18.8.0 (x64-linux) | 6.78/iter µs  | 2.7 µs | 217.2 µs | 4.7 µs  | 93.1 µs  |
-| JavaScript /  bun 0.1.10 (x64-linux)  | 7.41/iter µs  | 2.4 µs | 257.9 µs | 4 µs    | 46.6 µs  |
-| JavaScript /  deno 1.25.0 (x64-linux) | 16.22/iter µs | 7.4 µs | 227.7 µs | 10.5 µs | 222.4 µs |
+| Language                              | Average       | p75    | p99       | Min     | Max      |
+| ------------------------------------- | ------------- | ------ | --------- | ------- | -------- |
+| JavaScript /  node 18.8.0 (x64-linux) | 7.57/iter µs  | 2.7 µs | 218.5 µs  | 4.8 µs  | 105.7 µs |
+| JavaScript /  bun 0.1.10 (x64-linux)  | 8.21/iter µs  | 2.6 µs | 257.41 µs | 4.8 µs  | 51.4 µs  |
+| JavaScript /  deno 1.25.0 (x64-linux) | 19.48/iter µs | 5.8 µs | 301.21 µs | 13.5 µs | 231.6 µs |
 
 
 <div id="chart-36"></div>
@@ -24,7 +24,7 @@ new ApexCharts(document.querySelector('#chart-36'), {
                             enabled: true,
                         },
                     },
-                    series: [{"name":"JavaScript / deno 1.25.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,35771.53,35771.53,35771.53,35771.53,35771.53,16217.91]},{"name":"JavaScript / bun 0.1.10 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,162089.52,162089.52,162089.52,162089.52,162089.52,7409.92]},{"name":"JavaScript / node 18.8.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,11074.62,11074.62,11074.62,11074.62,11074.62,6776.92]}],
+                    series: [{"name":"JavaScript / deno 1.25.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,35771.53,35771.53,35771.53,35771.53,35771.53,16217.91,16217.91,19482.36]},{"name":"JavaScript / bun 0.1.10 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,162089.52,162089.52,162089.52,162089.52,162089.52,7409.92,7409.92,8211.18]},{"name":"JavaScript / node 18.8.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,11074.62,11074.62,11074.62,11074.62,11074.62,6776.92,6776.92,7572.19]}],
                     stroke: {
                         width: 1,
                         curve: "straight",
@@ -57,7 +57,7 @@ new ApexCharts(document.querySelector('#chart-36'), {
                         },
                     },
                     xaxis: {
-                        categories: ["75f0959","4a91113","e0e3f5e","84993b0","456fb01","659c8b9","de35d11","1038a86","63a645f","af1a4a3","3933845","9663e12","ca114bf","222f025","5910ee7","fbe56df","e905e2a","f2e77e3","b53c9bc"],
+                        categories: ["e0e3f5e","84993b0","456fb01","659c8b9","de35d11","1038a86","63a645f","af1a4a3","3933845","9663e12","ca114bf","222f025","5910ee7","fbe56df","e905e2a","f2e77e3","b53c9bc","1def946","f0d489b","Latest"],
                         labels: {
                             show: false,
                         },
@@ -77,7 +77,7 @@ new ApexCharts(document.querySelector('#chart-36'), {
 
 | Language | Average       | p75     | p99     | Min     | Max     |
 | -------- | ------------- | ------- | ------- | ------- | ------- |
-| Python   | 20.19/iter µs | 19.3 µs | 25.3 µs | 20.4 µs | 22.5 µs |
+| Python   | 24.16/iter µs | 18.4 µs | 95.6 µs | 24.2 µs | 38.4 µs |
 
 
 <div id="chart-37"></div>
@@ -93,7 +93,7 @@ new ApexCharts(document.querySelector('#chart-37'), {
                             enabled: true,
                         },
                     },
-                    series: [{"name":"Python","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,19121.48,19121.48,19121.48,19121.48,19121.48,20186.81]}],
+                    series: [{"name":"Python","data":[0,0,0,0,0,0,0,0,0,0,0,0,19121.48,19121.48,19121.48,19121.48,19121.48,20186.81,20186.81,24162.5]}],
                     stroke: {
                         width: 1,
                         curve: "straight",
@@ -126,7 +126,7 @@ new ApexCharts(document.querySelector('#chart-37'), {
                         },
                     },
                     xaxis: {
-                        categories: ["75f0959","4a91113","e0e3f5e","84993b0","456fb01","659c8b9","de35d11","1038a86","63a645f","af1a4a3","3933845","9663e12","ca114bf","222f025","5910ee7","fbe56df","e905e2a","f2e77e3","b53c9bc"],
+                        categories: ["e0e3f5e","84993b0","456fb01","659c8b9","de35d11","1038a86","63a645f","af1a4a3","3933845","9663e12","ca114bf","222f025","5910ee7","fbe56df","e905e2a","f2e77e3","b53c9bc","1def946","f0d489b","Latest"],
                         labels: {
                             show: false,
                         },
