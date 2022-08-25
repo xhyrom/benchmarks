@@ -172,3 +172,5 @@ tools/bombardier
 tools/oha
 files/dist/
 __pycache__/
+tests/
+!*/.cache/outputs/*
