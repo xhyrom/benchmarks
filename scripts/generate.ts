@@ -156,7 +156,7 @@ for (const [benchmarkName, files] of Object.entries(outputs)) {
 
                 seriesCharts[language].push({
                     name: bench.runtime ? `${bench.language} /${bench.additional_info ? ` ${bench.additional_info} /` : ''} ${bench.runtime}` : bench.language,
-                    data: data[language][bench.runtime],
+                    data: [...data[language][bench.runtime], bench.stats.avg],
                 });
 
                 data[language][bench.runtime] = [];
