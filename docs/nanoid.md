@@ -1,14 +1,14 @@
-<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<link rel="stylesheet" href="https://xhyrom.github.io/benchmarks/index.css" /><script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 - [JavaScript](#nanoid-javascript)
 - [Python](#nanoid-python)
 
 ### <a name="nanoid-javascript">JavaScript</a>
 
-| Language                              | Average      | p75    | p99      | Min     | Max      |
-| ------------------------------------- | ------------ | ------ | -------- | ------- | -------- |
-| JavaScript /  node 18.8.0 (x64-linux) | 7.37/iter µs | 3.2 µs | 221.5 µs | 5.1 µs  | 106.8 µs |
-| JavaScript /  bun 0.1.10 (x64-linux)  | 9.03/iter µs | 2.6 µs | 264.4 µs | 4.4 µs  | 122.7 µs |
-| JavaScript /  deno 1.25.0 (x64-linux) | 17.6/iter µs | 5.8 µs | 262.7 µs | 12.7 µs | 203.6 µs |
+| Language                              | Average       | p75    | p99       | Min     | Max      |
+| ------------------------------------- | ------------- | ------ | --------- | ------- | -------- |
+| JavaScript /  node 18.8.0 (x64-linux) | 7.35/iter µs  | 3 µs   | 231 µs    | 3.9 µs  | 107.6 µs |
+| JavaScript /  bun 0.1.10 (x64-linux)  | 8.52/iter µs  | 2.5 µs | 299.11 µs | 5.1 µs  | 39.2 µs  |
+| JavaScript /  deno 1.25.0 (x64-linux) | 20.11/iter µs | 5.8 µs | 263.81 µs | 13.2 µs | 222.8 µs |
 
 
 <div id="chart-36"></div>
@@ -24,7 +24,7 @@ new ApexCharts(document.querySelector('#chart-36'), {
                             enabled: true,
                         },
                     },
-                    series: [{"name":" deno 1.25.0 (x64-linux)","data":[0,0,0,0,0,0,35771.53,35771.53,35771.53,35771.53,35771.53,16217.91,16217.91,19482.36,18069.56,18069.56,18069.56,16451.96,16451.96,17595.26]},{"name":" bun 0.1.10 (x64-linux)","data":[0,0,0,0,0,0,162089.52,162089.52,162089.52,162089.52,162089.52,7409.92,7409.92,8211.18,8078.05,8078.05,8078.05,10042.97,10042.97,9034.11]},{"name":" node 18.8.0 (x64-linux)","data":[0,0,0,0,0,0,11074.62,11074.62,11074.62,11074.62,11074.62,6776.92,6776.92,7572.19,7563.04,7563.04,7563.04,7049.97,7049.97,7370.06]}],
+                    series: [{"name":" deno 1.25.0 (x64-linux)","data":[0,0,0,35771.53,35771.53,35771.53,35771.53,35771.53,16217.91,16217.91,19482.36,18069.56,18069.56,18069.56,16451.96,16451.96,17595.26,17595.26,17595.26,20107.41]},{"name":" bun 0.1.10 (x64-linux)","data":[0,0,0,162089.52,162089.52,162089.52,162089.52,162089.52,7409.92,7409.92,8211.18,8078.05,8078.05,8078.05,10042.97,10042.97,9034.11,9034.11,9034.11,8523.11]},{"name":" node 18.8.0 (x64-linux)","data":[0,0,0,11074.62,11074.62,11074.62,11074.62,11074.62,6776.92,6776.92,7572.19,7563.04,7563.04,7563.04,7049.97,7049.97,7370.06,7370.06,7370.06,7350.14]}],
                     stroke: {
                         width: 1,
                         curve: "straight",
@@ -57,7 +57,7 @@ new ApexCharts(document.querySelector('#chart-36'), {
                         },
                     },
                     xaxis: {
-                        categories: ["63a645f","af1a4a3","3933845","9663e12","ca114bf","222f025","5910ee7","fbe56df","e905e2a","f2e77e3","b53c9bc","1def946","f0d489b","3fdd09b","5a0d741","adfa99a","dfe4527","48c9bc3","eebfb79","Latest"],
+                        categories: ["9663e12","ca114bf","222f025","5910ee7","fbe56df","e905e2a","f2e77e3","b53c9bc","1def946","f0d489b","3fdd09b","5a0d741","adfa99a","dfe4527","48c9bc3","eebfb79","3e0357f","5bb06d6","d53b782","Latest"],
                         labels: {
                             show: false,
                         },
@@ -75,9 +75,9 @@ new ApexCharts(document.querySelector('#chart-36'), {
 
 ### <a name="nanoid-python">Python</a>
 
-| Language | Average       | p75     | p99     | Min     | Max     |
-| -------- | ------------- | ------- | ------- | ------- | ------- |
-| Python   | 21.74/iter µs | 20.7 µs | 54.5 µs | 21.5 µs | 25.5 µs |
+| Language | Average      | p75     | p99     | Min   | Max     |
+| -------- | ------------ | ------- | ------- | ----- | ------- |
+| Python   | 22.8/iter µs | 20.5 µs | 42.7 µs | 23 µs | 29.9 µs |
 
 
 <div id="chart-37"></div>
@@ -93,7 +93,7 @@ new ApexCharts(document.querySelector('#chart-37'), {
                             enabled: true,
                         },
                     },
-                    series: [{"name":"Python","data":[0,0,0,0,0,0,19121.48,19121.48,19121.48,19121.48,19121.48,20186.81,20186.81,24162.5,21398,21398,21398,20302.91,20302.91,21739.2]}],
+                    series: [{"name":"Python","data":[0,0,0,19121.48,19121.48,19121.48,19121.48,19121.48,20186.81,20186.81,24162.5,21398,21398,21398,20302.91,20302.91,21739.2,21739.2,21739.2,22804.37]}],
                     stroke: {
                         width: 1,
                         curve: "straight",
@@ -126,7 +126,7 @@ new ApexCharts(document.querySelector('#chart-37'), {
                         },
                     },
                     xaxis: {
-                        categories: ["63a645f","af1a4a3","3933845","9663e12","ca114bf","222f025","5910ee7","fbe56df","e905e2a","f2e77e3","b53c9bc","1def946","f0d489b","3fdd09b","5a0d741","adfa99a","dfe4527","48c9bc3","eebfb79","Latest"],
+                        categories: ["9663e12","ca114bf","222f025","5910ee7","fbe56df","e905e2a","f2e77e3","b53c9bc","1def946","f0d489b","3fdd09b","5a0d741","adfa99a","dfe4527","48c9bc3","eebfb79","3e0357f","5bb06d6","d53b782","Latest"],
                         labels: {
                             show: false,
                         },
