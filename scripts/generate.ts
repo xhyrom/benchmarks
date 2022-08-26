@@ -54,7 +54,7 @@ let head = [
 let x = 0;
 for (const [benchmarkName, files] of Object.entries(outputs)) {
     let perBenchMarkdown = '';
-    let perBenchHead = `<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>\n`;
+    let perBenchHead = `<link rel="stylesheet" href="https://xhyrom.github.io/benchmarks/index.css" /><script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>\n`;
     
     head += `   - [${benchmarkName}](./${benchmarkName})\n`;
 
