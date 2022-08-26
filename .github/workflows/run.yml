@@ -27,7 +27,6 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install dependencies
-        # Use npm because bun doesn't support install field
         run: npm install && rm package-lock.json && bun install
 
       - name: Run setup
