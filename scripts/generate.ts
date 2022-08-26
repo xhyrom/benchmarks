@@ -1,7 +1,7 @@
 import { markdownTable } from 'markdown-table';
 import { readdirSync, readFileSync } from 'fs';
 import { join, extname } from 'path';
-import log from './tools/paperdave-logger';
+import log from '@paperdave/logger';
 import { NumberType, Tool, toObject, sort, format, getCPU, getLatestCommits, getFileContentFromCommit } from './utils';
 
 const lastCommits = (await getLatestCommits()).reverse();
