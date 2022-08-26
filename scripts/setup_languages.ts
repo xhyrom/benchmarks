@@ -1,9 +1,10 @@
 import { installed, runCommand } from './utils';
-import log, { setLevel } from './tools/paperdave-logger';
+import log, { setLogFilter } from '@paperdave/logger';
 import { readdirSync } from 'node:fs';
 import { join } from 'node:path';
 
-setLevel('debug');
+setLogFilter("*");
+
 const languages = readdirSync(join(import.meta.dir, '..', 'benchmarks'), { withFileTypes: true }).filter(f => !f.isDirectory()).map(f => join(join(import.meta.dir, '..', 'benchmarks', f.name)));
 const argv = process.argv.slice(2);
 

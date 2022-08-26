@@ -1,9 +1,9 @@
 import { installed, runCommand } from './utils';
-import log, { setLevel } from './tools/paperdave-logger';
+import log, { setLogFilter } from '@paperdave/logger';
 import { readdirSync } from 'fs';
 import { join, dirname } from 'path';
 
-setLevel('debug');
+setLogFilter("*");
 
 const benchmarks = [];
 const getBenchmarks = async(folder: string = join(import.meta.dir, '..', 'benchmarks')) => {
@@ -34,7 +34,7 @@ for (const benchmark of benchmarks) {
         log.debug(runCommand(content.install));
 
         const output = installed(content.version);
-        if (!output) log.fail(`Failed to install tools for ${content.name}`);
+        if (!output) log.error(`Failed to install tools for ${content.name}`);
         else log.success(`Installed tools for ${content.name}, ${output}`);
     }
 }
