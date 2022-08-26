@@ -28,7 +28,7 @@ jobs:
 
       - name: Install dependencies
         # Use npm because bun doesn't support install field
-        run: npm install && rm package-lock.json && bun install && cd scripts/tools/paperdave-logger && bun install
+        run: npm install && rm package-lock.json && bun install
 
       - name: Run setup
         run: |
