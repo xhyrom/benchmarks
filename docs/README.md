@@ -1,4 +1,4 @@
-*Ran on Intel(R) Xeon(R) Platinum 8370C CPU @ 2.80GHz*
+*Ran on Intel(R) Xeon(R) Platinum 8272CL CPU @ 2.60GHz*
 
 ## Table Of Contents
 
