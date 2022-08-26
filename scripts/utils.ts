@@ -41,7 +41,11 @@ export const getCPU = () => {
 
 /** Get X commits from repository */
 export const getLatestCommits = async(repo: string = 'xhyrom/benchmarks', per_page: number = 19): Promise<string[]> => {
-    const commits = await (await fetch(`https://api.github.com/repos/${repo}/commits?per_page=${per_page}`)).json();
+    const commits = await (await fetch(`https://api.github.com/repos/${repo}/commits?per_page=${per_page}`, {
+        headers: {
+            'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`
+        }
+    })).json();
 
     return (commits as any).map(c => c.sha.slice(0, 7));
 }
@@ -104,7 +108,8 @@ export const save = async(
     language: string,
     versionCommand: string,
     type: NumberType,
-    runtime?: string
+    runtime?: string,
+    additionalInfo?: string,
 ): Promise<void> => {
     const parsed = JSON.parse(content);
 
@@ -131,6 +136,7 @@ export const save = async(
                 language,
                 tool,
                 type,
+                additionalInfo: additionalInfo !== 'null' ? additionalInfo : null,
                 runtime: runtime !== 'null' ? `${runtime} ${installed(`${versionCommand} | grep -m1 "" | perl -pe '($_)=/([0-9]+([.][0-9]+)+)/'`)} (${process.arch}-${process.platform})` : null,
             });
             break;
@@ -148,6 +154,7 @@ export const save = async(
                 language,
                 tool,
                 type,
+                additionalInfo: additionalInfo !== 'null' ? additionalInfo : null,
                 runtime: runtime !== 'null' ? `${runtime} ${installed(`${versionCommand} | grep -m1 "" | perl -pe '($_)=/([0-9]+([.][0-9]+)+)/'`)} (${process.arch}-${process.platform})` : null,
             });
             break;
@@ -165,6 +172,7 @@ export const save = async(
                 language,
                 tool,
                 type,
+                additionalInfo: additionalInfo !== 'null' ? additionalInfo : null,
                 runtime: runtime !== 'null' ? `${runtime} ${installed(`${versionCommand} | grep -m1 "" | perl -pe '($_)=/([0-9]+([.][0-9]+)+)/'`)} (${process.arch}-${process.platform})` : null,
             });
             break;
@@ -178,6 +186,7 @@ export const save = async(
                 language,
                 tool,
                 type,
+                additionalInfo: additionalInfo !== 'null' ? additionalInfo : null,
                 runtime: runtime !== 'null' ? `${runtime} ${installed(`${versionCommand} | grep -m1 "" | perl -pe '($_)=/([0-9]+([.][0-9]+)+)/'`)} (${process.arch}-${process.platform})` : null,
             });
             break;
@@ -192,4 +201,4 @@ export const save = async(
 
 const argv = process.argv.slice(2);
 
-if (argv[0] == 'save') await save(argv[1], argv[2], argv[3], argv[4] as any, argv[5], argv[6], argv[7] as any, argv[8])
+if (argv[0] == 'save') await save(argv[1], argv[2], argv[3], argv[4] as any, argv[5], argv[6], argv[7] as any, argv[8], argv[9]);

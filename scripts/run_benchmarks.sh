@@ -21,6 +21,7 @@ function run_benchmark {
     output=$( jq -r ".environment[] | select(.name == \"$filename\")" <<< $content )
 
     runtime=$( jq -r ".runtime" <<< $output )
+    additional_info=$( jq -r ".additional_info" <<< $output )
     versioncommand=$( jq -r ".version" <<< $output )
 
     # Command for build file into binary
@@ -57,7 +58,7 @@ function run_benchmark {
     fi
     
 
-    bun ./scripts/utils.ts "save" "$output" "$benchmark$group" "$filename" "$tool_name" "$language" "$versioncommand" "/$type" "$runtime"
+    bun ./scripts/utils.ts "save" "$output" "$benchmark$group" "$filename" "$tool_name" "$language" "$versioncommand" "/$type" "$runtime" "$additional_info"
 
     if [[ "$buildfilecommand" != "null" ]]; then
         rm "${file/".${extension}"/""}"

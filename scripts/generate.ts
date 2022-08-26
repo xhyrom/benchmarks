@@ -29,7 +29,7 @@ interface Output {
 interface Benchmark {
     language: string;
     runtime: string | null;
-    additional_info: string | null;
+    additionalInfo: string | null;
     tool: Tool;
     type: NumberType;
     stats: {
@@ -127,7 +127,7 @@ for (const [benchmarkName, files] of Object.entries(outputs)) {
                 //charts[language].xaxis.categories.push(bench.runtime ? `${bench.language} / ${bench.runtime}` : bench.language);
     
                 const forPush = [
-                    bench.runtime ? `${bench.language} /${bench.additional_info ? ` ${bench.additional_info} /` : ''}  ${bench.runtime}` : bench.language,
+                    bench.runtime ? `${bench.language} /${bench.additionalInfo ? ` ${bench.additionalInfo} /` : ''}  ${bench.runtime}` : bench.language,
                     format(bench.stats.avg, bench.tool, bench.type),
                     format(bench.stats.min, bench.tool),
                     format(bench.stats.max, bench.tool),
@@ -155,7 +155,7 @@ for (const [benchmarkName, files] of Object.entries(outputs)) {
                 }
 
                 seriesCharts[language].push({
-                    name: bench.runtime ? `${bench.language} /${bench.additional_info ? ` ${bench.additional_info} /` : ''} ${bench.runtime}` : bench.language,
+                    name: bench.runtime ? `${bench.language} /${bench.additionalInfo ? ` ${bench.additionalInfo} /` : ''} ${bench.runtime}` : bench.language,
                     data: [...data[language][bench.runtime], bench.stats.avg],
                 });
 
