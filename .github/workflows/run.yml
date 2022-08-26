@@ -10,7 +10,7 @@ env:
 
 jobs:
   run:
-    runs-on: ubuntu-20.04-xl
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
 
