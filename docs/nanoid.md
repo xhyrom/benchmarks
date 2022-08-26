@@ -4,11 +4,11 @@
 
 ### <a name="nanoid-javascript">JavaScript</a>
 
-| Language                              | Average       | p75    | p99      | Min     | Max       |
-| ------------------------------------- | ------------- | ------ | -------- | ------- | --------- |
-| JavaScript /  node 18.8.0 (x64-linux) | 7.56/iter µs  | 3 µs   | 231.4 µs | 5 µs    | 100.1 µs  |
-| JavaScript /  bun 0.1.10 (x64-linux)  | 8.08/iter µs  | 2.5 µs | 275.9 µs | 4.7 µs  | 47.6 µs   |
-| JavaScript /  deno 1.25.0 (x64-linux) | 18.07/iter µs | 5.6 µs | 256.1 µs | 12.6 µs | 240.29 µs |
+| Language                              | Average       | p75    | p99      | Min     | Max      |
+| ------------------------------------- | ------------- | ------ | -------- | ------- | -------- |
+| JavaScript /  node 18.8.0 (x64-linux) | 7.05/iter µs  | 2.8 µs | 223.1 µs | 4.9 µs  | 92.3 µs  |
+| JavaScript /  bun 0.1.10 (x64-linux)  | 10.04/iter µs | 2.5 µs | 258.6 µs | 7.3 µs  | 49.9 µs  |
+| JavaScript /  deno 1.25.0 (x64-linux) | 16.45/iter µs | 7.4 µs | 229.4 µs | 10.7 µs | 217.8 µs |
 
 
 <div id="chart-36"></div>
@@ -24,7 +24,7 @@ new ApexCharts(document.querySelector('#chart-36'), {
                             enabled: true,
                         },
                     },
-                    series: [{"name":"JavaScript / deno 1.25.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,35771.53,35771.53,35771.53,35771.53,35771.53,16217.91,16217.91,19482.36,18069.56]},{"name":"JavaScript / bun 0.1.10 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,162089.52,162089.52,162089.52,162089.52,162089.52,7409.92,7409.92,8211.18,8078.05]},{"name":"JavaScript / node 18.8.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,11074.62,11074.62,11074.62,11074.62,11074.62,6776.92,6776.92,7572.19,7563.04]}],
+                    series: [{"name":"JavaScript / deno 1.25.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,35771.53,35771.53,35771.53,35771.53,35771.53,16217.91,16217.91,19482.36,18069.56,18069.56,18069.56,16451.96]},{"name":"JavaScript / bun 0.1.10 (x64-linux)","data":[0,0,0,0,0,0,0,0,162089.52,162089.52,162089.52,162089.52,162089.52,7409.92,7409.92,8211.18,8078.05,8078.05,8078.05,10042.97]},{"name":"JavaScript / node 18.8.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,11074.62,11074.62,11074.62,11074.62,11074.62,6776.92,6776.92,7572.19,7563.04,7563.04,7563.04,7049.97]}],
                     stroke: {
                         width: 1,
                         curve: "straight",
@@ -57,7 +57,7 @@ new ApexCharts(document.querySelector('#chart-36'), {
                         },
                     },
                     xaxis: {
-                        categories: ["84993b0","456fb01","659c8b9","de35d11","1038a86","63a645f","af1a4a3","3933845","9663e12","ca114bf","222f025","5910ee7","fbe56df","e905e2a","f2e77e3","b53c9bc","1def946","f0d489b","3fdd09b","Latest"],
+                        categories: ["de35d11","1038a86","63a645f","af1a4a3","3933845","9663e12","ca114bf","222f025","5910ee7","fbe56df","e905e2a","f2e77e3","b53c9bc","1def946","f0d489b","3fdd09b","5a0d741","adfa99a","dfe4527","Latest"],
                         labels: {
                             show: false,
                         },
@@ -77,7 +77,7 @@ new ApexCharts(document.querySelector('#chart-36'), {
 
 | Language | Average      | p75     | p99     | Min     | Max     |
 | -------- | ------------ | ------- | ------- | ------- | ------- |
-| Python   | 21.4/iter µs | 20.7 µs | 30.3 µs | 21.5 µs | 23.7 µs |
+| Python   | 20.3/iter µs | 19.5 µs | 22.9 µs | 20.5 µs | 21.7 µs |
 
 
 <div id="chart-37"></div>
@@ -93,7 +93,7 @@ new ApexCharts(document.querySelector('#chart-37'), {
                             enabled: true,
                         },
                     },
-                    series: [{"name":"Python","data":[0,0,0,0,0,0,0,0,0,0,0,19121.48,19121.48,19121.48,19121.48,19121.48,20186.81,20186.81,24162.5,21398]}],
+                    series: [{"name":"Python","data":[0,0,0,0,0,0,0,0,19121.48,19121.48,19121.48,19121.48,19121.48,20186.81,20186.81,24162.5,21398,21398,21398,20302.91]}],
                     stroke: {
                         width: 1,
                         curve: "straight",
@@ -126,7 +126,7 @@ new ApexCharts(document.querySelector('#chart-37'), {
                         },
                     },
                     xaxis: {
-                        categories: ["84993b0","456fb01","659c8b9","de35d11","1038a86","63a645f","af1a4a3","3933845","9663e12","ca114bf","222f025","5910ee7","fbe56df","e905e2a","f2e77e3","b53c9bc","1def946","f0d489b","3fdd09b","Latest"],
+                        categories: ["de35d11","1038a86","63a645f","af1a4a3","3933845","9663e12","ca114bf","222f025","5910ee7","fbe56df","e905e2a","f2e77e3","b53c9bc","1def946","f0d489b","3fdd09b","5a0d741","adfa99a","dfe4527","Latest"],
                         labels: {
                             show: false,
                         },
