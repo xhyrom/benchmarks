@@ -1,0 +1,11 @@
+<head><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta charset="UTF-8"/><link href="/windi.css" rel="stylesheet"/><link href="/assets/main.css" rel="stylesheet"/><link href="/assets/gfm.css" rel="stylesheet"/></head><body class="bg-gray-50"><main><div class="min-h-full"><div class="mb-12"><div class="section-x-inset-md mt-8 pb-8"><div><p>()=&gt;{
+return `
+<img src="/assets/hyro_blob.png" class="mb-12 w-32 h-32"/><h4 class="text-2xl font-bold tracking-tight">Benchmarks</h4>
+<p class="mt-4 bg-gray-100">
+Here, you can see <span class="text-sky-100">${benchmarkName}</span> benchmark results.
+</p></p>
+<pre><code>            ${perBenchHead}\n\n${perBenchMarkdown}
+            `;
+        }
+</code></pre>
+</div></div></div></div></main></body>
