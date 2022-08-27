@@ -1,3 +1,5 @@
+// Currently not used, check website/
+
 import { markdownTable } from 'markdown-table';
 import { readdirSync, readFileSync } from 'fs';
 import { join, extname } from 'path';

@@ -8,7 +8,7 @@
     "setup:languages": "bun scripts/setup_languages.ts",
     "setup:benchmarks": "bun scripts/setup_benchmarks.ts",
     "bench": "./scripts/run_benchmarks.sh",
-    "generate": "bun scripts/generate.ts",
+    "generate": "echo 'Generating website with Lume (must have Deno, bun doesnt supports URL imports)' && cd website && deno task build",
     "all": "bun run setup && bun run bench && bun run generate"
   },
   "devDependencies": {

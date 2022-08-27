@@ -3,6 +3,8 @@ import { markdownTable } from 'https://cdn.skypack.dev/markdown-table@3?dts'
 
 const __dirname = new URL('.', import.meta.url).pathname;
 
+export type Tool = 'oha' | 'bombardier' | 'hyperfine' | 'server';
+export type NumberType = '/iter' | '/rps';
 interface Output {
     group: string | null;
     file: string;
