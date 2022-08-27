@@ -2,6 +2,7 @@ import lume from "lume/mod.ts";
 import jsx from "lume/plugins/jsx.ts";
 import windicss from "https://raw.githubusercontent.com/lumeland/experimental-plugins/6bb563d6bfbaa52603a0c6dd3d02ffaed2536e3d/windicss/windicss.ts";
 import parcelCss from "lume/plugins/parcel_css.ts";
+import basePath from "lume/plugins/base_path.ts";
 
 const site = lume({
     src: "./src",
@@ -19,6 +20,7 @@ const site = lume({
 
 site
     .copy([".png", ".ttf"])
+    .use(basePath())
     .use(parcelCss())
     .use(windicss({
         config: {
