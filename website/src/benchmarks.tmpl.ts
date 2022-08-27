@@ -259,7 +259,7 @@ return \`\${Number(time.toFixed(2)).toLocaleString(locale)}\${type}\`;
         }
 
         yield {
-            url: `/benchmarks/${benchmarkName}`,
+            url: `/benchmarks/${benchmarkName}/`,
             layout: "layouts/base.tsx",
             templateEngine: ["md", "njk"],
             loadCss: ["gfm"],
