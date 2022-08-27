@@ -15,7 +15,7 @@ export default({
             {benchmarks.categories.map(c => {
                 return (
                 <li>
-                    <comp.Link url={`/benchmarks/${c}`} name={c} />
+                    <comp.Link url={`/benchmarks/benchmarks/${c}`} name={c} />
                 </li>
                 )
             })}
