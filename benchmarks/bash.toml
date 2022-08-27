@@ -1,0 +1,9 @@
+language = "Bash"
+ext = "sh"
+
+environment = [
+  # For cli benchmarks
+  { name = "js.bun.sh", runtime = "bun", install = "curl https://bun.sh/install | bash && echo 'export PATH=$HOME/.bun/bin:$PATH' >> $PROFILE", run = "sh $FILE$EXTENSION", version = "bun -v" },
+  { name = "js.deno.sh", runtime = "deno", install = "curl -fsSL https://deno.land/install.sh | bash && echo 'export PATH=$HOME/.deno/bin:$PATH' >> $PROFILE", run = "sh $FILE$EXTENSION", version = "deno --version" },
+  { name = "js.npm.sh", runtime = "node", install = "curl -sL https://deb.nodesource.com/setup_current.x | bash && sudo apt install nodejs", run = "sh $FILE$EXTENSION", version = "node --version" }
+]
