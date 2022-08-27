@@ -1,4 +1,4 @@
-*Ran on Intel(R) Xeon(R) CPU E5-2673 v4 @ 2.30GHz*
+*Ran on Intel(R) Xeon(R) Platinum 8272CL CPU @ 2.60GHz*
 
 ## Table Of Contents
 
