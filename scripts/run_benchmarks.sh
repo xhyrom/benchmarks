@@ -10,7 +10,7 @@ function run_benchmark {
     filename=$(basename $file)
     extension=${filename##*.}
 
-    if [[ "$file" == *".toml"* || "$extension" == "main" ]]; then return; fi
+    if [[ "$file" == *".toml"* || "$file" == *".json"* || "$extension" == "main" ]]; then return; fi
 
     echo "file - $filename"
     
