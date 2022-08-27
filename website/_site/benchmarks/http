@@ -1,11 +1,497 @@
-<head><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta charset="UTF-8"/><link href="/windi.css" rel="stylesheet"/><link href="/assets/main.css" rel="stylesheet"/><link href="/assets/gfm.css" rel="stylesheet"/></head><body class="bg-gray-50"><main><div class="min-h-full"><div class="mb-12"><div class="section-x-inset-md mt-8 pb-8"><div><p>()=&gt;{
-return `
-<img src="/assets/hyro_blob.png" class="mb-12 w-32 h-32"/><h4 class="text-2xl font-bold tracking-tight">Benchmarks</h4>
+<head><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta charset="UTF-8"/><link href="/windi.css" rel="stylesheet"/><link href="/assets/main.css" rel="stylesheet"/><link href="/assets/gfm.css" rel="stylesheet"/><script src="https://cdn.jsdelivr.net/npm/apexcharts"></script></head><body class="bg-gray-50"><main><div class="min-h-full"><div class="mb-12"><div class="section-x-inset-md mt-8 pb-8"><div><p><img src="/assets/hyro_blob.png" class="mb-12 w-32 h-32"/><h4 class="text-2xl font-bold tracking-tight">Benchmarks</h4></p>
 <p class="mt-4 bg-gray-100">
-Here, you can see <span class="text-sky-100">${benchmarkName}</span> benchmark results.
-</p></p>
-<pre><code>            ${perBenchHead}\n\n${perBenchMarkdown}
-            `;
-        }
-</code></pre>
+Here, you can see <span class="text-sky-100">http</span> benchmark results.
+</p>
+<p><div class="mt-12 pt-1"><h4 class="text-2xl font-bold tracking-tight">Categories</h4><ul class="ml-8 list-disc my-2"><li><a class="link" href="/benchmarks/sqlite" type="">sqlite</a></li><li><a class="link" href="/benchmarks/json" type="">json</a></li><li><a class="link" href="/benchmarks/nanoid" type="">nanoid</a></li><li><a class="link" href="/benchmarks/base64" type="">base64</a></li><li><a class="link" href="/benchmarks/http" type="">http</a></li><li><a class="link" href="/benchmarks/console" type="">console</a></li></ul></div></p>
+<div class="mt-12 pt-1">
+<h4 class="text-2xl font-bold tracking-tight"><a name="http-python">Python</a></h4>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Average</th>
+<th>p75</th>
+<th>p99</th>
+<th>Min</th>
+<th>Max</th>
+<th>Latency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python</td>
+<td>2,980.7/rps</td>
+<td>522.73</td>
+<td>4,051.13</td>
+<td>3,503.82</td>
+<td>3,973.22</td>
+<td>17.33 ms</td>
+</tr>
+</tbody>
+</table>
+<div id="chart-27"></div>
+<script>
+new ApexCharts(document.querySelector('#chart-27'), {
+                        chart: {
+                            height: 320,
+                            type: 'line',
+                            toolbar: {
+                                show: true,
+                            },
+                            animations: {
+                                enabled: true,
+                            },
+                        },
+                        series: [{"name":"Python","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2980.700510020002]}],
+                        stroke: {
+                            width: 1,
+                            curve: "straight",
+                        },
+                        legend: {
+                            show: true,
+                            showForSingleSeries: true,
+                            position: "bottom",
+                        },
+                        yaxis: {
+                            labels: {
+                                formatter: function (v) {
+const time = v;
+const locale = 'en-US';
+const type = '/rps';
+return `${Number(time.toFixed(2)).toLocaleString(locale)}${type}`;
+}
+                            },
+                            title: {
+                                text: "requests per second"
+                            },
+                        },
+                        xaxis: {
+                            categories: ["ae1b26b","d9eb378","1220af9","f749858","c17fc69","d2c6ac7","89e8f77","3828643","d3194b4","00d24dd","ff55f3d","2feb9a5","c434a6d","6e218ab","ff3683a","3ee7b8c","4003018","d53b782","5bb06d6","Latest"],
+                            labels: {
+                                show: false,
+                            },
+                            tooltip: {
+                                enabled: false,
+                            },
+                        },
+                        plotOptions: {
+                            bar: {
+                                distributed: true
+                            }
+                        }
+                    }).render()
+</script>
+<h4 class="text-2xl font-bold tracking-tight"><a name="http-crystal">Crystal</a></h4>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Average</th>
+<th>p75</th>
+<th>p99</th>
+<th>Min</th>
+<th>Max</th>
+<th>Latency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Crystal</td>
+<td>54,326.44/rps</td>
+<td>5,717.99</td>
+<td>63,054.12</td>
+<td>58,284.77</td>
+<td>61,949.35</td>
+<td>917.74 µs</td>
+</tr>
+</tbody>
+</table>
+<div id="chart-28"></div>
+<script>
+new ApexCharts(document.querySelector('#chart-28'), {
+                        chart: {
+                            height: 320,
+                            type: 'line',
+                            toolbar: {
+                                show: true,
+                            },
+                            animations: {
+                                enabled: true,
+                            },
+                        },
+                        series: [{"name":"Crystal","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,54326.43668198202]}],
+                        stroke: {
+                            width: 1,
+                            curve: "straight",
+                        },
+                        legend: {
+                            show: true,
+                            showForSingleSeries: true,
+                            position: "bottom",
+                        },
+                        yaxis: {
+                            labels: {
+                                formatter: function (v) {
+const time = v;
+const locale = 'en-US';
+const type = '/rps';
+return `${Number(time.toFixed(2)).toLocaleString(locale)}${type}`;
+}
+                            },
+                            title: {
+                                text: "requests per second"
+                            },
+                        },
+                        xaxis: {
+                            categories: ["ae1b26b","d9eb378","1220af9","f749858","c17fc69","d2c6ac7","89e8f77","3828643","d3194b4","00d24dd","ff55f3d","2feb9a5","c434a6d","6e218ab","ff3683a","3ee7b8c","4003018","d53b782","5bb06d6","Latest"],
+                            labels: {
+                                show: false,
+                            },
+                            tooltip: {
+                                enabled: false,
+                            },
+                        },
+                        plotOptions: {
+                            bar: {
+                                distributed: true
+                            }
+                        }
+                    }).render()
+</script>
+<h4 class="text-2xl font-bold tracking-tight"><a name="http-javascript">JavaScript</a></h4>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Average</th>
+<th>p75</th>
+<th>p99</th>
+<th>Min</th>
+<th>Max</th>
+<th>Latency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>JavaScript /  bun 0.1.10 (x64-linux)</td>
+<td>53,842.4/rps</td>
+<td>5,466.96</td>
+<td>71,562.51</td>
+<td>56,215.47</td>
+<td>69,489.9</td>
+<td>925.58 µs</td>
+</tr>
+<tr>
+<td>JavaScript / flash (new Deno.serve) /  deno 1.25.0 (x64-linux)</td>
+<td>35,889.52/rps</td>
+<td>7,362.86</td>
+<td>44,931.78</td>
+<td>40,476.82</td>
+<td>44,571.79</td>
+<td>1.39 ms</td>
+</tr>
+<tr>
+<td>JavaScript /  deno 1.25.0 (x64-linux)</td>
+<td>29,803.11/rps</td>
+<td>4,831.71</td>
+<td>37,124.13</td>
+<td>33,001.45</td>
+<td>36,206.06</td>
+<td>1.68 ms</td>
+</tr>
+<tr>
+<td>JavaScript /  node 18.8.0 (x64-linux)</td>
+<td>17,662.3/rps</td>
+<td>2,773.31</td>
+<td>21,718.36</td>
+<td>19,112.1</td>
+<td>20,586.74</td>
+<td>2.83 ms</td>
+</tr>
+</tbody>
+</table>
+<div id="chart-29"></div>
+<script>
+new ApexCharts(document.querySelector('#chart-29'), {
+                        chart: {
+                            height: 320,
+                            type: 'line',
+                            toolbar: {
+                                show: true,
+                            },
+                            animations: {
+                                enabled: true,
+                            },
+                        },
+                        series: [{"name":" bun 0.1.10 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,53842.40035482336]},{"name":" flash (new Deno.serve) / deno 1.25.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,35889.521740754426]},{"name":" node 18.8.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,17662.30023117817]},{"name":" deno 1.25.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29803.111131264603]}],
+                        stroke: {
+                            width: 1,
+                            curve: "straight",
+                        },
+                        legend: {
+                            show: true,
+                            showForSingleSeries: true,
+                            position: "bottom",
+                        },
+                        yaxis: {
+                            labels: {
+                                formatter: function (v) {
+const time = v;
+const locale = 'en-US';
+const type = '/rps';
+return `${Number(time.toFixed(2)).toLocaleString(locale)}${type}`;
+}
+                            },
+                            title: {
+                                text: "requests per second"
+                            },
+                        },
+                        xaxis: {
+                            categories: ["ae1b26b","d9eb378","1220af9","f749858","c17fc69","d2c6ac7","89e8f77","3828643","d3194b4","00d24dd","ff55f3d","2feb9a5","c434a6d","6e218ab","ff3683a","3ee7b8c","4003018","d53b782","5bb06d6","Latest"],
+                            labels: {
+                                show: false,
+                            },
+                            tooltip: {
+                                enabled: false,
+                            },
+                        },
+                        plotOptions: {
+                            bar: {
+                                distributed: true
+                            }
+                        }
+                    }).render()
+</script>
+<h4 class="text-2xl font-bold tracking-tight"><a name="http-ruby">Ruby</a></h4>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Average</th>
+<th>p75</th>
+<th>p99</th>
+<th>Min</th>
+<th>Max</th>
+<th>Latency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ruby</td>
+<td>6,235.58/rps</td>
+<td>747.83</td>
+<td>8,155.73</td>
+<td>6,700.51</td>
+<td>7,881.7</td>
+<td>8.02 ms</td>
+</tr>
+</tbody>
+</table>
+<div id="chart-30"></div>
+<script>
+new ApexCharts(document.querySelector('#chart-30'), {
+                        chart: {
+                            height: 320,
+                            type: 'line',
+                            toolbar: {
+                                show: true,
+                            },
+                            animations: {
+                                enabled: true,
+                            },
+                        },
+                        series: [{"name":"Ruby","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6235.57667766975]}],
+                        stroke: {
+                            width: 1,
+                            curve: "straight",
+                        },
+                        legend: {
+                            show: true,
+                            showForSingleSeries: true,
+                            position: "bottom",
+                        },
+                        yaxis: {
+                            labels: {
+                                formatter: function (v) {
+const time = v;
+const locale = 'en-US';
+const type = '/rps';
+return `${Number(time.toFixed(2)).toLocaleString(locale)}${type}`;
+}
+                            },
+                            title: {
+                                text: "requests per second"
+                            },
+                        },
+                        xaxis: {
+                            categories: ["ae1b26b","d9eb378","1220af9","f749858","c17fc69","d2c6ac7","89e8f77","3828643","d3194b4","00d24dd","ff55f3d","2feb9a5","c434a6d","6e218ab","ff3683a","3ee7b8c","4003018","d53b782","5bb06d6","Latest"],
+                            labels: {
+                                show: false,
+                            },
+                            tooltip: {
+                                enabled: false,
+                            },
+                        },
+                        plotOptions: {
+                            bar: {
+                                distributed: true
+                            }
+                        }
+                    }).render()
+</script>
+<h4 class="text-2xl font-bold tracking-tight"><a name="http-rust">Rust</a></h4>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Average</th>
+<th>p75</th>
+<th>p99</th>
+<th>Min</th>
+<th>Max</th>
+<th>Latency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rust</td>
+<td>4,604.67/rps</td>
+<td>686.73</td>
+<td>6,632.96</td>
+<td>5,094.65</td>
+<td>6,290.03</td>
+<td>10.86 ms</td>
+</tr>
+</tbody>
+</table>
+<div id="chart-31"></div>
+<script>
+new ApexCharts(document.querySelector('#chart-31'), {
+                        chart: {
+                            height: 320,
+                            type: 'line',
+                            toolbar: {
+                                show: true,
+                            },
+                            animations: {
+                                enabled: true,
+                            },
+                        },
+                        series: [{"name":"Rust","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4604.671471125463]}],
+                        stroke: {
+                            width: 1,
+                            curve: "straight",
+                        },
+                        legend: {
+                            show: true,
+                            showForSingleSeries: true,
+                            position: "bottom",
+                        },
+                        yaxis: {
+                            labels: {
+                                formatter: function (v) {
+const time = v;
+const locale = 'en-US';
+const type = '/rps';
+return `${Number(time.toFixed(2)).toLocaleString(locale)}${type}`;
+}
+                            },
+                            title: {
+                                text: "requests per second"
+                            },
+                        },
+                        xaxis: {
+                            categories: ["ae1b26b","d9eb378","1220af9","f749858","c17fc69","d2c6ac7","89e8f77","3828643","d3194b4","00d24dd","ff55f3d","2feb9a5","c434a6d","6e218ab","ff3683a","3ee7b8c","4003018","d53b782","5bb06d6","Latest"],
+                            labels: {
+                                show: false,
+                            },
+                            tooltip: {
+                                enabled: false,
+                            },
+                        },
+                        plotOptions: {
+                            bar: {
+                                distributed: true
+                            }
+                        }
+                    }).render()
+</script>
+<h4 class="text-2xl font-bold tracking-tight"><a name="http-go">Go</a></h4>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Average</th>
+<th>p75</th>
+<th>p99</th>
+<th>Min</th>
+<th>Max</th>
+<th>Latency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Go</td>
+<td>34,974.11/rps</td>
+<td>3,881.05</td>
+<td>44,083.59</td>
+<td>37,662.2</td>
+<td>42,488.49</td>
+<td>1.43 ms</td>
+</tr>
+</tbody>
+</table>
+<div id="chart-32"></div>
+<script>
+new ApexCharts(document.querySelector('#chart-32'), {
+                        chart: {
+                            height: 320,
+                            type: 'line',
+                            toolbar: {
+                                show: true,
+                            },
+                            animations: {
+                                enabled: true,
+                            },
+                        },
+                        series: [{"name":"Go","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,34974.10553327195]}],
+                        stroke: {
+                            width: 1,
+                            curve: "straight",
+                        },
+                        legend: {
+                            show: true,
+                            showForSingleSeries: true,
+                            position: "bottom",
+                        },
+                        yaxis: {
+                            labels: {
+                                formatter: function (v) {
+const time = v;
+const locale = 'en-US';
+const type = '/rps';
+return `${Number(time.toFixed(2)).toLocaleString(locale)}${type}`;
+}
+                            },
+                            title: {
+                                text: "requests per second"
+                            },
+                        },
+                        xaxis: {
+                            categories: ["ae1b26b","d9eb378","1220af9","f749858","c17fc69","d2c6ac7","89e8f77","3828643","d3194b4","00d24dd","ff55f3d","2feb9a5","c434a6d","6e218ab","ff3683a","3ee7b8c","4003018","d53b782","5bb06d6","Latest"],
+                            labels: {
+                                show: false,
+                            },
+                            tooltip: {
+                                enabled: false,
+                            },
+                        },
+                        plotOptions: {
+                            bar: {
+                                distributed: true
+                            }
+                        }
+                    }).render()
+</script>
+</div>
 </div></div></div></div></main></body>

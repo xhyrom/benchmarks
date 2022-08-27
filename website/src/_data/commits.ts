@@ -1,5 +1,3 @@
-import benchmarks, { categories } from "./benchmarks.ts";
-
 /** Get X commits from repository */
 export const getLastCommits = async(repo: string = 'xhyrom/benchmarks', per_page: number = 19): Promise<string[]> => {
     const commits = await (await fetch(`https://api.github.com/repos/${repo}/commits?per_page=${per_page}`, {

@@ -1,4 +1,4 @@
-export default ({ children, loadCss }) => {
+export default ({ children, loadCss, loadScripts }) => {
   return (
     <>
         <head>
@@ -9,6 +9,10 @@ export default ({ children, loadCss }) => {
 
           {loadCss ? loadCss.map((css) => {
             return <link href={`/assets/${css}.css`} rel="stylesheet" />
+          }) : null}
+
+          {loadScripts ? loadScripts.map((script) => {
+            return <script src={script}></script>
           }) : null}
         </head>
         <body class="bg-gray-50">

@@ -1,22 +1,59 @@
-@import url('/assets/Inter-VariableFont_slnt,wght.ttf');
-
+@import "/assets/Inter-VariableFont_slnt,wght.ttf";
 * {
-    font-family: 'Inter', sans-serif;
+ font-family:Inter,
+ sans-serif
 }
 
-body,blockquote,dl,dd,h1,h2,h3,h4,h5,h6,hr,figure,p,pre,fieldset,ol,ul{margin:0}
-.section-x-inset-md{max-width:768px;margin-left:auto;margin-right:auto;padding-left:1rem;padding-right:1rem}
-@media (min-width:640px){.section-x-inset-md{padding-left:1.5rem;padding-right:1.5rem}}
-@media (min-width:768px){.section-x-inset-md{padding-left:2rem;padding-right:2rem}}
+body,
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre,
+fieldset,
+ol,
+ul {
+ margin:0
+}
+
+.section-x-inset-md {
+ max-width:768px;
+ margin-left:auto;
+ margin-right:auto;
+ padding-left:1rem;
+ padding-right:1rem
+}
+
+@media (min-width:640px) {
+ .section-x-inset-md {
+  padding-left:1.5rem;
+  padding-right:1.5rem
+ }
+}
+
+@media (min-width:768px) {
+ .section-x-inset-md {
+  padding-left:2rem;
+  padding-right:2rem
+ }
+}
 
 ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
+ margin:0;
+ padding:0;
+ list-style:none
 }
 
 ul li {
-	margin: 0;
-	padding: 0 8px;
-	line-height: 20px;
+ margin:0;
+ padding:0 8px;
+ line-height:20px
 }

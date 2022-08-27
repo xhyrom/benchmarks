@@ -94,11 +94,11 @@ export default async function* ({ benchmarks, commits }: any) {
         for (const [group, results] of Object.entries(content)) {
             let size = {
                 spaces: 6,
-                header: 3,
+                header: 2,
             };
             if (group !== 'main') {
-                perBenchMarkdown += `### <a name="${benchmarkName}-${group}">${group.replaceAll('-', ' ')}</a>\n\n`;
-                perBenchHead += `- [${group.replaceAll('-', ' ')}](#${benchmarkName}-${group})\n`;
+                perBenchMarkdown += `<h4 class="text-2xl font-bold tracking-tight"><a name="${benchmarkName}-${group}">${group.charAt(0).toUpperCase() + group.slice(1).replaceAll('-', ' ')}</a></h4>\n<br />`;
+                //perBenchHead += `- [${group.replaceAll('-', ' ')}](#${benchmarkName}-${group})\n\n`;
                 size.spaces += 3;
                 size.header++;
             };
@@ -109,8 +109,9 @@ export default async function* ({ benchmarks, commits }: any) {
                 let seriesCharts: Record<string, any[]> = {};
                 let data: Record<string, Record<string, any[]>> = {};
                 const hasGroup = group !== 'main';
-                perBenchHead += `${size.spaces === 9 ? '    ' : ''}- [${language}](#${benchmarkName}${hasGroup ? `-${group}` : ''}-${language.toLowerCase()})\n`;
-                perBenchMarkdown += `${'#'.repeat(size.header)} <a name="${benchmarkName}${hasGroup ? `-${group}` : ''}-${language.toLowerCase()}">${language}</a>\n`;
+                //perBenchHead += `${size.spaces === 9 ? '    ' : ''}- [${language}](#${benchmarkName}${hasGroup ? `-${group}` : ''}-${language.toLowerCase()})\n\n`;
+                perBenchMarkdown += `<h4 class="text-${size.header}xl font-bold tracking-tight"><a name="${benchmarkName}${hasGroup ? `-${group}` : ''}-${language.toLowerCase()}">${language}</a></h4>\n`;
+                //perBenchMarkdown += `${'#'.repeat(size.header)} <a name="${benchmarkName}${hasGroup ? `-${group}` : ''}-${language.toLowerCase()}">${language}</a>\n`;
         
                 tables[language] = [
                     ['Language', 'Average', 'p75', 'p99', 'Min', 'Max']
@@ -260,16 +261,21 @@ return \`\${Number(time.toFixed(2)).toLocaleString(locale)}\${type}\`;
             layout: "layouts/base.tsx",
             templateEngine: ["md", "njk"],
             loadCss: ["gfm"],
-            content: () => {
-                return `
-                {{ comp.Header() | safe }}
-                <p class="mt-4 bg-gray-100">
-                Here, you can see <span class="text-sky-100">${benchmarkName}</span> benchmark results.
-                </p>
-                
-                ${perBenchHead}\n\n${perBenchMarkdown}
-                `
-            }
+            loadScripts: ["https://cdn.jsdelivr.net/npm/apexcharts"],
+            content: `
+{{ comp.Header() | safe }}
+<p class="mt-4 bg-gray-100">
+Here, you can see <span class="text-sky-100">${benchmarkName}</span> benchmark results.
+</p>
+
+{{ comp.Categories() | safe }}
+
+<div class="mt-12 pt-1">
+
+${perBenchMarkdown}
+
+</div>
+`
         };
     }
 }
