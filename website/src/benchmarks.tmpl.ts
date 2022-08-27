@@ -265,10 +265,10 @@ return \`\${Number(time.toFixed(2)).toLocaleString(locale)}\${type}\`;
             content: `
 {{ comp.Header() | safe }}
 <p class="mt-4 bg-gray-100">
-Here, you can see <span class="text-sky-100">${benchmarkName}</span> benchmark results.
+Here, you can see <span class="text-sky-600">${benchmarkName}</span> benchmark results.
 </p>
 
-{{ comp.Categories() | safe }}
+{{ comp.Categories({ showHome: true }) | safe }}
 
 <div class="mt-12 pt-1">
 

@@ -18,7 +18,7 @@ export const getFileContentFromCommit = async(
         avg: number;
     };
 }> => {
-    const res = { ok: false} //await fetch(encodeURI(`https://raw.githubusercontent.com/${repo}/${commit}/scripts/.cache/outputs/${file}`));
+    const res = await fetch(encodeURI(`https://raw.githubusercontent.com/${repo}/${commit}/scripts/.cache/outputs/${file}`));
     if (!res.ok) return {"stats": {"avg": 0}};
     
     const content = await res.json();

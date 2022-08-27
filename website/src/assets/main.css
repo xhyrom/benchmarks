@@ -57,3 +57,6 @@ ul li {
  padding:0 8px;
  line-height:20px
 }
+
+/* Temp solution */
+.text-sky-600{--tw-text-opacity:1;color:rgba(2,132,199,var(--tw-text-opacity))}

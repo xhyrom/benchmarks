@@ -5,6 +5,10 @@ import parcelCss from "lume/plugins/parcel_css.ts";
 
 const site = lume({
     src: "./src",
+    location: new URL("https://xhyrom.github.io/benchmarks"),
+    server: {
+        page404: "./index.html"
+    }
 }, {
     markdown: {
         options: {

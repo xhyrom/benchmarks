@@ -1,8 +1,8 @@
 <head><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta charset="UTF-8"/><link href="/windi.css" rel="stylesheet"/><link href="/assets/main.css" rel="stylesheet"/><link href="/assets/gfm.css" rel="stylesheet"/><script src="https://cdn.jsdelivr.net/npm/apexcharts"></script></head><body class="bg-gray-50"><main><div class="min-h-full"><div class="mb-12"><div class="section-x-inset-md mt-8 pb-8"><div><p><img src="/assets/hyro_blob.png" class="mb-12 w-32 h-32"/><h4 class="text-2xl font-bold tracking-tight">Benchmarks</h4></p>
 <p class="mt-4 bg-gray-100">
-Here, you can see <span class="text-sky-100">base64</span> benchmark results.
+Here, you can see <span class="text-sky-600">base64</span> benchmark results.
 </p>
-<p><div class="mt-12 pt-1"><h4 class="text-2xl font-bold tracking-tight">Categories</h4><ul class="ml-8 list-disc my-2"><li><a class="link" href="/benchmarks/sqlite" type="">sqlite</a></li><li><a class="link" href="/benchmarks/json" type="">json</a></li><li><a class="link" href="/benchmarks/nanoid" type="">nanoid</a></li><li><a class="link" href="/benchmarks/base64" type="">base64</a></li><li><a class="link" href="/benchmarks/http" type="">http</a></li><li><a class="link" href="/benchmarks/console" type="">console</a></li></ul></div></p>
+<p><div class="mt-12 pt-1"><h4 class="text-2xl font-bold tracking-tight">Categories</h4><ul class="ml-8 list-disc my-2"><li><a class="link" href="/" type="">../</a></li><li><a class="link" href="/benchmarks/sqlite" type="">sqlite</a></li><li><a class="link" href="/benchmarks/json" type="">json</a></li><li><a class="link" href="/benchmarks/nanoid" type="">nanoid</a></li><li><a class="link" href="/benchmarks/base64" type="">base64</a></li><li><a class="link" href="/benchmarks/http" type="">http</a></li><li><a class="link" href="/benchmarks/console" type="">console</a></li></ul></div></p>
 <div class="mt-12 pt-1">
 <h4 class="text-2xl font-bold tracking-tight"><a name="base64-encode">Encode</a></h4>
 <br /><h4 class="text-3xl font-bold tracking-tight"><a name="base64-encode-python">Python</a></h4>
@@ -20,11 +20,11 @@ Here, you can see <span class="text-sky-100">base64</span> benchmark results.
 <tbody>
 <tr>
 <td>Python</td>
-<td>31.85/iter ms</td>
-<td>28.98 ms</td>
-<td>39.89 ms</td>
-<td>31.97 ms</td>
-<td>32.92 ms</td>
+<td>23.98/iter ms</td>
+<td>23 ms</td>
+<td>29.76 ms</td>
+<td>24.69 ms</td>
+<td>23.65 ms</td>
 </tr>
 </tbody>
 </table>
@@ -41,7 +41,7 @@ new ApexCharts(document.querySelector('#chart-17'), {
                                 enabled: true,
                             },
                         },
-                        series: [{"name":"Python","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,31848128.929999996]}],
+                        series: [{"name":"Python","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,23977192.44999999]}],
                         stroke: {
                             width: 1,
                             curve: "straight",
@@ -71,7 +71,7 @@ return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
                             },
                         },
                         xaxis: {
-                            categories: ["ae1b26b","d9eb378","1220af9","f749858","c17fc69","d2c6ac7","89e8f77","3828643","d3194b4","00d24dd","ff55f3d","2feb9a5","c434a6d","6e218ab","ff3683a","3ee7b8c","4003018","d53b782","5bb06d6","Latest"],
+                            categories: ["f12f7bb","ae1b26b","d9eb378","1220af9","f749858","c17fc69","d2c6ac7","89e8f77","3828643","d3194b4","00d24dd","ff55f3d","2feb9a5","c434a6d","6e218ab","ff3683a","3ee7b8c","4003018","d53b782","Latest"],
                             labels: {
                                 show: false,
                             },
@@ -101,11 +101,11 @@ return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
 <tbody>
 <tr>
 <td>Crystal</td>
-<td>3.03/iter ms</td>
-<td>2.14 ms</td>
-<td>7.12 ms</td>
-<td>2.71 ms</td>
-<td>3.52 ms</td>
+<td>2.2/iter ms</td>
+<td>1.94 ms</td>
+<td>2.84 ms</td>
+<td>2.43 ms</td>
+<td>2.08 ms</td>
 </tr>
 </tbody>
 </table>
@@ -122,7 +122,7 @@ new ApexCharts(document.querySelector('#chart-18'), {
                                 enabled: true,
                             },
                         },
-                        series: [{"name":"Crystal","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3032221.340000001]}],
+                        series: [{"name":"Crystal","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2202323.650000002]}],
                         stroke: {
                             width: 1,
                             curve: "straight",
@@ -152,7 +152,7 @@ return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
                             },
                         },
                         xaxis: {
-                            categories: ["ae1b26b","d9eb378","1220af9","f749858","c17fc69","d2c6ac7","89e8f77","3828643","d3194b4","00d24dd","ff55f3d","2feb9a5","c434a6d","6e218ab","ff3683a","3ee7b8c","4003018","d53b782","5bb06d6","Latest"],
+                            categories: ["f12f7bb","ae1b26b","d9eb378","1220af9","f749858","c17fc69","d2c6ac7","89e8f77","3828643","d3194b4","00d24dd","ff55f3d","2feb9a5","c434a6d","6e218ab","ff3683a","3ee7b8c","4003018","d53b782","Latest"],
                             labels: {
                                 show: false,
                             },
@@ -182,27 +182,27 @@ return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
 <tbody>
 <tr>
 <td>JavaScript /  bun 0.1.10 (x64-linux)</td>
-<td>20.88/iter ms</td>
-<td>17.19 ms</td>
-<td>28.34 ms</td>
-<td>19.9 ms</td>
-<td>20.94 ms</td>
+<td>15.94/iter ms</td>
+<td>13.8 ms</td>
+<td>18.72 ms</td>
+<td>14 ms</td>
+<td>15.72 ms</td>
 </tr>
 <tr>
 <td>JavaScript /  deno 1.25.0 (x64-linux)</td>
-<td>38.39/iter ms</td>
-<td>34.44 ms</td>
-<td>48.38 ms</td>
-<td>41.93 ms</td>
-<td>35.78 ms</td>
+<td>31.59/iter ms</td>
+<td>29.6 ms</td>
+<td>34.5 ms</td>
+<td>30.41 ms</td>
+<td>32.28 ms</td>
 </tr>
 <tr>
 <td>JavaScript /  node 18.8.0 (x64-linux)</td>
-<td>63.78/iter ms</td>
-<td>58.11 ms</td>
-<td>70.97 ms</td>
-<td>63.46 ms</td>
-<td>61.55 ms</td>
+<td>52.55/iter ms</td>
+<td>50.02 ms</td>
+<td>63.08 ms</td>
+<td>52.61 ms</td>
+<td>52.01 ms</td>
 </tr>
 </tbody>
 </table>
@@ -219,7 +219,7 @@ new ApexCharts(document.querySelector('#chart-19'), {
                                 enabled: true,
                             },
                         },
-                        series: [{"name":" bun 0.1.10 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,20875503.310000006]},{"name":" node 18.8.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,63778312.610000014]},{"name":" deno 1.25.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,38385795.82]}],
+                        series: [{"name":" bun 0.1.10 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,15938473.050000003]},{"name":" node 18.8.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,52553134.15000001]},{"name":" deno 1.25.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,31589615.340000007]}],
                         stroke: {
                             width: 1,
                             curve: "straight",
@@ -249,7 +249,7 @@ return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
                             },
                         },
                         xaxis: {
-                            categories: ["ae1b26b","d9eb378","1220af9","f749858","c17fc69","d2c6ac7","89e8f77","3828643","d3194b4","00d24dd","ff55f3d","2feb9a5","c434a6d","6e218ab","ff3683a","3ee7b8c","4003018","d53b782","5bb06d6","Latest"],
+                            categories: ["f12f7bb","ae1b26b","d9eb378","1220af9","f749858","c17fc69","d2c6ac7","89e8f77","3828643","d3194b4","00d24dd","ff55f3d","2feb9a5","c434a6d","6e218ab","ff3683a","3ee7b8c","4003018","d53b782","Latest"],
                             labels: {
                                 show: false,
                             },
@@ -279,11 +279,11 @@ return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
 <tbody>
 <tr>
 <td>Ruby</td>
-<td>78.78/iter ms</td>
-<td>71.9 ms</td>
-<td>94.4 ms</td>
-<td>75.48 ms</td>
-<td>80.41 ms</td>
+<td>59.98/iter ms</td>
+<td>58.6 ms</td>
+<td>64.72 ms</td>
+<td>59.35 ms</td>
+<td>60.26 ms</td>
 </tr>
 </tbody>
 </table>
@@ -300,7 +300,7 @@ new ApexCharts(document.querySelector('#chart-20'), {
                                 enabled: true,
                             },
                         },
-                        series: [{"name":"Ruby","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,78778054.14000002]}],
+                        series: [{"name":"Ruby","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,59978503.95000002]}],
                         stroke: {
                             width: 1,
                             curve: "straight",
@@ -330,7 +330,7 @@ return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
                             },
                         },
                         xaxis: {
-                            categories: ["ae1b26b","d9eb378","1220af9","f749858","c17fc69","d2c6ac7","89e8f77","3828643","d3194b4","00d24dd","ff55f3d","2feb9a5","c434a6d","6e218ab","ff3683a","3ee7b8c","4003018","d53b782","5bb06d6","Latest"],
+                            categories: ["f12f7bb","ae1b26b","d9eb378","1220af9","f749858","c17fc69","d2c6ac7","89e8f77","3828643","d3194b4","00d24dd","ff55f3d","2feb9a5","c434a6d","6e218ab","ff3683a","3ee7b8c","4003018","d53b782","Latest"],
                             labels: {
                                 show: false,
                             },
@@ -360,11 +360,11 @@ return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
 <tbody>
 <tr>
 <td>Go</td>
-<td>1.37/iter ms</td>
-<td>848.87 µs</td>
-<td>5.16 ms</td>
-<td>1.29 ms</td>
-<td>1.69 ms</td>
+<td>1.13/iter ms</td>
+<td>935.97 µs</td>
+<td>2.5 ms</td>
+<td>1.07 ms</td>
+<td>1.15 ms</td>
 </tr>
 </tbody>
 </table>
@@ -381,7 +381,7 @@ new ApexCharts(document.querySelector('#chart-21'), {
                                 enabled: true,
                             },
                         },
-                        series: [{"name":"Go","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1369357.8099999998]}],
+                        series: [{"name":"Go","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1128846.8200000003]}],
                         stroke: {
                             width: 1,
                             curve: "straight",
@@ -411,7 +411,7 @@ return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
                             },
                         },
                         xaxis: {
-                            categories: ["ae1b26b","d9eb378","1220af9","f749858","c17fc69","d2c6ac7","89e8f77","3828643","d3194b4","00d24dd","ff55f3d","2feb9a5","c434a6d","6e218ab","ff3683a","3ee7b8c","4003018","d53b782","5bb06d6","Latest"],
+                            categories: ["f12f7bb","ae1b26b","d9eb378","1220af9","f749858","c17fc69","d2c6ac7","89e8f77","3828643","d3194b4","00d24dd","ff55f3d","2feb9a5","c434a6d","6e218ab","ff3683a","3ee7b8c","4003018","d53b782","Latest"],
                             labels: {
                                 show: false,
                             },
@@ -442,11 +442,11 @@ return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
 <tbody>
 <tr>
 <td>Python</td>
-<td>32.5/iter ms</td>
-<td>28.73 ms</td>
-<td>43.79 ms</td>
-<td>29.92 ms</td>
-<td>31.68 ms</td>
+<td>24.61/iter ms</td>
+<td>23.31 ms</td>
+<td>30.57 ms</td>
+<td>25.09 ms</td>
+<td>24.37 ms</td>
 </tr>
 </tbody>
 </table>
@@ -463,7 +463,7 @@ new ApexCharts(document.querySelector('#chart-22'), {
                                 enabled: true,
                             },
                         },
-                        series: [{"name":"Python","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,32495874.680000007]}],
+                        series: [{"name":"Python","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,24609012.920000013]}],
                         stroke: {
                             width: 1,
                             curve: "straight",
@@ -493,7 +493,7 @@ return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
                             },
                         },
                         xaxis: {
-                            categories: ["ae1b26b","d9eb378","1220af9","f749858","c17fc69","d2c6ac7","89e8f77","3828643","d3194b4","00d24dd","ff55f3d","2feb9a5","c434a6d","6e218ab","ff3683a","3ee7b8c","4003018","d53b782","5bb06d6","Latest"],
+                            categories: ["f12f7bb","ae1b26b","d9eb378","1220af9","f749858","c17fc69","d2c6ac7","89e8f77","3828643","d3194b4","00d24dd","ff55f3d","2feb9a5","c434a6d","6e218ab","ff3683a","3ee7b8c","4003018","d53b782","Latest"],
                             labels: {
                                 show: false,
                             },
@@ -523,11 +523,11 @@ return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
 <tbody>
 <tr>
 <td>Crystal</td>
-<td>2.83/iter ms</td>
-<td>2.14 ms</td>
-<td>8.47 ms</td>
-<td>2.92 ms</td>
-<td>2.57 ms</td>
+<td>2.15/iter ms</td>
+<td>1.92 ms</td>
+<td>2.81 ms</td>
+<td>1.98 ms</td>
+<td>1.95 ms</td>
 </tr>
 </tbody>
 </table>
@@ -544,7 +544,7 @@ new ApexCharts(document.querySelector('#chart-23'), {
                                 enabled: true,
                             },
                         },
-                        series: [{"name":"Crystal","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2832257.500000002]}],
+                        series: [{"name":"Crystal","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2152720.2199999997]}],
                         stroke: {
                             width: 1,
                             curve: "straight",
@@ -574,7 +574,7 @@ return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
                             },
                         },
                         xaxis: {
-                            categories: ["ae1b26b","d9eb378","1220af9","f749858","c17fc69","d2c6ac7","89e8f77","3828643","d3194b4","00d24dd","ff55f3d","2feb9a5","c434a6d","6e218ab","ff3683a","3ee7b8c","4003018","d53b782","5bb06d6","Latest"],
+                            categories: ["f12f7bb","ae1b26b","d9eb378","1220af9","f749858","c17fc69","d2c6ac7","89e8f77","3828643","d3194b4","00d24dd","ff55f3d","2feb9a5","c434a6d","6e218ab","ff3683a","3ee7b8c","4003018","d53b782","Latest"],
                             labels: {
                                 show: false,
                             },
@@ -604,27 +604,27 @@ return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
 <tbody>
 <tr>
 <td>JavaScript /  bun 0.1.10 (x64-linux)</td>
-<td>20.83/iter ms</td>
-<td>17.87 ms</td>
-<td>34.24 ms</td>
-<td>24.43 ms</td>
-<td>19.23 ms</td>
+<td>16.19/iter ms</td>
+<td>14.52 ms</td>
+<td>18.56 ms</td>
+<td>15.97 ms</td>
+<td>16.74 ms</td>
 </tr>
 <tr>
 <td>JavaScript /  deno 1.25.0 (x64-linux)</td>
-<td>38.71/iter ms</td>
-<td>34.37 ms</td>
-<td>48.92 ms</td>
-<td>38.62 ms</td>
-<td>37.1 ms</td>
+<td>30.17/iter ms</td>
+<td>28.59 ms</td>
+<td>33.68 ms</td>
+<td>29.98 ms</td>
+<td>29.72 ms</td>
 </tr>
 <tr>
 <td>JavaScript /  node 18.8.0 (x64-linux)</td>
-<td>65.89/iter ms</td>
-<td>59.66 ms</td>
-<td>85.41 ms</td>
-<td>64.35 ms</td>
-<td>64.3 ms</td>
+<td>49.36/iter ms</td>
+<td>45.73 ms</td>
+<td>53.46 ms</td>
+<td>50.46 ms</td>
+<td>50.42 ms</td>
 </tr>
 </tbody>
 </table>
@@ -641,7 +641,7 @@ new ApexCharts(document.querySelector('#chart-24'), {
                                 enabled: true,
                             },
                         },
-                        series: [{"name":" bun 0.1.10 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,20826257.449999996]},{"name":" node 18.8.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,65892142.419999994]},{"name":" deno 1.25.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,38714651.62000002]}],
+                        series: [{"name":" bun 0.1.10 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,16186583.640000002]},{"name":" node 18.8.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,49360161.03000001]},{"name":" deno 1.25.0 (x64-linux)","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,30174217.17]}],
                         stroke: {
                             width: 1,
                             curve: "straight",
@@ -671,7 +671,7 @@ return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
                             },
                         },
                         xaxis: {
-                            categories: ["ae1b26b","d9eb378","1220af9","f749858","c17fc69","d2c6ac7","89e8f77","3828643","d3194b4","00d24dd","ff55f3d","2feb9a5","c434a6d","6e218ab","ff3683a","3ee7b8c","4003018","d53b782","5bb06d6","Latest"],
+                            categories: ["f12f7bb","ae1b26b","d9eb378","1220af9","f749858","c17fc69","d2c6ac7","89e8f77","3828643","d3194b4","00d24dd","ff55f3d","2feb9a5","c434a6d","6e218ab","ff3683a","3ee7b8c","4003018","d53b782","Latest"],
                             labels: {
                                 show: false,
                             },
@@ -701,11 +701,11 @@ return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
 <tbody>
 <tr>
 <td>Ruby</td>
-<td>79.75/iter ms</td>
-<td>71.38 ms</td>
-<td>87.89 ms</td>
-<td>77.5 ms</td>
-<td>83.97 ms</td>
+<td>62.06/iter ms</td>
+<td>58.64 ms</td>
+<td>65.29 ms</td>
+<td>62.52 ms</td>
+<td>58.64 ms</td>
 </tr>
 </tbody>
 </table>
@@ -722,7 +722,7 @@ new ApexCharts(document.querySelector('#chart-25'), {
                                 enabled: true,
                             },
                         },
-                        series: [{"name":"Ruby","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,79750509.58000001]}],
+                        series: [{"name":"Ruby","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,62058560.82999997]}],
                         stroke: {
                             width: 1,
                             curve: "straight",
@@ -752,7 +752,7 @@ return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
                             },
                         },
                         xaxis: {
-                            categories: ["ae1b26b","d9eb378","1220af9","f749858","c17fc69","d2c6ac7","89e8f77","3828643","d3194b4","00d24dd","ff55f3d","2feb9a5","c434a6d","6e218ab","ff3683a","3ee7b8c","4003018","d53b782","5bb06d6","Latest"],
+                            categories: ["f12f7bb","ae1b26b","d9eb378","1220af9","f749858","c17fc69","d2c6ac7","89e8f77","3828643","d3194b4","00d24dd","ff55f3d","2feb9a5","c434a6d","6e218ab","ff3683a","3ee7b8c","4003018","d53b782","Latest"],
                             labels: {
                                 show: false,
                             },
@@ -782,11 +782,11 @@ return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
 <tbody>
 <tr>
 <td>Go</td>
-<td>1.29/iter ms</td>
-<td>689.88 µs</td>
-<td>2.56 ms</td>
-<td>1.01 ms</td>
-<td>1.74 ms</td>
+<td>1.04/iter ms</td>
+<td>903.42 µs</td>
+<td>1.54 ms</td>
+<td>1.04 ms</td>
+<td>980.72 µs</td>
 </tr>
 </tbody>
 </table>
@@ -803,7 +803,7 @@ new ApexCharts(document.querySelector('#chart-26'), {
                                 enabled: true,
                             },
                         },
-                        series: [{"name":"Go","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1294967.219999999]}],
+                        series: [{"name":"Go","data":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1041123.6099999994]}],
                         stroke: {
                             width: 1,
                             curve: "straight",
@@ -833,7 +833,7 @@ return `${Number((time / 36e11).toFixed(2)).toLocaleString(locale)}${type} h`;
                             },
                         },
                         xaxis: {
-                            categories: ["ae1b26b","d9eb378","1220af9","f749858","c17fc69","d2c6ac7","89e8f77","3828643","d3194b4","00d24dd","ff55f3d","2feb9a5","c434a6d","6e218ab","ff3683a","3ee7b8c","4003018","d53b782","5bb06d6","Latest"],
+                            categories: ["f12f7bb","ae1b26b","d9eb378","1220af9","f749858","c17fc69","d2c6ac7","89e8f77","3828643","d3194b4","00d24dd","ff55f3d","2feb9a5","c434a6d","6e218ab","ff3683a","3ee7b8c","4003018","d53b782","Latest"],
                             labels: {
                                 show: false,
                             },
