@@ -33,7 +33,7 @@ export const getCPU = () => {
     }
 
     if (process.platform === 'darwin') {
-        return runCommand("sysctl -n machdep.cpu.brand_string'").replace(/\n|\r/g, '');
+        return runCommand("sysctl -n machdep.cpu.brand_string").replace(/\n|\r/g, '');
     }
 
     return 'unknown';
