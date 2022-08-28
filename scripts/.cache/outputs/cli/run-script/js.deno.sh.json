@@ -1,1 +1,1 @@
-{"stats":{"avg":5151100.43,"min":4836998.6400000015,"max":5945318.640000001,"p75":5070902.6400000015,"p99":5071702.64,"latency":null},"language":"Bash","tool":"hyperfine","type":"/iter","additionalInfo":null,"runtime":"deno 1.25.0 (x64-linux)"}
+{"stats":{"avg":6847298.000000002,"min":6105059.920000001,"max":9724674.92,"p75":6799762.920000001,"p99":6584661.92,"latency":null},"language":"Bash","tool":"hyperfine","type":"/iter","additionalInfo":null,"runtime":"deno 1.25.0 (x64-linux)"}
