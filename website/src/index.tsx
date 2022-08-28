@@ -18,7 +18,7 @@ export default async({ benchmarks, comp }) => {
       <p class="mt-4">
       You can checkout some absolutely shocking benchmarks here! If you want to contribute here's our <comp.Link url="https://github.com/xHyroM/benchmarks" name="repository" type="_blank" /> link.
       <br />
-      It is possible that the numbers are very low due to running on <b>Github Actions</b> and on cpu <b>{cpu}</b>
+      It is possible that the numbers are terrible due to running on <b>Github Actions</b> and on cpu <b>{cpu}</b>
       </p>
 
       <comp.Categories />
