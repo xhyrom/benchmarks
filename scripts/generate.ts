@@ -32,6 +32,7 @@ interface Benchmark {
     language: string;
     runtime: string | null;
     additionalInfo: string | null;
+    version: string;
     tool: Tool;
     type: NumberType;
     stats: {

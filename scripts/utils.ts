@@ -136,8 +136,9 @@ export const save = async(
                 language,
                 tool,
                 type,
+                version: `${installed(`${versionCommand} | grep -m1 "" | perl -pe '($_)=/([0-9]+([.][0-9]+)+)/'`)} (${process.arch}-${process.platform})`,
                 additionalInfo: additionalInfo !== 'null' ? additionalInfo : null,
-                runtime: runtime !== 'null' ? `${runtime} ${installed(`${versionCommand} | grep -m1 "" | perl -pe '($_)=/([0-9]+([.][0-9]+)+)/'`)} (${process.arch}-${process.platform})` : null,
+                runtime: runtime !== 'null' ? runtime : null,
             });
             break;
         }
@@ -154,8 +155,9 @@ export const save = async(
                 language,
                 tool,
                 type,
+                version: `${installed(`${versionCommand} | grep -m1 "" | perl -pe '($_)=/([0-9]+([.][0-9]+)+)/'`)} (${process.arch}-${process.platform})`,
                 additionalInfo: additionalInfo !== 'null' ? additionalInfo : null,
-                runtime: runtime !== 'null' ? `${runtime} ${installed(`${versionCommand} | grep -m1 "" | perl -pe '($_)=/([0-9]+([.][0-9]+)+)/'`)} (${process.arch}-${process.platform})` : null,
+                runtime: runtime !== 'null' ? runtime : null,
             });
             break;
         }
@@ -172,8 +174,9 @@ export const save = async(
                 language,
                 tool,
                 type,
+                version: `${installed(`${versionCommand} | grep -m1 "" | perl -pe '($_)=/([0-9]+([.][0-9]+)+)/'`)} (${process.arch}-${process.platform})`,
                 additionalInfo: additionalInfo !== 'null' ? additionalInfo : null,
-                runtime: runtime !== 'null' ? `${runtime} ${installed(`${versionCommand} | grep -m1 "" | perl -pe '($_)=/([0-9]+([.][0-9]+)+)/'`)} (${process.arch}-${process.platform})` : null,
+                runtime: runtime !== 'null' ? runtime : null,
             });
             break;
         }
@@ -186,8 +189,9 @@ export const save = async(
                 language,
                 tool,
                 type,
+                version: `${installed(`${versionCommand} | grep -m1 "" | perl -pe '($_)=/([0-9]+([.][0-9]+)+)/'`)} (${process.arch}-${process.platform})`,
                 additionalInfo: additionalInfo !== 'null' ? additionalInfo : null,
-                runtime: runtime !== 'null' ? `${runtime} ${installed(`${versionCommand} | grep -m1 "" | perl -pe '($_)=/([0-9]+([.][0-9]+)+)/'`)} (${process.arch}-${process.platform})` : null,
+                runtime: runtime !== 'null' ? runtime : null,
             });
             break;
         }

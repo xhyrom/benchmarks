@@ -15,6 +15,7 @@ interface Benchmark {
     language: string;
     runtime: string | null;
     additionalInfo: string | null;
+    version: string;
     tool: Tool;
     type: NumberType;
     stats: {
@@ -137,7 +138,7 @@ export default async function* ({ benchmarks, commits }: any) {
                     //charts[language].xaxis.categories.push(bench.runtime ? `${bench.language} / ${bench.runtime}` : bench.language);
         
                     const forPush = [
-                        bench.runtime ? `${bench.language} /${bench.additionalInfo ? ` ${bench.additionalInfo} /` : ''}  ${bench.runtime}` : bench.language,
+                        bench.runtime ? `${bench.language} /${bench.additionalInfo ? ` ${bench.additionalInfo} /` : ''}  ${bench.runtime} ${bench.version}` : `${bench.language} ${bench.version}`,
                         format(bench.stats.avg, bench.tool, bench.type),
                         format(bench.stats.min, bench.tool),
                         format(bench.stats.max, bench.tool),
