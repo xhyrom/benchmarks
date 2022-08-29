@@ -1,1 +1,1 @@
-sudo bun add package -g
+bun add package -g
