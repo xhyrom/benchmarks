@@ -97,13 +97,13 @@ export default async function* ({ benchmarks, commits }: any) {
         for (const [group, results] of Object.entries(content)) {
             let size = {
                 spaces: 6,
-                header: 2,
+                header: 3,
             };
             if (group !== 'main') {
-                perBenchMarkdown += `<h4 class="text-2xl font-bold tracking-tight"><a name="${benchmarkName}-${group}">${group.charAt(0).toUpperCase() + group.slice(1).replaceAll('-', ' ')}</a></h4>\n<br />`;
+                perBenchMarkdown += `<h4 class="text-3xl font-bold tracking-tight"><a name="${benchmarkName}-${group}">${group.charAt(0).toUpperCase() + group.slice(1).replaceAll('-', ' ')}</a></h4>\n<br />`;
                 //perBenchHead += `- [${group.replaceAll('-', ' ')}](#${benchmarkName}-${group})\n\n`;
                 size.spaces += 3;
-                size.header++;
+                size.header--;
             };
     
             for (const language of [...new Set(Object.values(results).map(b => b.benchmark.language))]) {
