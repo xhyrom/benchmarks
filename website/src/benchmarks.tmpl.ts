@@ -267,7 +267,7 @@ return \`\${Number(time.toFixed(2)).toLocaleString(locale)}\${type}\`;
             loadScripts: ["https://cdn.jsdelivr.net/npm/apexcharts"],
             content: `
 {{ comp.Header() | safe }}
-<p class="mt-4 bg-gray-100">
+<p class="mt-4">
 Here, you can see <span class="text-sky-600">${benchmarkName}</span> benchmark results.
 </p>
 
