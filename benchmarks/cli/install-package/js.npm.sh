@@ -1,0 +1,1 @@
+sudo npm i package --location=global

@@ -1,0 +1,1 @@
+sudo bun add package -g
