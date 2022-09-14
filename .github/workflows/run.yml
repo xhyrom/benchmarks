@@ -27,7 +27,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install dependencies
-        run: npm install && rm package-lock.json && bun install
+        run: bun install
 
       - name: Run setup
         run: |
