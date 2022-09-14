@@ -32,8 +32,11 @@ jobs:
       - name: Run setup
         run: |
           bun run setup:init
+          bun install
           bun run setup:languages GITHUB_ACTIONS
+          bun install
           source $PROFILE
+          bun install
           bun run setup:benchmarks
 
       - name: Run benchmarks

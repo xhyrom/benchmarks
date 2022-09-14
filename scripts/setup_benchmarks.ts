@@ -1,7 +1,7 @@
 import { installed, runCommand } from './utils';
 import log, { setLogFilter } from '@paperdave/logger';
-import { readdirSync } from 'fs';
-import { join, dirname } from 'path';
+import { readdirSync } from 'node:fs';
+import { join, dirname } from 'node:path';
 
 setLogFilter("*");
 
