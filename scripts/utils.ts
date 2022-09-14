@@ -1,7 +1,7 @@
 import { spawn } from 'bun-utilities/spawn.js';
 import { mkdirSync } from 'fs';
 import { join } from 'path';
-console.log(await import('bun-utilities/spawn.mjs'));
+console.log(spawn);
 export const runCommand = (command: string): string => {
     const run = spawn('bash', ['-c', command]);
     return run.stdout || run.stderr;
