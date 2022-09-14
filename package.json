@@ -1,6 +1,6 @@
 {
   "name": "benchmarks",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "postinstall": "cd node_modules/better-sqlite3 && bun run install",
     "setup": "bun run setup:init && bun run setup:languages && bun run setup:benchmarks",
