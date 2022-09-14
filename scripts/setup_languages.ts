@@ -29,7 +29,7 @@ for (const language of languages) {
         log.info(`Step ${step.name}`);
 
         const installCheck = installed(step.version);
-        if (installCheck && argv[0] !== 'GITHUB_ACTIONS') {
+        if (installCheck && argv[0] !== 'GITHUB_ACTIONS' && !step.includes('bun')) {
             log.info('Skipping install step');
             log.info(`Founded version: ${installCheck}`);
         } else {
