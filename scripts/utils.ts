@@ -1,4 +1,4 @@
-import { spawn } from 'bun-utilities/spawn.js';
+import { spawn } from 'bun-utilities/spawn.mjs';
 import { mkdirSync } from 'fs';
 import { join } from 'path';
 console.log(spawn);
