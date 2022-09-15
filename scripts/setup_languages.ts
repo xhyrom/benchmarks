@@ -6,7 +6,6 @@ import { join } from 'node:path';
 setLogFilter("*");
 
 const languages = readdirSync(join(import.meta.dir, '..', 'benchmarks'), { withFileTypes: true }).filter(f => !f.isDirectory()).map(f => join(join(import.meta.dir, '..', 'benchmarks', f.name)));
-const argv = process.argv.slice(2);
 
 for (const language of languages) {
     let content = (await import(language)).default;
@@ -29,7 +28,7 @@ for (const language of languages) {
         log.info(`Step ${step.name}`);
 
         const installCheck = installed(step.version);
-        if (installCheck && argv[0] !== 'GITHUB_ACTIONS' && !step.includes('bun')) {
+        if (installCheck) {
             log.info('Skipping install step');
             log.info(`Founded version: ${installCheck}`);
         } else {
