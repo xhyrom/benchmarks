@@ -33,7 +33,7 @@ jobs:
         run: |
           bun run setup:init
           bun install
-          bun run setup:languages GITHUB_ACTIONS
+          bun run setup:languages
           bun install
           source $PROFILE
           bun install
