@@ -36,7 +36,7 @@ export const time = () => {
     }
 
     if (typeof Deno !== 'undefined') {
-        return Math.ceil(1e6 * Deno.core.opSync('op_now'));
+        return Math.ceil(1e6 * performance.now());
     }
 
     return process.hrtime.bigint();
