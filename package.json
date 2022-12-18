@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@paperdave/logger": "^2.2.3",
-    "better-sqlite3": "^7.6.2",
+    "better-sqlite3": "^8.0.1",
     "bun-utilities": "^0.2.1",
     "markdown-table": "^3.0.2",
     "nanoid": "^4.0.0",
