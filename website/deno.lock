@@ -1,6 +1,9 @@
 {
   "version": "2",
   "remote": {
+    "https://cdn.skypack.dev/-/markdown-table@v3.0.3-MSGbifUa1PwrePpqubwu/dist=es2019,mode=imports/optimized/markdown-table.js": "4f6857ac497a509a6f1631cf79d943ffbc3e6e025db0f9e4451b68c2962c03c6",
+    "https://cdn.skypack.dev/-/markdown-table@v3.0.3-MSGbifUa1PwrePpqubwu/dist=es2019,mode=types/index.d.ts": "d6fdaeb6f1e4e29d7827e30d743dfef5cb6c8bca4bc546001a3b3e751a2de06c",
+    "https://cdn.skypack.dev/markdown-table@3?dts": "cac6ce9d2fc16f7eccc6e32bc3aba401d1ee673091bfcfe8ef8b2fe060670402",
     "https://deno.land/std@0.149.0/_util/assert.ts": "e94f2eb37cebd7f199952e242c77654e43333c1ac4c5c700e929ea3aa5489f74",
     "https://deno.land/std@0.149.0/_util/os.ts": "3b4c6e27febd119d36a416d7a97bd3b0251b77c88942c8f16ee5953ea13e2e49",
     "https://deno.land/std@0.149.0/path/_constants.ts": "df1db3ffa6dd6d1252cc9617e5d72165cd2483df90e93833e13580687b6083c3",
