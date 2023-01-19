@@ -1,1 +1,1 @@
-{"stats":{"avg":27742191.040000007,"min":26072088.3,"max":32667496.3,"p75":27470290.3,"p99":26701288.300000004,"latency":null},"language":"Python","tool":"hyperfine","type":"/iter","version":"3.8.10 (x64-linux)","additionalInfo":null,"runtime":null}
+{"stats":{"avg":21382344.68,"min":20959999.400000002,"max":22641631.400000002,"p75":21617812.400000002,"p99":21392107.4,"latency":null},"language":"Python","tool":"hyperfine","type":"/iter","version":"3.8.10 (x64-linux)","additionalInfo":null,"runtime":null}
