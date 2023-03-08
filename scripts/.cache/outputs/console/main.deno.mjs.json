@@ -1,1 +1,1 @@
-{"stats":{"avg":87210629.67999998,"min":82860786,"max":107112791.00000001,"p75":84723794,"p99":83537388,"latency":null},"language":"JavaScript","tool":"hyperfine","type":"/iter","version":"1.31.1 (x64-linux)","additionalInfo":null,"runtime":"deno"}
+{"stats":{"avg":70151384.94,"min":68844274.58,"max":75326178.58,"p75":69686473.58,"p99":69577074.58,"latency":null},"language":"JavaScript","tool":"hyperfine","type":"/iter","version":"1.31.1 (x64-linux)","additionalInfo":null,"runtime":"deno"}
