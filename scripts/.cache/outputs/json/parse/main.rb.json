@@ -1,1 +1,1 @@
-{"stats":{"avg":83893279.77000003,"min":79644055.86000001,"max":93011343.86,"p75":83040979.86,"p99":88355012.86,"latency":null},"language":"Ruby","tool":"hyperfine","type":"/iter","version":"2.7.0 (x64-linux)","additionalInfo":null,"runtime":null}
+{"stats":{"avg":60718990.76999999,"min":59645263.54000001,"max":62887411.53999999,"p75":60068470.54,"p99":60745780.54,"latency":null},"language":"Ruby","tool":"hyperfine","type":"/iter","version":"2.7.0 (x64-linux)","additionalInfo":null,"runtime":null}
