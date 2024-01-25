@@ -893,5 +893,18 @@
     "https://deno.land/x/sqlite@v3.8/src/function.ts": "e4c83b8ec64bf88bafad2407376b0c6a3b54e777593c70336fb40d43a79865f2",
     "https://deno.land/x/sqlite@v3.8/src/query.ts": "d58abda928f6582d77bad685ecf551b1be8a15e8e38403e293ec38522e030cad",
     "https://deno.land/x/sqlite@v3.8/src/wasm.ts": "e79d0baa6e42423257fb3c7cc98091c54399254867e0f34a09b5bdef37bd9487"
+  },
+  "workspace": {
+    "packageJson": {
+      "dependencies": [
+        "npm:@paperdave/logger@^2.2.3",
+        "npm:better-sqlite3@^8.0.1",
+        "npm:bun-types@^0.1.8",
+        "npm:bun-utilities@^0.2.1",
+        "npm:markdown-table@^3.0.2",
+        "npm:nanoid@^4.0.0",
+        "npm:node-gyp@^9.3.0"
+      ]
+    }
   }
 }
