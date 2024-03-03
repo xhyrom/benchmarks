@@ -1,1 +1,1 @@
-{"stats":{"avg":678975.0299999996,"min":592044.0799999998,"max":1314033.0799999996,"p75":638412.0799999997,"p99":673366.0799999998,"latency":null},"language":"Go","tool":"hyperfine","type":"/iter","version":"1.21.7 (x64-linux)","additionalInfo":null,"runtime":null}
+{"stats":{"avg":681096.76,"min":588173.7800000004,"max":1357854.7800000005,"p75":621185.7800000004,"p99":609753.7800000004,"latency":null},"language":"Go","tool":"hyperfine","type":"/iter","version":"1.21.7 (x64-linux)","additionalInfo":null,"runtime":null}
